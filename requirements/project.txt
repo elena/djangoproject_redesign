@@ -1,0 +1,5 @@
+# These are the libraries that are required to run the myproject project.
+
+docutils
+Django==1.4.1
+Sphinx==1.1.3
