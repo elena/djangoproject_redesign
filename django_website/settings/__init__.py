@@ -5,7 +5,7 @@ This module attempts to find settings in two ways:
 
 1. Via an environmental variable: ``DJANGO_RUNTIME_ENVIRONMENT`` which should be
 one of the following: "dev", "staging", or "production". If the variable is not
-set, the myproject project will default to "dev"
+set, the django_website project will default to "dev"
 
 2. Via a ``local_settings.py`` file, placed in this directory. Under no
 circumstances should this file be versioned. It is solely to override settings
@@ -31,7 +31,7 @@ should do so in the ``base.py`` module in this directory.
 
 
 # Import base settings
-base =  __import__('myproject.settings.base', {}, {}, ['base'], -1)
+base =  __import__('django_website.settings.base', {}, {}, ['base'], -1)
 for setting in dir(base):
     if setting == setting.upper():
         locals().update({setting: getattr(base, setting)})
@@ -47,7 +47,7 @@ if not runtime_env in allowed_envs:
 
 try:
     environment = __import__(
-        'myproject.settings.%s' % runtime_env,
+        'django_website.settings.%s' % runtime_env,
         globals(),
         locals(),
         [runtime_env],

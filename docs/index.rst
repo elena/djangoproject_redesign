@@ -1,4 +1,4 @@
-myproject documentation!
+django_website documentation!
 ========================================
 
 Contents:

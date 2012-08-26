@@ -1,7 +1,7 @@
 import os
 
 
-# Django settings for myproject project.
+# Django settings for django_website project.
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
@@ -46,7 +46,7 @@ USE_L10N = True
 # If you set this to False, Django will not use timezone-aware datetimes.
 USE_TZ = True
 
-# The directory the myproject project is in.
+# The directory the django_website project is in.
 PROJECT_DIR = os.path.normpath(os.path.join(
     os.path.dirname(__file__),
     os.pardir
@@ -107,10 +107,10 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'myproject.urls'
+ROOT_URLCONF = 'django_website.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'myproject.wsgi.application'
+WSGI_APPLICATION = 'django_website.wsgi.application'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".

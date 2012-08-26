@@ -4,7 +4,7 @@ TEMPLATE_DEBUG = DEBUG
 # Django debug toolbar and Django extensions are both highly useful
 # utilities. To install them, run::
 #
-#    ?> pip install /Volumes/Data/src/djangoproject_env/myproject/requirements/development.txt
+#    ?> pip install /Volumes/Data/src/djangoproject_env/django_website/requirements/development.txt
 #
 INSTALLED_APPS_ENV_ADDITIONS = (
     'debug_toolbar',

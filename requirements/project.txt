@@ -1,4 +1,4 @@
-# These are the libraries that are required to run the myproject project.
+# These are the libraries that are required to run the django_website project.
 
 docutils
 Django==1.4.1
