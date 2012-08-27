@@ -1,6 +1,17 @@
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'django_website.db',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': '',
+    }
+}
+
 # Django debug toolbar and Django extensions are both highly useful
 # utilities. To install them, run::
 #
@@ -31,3 +42,5 @@ DEBUG_TOOLBAR_CONFIG = {
 
 # Log sent emails to the console.
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+COMPRESS_ENABLED = False

@@ -1,15 +1,16 @@
 from django.conf import settings
-from django.conf.urls import include, patterns, static, url
+from django.conf.urls import patterns, url
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
-from django.contrib import admin
-admin.autodiscover()
+from django_website import views
 
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'django_website.views.home', name='home'),
-    # url(r'^django_website/', include('django_website.foo.urls')),
-    url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-    ),
-    url(r'^admin/', include(admin.site.urls)),
-) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT, show_indexes=True)
+    url(r'^$', views.Home.as_view(), name="home")
+)
+
+if settings.DEBUG:
+    urlpatterns += staticfiles_urlpatterns()
+    urlpatterns += patterns('',
+        url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT})
+    )

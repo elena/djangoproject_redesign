@@ -49,7 +49,8 @@ USE_TZ = True
 # The directory the django_website project is in.
 PROJECT_DIR = os.path.normpath(os.path.join(
     os.path.dirname(__file__),
-    os.pardir
+    os.pardir,
+    os.pardir,
 ))
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
@@ -65,7 +66,7 @@ MEDIA_URL = '/media/'
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = os.path.join(PROJECT_DIR, os.pardir, 'collected_static')
+STATIC_ROOT = os.path.join(PROJECT_DIR, 'collected_static')
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
@@ -79,12 +80,14 @@ STATICFILES_DIRS = (
     os.path.join(PROJECT_DIR, 'static'),
 )
 
+print os.path.join(PROJECT_DIR, os.pardir, 'static')
+
 # List of finder classes that know how to find static files in
 # various locations.
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    'compressor.finders.CompressorFinder',
 )
 
 # Make this unique, and don't share it with anybody.
@@ -126,8 +129,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.admin',
-    'django.contrib.admindocs',
+    'compressor',
 )
 
 # A sample logging configuration. The only tangible logging
