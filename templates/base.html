@@ -8,11 +8,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>{% block title %}{% endblock %}</title>
   <meta name="description" content="{% block description %}{% endblock %}">
+  <link rel="shortcut icon" href="{% static "images/favicon.ico" %}" >
   {% compress css %}
   <link rel="stylesheet" href="{% static "css/reset.css" %}">
+  <link rel="stylesheet" href="{% static "css/typography.css" %}">
   <link rel="stylesheet" href="{% static "css/screen.css" %}" media="screen">
-  <link rel="stylesheet" href="{% static "css/print.css" %}" media="print">  
-  {% block extracss %}{% endblock %}
+  <link rel="stylesheet" href="{% static "css/print.css" %}" media="print">
+  {% block extracss %}{# Extra CSS files that need to be loaded in the <head> go here #}{% endblock %}
   {% endcompress %}
   <script src="{% static "js/libs/jquery.js" %}"></script>
   <script src="{% static "js/libs/underscore.js" %}"></script>
@@ -20,8 +22,10 @@
   {% block libjs %}{# JS libraries that need to be loaded in the <head> go here #}{% endblock %}
 </head>
 <body>
+{% include "includes/header.html" %}
 {% block body %}{% endblock %}
-{% compress js %}{% block extrajs %}{% endblock %}{% endcompress %}
+{% include "includes/footer.html" %}
+{% compress js %}{% block extrajs %}{# Extra JS files that need to be loaded at the base of the page go here. #}{% endblock %}{% endcompress %}
 <script>
   var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
   (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
