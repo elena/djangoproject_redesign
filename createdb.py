@@ -34,5 +34,5 @@ def create_dbs():
 
 if __name__ == '__main__':
     import sys
-    from django_webiste.wsgi import *
+    from django_website.wsgi import *
     create_dbs()
