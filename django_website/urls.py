@@ -7,7 +7,8 @@ from django_website import views
 
 urlpatterns = patterns('',
     url(r'^$', views.Index.as_view(), name="index"),
-    url(r'^why/$', views.WhyDjango.as_view(), name="why")
+    url(r'^why/$', views.WhyDjango.as_view(), name="why"),
+    url(r'^start/$', views.GetStarted.as_view(), name="start"),
 )
 
 if settings.DEBUG:

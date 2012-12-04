@@ -80,8 +80,6 @@ STATICFILES_DIRS = (
     os.path.join(PROJECT_DIR, 'static'),
 )
 
-print os.path.join(PROJECT_DIR, os.pardir, 'static')
-
 # List of finder classes that know how to find static files in
 # various locations.
 STATICFILES_FINDERS = (
@@ -130,6 +128,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'compressor',
+    'django_pygments',
 )
 
 # A sample logging configuration. The only tangible logging

@@ -35,3 +35,20 @@ h3, h4 {
 h3, h4 { margin: 8px 0;}
 
 li, p { margin-bottom: 8px;}
+
+#logo {
+    background: url(../images/logo.png) no-repeat 0 0;
+    height: 87px;
+    text-indent: -900px;
+    width: 250px;
+}
+
+nav#secondary {
+    border-bottom: 1px solid silver;
+}
+
+footer {
+    border-top: 1px solid silver;
+    margin-top: 30px;
+    padding-top: 10px;
+}
