@@ -9,6 +9,7 @@ TEMPLATE_DEBUG = DEBUG
 
 COMPRESS_ENABLED = False
 
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -17,6 +18,18 @@ DATABASES = {
         'PASSWORD': env['DOTCLOUD_DB_SQL_PASSWORD'],
         'HOST': env['DOTCLOUD_DB_SQL_HOST'],
         'PORT': str(env['DOTCLOUD_DB_SQL_PORT']),
+    }
+}
+"""
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'django_website.db',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': '',
     }
 }
 

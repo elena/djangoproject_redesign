@@ -9,7 +9,7 @@
 # 5. ...and collect static media.
 # 6. Install crontab job for search index updating
 
-python createdb.py
+#python createdb.py
 python manage.py syncdb --noinput
 python mkadmin.py
 mkdir -p /home/dotcloud/data/media
