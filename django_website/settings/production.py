@@ -24,3 +24,8 @@ COMPRESS_CSS_FILTERS = (
     'compressor.filters.css_default.CssAbsoluteFilter',
     'compressor.filters.cssmin.CSSMinFilter'
 )
+
+MEDIA_ROOT = "/home/dotcloud/data/media"
+MEDIA_URL = "/media/"
+STATIC_ROOT = "/home/dotcloud/volatile/static"
+STATIC_URL = "/static/"

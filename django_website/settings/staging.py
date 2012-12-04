@@ -19,3 +19,19 @@ DATABASES = {
         'PORT': str(env['DOTCLOUD_DB_SQL_PORT']),
     }
 }
+
+INSTALLED_APPS_ENV_ADDITIONS = (
+    'lockdown',
+)
+
+MIDDLEWARE_CLASSES_ENV_ADDITIONS = (
+    'lockdown.middleware.LockdownMiddleware',
+)
+
+MEDIA_ROOT = "/home/dotcloud/data/media"
+MEDIA_URL = "/media/"
+STATIC_ROOT = "/home/dotcloud/volatile/static"
+STATIC_URL = "/static/"
+
+# Password that keeps staging under lock and key
+LOCKDOWN_PASSWORD = 'djangopreview'
