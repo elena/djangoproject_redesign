@@ -1,4 +1,4 @@
-import os
+import json, os
 
 """
 This module attempts to find settings in two ways:
@@ -31,13 +31,22 @@ should do so in the ``base.py`` module in this directory.
 
 
 # Import base settings
-base =  __import__('django_website.settings.base', {}, {}, ['base'], -1)
+base = __import__('django_website.settings.base', {}, {}, ['base'], -1)
 for setting in dir(base):
     if setting == setting.upper():
         locals().update({setting: getattr(base, setting)})
 
 allowed_envs = ('dev', 'staging', 'production')
-runtime_env = os.environ.get('DJANGO_RUNTIME_ENVIRONMENT', 'dev')
+try:
+    if os.path.exists('/home/dotcloud/environment.json'):
+        with open('/home/dotcloud/environment.json') as f:
+            dotcloud_env = json.load(f)
+            runtime_env = dotcloud_env['DJANGO_RUNTIME_ENVIRONMENT']
+    else:
+        runtime_env = 'dev'
+except IOError:
+    runtime_env = 'dev'
+
 if not runtime_env in allowed_envs:
     from django.core.exceptions import ImproperlyConfigured
     raise ImproperlyConfigured((
