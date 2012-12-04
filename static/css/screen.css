@@ -38,13 +38,17 @@ li, p { margin-bottom: 8px;}
 
 #logo {
     background: url(../images/logo.png) no-repeat 0 0;
-    height: 87px;
     text-indent: -900px;
+}
+#logo a {
+    display: block;
+    height: 87px;
     width: 250px;
 }
 
 nav#secondary {
     border-bottom: 1px solid silver;
+    border-top: 1px dashed silver;
 }
 
 footer {
