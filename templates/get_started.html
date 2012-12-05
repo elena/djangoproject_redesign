@@ -24,7 +24,7 @@ class Band(models.Model):
     name = models.CharField(max_length=200)
 
 class Member(models.Model):
-    """ A member of a rock band."""
+    """ A member of a rock band member."""
     name = models.CharField("Memebr's name", max_length=200)
     instrument = models.CharField(choices=(
             ('g', "Guitar"),
