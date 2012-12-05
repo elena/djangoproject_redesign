@@ -1,19 +1,18 @@
 {% load url from future %}
-<h1 id="logo"><a href="{% url 'index' %}">Django Logo</a></h1>
-<aside id="tagline"><p>The web framework for perfectionists with deadlines.</p></aside>
-<nav id="main">
-    <ul>
-        <li><a href="{% url 'why' %}">Why Django</a></li>
-        <li><a href="{% url 'start' %}">Get Started</a></li>
-        <li><a href="https://docs.djangoproject.com">Documentation</a></li>
-    </ul>
-</nav>
 
-<nav id="secondary">
-    <ul>
-        <li><a href="{% url 'news_index' %}">News &amp; Events</a></li>
-        <li><a href="#">Community</a></li>
-        <li><a href="https://code.djangoproject.com/">Code</a></li>
-        <li><a href="#">About</a></li>
-    </ul>
-</nav>
+<div role="banner">
+	<a href="{% url 'index' %}">Django</a>
+	<p>The web framework for perfectionists with deadlines.</p>
+
+	<ul class="nav-primary" role="navigation">
+		<li><a href="{% url 'why' %}">Why Django</a></li>
+		<li><a href="{% url 'start' %}">Get Started</a></li>
+		<li><a href="https://docs.djangoproject.com">Documentation</a></li>
+	</ul>
+	<ul class="nav-secondary" role="navigation">
+		<li><a href="{% url 'news_index' %}">News &amp; Events</a></li>
+		<li><a href="#">Community</a></li>
+		<li><a href="https://code.djangoproject.com/">Code</a></li>
+		<li><a href="#">About</a></li>
+	</ul>
+</div>

@@ -1,135 +1,146 @@
 {% extends 'base.html' %}{% load static pygmentify %}
-
 {% block title %}Get Started{% endblock %}
-
-{% block extracss %}
-        <link rel="stylesheet" href="{% static "css/pygments.css" %}">
-{% endblock %}
-
-
-
 {% block body %}
+
 <h1>Get Started</h1>
 <p>Intro copy about how it's easy to get started. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod deserunt mollit anim id est laborum.</p>
+
 <h2>Features of Django</h2>
-<!-- The content below can be an accordion or tab type thing: <h3> is the label, everything ese is the content -->
-<ul id="features" class="accordion">
-    <li>
-        <h3>Object-Relational Mapper</h3>
-        <p>Deﬁne your data models entirely in Python. You get a rich, dynamic database-access API for free&mdash;but you can still write SQL if needed. <a href="https://docs.djangoproject.com/en/dev/topics/db/models/">Read More</a></p>
-        {% pygment %}
-         <pre lang="python">
+
+<ul class="list-feature">
+	<li>
+		<h3>Object-Relational Mapper</h3>
+		<p>Deﬁne your data models entirely in Python. You get a rich, dynamic database-access API for free&mdash;but you can still write SQL if needed. <a href="https://docs.djangoproject.com/en/dev/topics/db/models/">Read More</a></p>
+
+{% pygment %}
+<pre lang="python">
 class Band(models.Model):
-    """ A model of a rock band."""
-    name = models.CharField(max_length=200)
+	""" A model of a rock band."""
+	name = models.CharField(max_length=200)
 
 class Member(models.Model):
-    """ A member of a rock band member."""
-    name = models.CharField("Memebr's name", max_length=200)
-    instrument = models.CharField(choices=(
-            ('g', "Guitar"),
-            ('b', "Bass"),
-            ('d', "Drums"),
-        ),
-        max_length=1
-    )
-    can_rock = models.BoolanField(default=True)
-    band = models.ForeignKey("Band")
-        </pre>
-        {% endpygment %}
-    </li>
-    <li>
-        <h3>URLs and Views</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation.<a href="#">Read More</a></p>
-        {% pygment %}
-         <pre lang="python">
+	""" A member of a rock band member."""
+	name = models.CharField("Memebr's name", max_length=200)
+	instrument = models.CharField(choices=(
+			('g', "Guitar"),
+			('b', "Bass"),
+			('d', "Drums"),
+		),
+		max_length=1
+	)
+	can_rock = models.BoolanField(default=True)
+	band = models.ForeignKey("Band")
+</pre>
+{% endpygment %}
+
+	</li>
+	<li>
+		<h3>URLs and Views</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation.<a href="#">Read More</a></p>
+
+{% pygment %}
+ <pre lang="python">
 """
 Python code TBD
 """
-        </pre>
-        {% endpygment %}
-    </li>
-    <li>
-        <h3>Templates</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation.<a href="#">Read More</a></p>
-        {% pygment %}
-         <pre lang="python">
+</pre>
+{% endpygment %}
+
+	</li>
+	<li>
+		<h3>Templates</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation.<a href="#">Read More</a></p>
+
+{% pygment %}
+<pre lang="python">
 """
 Python code TBD
 """
-        </pre>
-        {% endpygment %}
-    </li>
-    <li>
-        <h3>Forms</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation.<a href="#">Read More</a></p>
-        {% pygment %}
-         <pre lang="python">
+</pre>
+{% endpygment %}
+
+	</li>
+	<li>
+		<h3>Forms</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation.<a href="#">Read More</a></p>
+
+{% pygment %}
+ <pre lang="python">
 """
 Python code TBD
 """
-        </pre>
-        {% endpygment %}
-    </li>
-    <li>
-        <h3>Authentication</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation.<a href="#">Read More</a></p>
-        {% pygment %}
-         <pre lang="python">
+</pre>
+{% endpygment %}
+
+	</li>
+	<li>
+		<h3>Authentication</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation.<a href="#">Read More</a></p>
+
+{% pygment %}
+ <pre lang="python">
 """
 Python code TBD
 """
-        </pre>
-        {% endpygment %}
-    </li>
-    <li>
-        <h3>Admin</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation.<a href="#">Read More</a></p>
-        {% pygment %}
-         <pre lang="python">
+</pre>
+{% endpygment %}
+
+	</li>
+	<li>
+		<h3>Admin</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation.<a href="#">Read More</a></p>
+
+{% pygment %}
+ <pre lang="python">
 """
 Python code TBD
 """
-        </pre>
-        {% endpygment %}
-    </li>
-    <li>
-        <h3>Internationalization</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation.<a href="#">Read More</a></p>
-        {% pygment %}
-         <pre lang="python">
+</pre>
+{% endpygment %}	
+
+	</li>
+	<li>
+		<h3>Internationalization</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation.<a href="#">Read More</a></p>
+
+{% pygment %}
+ <pre lang="python">
 """
 Python code TBD
 """
-        </pre>
-        {% endpygment %}
-    </li>
-    <li>
-        <h3>Security</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation.<a href="#">Read More</a></p>
-        {% pygment %}
-         <pre lang="python">
+</pre>
+{% endpygment %}
+	
+	</li>
+	<li>
+		<h3>Security</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation.<a href="#">Read More</a></p>
+
+{% pygment %}
+ <pre lang="python">
 """
 Python code TBD
 """
-        </pre>
-        {% endpygment %}
-    </li>
+</pre>
+{% endpygment %}
+	
+	</li>
 </ul>
+
 <h2>Install Django</h2>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -137,12 +148,15 @@ quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
 <h2>Write your first Django app</h2>
 <p><a href="#">Tutorial CTA?</a> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. </p>
+
 <h2>Read the documentation</h2>
 <p><a href="#">Docs CTA?</a> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. </p>
+
 <h2>Join the community</h2>
 <p><a href="#">Community CTA?</a> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. </p>

@@ -1,51 +1,50 @@
-<footer>
-    <!--
-    A fat footer exists on every page. We can safely put a larger number of secondary nav items here without adversely affecting the visitor experience. For example, a link to the DSF page which doesn’t make sense as a masthead navitem.
+<div class="contentinfo">
 
-    This could also be an opportunity for navigation with a alternative taxonomy/structure. For example, splitting into columns by audience (For developers / For PHBs / etc).
+	{% comment %}
+	A fat footer exists on every page. We can safely put a larger number of secondary nav items here without adversely affecting the visitor experience. For example, a link to the DSF page which doesn’t make sense as a masthead navitem.
 
-    Having a “report security issue” link might seem needless, but it could be an opportunity to show how serious we are about security, and provide visitors with an easy-to-reach reporting address.
-    -->
-    <nav id="utility">
-        <ul>
-            <li><a href="#">About Django</a></li>
-            <li>
-                <h4><a href="#">Django Software Foundation</a></h4>
-                <ul>
-                    <li><a href="#">Donate</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Contributor license agreement</a></li>
-                    <li><a href="#">Records</a></li>
-                    <li><a href="#">Contact us</a></li>
-                </ul>
-            </li>
-            <li><h4><a href="#">Case studies</a></h4></li>
-            <li>
-                <h4><a href="#">Logos and collateral</a></h4>
-            </li>
-            <li>
-                <h4><a href="https://docs.djangoproject.com/en/dev/internals/security/">Report a security issue</a></h4>
-            </li>
-        </ul>
-    </nav>
-    <nav id="social">
-        <h4>Follow us</h4>
-        <ul>
-            <li class="twitter"><a href="https://twitter.com/djangoproject">Twitter</a></li>
-            <li class="github"><a href="http://github.com/django">GitHub</a></li>
-            <li class="rss"><a href="#">News and Events</a></li>
-            <li class="rss"><a href="https://code.djangoproject.com/timeline?daysback=90&max=50&wiki=on&ticket=on&changeset=on&milestone=on&format=rss">Bugs &amp; Featue Requests</a></li>
-        </ul>
-    </nav>
-    <nav id="community">
-        <h4>Community Resources</h4>
-        <ul>
-            <li><a href="http://djangogigs.com/">Freeleancers and jobs</a></li>
-            <li><a href="https://people.djangoproject.com/">Django users</a>
-            <li><a href="http://djangosites.org/">Sites built with Django</a></li>
-            <li><a href="http://www.djangopackages.com/">Django packages</a></li>
-            <li><a href="irc://irc.freenode.net/django">IRC Channel</a></li>
-        </ul>
-    </li>
-    <small> 2005&ndash;{% now "Y" %} <a href="#">Django Software Foundation</a> unless otherwise noted. Django is a registered trademark of the Django Software Foundation. <a href="http://mediatemple.net/">Linux Web hosting</a> graciously provided by Media Temple. Website design by <a href="http://www.threespot.com">Threespot</a>.</small>
-</footer>
+	This could also be an opportunity for navigation with a alternative taxonomy/structure. For example, splitting into columns by audience (For developers / For PHBs / etc).
+
+	Having a “report security issue” link might seem needless, but it could be an opportunity to show how serious we are about security, and provide visitors with an easy-to-reach reporting address.
+	{% endcomment %}
+
+	<ul class="nav-utility" role="navigation">
+		<li><a href="#">About Django</a></li>
+		<li>
+			<h4><a href="#">Django Software Foundation</a></h4>
+			<ul>
+				<li><a href="#">Donate</a></li>
+				<li><a href="#">FAQ</a></li>
+				<li><a href="#">Contributor license agreement</a></li>
+				<li><a href="#">Records</a></li>
+				<li><a href="#">Contact us</a></li>
+			</ul>
+		</li>
+		<li><h4><a href="#">Case studies</a></h4></li>
+		<li>
+			<h4><a href="#">Logos and collateral</a></h4>
+		</li>
+		<li>
+			<h4><a href="https://docs.djangoproject.com/en/dev/internals/security/">Report a security issue</a></h4>
+		</li>
+	</ul>
+
+	<h4>Follow us</h4>
+	<ul class="nav-social" role="navigation">
+		<li class="twitter"><a href="https://twitter.com/djangoproject">Twitter</a></li>
+		<li class="github"><a href="http://github.com/django">GitHub</a></li>
+		<li class="rss"><a href="#">News and Events</a></li>
+		<li class="rss"><a href="https://code.djangoproject.com/timeline?daysback=90&amp;max=50&amp;wiki=on&amp;ticket=on&amp;changeset=on&amp;milestone=on&amp;format=rss">Bugs &amp; Featue Requests</a></li>
+	</ul>
+	
+	<h4>Community Resources</h4>
+	<ul class="nav-community" role="navigation">
+		<li><a href="http://djangogigs.com/">Freeleancers and jobs</a></li>
+		<li><a href="https://people.djangoproject.com/">Django users</a></li>
+		<li><a href="http://djangosites.org/">Sites built with Django</a></li>
+		<li><a href="http://www.djangopackages.com/">Django packages</a></li>
+		<li><a href="irc://irc.freenode.net/django">IRC Channel</a></li>
+	</ul>
+	
+	<p>2005&ndash;{% now "Y" %} <a href="#">Django Software Foundation</a> unless otherwise noted. Django is a registered trademark of the Django Software Foundation. <a href="http://mediatemple.net/">Linux Web hosting</a> graciously provided by Media Temple. Website design by <a href="http://www.threespot.com">Threespot</a>.</p>
+</div>
