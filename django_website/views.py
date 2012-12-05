@@ -10,8 +10,9 @@ class Index(TemplateView):
 
 class WhyDjango(TemplateView):
     """
-    A view of the homepage.
+    A view of the "Why Django" page.
     """
+    nav = "why_django"
     template_name = "why_django.html"
 
 
@@ -19,4 +20,20 @@ class GetStarted(TemplateView):
     """
     A view of the "Get Started" page.
     """
+    nav = "get_started"
     template_name = "get_started.html"
+
+
+class NewsIndex(TemplateView):
+    """
+    A view of the "News/Events page.
+    """
+    nav = "news"
+    template_name = "news_index.html"
+
+class NewsDetail(TemplateView):
+    """
+    A view of a news or event item.
+    """
+    nav = "news"
+    template_name = "news_detail.html"

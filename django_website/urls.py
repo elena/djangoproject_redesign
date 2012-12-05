@@ -9,6 +9,8 @@ urlpatterns = patterns('',
     url(r'^$', views.Index.as_view(), name="index"),
     url(r'^why/$', views.WhyDjango.as_view(), name="why"),
     url(r'^start/$', views.GetStarted.as_view(), name="start"),
+    url(r'^news/$', views.NewsIndex.as_view(), name="news_index"),
+    url(r'^news/example/$', views.NewsDetail.as_view(), name="news_detail"),
 )
 
 if settings.DEBUG:
