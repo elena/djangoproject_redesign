@@ -1,8 +1,23 @@
 // normalize
 @import "normalize";
 
-// Styles
-@import "typography";
+// Base Styles (colors, type, etc)
+@import "base";
+
+// Layout (media queries, structural organization)
+@import "layout";
+
+// Modules (recyclable classes, groups)
+@import "modules";
+
+
+
+
+
+
+
+
+
 
 // import helpers last
 @import "helpers";

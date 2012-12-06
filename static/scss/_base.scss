@@ -1,20 +1,161 @@
-// get fonts
-@import "font-face";
+// Colors
+$blue: #00acf3; 
 
-// setup font sizing
+$gray-text: #7c7c7c; 
+
+$green-light: #e8f4d0; 
+$green-medium: #b1cb2c;
+$green-dark: #092e20;
+
+
+
+// @font-face
+@font-face {
+	font-family: 'Elena';
+	src: url('../fonts/elena/ElenaWebBasicBold.eot');
+	src: url('../fonts/elena/ElenaWebBasicBold.eot?#iefix') format('embedded-opentype'),
+			 url('../fonts/elena/ElenaWebBasicBold.woff') format('woff');
+	font-weight: 700;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Elena';
+	src: url('../fonts/elena/ElenaWebBasicBoldItalic.eot');
+	src: url('../fonts/elena/ElenaWebBasicBoldItalic.eot?#iefix') format('embedded-opentype'),
+			 url('../fonts/elena/ElenaWebBasicBoldItalic.woff') format('woff');
+	font-weight: 700;
+	font-style: italic;
+}
+@font-face {
+	font-family: 'Elena';
+	src: url('../fonts/elena/ElenaWebBasicRegular.eot');
+	src: url('../fonts/elena/ElenaWebBasicRegular.eot?#iefix') format('embedded-opentype'),
+			 url('../fonts/elena/ElenaWebBasicRegular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Elena';
+	src: url('../fonts/elena/ElenaWebBasicRegularItalic.eot');
+	src: url('../fonts/elena/ElenaWebBasicRegularItalic.eot?#iefix') format('embedded-opentype'),
+			 url('../fonts/elena/ElenaWebBasicRegularItalic.woff') format('woff');
+	font-weight: 400;
+	font-style: italic;
+}
+@font-face {
+	font-family: 'Colfax';
+	src: url('../fonts/colfax/ColfaxWebBlack.eot');
+	src: url('../fonts/colfax/ColfaxWebBlack.eot?#iefix') format('embedded-opentype'),
+			 url('../fonts/colfax/ColfaxWebBlack.woff') format('woff');
+	font-weight: 900;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Colfax';
+	src: url('../fonts/colfax/ColfaxWebBold.eot');
+	src: url('../fonts/colfax/ColfaxWebBold.eot?#iefix') format('embedded-opentype'),
+			 url('../fonts/colfax/ColfaxWebBold.woff') format('woff');
+	font-weight: 700;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Colfax';
+	src: url('../fonts/colfax/ColfaxWebRegular.eot');
+	src: url('../fonts/colfax/ColfaxWebRegular.eot?#iefix') format('embedded-opentype'),
+			 url('../fonts/colfax/ColfaxWebRegular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+
+// TODO: Update font stacks
+// font mixins
+@mixin elena {
+	font-family: 'Elena', Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
+}
+@mixin colfax {
+	font-family: 'Colfax', Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
+}
+
+// setup font sizing mixin
 html {
 	font-size: 62.5%;
 }
-@mixin font-size ( $size: 14 ) {
+@mixin font-size ( $size: 16 ) {
 	font-size: $size + px;
 	font-size: $size/10 + rem; 
 }
+
+// default type / colors
 body {
-	@include font-size(14); 
+	background: #FFF;
+	color: $gray-text;
+	@include elena;
+	@include font-size(); 
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+}
+
+// links
+a, 
+a:active, 
+a:focus {
+	color: darken($gray-text, 50%);
+	text-decoration: underline;
+
+	&:visited {
+		color: lighten($gray-text, 25%);
+	}
+
+	&:hover {
+		color: $blue;
+	}
+}
+
+// headers
+h1,h2,h3,h4,h5,h6 {
+	@include colfax;
+	font-weight: normal;
+}
+h1{
+	@include font-size(30);
+	font-weight: 900;
+}
+h2{
+	@include font-size(26);
+	color: $blue;
+}
+h3{
+	
 }
 
 
-// Pygments Styles
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Pygments Code hightlighting Styles
+
+.highlight {
+	@include font-size(13);
+	border: 1px solid #EAEAEA;
+	background: #F4F4F4;
+	border-radius: 4px;
+	margin: 0 20px;
+}
 
 .highlight .hll { background-color: #ffffcc }
 .highlight  { background: #f8f8f8; overflow: auto; }

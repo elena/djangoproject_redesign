@@ -6,6 +6,7 @@
 <head>{% load compress static %}
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width">
 	<meta name="description" content="{% block description %}{% endblock %}">
 	<link rel="shortcut icon" href="{% static "images/favicon.ico" %}" >
 
@@ -13,13 +14,18 @@
 	
 	{% compress css %}
 		<link rel="stylesheet" href="{% static "css/style.css" %}">
-		<link rel="stylesheet" href="{% static "css/spence_styles.css" %}">
 		<link rel="stylesheet" href="{% static "css/print.css" %}" media="print">
-		{% block extracss %}{# Extra CSS files that need to be loaded in the <head> go here #}{% endblock %}
+		{% block extracss %}
+			{# Extra CSS files that need to be loaded in the <head> go here #}
+		{% endblock %}
 	{% endcompress %}
 	
 	<!-- <script src="{% static "js/libs/jquery.js" %}"></script> -->
-	{% block libjs %}{# JS libraries that need to be loaded in the <head> go here #}{% endblock %}
+	{% block libjs %}
+		<script src="{% static "js/modernizr.js" %}"></script>
+		<!-- TODO: production build of Modernizr -->
+		{# JS libraries that need to be loaded in the <head> go here #}
+	{% endblock %}
 
 </head>
 <body>
@@ -32,11 +38,10 @@
 
 	{% include "includes/footer.html" %}
 
-	{% compress js %}
 		{% block extrajs %}
-			{# Extra JS files that need to be loaded at the base of the page go here. #}
+			<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+			<script>window.jQuery || document.write('<script src="{% static "js/jquery.js" %}"><\/script>')</script>
 		{% endblock %}
-	{% endcompress %}
 
 	<script>
 		// var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
