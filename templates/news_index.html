@@ -4,37 +4,34 @@
 
 <h1>News &amp; Events</h1>
 <p>Get updates on Django and the Django Software Foundation as well as announcements on upcoming conferences and sprints around the world.</p>
-
-<h2>News</h2>
-
 <ul class="news">
 	<li>
-		<h3><a href="{% url 'news_detail' %}">Karen Tracey joins the DSF board</a></h3>
-		
+		<h2><a href="{% url 'news_detail' %}">Karen Tracey joins the DSF board</a></h2>
+
 		<span class="meta">Posted by <a href="#" rel="author">Russell Keith-Magee</a> on <time pubdate datetime="2012-12-04">December 4, 2012</time> in <a href="#">Django Software Foundation</a></span>
-		
+
 		<p>In late October, the DSF announced the resignation of Jacob Kaplan-Moss from the Django Software Foundation board.</p>
-		
+
 		<p>The DSF membership nominated a group of potential candidates to replace fill Jacob's seat, and then voted on those nominations. These votes revealed a clearly preferred candidate, and late last week, the board of the Django Software Foundation (DSF) met and voted unanimously to confirm Karen Tracey to fill Jacob's seat on the DSF board.</p>
-	
+
 		<a href="{% url 'news_detail' %}">Read more.</a>
 	</li>
 
 	<li>
-		<h3><a href="{% url 'news_detail' %}">DjangoCon Europe 2013 Call For Papers</a></h3>
-		
+		<h2><a href="{% url 'news_detail' %}">DjangoCon Europe 2013 Call For Papers</a></h2>
+
 		<span class="meta">Posted by <a href="#" rel="author">Russell Keith-Magee</a> and <a href="#" rel="author">Tomasz Paczkowski</a> on <time pubdate datetime="2012-12-04">December 4, 2012</time> in <a href="#">Conferences</a></span>
-		
+
 		<p>DjangoCon Europe 2013 organizers are pleased to invite all members of the Django community to submit their talk proposals for the conference. We’re looking for Django and Python enthusiasts, pioneers, adventurers and anyone else who would like to share their Django achievements and experiments with the rest of the community.</p>
-		
+
 		<p>For more information, please read the announcement on the <a href="http://blog.djangocircus.com/post/36590674298/call-for-speakers">DjangoCon Europe website</a>.</p>
 	</li>
 
 	<li>
-		<h3><a href="{% url 'news_detail' %}">Django 1.5 beta 1 released</a></h3>
-		
+		<h2><a href="{% url 'news_detail' %}">Django 1.5 beta 1 released</a></h2>
+
 		<span class="meta">Posted by <a href="#" rel="author">James Bennett</a> on <time pubdate datetime="2012-11-27">November 27, 2012</time> in <a href="#">Release Announcements</a></span>
-		
+
 		<p>As part of the Django 1.5 release process, today we've released Django 1.5 beta 1, a preview/testing package that gives a little taste of some of the new stuff coming in Django 1.5. As with all alpha and beta packages, this is not for production use, but if you'd like to try out some of the new goodies coming in 1.5, or if you'd like to pitch in and help us fix bugs before the final 1.5 release (due in December), feel free to grab a copy and give it a spin.</p>
 
 		<p>You can get a copy of the 1.5 beta package from our downloads page, and we recommend you read the release notes. Also, for the security conscious, signed MD5 and SHA1 checksums of the 1.5 alpha package are available.</p>
@@ -43,10 +40,10 @@
 	</li>
 
 	<li>
-		<h3><a href="{% url 'news_detail' %}">DjangoCon US 2014-15: Request For Proposals</a></h3>
-		
+		<h2><a href="{% url 'news_detail' %}">DjangoCon US 2014-15: Request For Proposals</a></h2>
+
 		<span class="meta">Posted by <a href="#" rel="author">Russell Keith-Magee</a> on <time pubdate datetime="2012-11-08">November 8, 2012</time> in <a href="#">Conferences</a></span>
-		
+
 		<p>DjangoCon US was first held in 2008, and has been held annually ever since. It is now the largest Django-specific event in the Django community calendar.</p>
 
 		<p>The Django Software Foundation (DSF) is not, and does not wish to become formally involved in the organization of DjangoCon US. The DjangoCon name is owned by the DSF, and is licensed to the group organizing a DjangoCon event. The DjangoCon organizing group then runs the event as a for-profit enterprise, assuming all financial risk, but also reaping any profit resulting from the event. Past DjangoCon US organizers have made substantial financial donations to the DSF as result of profits earned, but this has been neither expected nor required as part of the licensing arrangement.</p>
@@ -54,8 +51,6 @@
 		<a href="{% url 'news_detail' %}">Read more.</a>
 	</li>
 </ul>
-
-
 <ul class="nav-pagination" role="navigation">
 	<li class="current">1</li>
 	<li><a href="#">2</a></li>
@@ -67,9 +62,41 @@
 	<li class="last"><a href="#">25</a></li>
 	<li class="next"><a href="#">Next</a></li>
 </ul>
-
-
-<h2>Events</h2>
+<div class="aside">
+	<a href="/news/rss/">Subscribe to RSS</a>
+	<div>
+		<h2>Topics</h2>
+		<ul>
+			<li><a href="#">Django Software Foundation</a></li>
+			<li><a href="#">Events</a></li>
+			<li><a href="#">Conferences</a></li>
+			<li><a href="#">Release Announcements</a></li>
+			<li><a href="#">Security</a></li>
+		</ul>
+		<form action="#">
+			<input type="text" placeholder="Search news">
+			<button type="submit">Go</button>
+		</form>
+	</div>
+	<div>
+		<h2>Upcoming Events</h2>
+		<ul>
+			<li>
+				<a href="#">Django Sprint in Stockholm, Sweden</a>
+				<span>Stockholm, Sweden</span>
+				<time>November 17-18</time>
+				<p>The sprint will be focused on Django 1.5 RC1, helping out getting it as stable and bug-free as possible. It’s scheduled for release on November 26, one week after the sprint. It's also possible to work on 1.6.</p>
+				<a href="#">Read more</a>
+			</li>
+			<li>
+				<a href="#">Django Sprint in Toulouse, France</a>
+				<span>Stockholm, Sweden</span>
+				<time>November 24-25</time>
+			</li>
+		</ul>
+		<a href="#">All events</a>
+	</div>
+</div>
 
 {% comment %}
 Django Sprint in Toulouse, France
@@ -266,7 +293,7 @@ This year’s conference is from Sept. 3 to Sept. 9. The deadline for the grant 
 
 If you know of a talented, deserving developer (of any gender) who might benefit greatly from attending DjangoCon, please encourage them to apply. Many thanks to Lynn Root, PyLadies, the DjangoCon organizers and the Python Software Foundation for helping manage this program.
 
-Posted by Jeremy Dunck on July 30, 2012 
+Posted by Jeremy Dunck on July 30, 2012
 
 {% endcomment %}
 {% endblock body %}
