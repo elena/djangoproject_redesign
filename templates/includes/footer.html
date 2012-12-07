@@ -1,46 +1,45 @@
-<div class="contentinfo">
+{% load static %}
+{% load url from future %}
 
-	{% comment %}
-	A fat footer exists on every page. We can safely put a larger number of secondary nav items here without adversely affecting the visitor experience. For example, a link to the DSF page which doesn’t make sense as a masthead navitem.
+<div role="contentinfo">
 
-	This could also be an opportunity for navigation with a alternative taxonomy/structure. For example, splitting into columns by audience (For developers / For PHBs / etc).
+	<a class="logo" href="{% url 'index'  %}">
+		<img src="{% static 'images/logo-white.svg' %}" alt="Django" />
+	</a>
 
-	Having a “report security issue” link might seem needless, but it could be an opportunity to show how serious we are about security, and provide visitors with an easy-to-reach reporting address.
-	{% endcomment %}
-
-	<ul class="nav-utility" role="navigation">
+	<span class="label-learn"><i class="icon-question-sign"></i>Learn More</span>
+	<ul>
 		<li><a href="#">About Django</a></li>
-		<li>
-			<a href="#">Django Software Foundation</a>
-			<ul>
-				<li><a href="#">Donate</a></li>
-				<li><a href="#">FAQ</a></li>
-				<li><a href="#">Contributor license agreement</a></li>
-				<li><a href="#">Records</a></li>
-				<li><a href="#">Contact us</a></li>
-			</ul>
-		</li>
-		<li><a href="#">Case studies</a></li>
-		<li><a href="#">Logos and collateral</a></li>
-		<li><a href="https://docs.djangoproject.com/en/dev/internals/security/">Report a security issue</a></li>
+		<li><a href="#">Django Software Benefits Foundation</a></li>
+		<li><a href="#">Case Studies</a></li>
+		<li><a href="#">Getting Started with Django</a></li>
 	</ul>
 
-	<span>Follow us</span>
-	<ul class="nav-social" role="navigation">
-		<li class="twitter"><a href="https://twitter.com/djangoproject">Twitter</a></li>
-		<li class="github"><a href="http://github.com/django">GitHub</a></li>
-		<li class="rss"><a href="#">News and Events</a></li>
-		<li class="rss"><a href="https://code.djangoproject.com/timeline?daysback=90&amp;max=50&amp;wiki=on&amp;ticket=on&amp;changeset=on&amp;milestone=on&amp;format=rss">Bugs &amp; Featue Requests</a></li>
+	<span class="label"><i class="icon-signin"></i>Get Involved</span>
+	<ul>
+		<li><a href="#">Join a Group</a></li>
+		<li><a href="#">Find a Job</a></li>
+		<li><a href="#">Submit a Bug</a></li>
+		<li><a href="#">Report a Security Issue</a></li>
+		<li><a href="#">Attend an Event</a></li>
 	</ul>
-	
-	<span>Community Resources</span>
-	<ul class="nav-community" role="navigation">
-		<li><a href="http://djangogigs.com/">Freeleancers and jobs</a></li>
-		<li><a href="https://people.djangoproject.com/">Django users</a></li>
-		<li><a href="http://djangosites.org/">Sites built with Django</a></li>
-		<li><a href="http://www.djangopackages.com/">Django packages</a></li>
-		<li><a href="irc://irc.freenode.net/django">IRC Channel</a></li>
+
+	<span class="label"><i class="icon-group"></i>Follow Us</span>
+	<ul>
+		<li><a href="http://github.com/django">Github</a></li>
+		<li><a href="https://twitter.com/djangoproject">Twitter</a></li>
+		<li><a href="#">News &amp; Event RSS</a></li>
+		<li><a href="#">Django Users Mailing List</a></li>
 	</ul>
-	
-	<p>2005&ndash;{% now "Y" %} <a href="#">Django Software Foundation</a> unless otherwise noted. Django is a registered trademark of the Django Software Foundation. <a href="http://mediatemple.net/">Linux Web hosting</a> graciously provided by Media Temple. Website design by <a href="http://www.threespot.com">Threespot</a>.</p>
+
+	<p>2005&ndash;{% now "Y" %} <a href="#">Django Software Foundation</a> unless otherwise noted.</p> 
+
+	<p>Django is a registered trademark of the Django Software Foundation.</p> 
+
+	<p><a href="http://mediatemple.net/">Linux Web hosting</a> graciously provided by <a href="http://mediatemple.net">Media Temple</a></p> 
+
+	<p>Website design by <a href="http://www.threespot.com">Threespot</a></p>
+
+	<p>Fonts from <a href="#">Typekit</a></p>
+
 </div>

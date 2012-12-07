@@ -1,23 +1,60 @@
+// recycleable style classes
+.link-readmore {
+	@include blue-link;
+	@include colfax;
+	@include font-size(11);
+	display: inline-block;
+	// IE7 inline-block fix
+		zoom:1; 
+		*display: inline; 
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.p-intro {
+	font-style: italic;
+}
+
+
+
+
+
 
 // Header
 [role="banner"] {
 	background: $green-light;
 	@extend .clearfix;
-	padding-top: 10px;
-	padding-bottom: 30px;
+	padding-top: 80px;
+	padding-bottom: 10px;
+	position: relative;
+	z-index: 0;
 	
 	// logo
 	.logo {
+		@extend .ir;
+		background: url(../images/logo-white.svg) center center no-repeat $green-medium;
+		border-radius: 50%;
 		display: block;
-		height: 50px;
-		width: 142px;
-		
-		.no-svg & { // NOTE: Modernizr Usage
-			background: url(../images/logo.png) 0 0 no-repeat;
-			
-			img {
-				display: none;
-			}
+		left: -50px;
+		height: 300px;
+		position: absolute;
+		top: -100px;
+		width: 300px;
+		z-index: -1;
+
+		// if they have border radius but no svg
+		.no-svg.borderradius & { // NOTE: Modernizr Usage
+			background: url(../images/logo-white.png) center center no-repeat $green-medium;
+		}
+
+		// if they have svg but no border radius
+		.svg.no-borderradius & { // NOTE: Modernizr Usage
+			background: url(../images/logo-green.svg) center center no-repeat;
+		}
+
+		// if they have neight svg nor border-radius
+		.no-svg.no-borderradius & { // NOTE: Modernizr Usage
+			background: url(../images/logo-green.png) center center no-repeat;
 		}
 	}
 
@@ -30,25 +67,51 @@
 	// navigation - secondary
 	.nav-secondary {
 		list-style: none;
-		margin: 20px 0 10px 0;
+		margin: 10px 0 0 0;
 		padding: 0;
 		text-align: center;
 
 		li {
-			border-left: 1px solid $green-dark;
 			display: inline-block;
-			font-style: italic;
+				// IE7 inline-block fix
+				zoom:1; 
+				*display: inline; 
+			@include colfax;
+			@include font-size(11);
+			font-weight: 700;
 			line-height: 1;
-			margin: 0;
-			padding: 1px 10px 0 10px;
+			margin: 10px 0 0 5px;
+			padding: 0;
+			text-transform: uppercase;
 
 			&:first-child {
 				border: none;
+				margin-left: 0;
 			}
 
 			a {
-				text-decoration: none;
 				color: $green-dark;
+				display: inline-block;
+				// IE7 inline-block fix
+					zoom:1; 
+					*display: inline; 
+					_height: 20px;/*fill in relevant height here*/
+				height: 20px;
+				margin: 0;
+				padding-top: 25px;
+				position: relative;
+				text-decoration: none;
+
+				&:after {
+					@include hash-dark;
+					content: "";
+					bottom: 35px;
+					display: block;
+					left: 0;
+					position: absolute;
+					right: 0;
+					top: 0;
+				}
 			}
 		}
 	}
@@ -66,12 +129,13 @@
 
 			a {
 				@include colfax;
+				border-radius: 33px;
 				color: #FFF;
 				background: $green-dark;
 				font-weight: 700;
 				display: block;
-				height: 70px;
-				line-height: 75px;
+				height: 66px;
+				line-height: 70px;
 				margin-top: 1px;
 				text-align: center;
 				text-decoration: none;
@@ -80,26 +144,225 @@
 			}
 
 			&:first-child a {
-				background: url(../images/patterns/pattern1.png) 0 0 repeat $green-dark;
+				background: url(../images/patterns/pattern1.png) center center repeat $green-dark;
 			}
 
 			&:nth-child(2) a {
-				background: url(../images/patterns/pattern2.png) 0 0 repeat $green-dark;
+				background: url(../images/patterns/pattern2.png) center center repeat $green-dark;
 			}
 
 			&:nth-child(3) a {
-				background: url(../images/patterns/pattern3.png) 0 0 repeat $green-dark;
+				background: url(../images/patterns/pattern3.png) center center repeat $green-dark;
 			}
 		}
 	}
 }
 
+
+
 // Footer
 [role="contentinfo"] {
-	background: $green-light;
-	@extend .clearfix;
+	@include colfax;
+	background: $green-dark;
+	border-top: 1px solid lighten($green-dark, 20%);
+	color: $green-light;
+	margin-top: 60px;
+	padding-bottom: 20px;
+	text-align: center;
+
+
+	.logo {
+		@extend .ir;
+		display: block;
+		height: 30px;
+		margin: 15px auto;
+		width: 80px;
+
+		img {
+			display: block;
+			width: 100%;
+		}
+
+		.no-svg & { // NOTE: Modernizr use
+			background: url(../images/logo-white-small.png) 0 0 no-repeat;
+
+			img {
+				display: none;
+			}
+		}
+	}
+
+	.label {
+		@include colfax;
+		color: #FFF; 
+		font-weight: 700;
+		display: block;
+		margin-top: 40px;
+		position: relative;
+		padding-top: 8px;
+		text-transform: uppercase;
+
+		i {
+			@include font-size(30);
+			color: $green-light;
+			display: block;
+			margin: 15px auto 10px auto;
+		}
+
+		&:after {
+			@include hash-light;
+			content: "";
+			display: block;
+			position: absolute;
+			height: 8px;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			top: 0;
+		}
+	}
+
+	.label-learn {
+		@extend .label;
+		margin-top: 0;
+	}
+
+	ul {
+		list-style: none;
+		margin: 10px 0 0 0;
+		padding: 0;
+
+		li {
+			margin: 10px 0 0 0;
+			padding: 0;
+		}
+
+		a {
+			color: $green-light;
+			-webkit-tap-highlight-color: $green-medium;
+			text-decoration: none;
+
+			&:hover {
+				color: $green-medium;
+			}
+		}
+	}
+
+	p {
+		@include elena;
+		@include font-size(14);
+		color: #FFF;
+
+		a {
+			color: #FFF;
+			-webkit-tap-highlight-color: $green-medium;
+
+			&:hover {
+				color: $green-medium;
+			}
+		}
+	}
+
 }
 
 
 
+// news list
+.list-news {
+	list-style: none;
+	margin: 0;
+	padding: 0;
 
+	li {
+		position: relative;
+		margin-top: 45px;
+		padding-top: 10px;
+
+		h3 {
+			margin: 15px 0;
+		}
+
+		&:after {
+			@include hash-dark;
+			content: "";
+			display: block;
+			height: 7px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+		}
+
+		&:first-child {
+			margin-top: 0;
+			padding-top: 0;
+
+			&:after {
+				display: none;
+			}
+		}
+	}
+}
+
+
+// events lis
+.list-events {
+	@include colfax;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	li {
+		display: block;
+		@include font-size(18);
+		line-height: 1.3;
+		margin: 15px 0 0 0;
+		padding: 25px 0 0 0;
+		position: relative;
+
+		&:after {
+			@include hash-dark;
+			content: "";
+			display: block;
+			height: 7px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+		}
+
+		&:first-child {
+			padding-top: 5px;
+
+			&:after {
+				display: none;
+			}
+		}
+	}
+
+	i {
+		background: $gray-text;
+		border-radius: 50%;
+		color: #FFF;
+		display: block;
+		float: left;
+		height: 30px;
+		line-height: 33px;
+		margin-right: 10px;
+		width: 30px;
+		text-align: center;
+	}
+
+	a {
+		@include blue-link;
+	}
+}
+
+
+
+// TODO: remove this.
+.nav-pagination {
+	display: none;
+}

@@ -3,8 +3,11 @@
 {% block body %}
 
 <h1>News &amp; Events</h1>
-<p>Get updates on Django and the Django Software Foundation as well as announcements on upcoming conferences and sprints around the world.</p>
-<ul class="news">
+<p class="p-intro">Get updates on Django and the Django Software Foundation as well as announcements on upcoming conferences and sprints around the world.</p>
+
+<h2><span>News</span></h2>
+
+<ul class="list-news">
 	<li>
 		<h2><a href="{% url 'news_detail' %}">Karen Tracey joins the DSF board</a></h2>
 
@@ -14,7 +17,7 @@
 
 		<p>The DSF membership nominated a group of potential candidates to replace fill Jacob's seat, and then voted on those nominations. These votes revealed a clearly preferred candidate, and late last week, the board of the Django Software Foundation (DSF) met and voted unanimously to confirm Karen Tracey to fill Jacob's seat on the DSF board.</p>
 
-		<a href="{% url 'news_detail' %}">Read more.</a>
+		<a class="link-readmore" href="{% url 'news_detail' %}">Read More</a>
 	</li>
 
 	<li>
@@ -48,7 +51,7 @@
 
 		<p>The Django Software Foundation (DSF) is not, and does not wish to become formally involved in the organization of DjangoCon US. The DjangoCon name is owned by the DSF, and is licensed to the group organizing a DjangoCon event. The DjangoCon organizing group then runs the event as a for-profit enterprise, assuming all financial risk, but also reaping any profit resulting from the event. Past DjangoCon US organizers have made substantial financial donations to the DSF as result of profits earned, but this has been neither expected nor required as part of the licensing arrangement.</p>
 
-		<a href="{% url 'news_detail' %}">Read more.</a>
+		<a class="link-readmore" href="{% url 'news_detail' %}">Read More</a>
 	</li>
 </ul>
 <ul class="nav-pagination" role="navigation">
@@ -62,6 +65,26 @@
 	<li class="last"><a href="#">25</a></li>
 	<li class="next"><a href="#">Next</a></li>
 </ul>
+
+
+<h2><span>Upcoming Events</span></h2>
+
+<ul class="list-events">
+	<li>
+		<i class="icon-calendar"></i>
+		<a href="#">DjangoCon 2013 Call for Papers</a>
+	</li>
+	<li>
+		<i class="icon-calendar"></i>
+		<a href="#">DjangoCon Europe 2013 Call for Papers</a>
+	</li>
+	<li>
+		<i class="icon-calendar"></i>
+		<a href="#">Call for Papers for DjangoCon 2013</a>
+	</li>
+</ul>
+
+
 <div class="aside">
 	<a href="/news/rss/">Subscribe to RSS</a>
 	<div>

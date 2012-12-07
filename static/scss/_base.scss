@@ -76,6 +76,45 @@ $green-dark: #092e20;
 	font-family: 'Colfax', Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
 }
 
+// assorted mixins
+@mixin hash-dark {
+	background: url(../images/patterns/hash-dark.png) repeat;
+	
+	@media only screen and 
+	(-webkit-min-device-pixel-ratio: 2), 
+	(min-resolution: 192dpi) { 
+		
+		& {
+			background: url(../images/patterns/hash-dark@2x.png) repeat;
+			background-size: 4px 4px;
+		}
+	}
+}
+
+@mixin hash-light {
+	background: url(../images/patterns/hash-light.png) repeat;
+	
+	@media only screen and 
+	(-webkit-min-device-pixel-ratio: 2), 
+	(min-resolution: 192dpi) { 
+		
+		& {
+			background: url(../images/patterns/hash-light@2x.png) repeat;
+			background-size: 4px 4px;
+		}
+	}
+}
+
+@mixin blue-link {
+	color: $blue;
+	text-decoration: none;
+	-webkit-tap-highlight-color: lighten($blue, 25%);
+	
+	&:hover {
+		color: lighten($blue, 25%);
+	}
+}
+
 // setup font sizing mixin
 html {
 	font-size: 62.5%;
@@ -115,18 +154,44 @@ a:focus {
 h1,h2,h3,h4,h5,h6 {
 	@include colfax;
 	font-weight: normal;
+
+	a {
+		text-decoration: none;
+	}
 }
 h1{
 	@include font-size(30);
 	font-weight: 900;
 }
 h2{
-	@include font-size(26);
+	@include hash-dark;
+	@include font-size(16);
 	color: $blue;
+	font-weight: 700;
+	padding: 8px 6px;
+	text-transform: uppercase;
+
+	span {
+		background: #FFF;
+		display: inline-block;
+		// IE7 inline-block fix
+			zoom:1; 
+			*display: inline; 
+			_height: 50px; //fill in relevant height here
+		height: 40px;
+		line-height: 43px;
+		padding: 0 15px;
+	}
 }
 h3{
-	
+	@include font-size(24);
+	color: $blue;	
+
+	a {
+		@include blue-link;
+	}
 }
+
 
 
 

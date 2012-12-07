@@ -1,0 +1,1 @@
+window.MobileMenu=window.MobileMenu||{};MobileMenu.Menu=function(){var e=function(e){this.menu=$(e);this.init()};e.prototype={init:function(){this.menu.attr("data-test","testing")},method:function(){}};return new e(".nav-menu")}();
