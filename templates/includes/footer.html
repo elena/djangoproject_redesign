@@ -2,44 +2,57 @@
 {% load url from future %}
 
 <div role="contentinfo">
+	<div class="container">
+		<a class="logo" href="{% url 'index'  %}">
+			<img src="{% static 'images/logo-white.svg' %}" alt="Django" />
+		</a>
 
-	<a class="logo" href="{% url 'index'  %}">
-		<img src="{% static 'images/logo-white.svg' %}" alt="Django" />
-	</a>
+		<div class="learn">
+			<span class="label"><i class="icon-info-sign"></i> Learn More</span>
+			<ul>
+				<li><a href="#">About Django</a></li>
+				<li><a href="#">Django Software Benefits Foundation</a></li>
+				<li><a href="#">Case Studies</a></li>
+				<li><a href="#">Getting Started with Django</a></li>
+			</ul>
+		</div>
 
-	<span class="label-learn"><i class="icon-question-sign"></i>Learn More</span>
-	<ul>
-		<li><a href="#">About Django</a></li>
-		<li><a href="#">Django Software Benefits Foundation</a></li>
-		<li><a href="#">Case Studies</a></li>
-		<li><a href="#">Getting Started with Django</a></li>
-	</ul>
+		<div class="involved">
+			<span class="label"><i class="icon-signin"></i> Get Involved</span>
+			<ul>
+				<li><a href="#">Join a Group</a></li>
+				<li><a href="#">Find a Job</a></li>
+				<li><a href="#">Submit a Bug</a></li>
+				<li><a href="#">Report a Security Issue</a></li>
+				<li><a href="#">Attend an Event</a></li>
+			</ul>
+		</div>
 
-	<span class="label"><i class="icon-signin"></i>Get Involved</span>
-	<ul>
-		<li><a href="#">Join a Group</a></li>
-		<li><a href="#">Find a Job</a></li>
-		<li><a href="#">Submit a Bug</a></li>
-		<li><a href="#">Report a Security Issue</a></li>
-		<li><a href="#">Attend an Event</a></li>
-	</ul>
+		<div class="follow">
+			<span class="label"><i class="icon-list"></i> Follow Us</span>
+			<ul>
+				<li><a href="http://github.com/django">Github</a></li>
+				<li><a href="https://twitter.com/djangoproject">Twitter</a></li>
+				<li><a href="#">News &amp; Event RSS</a></li>
+				<li><a href="#">Django Users Mailing List</a></li>
+			</ul>
+		</div>
 
-	<span class="label"><i class="icon-group"></i>Follow Us</span>
-	<ul>
-		<li><a href="http://github.com/django">Github</a></li>
-		<li><a href="https://twitter.com/djangoproject">Twitter</a></li>
-		<li><a href="#">News &amp; Event RSS</a></li>
-		<li><a href="#">Django Users Mailing List</a></li>
-	</ul>
+		<p class="copyright">&copy;2005&ndash;{% now "Y" %} <a href="#">Django Software Foundation</a> unless otherwise noted.</p> 
 
-	<p>2005&ndash;{% now "Y" %} <a href="#">Django Software Foundation</a> unless otherwise noted.</p> 
+		<p>Django is a registered trademark of the Django Software Foundation.</p> 
 
-	<p>Django is a registered trademark of the Django Software Foundation.</p> 
+		<ul class="thanks">
+			<li>Hosting by 
+				<a class="mediatemple" href="http://mediatemple.net">Media Temple</a>
+			</li>
+			<li>Fonts Served by 
+				<a class="typekit" href="#">Typekit</a>
+			</li>
+			<li>Design by 
+				<a class="threespot" href="http://www.threespot.com">Threespot</a>
+			</li>
+		</ul>
 
-	<p><a href="http://mediatemple.net/">Linux Web hosting</a> graciously provided by <a href="http://mediatemple.net">Media Temple</a></p> 
-
-	<p>Website design by <a href="http://www.threespot.com">Threespot</a></p>
-
-	<p>Fonts from <a href="#">Typekit</a></p>
-
+	</div>
 </div>

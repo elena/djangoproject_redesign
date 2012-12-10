@@ -1,19 +1,28 @@
 {% load url from future %}
 
 <div role="banner">
-	<a class="logo" href="{% url 'index' %}">Django</a>
-	<p class="tagline">The web framework for perfectionists with deadlines.</p>
-	<div class="nav-menu">
-		<ul class="nav-primary" role="navigation">
-			<li><a href="{% url 'why' %}">Why Django</a></li>
-			<li><a href="{% url 'start' %}">Get Started</a></li>
-			<li><a href="https://docs.djangoproject.com">Documentation</a></li>
-		</ul>
-		<ul class="nav-secondary" role="navigation">
-			<li><a href="{% url 'news_index' %}">News &amp; Events</a></li>
-			<li><a href="#">Community</a></li>
-			<li><a href="https://code.djangoproject.com/">Code</a></li>
-			<li><a href="#">About</a></li>
-		</ul>
+	<div class="container">
+		<a class="logo" href="{% url 'index' %}">Django</a>
+		<p class="tagline">The web framework for perfectionists with deadlines.</p>
+		
+		<!-- TODO: Dynamically generate menu with JS -->
+		<a href="#navigation" class="menu-button">
+			<i class="icon-reorder"></i>
+			<span>Menu</span>
+		</a>
+		
+		<div class="nav-menu" id="navigation">
+			<ul class="nav-primary" role="navigation">
+				<li><a href="{% url 'why' %}"><i class="icon-question-sign"></i> Why Django</a></li>
+				<li><a href="{% url 'start' %}"><i class="icon-check"></i> Get Started</a></li>
+				<li><a href="https://docs.djangoproject.com"><i class="icon-book"></i> Documentation</a></li>
+			</ul>
+			<ul class="nav-secondary" role="navigation">
+				<li class="active"><a href="{% url 'news_index' %}">News &amp; Events</a></li>
+				<li><a href="#">Community</a></li>
+				<li><a href="https://code.djangoproject.com/">Code</a></li>
+				<li><a href="#">About</a></li>
+			</ul>
+		</div>
 	</div>
 </div>

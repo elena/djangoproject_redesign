@@ -1,29 +1,8 @@
-// recycleable style classes
-.link-readmore {
-	@include blue-link;
-	@include colfax;
-	@include font-size(11);
-	display: inline-block;
-	// IE7 inline-block fix
-		zoom:1; 
-		*display: inline; 
-	font-weight: 700;
-	text-transform: uppercase;
-}
-
-.p-intro {
-	font-style: italic;
-}
-
-
-
-
-
-
 // Header
 [role="banner"] {
 	background: $green-light;
 	@extend .clearfix;
+	overflow: hidden;
 	padding-top: 80px;
 	padding-bottom: 10px;
 	position: relative;
@@ -58,10 +37,79 @@
 		}
 	}
 
+	.menu-button {
+		@include font-size(20);
+		background: #FFF;
+		border-radius: 50%;
+		display: block;
+		height: 45px;
+		line-height: 48px;
+		position: absolute;
+		right: 30px;
+		text-align: center;
+		text-decoration: none;
+		top: 30px;
+		width: 45px;
+
+		&:hover {
+			color: $green-medium;
+		}
+		
+		span {
+			@extend .visuallyhidden;
+		}
+	}
+
 	// tagline
 	.tagline {
 		position: absolute;
 		left: -9999px;
+	}
+
+	// navigation - primary
+	.nav-primary {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		li {
+			display: block;
+			margin: 10px 0 0 0;
+			padding: 0;
+
+			a {
+				@include colfax;
+				border-radius: 3px;
+				color: #FFF;
+				background: $green-dark;
+				font-weight: 700;
+				display: block;
+				line-height: 1.1;
+				padding: 24px 0 20px 0;
+				margin-top: 1px;
+				text-align: center;
+				text-decoration: none;
+				text-transform: uppercase;
+				width: 100%;
+			}
+
+			i {
+				@include font-size(20);
+				padding-right: 5px;
+			}
+
+			&:first-child a {
+				background: url(../images/patterns/pattern1.png) center center repeat $green-dark;
+			}
+
+			&:nth-child(2) a {
+				background: url(../images/patterns/pattern2.png) center center repeat $green-dark;
+			}
+
+			&:nth-child(3) a {
+				background: url(../images/patterns/pattern3.png) center center repeat $green-dark;
+			}
+		}
 	}
 
 	// navigation - secondary
@@ -112,47 +160,20 @@
 					right: 0;
 					top: 0;
 				}
-			}
-		}
-	}
 
-	// navigation - primary
-	.nav-primary {
-		list-style: none;
-		margin: 0;
-		padding: 0;
+				&:hover {
+					color: lighten($green-dark, 25%);
 
-		li {
-			display: block;
-			margin: 10px 0 0 0;
-			padding: 0;
-
-			a {
-				@include colfax;
-				border-radius: 33px;
-				color: #FFF;
-				background: $green-dark;
-				font-weight: 700;
-				display: block;
-				height: 66px;
-				line-height: 70px;
-				margin-top: 1px;
-				text-align: center;
-				text-decoration: none;
-				text-transform: uppercase;
-				width: 100%;
+					&:after {
+						background: lighten($green-dark, 25%);
+					}
+				}
 			}
 
-			&:first-child a {
-				background: url(../images/patterns/pattern1.png) center center repeat $green-dark;
-			}
-
-			&:nth-child(2) a {
-				background: url(../images/patterns/pattern2.png) center center repeat $green-dark;
-			}
-
-			&:nth-child(3) a {
-				background: url(../images/patterns/pattern3.png) center center repeat $green-dark;
+			&.active {
+				a:after {
+					background: $green-dark;
+				}
 			}
 		}
 	}
@@ -162,14 +183,14 @@
 
 // Footer
 [role="contentinfo"] {
+	@extend .clearfix;
 	@include colfax;
 	background: $green-dark;
 	border-top: 1px solid lighten($green-dark, 20%);
 	color: $green-light;
-	margin-top: 60px;
+	margin-top: 40px;
 	padding-bottom: 20px;
 	text-align: center;
-
 
 	.logo {
 		@extend .ir;
@@ -187,49 +208,38 @@
 			background: url(../images/logo-white-small.png) 0 0 no-repeat;
 
 			img {
-				display: none;
+				@extend .visuallyhidden;
 			}
 		}
 	}
 
 	.label {
 		@include colfax;
+		@include hash-border-light;
 		color: #FFF; 
 		font-weight: 700;
 		display: block;
 		margin-top: 40px;
 		position: relative;
-		padding-top: 8px;
+		padding-top: 25px;
 		text-transform: uppercase;
 
 		i {
 			@include font-size(30);
 			color: $green-light;
 			display: block;
-			margin: 15px auto 10px auto;
-		}
-
-		&:after {
-			@include hash-light;
-			content: "";
-			display: block;
-			position: absolute;
-			height: 8px;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			top: 0;
+			margin: 15px auto 0px auto;
 		}
 	}
 
-	.label-learn {
+	.learn .label {
 		@extend .label;
 		margin-top: 0;
 	}
 
 	ul {
 		list-style: none;
-		margin: 10px 0 0 0;
+		margin: 25px 0 0 0;
 		padding: 0;
 
 		li {
@@ -246,12 +256,73 @@
 				color: $green-medium;
 			}
 		}
+
+		&.thanks {
+			@include hash-border-light;
+			@include font-size(11);
+			display: block;
+			height: 20px;
+			margin-top: 35px;
+			padding-top: 40px;
+			position: relative;
+
+			li {
+				display: block;
+				float: left;
+				width: 33%;
+				min-width: 92px;
+			}
+
+			a {
+				@extend .ir;
+				display: block;
+				margin: 10px auto;
+
+				&.mediatemple {
+					background: url(../images/media-temple.svg) 0 0 no-repeat;
+					height: 32px;
+					width: 80px;
+					
+					.no-svg & {
+						background: url(../images/media-temple.png) 0 0 no-repeat;
+					}
+				}
+				&.threespot {
+					background: url(../images/threespot.svg) 0 0 no-repeat;
+					height: 19px;
+					width: 80px;
+					margin: 20px auto;
+					
+					.no-svg & {
+						background: url(../images/threespot.png) 0 0 no-repeat;
+					}
+				}
+				&.typekit { // TODO: Replace Typekit logo
+					background: url(../images/typekit.png) 0 0 no-repeat;
+					height: 25px;
+					width: 91px;
+					margin: 15px auto;
+					
+					.no-svg & {
+						background: url(../images/typekit.png) 0 0 no-repeat;
+					}
+				}
+			}
+		}
 	}
 
 	p {
 		@include elena;
 		@include font-size(14);
 		color: #FFF;
+		margin-top: 25px;
+
+		&.copyright {
+			@include hash-border-light;
+			margin-top: 35px;
+			padding-top: 45px;
+			position: relative;
+		}
 
 		a {
 			color: #FFF;
@@ -262,7 +333,6 @@
 			}
 		}
 	}
-
 }
 
 
@@ -275,8 +345,8 @@
 
 	li {
 		position: relative;
-		margin-top: 45px;
-		padding-top: 10px;
+		margin-top: 35px;
+		padding-top: 25px;
 
 		h3 {
 			margin: 15px 0;
@@ -318,8 +388,22 @@
 		@include font-size(18);
 		line-height: 1.3;
 		margin: 15px 0 0 0;
-		padding: 25px 0 0 0;
+		padding: 35px 0 10px 40px;
 		position: relative;
+
+		i {
+			background: $gray-text;
+			border-radius: 50%;
+			color: #FFF;
+			display: block;
+			height: 30px;
+			line-height: 33px;
+			width: 30px;
+			text-align: center;
+			position: absolute;
+			top: 30px;
+			left: 0;
+		}
 
 		&:after {
 			@include hash-dark;
@@ -334,7 +418,11 @@
 		}
 
 		&:first-child {
-			padding-top: 5px;
+			padding-top: 15px;
+
+			i {
+				top: 10px;
+			}
 
 			&:after {
 				display: none;
@@ -342,17 +430,11 @@
 		}
 	}
 
-	i {
-		background: $gray-text;
-		border-radius: 50%;
-		color: #FFF;
+	.meta {
+		@include colfax;
+		@include font-size(16);
 		display: block;
-		float: left;
-		height: 30px;
-		line-height: 33px;
-		margin-right: 10px;
-		width: 30px;
-		text-align: center;
+		margin-top: 20px;
 	}
 
 	a {
@@ -361,8 +443,50 @@
 }
 
 
+.header {
+	@include hash-dark;
+	padding: 20px;
 
-// TODO: remove this.
+	> * {
+		background: #FFF;
+		margin: 0 auto;
+		padding: 10px;
+
+		&.toolbox {
+			background: none;
+		}
+	}
+}
+
+// TODO: Insert actual pagination styles
 .nav-pagination {
+	display: block;
+	width: 100%;
+	margin: 30px auto;
+}
+
+// TODO: Build actual style for sub-nav
+img.toolbox {
+	display: block;
+	margin: 20px auto 0 auto;
+	width: 95%;
+	position: relative;
+}
+div.toolbox {
 	display: none;
 }
+
+// TODO: Get rid of temp hash style
+hr.hash {
+	display: block;
+	width: 100%;
+	height: 8px;
+	border: none;
+	outline: none;
+	margin-top: 20px;
+	@include hash-dark;
+}
+
+
+// import helpers so that @extend works
+@import "helpers";

@@ -1,0 +1,113 @@
+//container mixin
+.container {
+	width: (704/768) * 100%;
+	max-width: 1100px;
+	margin: 0 auto;	
+}
+
+// TODO: Remove Menu button hide
+.menu-button {
+	display: none !important;
+}
+
+[role="banner"] {
+	height: 220px;
+	padding: 0;
+	margin: 0;
+
+	.container {
+		padding-top: 100px;
+		position: relative;
+	}
+
+	.logo {
+		top: -90px;
+		left: -77px;
+	}
+
+	.tagline {
+		@include colfax;
+		color: $green-medium;
+		font-weight: 900;
+		left: 240px;
+		line-height: 1;
+		text-transform: uppercase;
+		top: 22px;
+		width: (180/700) * 100%;
+	}
+
+	.nav-primary li {
+		float: left;
+		width: (226/700) * 100%;
+		margin-left: (11/700) * 100%;
+
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+
+	.nav-secondary {
+		position: absolute;
+		top: 20px;
+		right: 0;
+	}
+
+}
+
+.header { 
+	padding-left: (32/768) * 100%;
+	padding-right: (32/768) * 100%;
+
+	> * {
+		max-width: 1080px;
+	}
+
+	// TODO: get rid of image style 
+	img {
+		display: none !important;
+	}
+}
+
+[role="main"] {
+	float: left;
+	width: (429/704) * 100%;
+	padding: 0;
+}
+
+.aside {
+	float: left;
+	width: (230/704) * 100%;
+	margin-left: (45/704) * 100%;
+	padding: 0;
+}
+
+[role="contentinfo"] {
+	clear: both;
+
+	.logo {
+		margin: 25px 0;
+	}
+
+	.label {
+		margin-top: 0;
+	}
+
+	.learn, .involved, .follow {
+		float: left;
+		margin-left: (9/704) * 100%;
+		padding-bottom: 50px;
+		text-align: left;
+		width: (228/704) * 100%;
+	}
+
+	.learn {
+		margin-left: 0;
+	}
+
+	.copyright {
+		clear: both;
+	}
+}
+
+// import helpers for @extend
+@import "helpers";

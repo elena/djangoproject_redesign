@@ -369,15 +369,19 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased; }
 
+body > * {
+  padding: 0 20px; }
+
+.logo {
+  font-size: 40px;
+  font-size: 4rem;
+  display: block; }
+
 a,
 a:active,
 a:focus {
   color: black;
   text-decoration: underline; }
-  a:visited,
-  a:active:visited,
-  a:focus:visited {
-    color: #bcbcbc; }
   a:hover,
   a:active:hover,
   a:focus:hover {
@@ -400,6 +404,7 @@ h2 {
   font-size: 1.6rem;
   color: #00acf3;
   font-weight: 700;
+  margin-top: 35px;
   padding: 8px 6px;
   text-transform: uppercase; }
   @media only screen and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
@@ -411,10 +416,8 @@ h2 {
     display: inline-block;
     zoom: 1;
     *display: inline;
-    _height: 50px;
-    height: 40px;
-    line-height: 43px;
-    padding: 0 15px; }
+    line-height: 1.1;
+    padding: 20px 15px 15px 15px; }
 
 h3 {
   font-size: 24px;
@@ -425,6 +428,55 @@ h3 {
     text-decoration: none;
     -webkit-tap-highlight-color: #73d6ff; }
     h3 a:hover {
+      color: #73d6ff; }
+
+.link-readmore, .all-events {
+  color: #00acf3;
+  text-decoration: none;
+  -webkit-tap-highlight-color: #73d6ff;
+  font-family: 'Colfax', Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
+  font-size: 11px;
+  font-size: 1.1rem;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  font-weight: 700;
+  text-transform: uppercase; }
+  .link-readmore:hover, .all-events:hover {
+    color: #73d6ff; }
+
+.p-intro {
+  font-style: italic; }
+
+.all-events {
+  display: block;
+  position: relative;
+  margin-top: 20px;
+  padding-top: 30px; }
+  .all-events:after {
+    background: url(../images/patterns/hash-dark.png) repeat;
+    content: "";
+    display: block;
+    position: absolute;
+    height: 6px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0; }
+    @media only screen and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+      .all-events:after {
+        background: url(../images/patterns/hash-dark@2x.png) repeat;
+        background-size: 4px 4px; } }
+
+.meta {
+  font-family: 'Colfax', Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
+  font-size: 16px;
+  font-size: 1.6rem; }
+  .meta a {
+    color: #00acf3;
+    text-decoration: none;
+    -webkit-tap-highlight-color: #73d6ff; }
+    .meta a:hover {
       color: #73d6ff; }
 
 .highlight {
@@ -1844,290 +1896,618 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
 .lt-ie8 .icon-user-md {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf200;&nbsp;'); }
 
-body > * {
-  padding: 0 20px; }
-
-.link-readmore {
-  color: #00acf3;
-  text-decoration: none;
-  -webkit-tap-highlight-color: #73d6ff;
-  font-family: 'Colfax', Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
-  font-size: 11px;
-  font-size: 1.1rem;
-  display: inline-block;
-  zoom: 1;
-  *display: inline;
-  font-weight: 700;
-  text-transform: uppercase; }
-  .link-readmore:hover {
-    color: #73d6ff; }
-
-.p-intro {
-  font-style: italic; }
-
-[role="banner"] {
-  background: #e8f4d0;
-  padding-top: 80px;
-  padding-bottom: 10px;
-  position: relative;
-  z-index: 0; }
-  [role="banner"] .logo {
-    background: url(../images/logo-white.svg) center center no-repeat #b1cb2c;
-    border-radius: 50%;
-    display: block;
-    left: -50px;
-    height: 300px;
-    position: absolute;
-    top: -100px;
-    width: 300px;
-    z-index: -1; }
-    .no-svg.borderradius [role="banner"] .logo {
-      background: url(../images/logo-white.png) center center no-repeat #b1cb2c; }
-    .svg.no-borderradius [role="banner"] .logo {
-      background: url(../images/logo-green.svg) center center no-repeat; }
-    .no-svg.no-borderradius [role="banner"] .logo {
-      background: url(../images/logo-green.png) center center no-repeat; }
-  [role="banner"] .tagline {
-    position: absolute;
-    left: -9999px; }
-  [role="banner"] .nav-secondary {
-    list-style: none;
-    margin: 10px 0 0 0;
-    padding: 0;
-    text-align: center; }
-    [role="banner"] .nav-secondary li {
-      display: inline-block;
-      zoom: 1;
-      *display: inline;
-      font-family: 'Colfax', Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
-      font-size: 11px;
-      font-size: 1.1rem;
-      font-weight: 700;
-      line-height: 1;
-      margin: 10px 0 0 5px;
+@media only screen and (min-device-width: 320px) {
+  [role="banner"] {
+    background: #e8f4d0;
+    overflow: hidden;
+    padding-top: 80px;
+    padding-bottom: 10px;
+    position: relative;
+    z-index: 0; }
+    [role="banner"] .logo {
+      background: url(../images/logo-white.svg) center center no-repeat #b1cb2c;
+      border-radius: 50%;
+      display: block;
+      left: -50px;
+      height: 300px;
+      position: absolute;
+      top: -100px;
+      width: 300px;
+      z-index: -1; }
+      .no-svg.borderradius [role="banner"] .logo {
+        background: url(../images/logo-white.png) center center no-repeat #b1cb2c; }
+      .svg.no-borderradius [role="banner"] .logo {
+        background: url(../images/logo-green.svg) center center no-repeat; }
+      .no-svg.no-borderradius [role="banner"] .logo {
+        background: url(../images/logo-green.png) center center no-repeat; }
+    [role="banner"] .menu-button {
+      font-size: 20px;
+      font-size: 2rem;
+      background: #FFF;
+      border-radius: 50%;
+      display: block;
+      height: 45px;
+      line-height: 48px;
+      position: absolute;
+      right: 30px;
+      text-align: center;
+      text-decoration: none;
+      top: 30px;
+      width: 45px; }
+      [role="banner"] .menu-button:hover {
+        color: #b1cb2c; }
+    [role="banner"] .tagline {
+      position: absolute;
+      left: -9999px; }
+    [role="banner"] .nav-primary {
+      list-style: none;
+      margin: 0;
+      padding: 0; }
+      [role="banner"] .nav-primary li {
+        display: block;
+        margin: 10px 0 0 0;
+        padding: 0; }
+        [role="banner"] .nav-primary li a {
+          font-family: 'Colfax', Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
+          border-radius: 3px;
+          color: #FFF;
+          background: #092e20;
+          font-weight: 700;
+          display: block;
+          line-height: 1.1;
+          padding: 24px 0 20px 0;
+          margin-top: 1px;
+          text-align: center;
+          text-decoration: none;
+          text-transform: uppercase;
+          width: 100%; }
+        [role="banner"] .nav-primary li i {
+          font-size: 20px;
+          font-size: 2rem;
+          padding-right: 5px; }
+        [role="banner"] .nav-primary li:first-child a {
+          background: url(../images/patterns/pattern1.png) center center repeat #092e20; }
+        [role="banner"] .nav-primary li:nth-child(2) a {
+          background: url(../images/patterns/pattern2.png) center center repeat #092e20; }
+        [role="banner"] .nav-primary li:nth-child(3) a {
+          background: url(../images/patterns/pattern3.png) center center repeat #092e20; }
+    [role="banner"] .nav-secondary {
+      list-style: none;
+      margin: 10px 0 0 0;
       padding: 0;
-      text-transform: uppercase; }
-      [role="banner"] .nav-secondary li:first-child {
-        border: none;
-        margin-left: 0; }
-      [role="banner"] .nav-secondary li a {
-        color: #092e20;
+      text-align: center; }
+      [role="banner"] .nav-secondary li {
         display: inline-block;
         zoom: 1;
         *display: inline;
-        _height: 20px;
-        /*fill in relevant height here*/
-        height: 20px;
-        margin: 0;
-        padding-top: 25px;
-        position: relative;
+        font-family: 'Colfax', Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
+        font-size: 11px;
+        font-size: 1.1rem;
+        font-weight: 700;
+        line-height: 1;
+        margin: 10px 0 0 5px;
+        padding: 0;
+        text-transform: uppercase; }
+        [role="banner"] .nav-secondary li:first-child {
+          border: none;
+          margin-left: 0; }
+        [role="banner"] .nav-secondary li a {
+          color: #092e20;
+          display: inline-block;
+          zoom: 1;
+          *display: inline;
+          _height: 20px;
+          /*fill in relevant height here*/
+          height: 20px;
+          margin: 0;
+          padding-top: 25px;
+          position: relative;
+          text-decoration: none; }
+          [role="banner"] .nav-secondary li a:after {
+            background: url(../images/patterns/hash-dark.png) repeat;
+            content: "";
+            bottom: 35px;
+            display: block;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0; }
+          [role="banner"] .nav-secondary li a:hover {
+            color: #1e996a; }
+            [role="banner"] .nav-secondary li a:hover:after {
+              background: #1e996a; }
+        [role="banner"] .nav-secondary li.active a:after {
+          background: #092e20; }
+
+  [role="contentinfo"] {
+    font-family: 'Colfax', Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
+    background: #092e20;
+    border-top: 1px solid #1a835b;
+    color: #e8f4d0;
+    margin-top: 40px;
+    padding-bottom: 20px;
+    text-align: center; }
+    [role="contentinfo"] .logo {
+      display: block;
+      height: 30px;
+      margin: 15px auto;
+      width: 80px; }
+      [role="contentinfo"] .logo img {
+        display: block;
+        width: 100%; }
+      .no-svg [role="contentinfo"] .logo {
+        background: url(../images/logo-white-small.png) 0 0 no-repeat; }
+    [role="contentinfo"] .label, [role="contentinfo"] .learn .label {
+      font-family: 'Colfax', Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
+      color: #FFF;
+      font-weight: 700;
+      display: block;
+      margin-top: 40px;
+      position: relative;
+      padding-top: 25px;
+      text-transform: uppercase; }
+      [role="contentinfo"] .label:after {
+        background: url(../images/patterns/hash-light.png) repeat;
+        content: "";
+        display: block;
+        position: absolute;
+        height: 8px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0; }
+      [role="contentinfo"] .label i, [role="contentinfo"] .learn .label i {
+        font-size: 30px;
+        font-size: 3rem;
+        color: #e8f4d0;
+        display: block;
+        margin: 15px auto 0px auto; }
+    [role="contentinfo"] .learn .label {
+      margin-top: 0; }
+    [role="contentinfo"] ul {
+      list-style: none;
+      margin: 25px 0 0 0;
+      padding: 0; }
+      [role="contentinfo"] ul li {
+        margin: 10px 0 0 0;
+        padding: 0; }
+      [role="contentinfo"] ul a {
+        color: #e8f4d0;
+        -webkit-tap-highlight-color: #b1cb2c;
         text-decoration: none; }
-        [role="banner"] .nav-secondary li a:after {
-          background: url(../images/patterns/hash-dark.png) repeat;
+        [role="contentinfo"] ul a:hover {
+          color: #b1cb2c; }
+      [role="contentinfo"] ul.thanks {
+        font-size: 11px;
+        font-size: 1.1rem;
+        display: block;
+        height: 20px;
+        margin-top: 35px;
+        padding-top: 40px;
+        position: relative; }
+        [role="contentinfo"] ul.thanks:after {
+          background: url(../images/patterns/hash-light.png) repeat;
           content: "";
-          bottom: 35px;
           display: block;
-          left: 0;
           position: absolute;
+          height: 8px;
+          left: 0;
           right: 0;
+          bottom: 0;
           top: 0; }
-          @media only screen and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-            [role="banner"] .nav-secondary li a:after {
-              background: url(../images/patterns/hash-dark@2x.png) repeat;
-              background-size: 4px 4px; } }
-  [role="banner"] .nav-primary {
+        [role="contentinfo"] ul.thanks li {
+          display: block;
+          float: left;
+          width: 33%;
+          min-width: 92px; }
+        [role="contentinfo"] ul.thanks a {
+          display: block;
+          margin: 10px auto; }
+          [role="contentinfo"] ul.thanks a.mediatemple {
+            background: url(../images/media-temple.svg) 0 0 no-repeat;
+            height: 32px;
+            width: 80px; }
+            .no-svg [role="contentinfo"] ul.thanks a.mediatemple {
+              background: url(../images/media-temple.png) 0 0 no-repeat; }
+          [role="contentinfo"] ul.thanks a.threespot {
+            background: url(../images/threespot.svg) 0 0 no-repeat;
+            height: 19px;
+            width: 80px;
+            margin: 20px auto; }
+            .no-svg [role="contentinfo"] ul.thanks a.threespot {
+              background: url(../images/threespot.png) 0 0 no-repeat; }
+          [role="contentinfo"] ul.thanks a.typekit {
+            background: url(../images/typekit.png) 0 0 no-repeat;
+            height: 25px;
+            width: 91px;
+            margin: 15px auto; }
+            .no-svg [role="contentinfo"] ul.thanks a.typekit {
+              background: url(../images/typekit.png) 0 0 no-repeat; }
+    [role="contentinfo"] p {
+      font-family: 'Elena', Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
+      font-size: 14px;
+      font-size: 1.4rem;
+      color: #FFF;
+      margin-top: 25px; }
+      [role="contentinfo"] p.copyright {
+        margin-top: 35px;
+        padding-top: 45px;
+        position: relative; }
+        [role="contentinfo"] p.copyright:after {
+          background: url(../images/patterns/hash-light.png) repeat;
+          content: "";
+          display: block;
+          position: absolute;
+          height: 8px;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          top: 0; }
+      [role="contentinfo"] p a {
+        color: #FFF;
+        -webkit-tap-highlight-color: #b1cb2c; }
+        [role="contentinfo"] p a:hover {
+          color: #b1cb2c; }
+
+  .list-news {
     list-style: none;
     margin: 0;
     padding: 0; }
-    [role="banner"] .nav-primary li {
-      display: block;
-      margin: 10px 0 0 0;
-      padding: 0; }
-      [role="banner"] .nav-primary li a {
-        font-family: 'Colfax', Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
-        border-radius: 33px;
-        color: #FFF;
-        background: #092e20;
-        font-weight: 700;
+    .list-news li {
+      position: relative;
+      margin-top: 35px;
+      padding-top: 25px; }
+      .list-news li h3 {
+        margin: 15px 0; }
+      .list-news li:after {
+        background: url(../images/patterns/hash-dark.png) repeat;
+        content: "";
         display: block;
-        height: 66px;
-        line-height: 70px;
-        margin-top: 1px;
-        text-align: center;
-        text-decoration: none;
-        text-transform: uppercase;
-        width: 100%; }
-      [role="banner"] .nav-primary li:first-child a {
-        background: url(../images/patterns/pattern1.png) center center repeat #092e20; }
-      [role="banner"] .nav-primary li:nth-child(2) a {
-        background: url(../images/patterns/pattern2.png) center center repeat #092e20; }
-      [role="banner"] .nav-primary li:nth-child(3) a {
-        background: url(../images/patterns/pattern3.png) center center repeat #092e20; }
+        height: 7px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0; }
+      .list-news li:first-child {
+        margin-top: 0;
+        padding-top: 0; }
+        .list-news li:first-child:after {
+          display: none; }
 
-[role="contentinfo"] {
-  font-family: 'Colfax', Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
-  background: #092e20;
-  border-top: 1px solid #1a835b;
-  color: #e8f4d0;
-  margin-top: 60px;
-  padding-bottom: 20px;
-  text-align: center; }
-  [role="contentinfo"] .logo {
-    display: block;
-    height: 30px;
-    margin: 15px auto;
-    width: 80px; }
-    [role="contentinfo"] .logo img {
-      display: block;
-      width: 100%; }
-    .no-svg [role="contentinfo"] .logo {
-      background: url(../images/logo-white-small.png) 0 0 no-repeat; }
-      .no-svg [role="contentinfo"] .logo img {
-        display: none; }
-  [role="contentinfo"] .label, [role="contentinfo"] .label-learn {
+  .list-events {
     font-family: 'Colfax', Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
-    color: #FFF;
-    font-weight: 700;
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+    .list-events li {
+      display: block;
+      font-size: 18px;
+      font-size: 1.8rem;
+      line-height: 1.3;
+      margin: 15px 0 0 0;
+      padding: 35px 0 10px 40px;
+      position: relative; }
+      .list-events li i {
+        background: #7c7c7c;
+        border-radius: 50%;
+        color: #FFF;
+        display: block;
+        height: 30px;
+        line-height: 33px;
+        width: 30px;
+        text-align: center;
+        position: absolute;
+        top: 30px;
+        left: 0; }
+      .list-events li:after {
+        background: url(../images/patterns/hash-dark.png) repeat;
+        content: "";
+        display: block;
+        height: 7px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0; }
+      .list-events li:first-child {
+        padding-top: 15px; }
+        .list-events li:first-child i {
+          top: 10px; }
+        .list-events li:first-child:after {
+          display: none; }
+    .list-events .meta {
+      font-family: 'Colfax', Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
+      font-size: 16px;
+      font-size: 1.6rem;
+      display: block;
+      margin-top: 20px; }
+    .list-events a {
+      color: #00acf3;
+      text-decoration: none;
+      -webkit-tap-highlight-color: #73d6ff; }
+      .list-events a:hover {
+        color: #73d6ff; }
+
+  .header {
+    background: url(../images/patterns/hash-dark.png) repeat;
+    padding: 20px; }
+    .header > * {
+      background: #FFF;
+      margin: 0 auto;
+      padding: 10px; }
+      .header > *.toolbox {
+        background: none; }
+
+  .nav-pagination {
     display: block;
-    margin-top: 40px;
-    position: relative;
-    padding-top: 8px;
-    text-transform: uppercase; }
-    [role="contentinfo"] .label i, [role="contentinfo"] .label-learn i {
-      font-size: 30px;
-      font-size: 3rem;
-      color: #e8f4d0;
-      display: block;
-      margin: 15px auto 10px auto; }
-    [role="contentinfo"] .label:after, [role="contentinfo"] .label-learn:after {
-      background: url(../images/patterns/hash-light.png) repeat;
-      content: "";
-      display: block;
-      position: absolute;
-      height: 8px;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      top: 0; }
-      @media only screen and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-        [role="contentinfo"] .label:after, [role="contentinfo"] .label-learn:after {
+    width: 100%;
+    margin: 30px auto; }
+
+  img.toolbox {
+    display: block;
+    margin: 20px auto 0 auto;
+    width: 95%;
+    position: relative; }
+
+  div.toolbox {
+    display: none; }
+
+  hr.hash {
+    display: block;
+    width: 100%;
+    height: 8px;
+    border: none;
+    outline: none;
+    margin-top: 20px;
+    background: url(../images/patterns/hash-dark.png) repeat; }
+  /* ==========================================================================
+   Helper classes
+   ========================================================================== */
+  /*
+  * Image replacement
+  */
+  .ir, [role="banner"] .logo, [role="contentinfo"] .logo, [role="contentinfo"] ul.thanks a {
+    font: 0/0 a;
+    text-shadow: none;
+    color: transparent; }
+
+  /*
+  * Hide from both screenreaders and browsers: h5bp.com/u
+  */
+  .hidden {
+    display: none !important;
+    visibility: hidden; }
+
+  /*
+  * Hide only visually, but have it available for screenreaders: h5bp.com/v
+  */
+  .visuallyhidden, [role="banner"] .menu-button span, .no-svg [role="contentinfo"] .logo img {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px; }
+
+  /*
+  * Extends the .visuallyhidden class to allow the element to be focusable
+  * when navigated to via the keyboard: h5bp.com/p
+  */
+  .visuallyhidden.focusable:active, [role="banner"] .menu-button span.focusable:active, .no-svg [role="contentinfo"] .logo img.focusable:active,
+  .visuallyhidden.focusable:focus,
+  [role="banner"] .menu-button span.focusable:focus,
+  .no-svg [role="contentinfo"] .logo img.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto; }
+
+  /*
+  * Hide visually and from screenreaders, but maintain layout
+  */
+  .invisible {
+    visibility: hidden; }
+
+  /**
+  * Clearfix helper
+  * Used to contain floats: h5bp.com/q
+  */
+  .clearfix:before, [role="banner"]:before, [role="contentinfo"]:before,
+  .clearfix:after,
+  [role="banner"]:after,
+  [role="contentinfo"]:after {
+    content: "";
+    display: table; }
+
+  .clearfix:after, [role="banner"]:after, [role="contentinfo"]:after {
+    clear: both; }
+
+  .clearfix, [role="banner"], [role="contentinfo"] {
+    *zoom: 1; } }
+          @media only screen and (min-device-width: 320px) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-width: 320px) and (min-resolution: 192dpi) {
+            [role="banner"] .nav-secondary li a:after {
+              background: url(../images/patterns/hash-dark@2x.png) repeat;
+              background-size: 4px 4px; } }
+      @media only screen and (min-device-width: 320px) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-width: 320px) and (min-resolution: 192dpi) {
+        [role="contentinfo"] .label:after {
           background: url(../images/patterns/hash-light@2x.png) repeat;
           background-size: 4px 4px; } }
-  [role="contentinfo"] .label-learn {
-    margin-top: 0; }
-  [role="contentinfo"] ul {
-    list-style: none;
-    margin: 10px 0 0 0;
-    padding: 0; }
-    [role="contentinfo"] ul li {
-      margin: 10px 0 0 0;
-      padding: 0; }
-    [role="contentinfo"] ul a {
-      color: #e8f4d0;
-      -webkit-tap-highlight-color: #b1cb2c;
-      text-decoration: none; }
-      [role="contentinfo"] ul a:hover {
-        color: #b1cb2c; }
-  [role="contentinfo"] p {
-    font-family: 'Elena', Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
-    font-size: 14px;
-    font-size: 1.4rem;
-    color: #FFF; }
-    [role="contentinfo"] p a {
-      color: #FFF;
-      -webkit-tap-highlight-color: #b1cb2c; }
-      [role="contentinfo"] p a:hover {
-        color: #b1cb2c; }
-
-.list-news {
-  list-style: none;
-  margin: 0;
-  padding: 0; }
-  .list-news li {
-    position: relative;
-    margin-top: 45px;
-    padding-top: 10px; }
-    .list-news li h3 {
-      margin: 15px 0; }
-    .list-news li:after {
-      background: url(../images/patterns/hash-dark.png) repeat;
-      content: "";
-      display: block;
-      height: 7px;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0; }
-      @media only screen and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        @media only screen and (min-device-width: 320px) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-width: 320px) and (min-resolution: 192dpi) {
+          [role="contentinfo"] ul.thanks:after {
+            background: url(../images/patterns/hash-light@2x.png) repeat;
+            background-size: 4px 4px; } }
+        @media only screen and (min-device-width: 320px) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-width: 320px) and (min-resolution: 192dpi) {
+          [role="contentinfo"] p.copyright:after {
+            background: url(../images/patterns/hash-light@2x.png) repeat;
+            background-size: 4px 4px; } }
+      @media only screen and (min-device-width: 320px) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-width: 320px) and (min-resolution: 192dpi) {
         .list-news li:after {
           background: url(../images/patterns/hash-dark@2x.png) repeat;
           background-size: 4px 4px; } }
-    .list-news li:first-child {
-      margin-top: 0;
-      padding-top: 0; }
-      .list-news li:first-child:after {
-        display: none; }
-
-.list-events {
-  font-family: 'Colfax', Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
-  list-style: none;
-  margin: 0;
-  padding: 0; }
-  .list-events li {
-    display: block;
-    font-size: 18px;
-    font-size: 1.8rem;
-    line-height: 1.3;
-    margin: 15px 0 0 0;
-    padding: 25px 0 0 0;
-    position: relative; }
-    .list-events li:after {
-      background: url(../images/patterns/hash-dark.png) repeat;
-      content: "";
-      display: block;
-      height: 7px;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0; }
-      @media only screen and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+      @media only screen and (min-device-width: 320px) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-width: 320px) and (min-resolution: 192dpi) {
         .list-events li:after {
           background: url(../images/patterns/hash-dark@2x.png) repeat;
           background-size: 4px 4px; } }
-    .list-events li:first-child {
-      padding-top: 5px; }
-      .list-events li:first-child:after {
-        display: none; }
-  .list-events i {
-    background: #7c7c7c;
-    border-radius: 50%;
-    color: #FFF;
-    display: block;
+  @media only screen and (min-device-width: 320px) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-width: 320px) and (min-resolution: 192dpi) {
+    .header {
+      background: url(../images/patterns/hash-dark@2x.png) repeat;
+      background-size: 4px 4px; } }
+  @media only screen and (min-device-width: 320px) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-width: 320px) and (min-resolution: 192dpi) {
+    hr.hash {
+      background: url(../images/patterns/hash-dark@2x.png) repeat;
+      background-size: 4px 4px; } }
+
+@media only screen and (min-width: 720px) {
+  .container {
+    width: 91.66667%;
+    max-width: 1100px;
+    margin: 0 auto; }
+
+  .menu-button {
+    display: none !important; }
+
+  [role="banner"] {
+    height: 220px;
+    padding: 0;
+    margin: 0; }
+    [role="banner"] .container {
+      padding-top: 100px;
+      position: relative; }
+    [role="banner"] .logo {
+      top: -90px;
+      left: -77px; }
+    [role="banner"] .tagline {
+      font-family: 'Colfax', Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
+      color: #b1cb2c;
+      font-weight: 900;
+      left: 240px;
+      line-height: 1;
+      text-transform: uppercase;
+      top: 22px;
+      width: 25.71429%; }
+    [role="banner"] .nav-primary li {
+      float: left;
+      width: 32.28571%;
+      margin-left: 1.57143%; }
+      [role="banner"] .nav-primary li:first-child {
+        margin-left: 0; }
+    [role="banner"] .nav-secondary {
+      position: absolute;
+      top: 20px;
+      right: 0; }
+
+  .header {
+    padding-left: 4.16667%;
+    padding-right: 4.16667%; }
+    .header > * {
+      max-width: 1080px; }
+    .header img {
+      display: none !important; }
+
+  [role="main"] {
     float: left;
-    height: 30px;
-    line-height: 33px;
-    margin-right: 10px;
-    width: 30px;
-    text-align: center; }
-  .list-events a {
-    color: #00acf3;
-    text-decoration: none;
-    -webkit-tap-highlight-color: #73d6ff; }
-    .list-events a:hover {
-      color: #73d6ff; }
+    width: 60.9375%;
+    padding: 0; }
 
-.nav-pagination {
-  display: none; }
+  .aside {
+    float: left;
+    width: 32.67045%;
+    margin-left: 6.39205%;
+    padding: 0; }
 
+  [role="contentinfo"] {
+    clear: both; }
+    [role="contentinfo"] .logo {
+      margin: 25px 0; }
+    [role="contentinfo"] .label {
+      margin-top: 0; }
+    [role="contentinfo"] .learn, [role="contentinfo"] .involved, [role="contentinfo"] .follow {
+      float: left;
+      margin-left: 1.27841%;
+      padding-bottom: 50px;
+      text-align: left;
+      width: 32.38636%; }
+    [role="contentinfo"] .learn {
+      margin-left: 0; }
+    [role="contentinfo"] .copyright {
+      clear: both; }
+
+  /* ==========================================================================
+   Helper classes
+   ========================================================================== */
+  /*
+  * Image replacement
+  */
+  .ir {
+    font: 0/0 a;
+    text-shadow: none;
+    color: transparent; }
+
+  /*
+  * Hide from both screenreaders and browsers: h5bp.com/u
+  */
+  .hidden {
+    display: none !important;
+    visibility: hidden; }
+
+  /*
+  * Hide only visually, but have it available for screenreaders: h5bp.com/v
+  */
+  .visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px; }
+
+  /*
+  * Extends the .visuallyhidden class to allow the element to be focusable
+  * when navigated to via the keyboard: h5bp.com/p
+  */
+  .visuallyhidden.focusable:active,
+  .visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto; }
+
+  /*
+  * Hide visually and from screenreaders, but maintain layout
+  */
+  .invisible {
+    visibility: hidden; }
+
+  /**
+  * Clearfix helper
+  * Used to contain floats: h5bp.com/q
+  */
+  .clearfix:before,
+  .clearfix:after {
+    content: "";
+    display: table; }
+
+  .clearfix:after {
+    clear: both; }
+
+  .clearfix {
+    *zoom: 1; } }
 /* ==========================================================================
  Helper classes
  ========================================================================== */
 /*
 * Image replacement
 */
-.ir, [role="banner"] .logo, [role="contentinfo"] .logo {
+.ir {
   font: 0/0 a;
   text-shadow: none;
   color: transparent; }
@@ -2175,18 +2555,13 @@ body > * {
 * Clearfix helper
 * Used to contain floats: h5bp.com/q
 */
-.clearfix:before, [role="banner"]:before,
-.clearfix:after,
-[role="banner"]:after {
+.clearfix:before,
+.clearfix:after {
   content: "";
   display: table; }
 
-.clearfix:after, [role="banner"]:after {
+.clearfix:after {
   clear: both; }
 
-/*
-* For IE 6/7 only
-* Include this rule to trigger hasLayout and contain floats.
-*/
-.clearfix, [role="banner"] {
+.clearfix {
   *zoom: 1; }

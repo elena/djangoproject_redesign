@@ -1,322 +1,71 @@
 {% extends "base.html" %}{% load url from future %}
+{% load static %}
 {% block title %}News &amp; Events{% endblock %}
+
+
+{% block header %}
+	<h1>News &amp; Events</h1>
+	<p class="p-intro">Get updates on Django and the Django Software Foundation as well as announcements on upcoming conferences and sprints around the world.</p>
+	<!-- TODO: Remove Temporary link -->
+	<img class="toolbox" src="{% static 'images/temps/sub-nav.png' %}" alt="temporary navigation placeholder" />
+{% endblock %}
+
+
 {% block body %}
 
-<h1>News &amp; Events</h1>
-<p class="p-intro">Get updates on Django and the Django Software Foundation as well as announcements on upcoming conferences and sprints around the world.</p>
+<div role="main">
+	<h2><span>News</span></h2>
+	<ul class="list-news">
+		<li>
+			<h3><a href="{% url 'news_detail' %}">Karen Tracey joins the DSF board</a></h3>
+			<span class="meta">Posted by <a href="#" rel="author">Russell Keith-Magee</a> on <time pubdate datetime="2012-12-04">December 4, 2012</time> in <a href="#">Django Software Foundation</a></span>
+			<p>In late October, the DSF announced the resignation of Jacob Kaplan-Moss from the Django Software Foundation board.</p>
+			<p>The DSF membership nominated a group of potential candidates to replace fill Jacob's seat, and then voted on those nominations. These votes revealed a clearly preferred candidate, and late last week, the board of the Django Software Foundation (DSF) met and voted unanimously to confirm Karen Tracey to fill Jacob's seat on the DSF board.</p>
+			<a class="link-readmore" href="{% url 'news_detail' %}">Read More</a>
+		</li>
+		<li>
+			<h3><a href="{% url 'news_detail' %}">DjangoCon Europe 2013 Call For Papers</a></h3>
+			<span class="meta">Posted by <a href="#" rel="author">Russell Keith-Magee</a> and <a href="#" rel="author">Tomasz Paczkowski</a> on <time pubdate datetime="2012-12-04">December 4, 2012</time> in <a href="#">Conferences</a></span>
+			<p>DjangoCon Europe 2013 organizers are pleased to invite all members of the Django community to submit their talk proposals for the conference. We’re looking for Django and Python enthusiasts, pioneers, adventurers and anyone else who would like to share their Django achievements and experiments with the rest of the community.</p>
+			<p>For more information, please read the announcement on the <a href="http://blog.djangocircus.com/post/36590674298/call-for-speakers">DjangoCon Europe website</a>.</p>
+		</li>
+		<li>
+			<h3><a href="{% url 'news_detail' %}">Django 1.5 beta 1 released</a></h3>
+			<span class="meta">Posted by <a href="#" rel="author">James Bennett</a> on <time pubdate datetime="2012-11-27">November 27, 2012</time> in <a href="#">Release Announcements</a></span>
+			<p>As part of the Django 1.5 release process, today we've released Django 1.5 beta 1, a preview/testing package that gives a little taste of some of the new stuff coming in Django 1.5. As with all alpha and beta packages, this is not for production use, but if you'd like to try out some of the new goodies coming in 1.5, or if you'd like to pitch in and help us fix bugs before the final 1.5 release (due in December), feel free to grab a copy and give it a spin.</p>
+			<p>You can get a copy of the 1.5 beta package from our downloads page, and we recommend you read the release notes. Also, for the security conscious, signed MD5 and SHA1 checksums of the 1.5 alpha package are available.</p>
+			<p>Also, please note that Django 1.5 now requires a minimum of Python 2.6; Python 2.5 is no longer supported. Python 3.x releases, starting with Python 3.2, are experimentally supported in this release. For more information on Python 3 support, and the testing Django 1.5 will still need, see this blog post.</p>
+		</li>
+		<li>
+			<h3><a href="{% url 'news_detail' %}">DjangoCon US 2014-15: Request For Proposals</a></h3>
+			<span class="meta">Posted by <a href="#" rel="author">Russell Keith-Magee</a> on <time pubdate datetime="2012-11-08">November 8, 2012</time> in <a href="#">Conferences</a></span>
+			<p>DjangoCon US was first held in 2008, and has been held annually ever since. It is now the largest Django-specific event in the Django community calendar.</p>
+			<p>The Django Software Foundation (DSF) is not, and does not wish to become formally involved in the organization of DjangoCon US. The DjangoCon name is owned by the DSF, and is licensed to the group organizing a DjangoCon event. The DjangoCon organizing group then runs the event as a for-profit enterprise, assuming all financial risk, but also reaping any profit resulting from the event. Past DjangoCon US organizers have made substantial financial donations to the DSF as result of profits earned, but this has been neither expected nor required as part of the licensing arrangement.</p>
+			<a class="link-readmore" href="{% url 'news_detail' %}">Read More</a>
+		</li>
+	</ul>
 
-<h2><span>News</span></h2>
+	<img class="nav-pagination" src="{% static 'images/temps/pagination.png' %}" alt="temporary navigation placeholder" />
+	<!-- 
+	TODO: Re-insert actual pagination html
+	<ul class="nav-pagination" role="navigation">
+		<li class="current">1</li>
+		<li><a href="#">2</a></li>
+		<li><a href="#">3</a></li>
+		<li><a href="#">4</a></li>
+		<li><a href="#">5</a></li>
+		<li class="ellipse">...</li>
+		<li><a href="#">24</a></li>
+		<li class="last"><a href="#">25</a></li>
+		<li class="next"><a href="#">Next</a></li>
+	</ul> -->
 
-<ul class="list-news">
-	<li>
-		<h2><a href="{% url 'news_detail' %}">Karen Tracey joins the DSF board</a></h2>
-
-		<span class="meta">Posted by <a href="#" rel="author">Russell Keith-Magee</a> on <time pubdate datetime="2012-12-04">December 4, 2012</time> in <a href="#">Django Software Foundation</a></span>
-
-		<p>In late October, the DSF announced the resignation of Jacob Kaplan-Moss from the Django Software Foundation board.</p>
-
-		<p>The DSF membership nominated a group of potential candidates to replace fill Jacob's seat, and then voted on those nominations. These votes revealed a clearly preferred candidate, and late last week, the board of the Django Software Foundation (DSF) met and voted unanimously to confirm Karen Tracey to fill Jacob's seat on the DSF board.</p>
-
-		<a class="link-readmore" href="{% url 'news_detail' %}">Read More</a>
-	</li>
-
-	<li>
-		<h2><a href="{% url 'news_detail' %}">DjangoCon Europe 2013 Call For Papers</a></h2>
-
-		<span class="meta">Posted by <a href="#" rel="author">Russell Keith-Magee</a> and <a href="#" rel="author">Tomasz Paczkowski</a> on <time pubdate datetime="2012-12-04">December 4, 2012</time> in <a href="#">Conferences</a></span>
-
-		<p>DjangoCon Europe 2013 organizers are pleased to invite all members of the Django community to submit their talk proposals for the conference. We’re looking for Django and Python enthusiasts, pioneers, adventurers and anyone else who would like to share their Django achievements and experiments with the rest of the community.</p>
-
-		<p>For more information, please read the announcement on the <a href="http://blog.djangocircus.com/post/36590674298/call-for-speakers">DjangoCon Europe website</a>.</p>
-	</li>
-
-	<li>
-		<h2><a href="{% url 'news_detail' %}">Django 1.5 beta 1 released</a></h2>
-
-		<span class="meta">Posted by <a href="#" rel="author">James Bennett</a> on <time pubdate datetime="2012-11-27">November 27, 2012</time> in <a href="#">Release Announcements</a></span>
-
-		<p>As part of the Django 1.5 release process, today we've released Django 1.5 beta 1, a preview/testing package that gives a little taste of some of the new stuff coming in Django 1.5. As with all alpha and beta packages, this is not for production use, but if you'd like to try out some of the new goodies coming in 1.5, or if you'd like to pitch in and help us fix bugs before the final 1.5 release (due in December), feel free to grab a copy and give it a spin.</p>
-
-		<p>You can get a copy of the 1.5 beta package from our downloads page, and we recommend you read the release notes. Also, for the security conscious, signed MD5 and SHA1 checksums of the 1.5 alpha package are available.</p>
-
-		<p>Also, please note that Django 1.5 now requires a minimum of Python 2.6; Python 2.5 is no longer supported. Python 3.x releases, starting with Python 3.2, are experimentally supported in this release. For more information on Python 3 support, and the testing Django 1.5 will still need, see this blog post.</p>
-	</li>
-
-	<li>
-		<h2><a href="{% url 'news_detail' %}">DjangoCon US 2014-15: Request For Proposals</a></h2>
-
-		<span class="meta">Posted by <a href="#" rel="author">Russell Keith-Magee</a> on <time pubdate datetime="2012-11-08">November 8, 2012</time> in <a href="#">Conferences</a></span>
-
-		<p>DjangoCon US was first held in 2008, and has been held annually ever since. It is now the largest Django-specific event in the Django community calendar.</p>
-
-		<p>The Django Software Foundation (DSF) is not, and does not wish to become formally involved in the organization of DjangoCon US. The DjangoCon name is owned by the DSF, and is licensed to the group organizing a DjangoCon event. The DjangoCon organizing group then runs the event as a for-profit enterprise, assuming all financial risk, but also reaping any profit resulting from the event. Past DjangoCon US organizers have made substantial financial donations to the DSF as result of profits earned, but this has been neither expected nor required as part of the licensing arrangement.</p>
-
-		<a class="link-readmore" href="{% url 'news_detail' %}">Read More</a>
-	</li>
-</ul>
-<ul class="nav-pagination" role="navigation">
-	<li class="current">1</li>
-	<li><a href="#">2</a></li>
-	<li><a href="#">3</a></li>
-	<li><a href="#">4</a></li>
-	<li><a href="#">5</a></li>
-	<li class="ellipse">...</li>
-	<li><a href="#">24</a></li>
-	<li class="last"><a href="#">25</a></li>
-	<li class="next"><a href="#">Next</a></li>
-</ul>
-
-
-<h2><span>Upcoming Events</span></h2>
-
-<ul class="list-events">
-	<li>
-		<i class="icon-calendar"></i>
-		<a href="#">DjangoCon 2013 Call for Papers</a>
-	</li>
-	<li>
-		<i class="icon-calendar"></i>
-		<a href="#">DjangoCon Europe 2013 Call for Papers</a>
-	</li>
-	<li>
-		<i class="icon-calendar"></i>
-		<a href="#">Call for Papers for DjangoCon 2013</a>
-	</li>
-</ul>
-
-
-<div class="aside">
-	<a href="/news/rss/">Subscribe to RSS</a>
-	<div>
-		<h2>Topics</h2>
-		<ul>
-			<li><a href="#">Django Software Foundation</a></li>
-			<li><a href="#">Events</a></li>
-			<li><a href="#">Conferences</a></li>
-			<li><a href="#">Release Announcements</a></li>
-			<li><a href="#">Security</a></li>
-		</ul>
-		<form action="#">
-			<input type="text" placeholder="Search news">
-			<button type="submit">Go</button>
-		</form>
-	</div>
-	<div>
-		<h2>Upcoming Events</h2>
-		<ul>
-			<li>
-				<a href="#">Django Sprint in Stockholm, Sweden</a>
-				<span>Stockholm, Sweden</span>
-				<time>November 17-18</time>
-				<p>The sprint will be focused on Django 1.5 RC1, helping out getting it as stable and bug-free as possible. It’s scheduled for release on November 26, one week after the sprint. It's also possible to work on 1.6.</p>
-				<a href="#">Read more</a>
-			</li>
-			<li>
-				<a href="#">Django Sprint in Toulouse, France</a>
-				<span>Stockholm, Sweden</span>
-				<time>November 24-25</time>
-			</li>
-		</ul>
-		<a href="#">All events</a>
-	</div>
 </div>
 
-{% comment %}
-Django Sprint in Toulouse, France
-We are pleased to announce that there will be a Django sprint organized as part of DjangoCon Toulouse, which will take place during the weekend of 24 &amp; 25 November. On Saturday there will be a series of eight talks and the sprint will be held on Sunday.
 
-Thanks to the Django Software Foundation and to the Toulibre association, Django core developer Julien Phalip will be there in person to help out. Lunch will also be provided.
 
-The sprint will be focused on Django 1.5 RC1, helping out getting it as stable and bug-free as possible. It’s scheduled for release on November 26, one day after the sprint. It's also possible to work on 1.6.
-
-The venue is at ENSEEIHT, located in the Toulouse city centre. The sprint will start at 10 AM CET on Sunday and finish in the evening. It is a free event but it is necessary to register yourself if you want to attend in person. More information about registration, location and directions can be found on the Django wiki sprint page and on the DjangoCon Toulouse official website.
-
-If you’re unable get to Toulouse in person you are invited to participate online from wherever you are. Add your name under Roster in the sprint page. Core developers will be available in the Freenode IRC channel #django-sprint in order to review tickets and to assist you in the sprinting process.
-
-We hope you can join us and help make the sprints as successful as possible!
-
-Posted by Julien Phalip on November 5, 2012
-
-Django 1.5 alpha 1 released
-As part of the Django 1.5 release process, today we've released Django 1.5 alpha 1, a preview/testing package that gives a little taste of some of the new stuff coming in Django 1.5. As with all alpha and beta packages, this is not for production use, but if you'd like to try out some of the new goodies coming in 1.5, or if you'd like to pitch in and help us fix bugs before the final 1.5 release (due in December), feel free to grab a copy and give it a spin.
-
-You can get a copy of the 1.5 alpha package from our downloads page, and we recommend you read the release notes. Also, for the security conscious, signed MD5 and SHA1 checksums of the 1.5 alpha package are available.
-
-Also, please note that Django 1.5 now requires a minimum of Python 2.6; Python 2.5 is no longer supported. Python 3.x releases, starting with Python 3.2, are experimentally supported in this release. For more information on Python 3 support, and the testing Django 1.5 will still need, see this blog post.
-
-Posted by James Bennett on October 25, 2012
-
-Django Software Foundation calls for board nominations
-After many years of service to the Django Software Foundation (DSF), Jacob Kaplan-Moss has expressed a desire to stand down from his position on the DSF board.
-
-Jacob was one of the founding members of the DSF board, and served as the President of the DSF from it's conception until June 2010. The Django Software Foundation would like to thank Jacob for his many years of diligent service.
-
-Jacob won't be going too far - he will continue to be a BDFL and contributor to the Django code base; he will also continue as a the infrastructure coordinator for the DSF.
-
-As a result of Jacob's resignation, the DSF is calling for nominations for a replacement board member.
-
-Formal nominations for the open board seat may be made by any DSF member. If you're not a DSF member, and you've got an idea of someone you'd like to see on the DSF board, feel free to suggest the name - if someone in the official membership agrees with you, they can formally propose that name for nomination.
-
-What does a DSF board member do? DSF board members are expected to participate in a monthly board teleconference, and follow up on any activities generated by that teleconference. Depending on the business presented to the board, this may result in additional work over the course of the month. The work will usually be administrative and organisational in nature -- for example, representing the board in legal discussions, or liaising with groups performing work on the DSF's behalf.
-
-The call for nominees closes at 1200 UTC on November 11.
-
-Of course, if you'd like to be involved in the formal nomination and voting process, you need to be a member of the DSF. Developer members are individuals appointed by the DSF board in recognition of their service to the Django community. Corporate members are those that have contributed financially to the DSF. If you are interested in becoming a corporate member of the DSF, you can find out more on our corporate membership page.
-
-If you've got any other questions about the board election process, please get in touch.
-
-Posted by Russell Keith-Magee on October 21, 2012
-
-Security releases issued
-Today the Django team is issuing multiple releases -- Django 1.3.4 and Django 1.4.2 -- to remedy security issues reported to us.
-
-All users are encouraged to upgrade Django immediately.
-
-Host header poisoning
-Some parts of Django -- independent of end-user-written applications -- make use of full URLs, including domain name, which are generated from the HTTP Host header. Some attacks against this are beyond Django's ability to control, and require the web server to be properly configured; Django's documentation has for some time contained notes advising users on such configuration.
-
-Django's own built-in parsing of the Host header is, however, still vulnerable, as was reported to us recently. The Host header parsing in Django 1.3 and Django 1.4 -- specifically, django.http.HttpRequest.get_host() -- was incorrectly handling username/password information in the header. Thus, for example, the following Host header would be accepted by Django when running on "validsite.com":
-
-Host: validsite.com:random@evilsite.com
-
-Using this, an attacker can cause parts of Django -- particularly the password-reset mechanism -- to generate and display arbitrary URLs to users.
-
-To remedy this, the parsing in HttpRequest.get_host() is being modified; Host headers which contain potentially dangerous content (such as username/password pairs) now raise the exception django.core.exceptions.SuspiciousOperation.
-
-Documentation of HttpOnly cookie option
-As of Django 1.4, session cookies are always sent with the HttpOnly flag, which provides some additional protection from cross-site scripting attacks by denying client-side scripts access to the session cookie.
-
-Though not directly a security issue in Django, it has been reported that the Django 1.4 documentation incorrectly described this change, by claiming that this was now the default for all cookies set by the HttpResponse.set_cookie() method.
-
-The Django documentation has been updated to reflect that this only applies to the session cookie. Users of Django are encouraged to review their use of set_cookie() to ensure that the HttpOnly flag is being set or unset appropriately.
-
-Affected versions
-The Host header issue described above is present in the following versions of Django:
-
-Django 1.3 release series (all versions)
-Django 1.4 release series (all versions)
-Django master development branch (soon to become Django 1.5)
-The HttpOnly cookie documentation issue is present in the following versions of Django:
-
-Django 1.4 release series (all versions)
-Django master development branch
-Resolution
-Patches have been applied to Django's development master branch, and to the 1.4 and 1.3 release branches, which resolve the issues described above. The patches may be obtained directly from the following changesets:
-
-Development master branch: commit for the Host header issue and commit for the HttpOnly cookie documentation issue.
-Django 1.4: commit for the Host header issue and commit for the HttpOnly cookie documentation issue.
-Django 1.3: commit for the Host header issue.
-The following new releases have been issued:
-
-Django 1.4.2 (download | checksums)
-Django 1.3.4 (download | checksums)
-As Django's development branch is currently in a pre-alpha state, users are strongly advised not to be running production deployments from it; if you are currently doing so, however, you are urged to upgrade imediately to the latest HEAD, which contains the above patches.
-
-Credits
-The Host header issue was reported by James Kettle. The HttpOnly cookie documentation issue was reported by Preston Holmes, who is now a committer on Django.
-
-General notes regarding security reporting
-As always, we ask that potential security issues be reported via private email to security@djangoproject.com, and not via Django's Trac instance or the django-developers list. Please see our security policies for further information.
-
-Posted by James Bennett on October 17, 2012
-
-Django Sprint in Stockholm, Sweden
-I’m very happy to announce that there will be a two-day Django sprint on November 17-18 in Stockholm, Sweden. Thanks to the Django Software Foundation Django core developer Jannis Leidel will be there in person to help out. Organized by the Django Stockholm Meetup Group.
-
-The sprint will be focused on Django 1.5 RC1, helping out getting it as stable and bug-free as possible. It’s scheduled for release on November 26, one week after the sprint. It's also possible to work on 1.6.
-
-The venue is Fyndiq office, located in the Stockholm city centre and has 50 spots. The sprint will start at 10 AM CET on Saturday and finish Sunday evening. There will also be a chance to hang out together at the location the night before the sprint on Friday with drinks and snacks.
-
-Register yourself if you want to attend in person. More information can also be found on the Django wiki sprint page.
-
-If you’re unable get to Stockholm in person you are invited to participate online from wherever you are. Add your name under Roster in the sprint page. Core developers will be available in the Freenode IRC channel #django-sprint in order to review tickets and to assist you in the sprinting process.
-
-We hope you can join us and help make the sprints as successful as possible.
-
-Posted by Jannis Leidel on October 10, 2012
-
-The DSF supports Getting Started With Django
-As a community, we've always valued documentation - no feature is added to Django without accompanying documentation. Documentation improvements are frequently accepted independent of feature work.
-
-When Django was initially released in 2005, screencasts were a fairly new - used for pitching (or demoing) a product in a short, effective way. They were a good bit of work to produce, and we knew changes were coming - so we waited for Django 1.0. When 1.0 was released in 2008, Django had already had some signicant acceptance, and screencasts seemed a little passé.
-
-But somehow we've made it 7 years without a richer introduction to the framework. The tutorial covers only a small part of the rich framework that Django's grown into, promising more help "coming soon".
-
-Thankfully, Kenneth Love has stepped up with a Kickstarter campaign to produce a series of videos: Getting Started With Django. The DSF is proud to join the community's support of this project by donating $2,000 towards the campaign - helping to reach the first stretch goal of making the videos free for download.
-
-If you would like to keep up to date or help with the production process, please join his mailing list.
-
-Posted by Jeremy Dunck on September 11, 2012
-
-DjangoCon US is less than two weeks away
-DjangoCon US (3rd-8th September), to be held in Washington D.C., is less than two weeks away.
-
-The packed schedule of talks has been posted, as has the list of tutorials to be held on the day before the conference. At the conclusion of formal conference proceedings, we'll be sprinting for 2 days.
-
-The keynote speakers have also been announced. Eric Sterling, President of the Criminal Justice Policy Foundation will be speaking on the challenge of building platforms for political power and change; Geoff Schmidt, a principal developer of Meteor, will be sharing insights from Meteor's design that could benefit Django and discuss how Meteor and Django can work together to build the real-time APIs of the future; and Selena Deckelmann will be speaking on reforming computer science education.
-
-Tickets are still available. Sign up, join in and enjoy everything that the biggest Django event has to offer.
-
-Posted by Russell Keith-Magee on August 21, 2012
-
-Experimental Python 3 support
-A little bit of history
-In May, Vinay Sajip published a fork proving that it was possible to support both Python 2 and 3 with a single codebase, and pass the entire test suite. This fork built upon earlier efforts by Martin von Löwis.
-
-Shortly after, the core team decided to use six as a compatibility layer, rather than an ad-hoc library. The goal was not only to cover Django's needs, but also to choose a solution that would work for the ecosystem at large. Starting with Django 1.5, six will be bundled as django.utils.six, and thus available for all Django applications that use the same porting strategy as Django itself.
-
-The first actual step towards Python 3 support was to remove the u prefixes of unicode strings and add the unicode_literals future import. This change was committed at the DjangoCon Europe sprints in July.
-
-Then the biggest part of the work happened over the last few weeks, with hundreds of commits updating various parts of Django.
-
-The core team focused on writing Python 3 code with Python 2 compatibility, rather than the opposite, in order to future-proof the code base. In order to avoid confusion, functions and classes whose name included string or unicode were renamed to bytes and text respectively. As a consequence, the port was significantly more invasive than Vinay Sajip's proof of concept.
-
-On the bright side, since string encoding and decoding operations need to be correct under Python 3, several approximations were corrected during the porting effort. Even though the compatibility code adds some noise, the resulting code is cleaner in many places.
-
-I'd like to thank all the community members and core developers who contributed to this huge project.
-
-What's next?
-Does this mean that Django is ready to use with Python 3? Not yet!
-
-First, Django has received next to none real-life testing under Python 3. Consider the code pre-alpha.
-
-Then, while the core team did its best to eliminate bugs, the test suite doesn't cover all possible uses of Django. That's where the community comes in.
-
-We need your help to test the development version of Django, not only to report bugs on Python 3, but also regressions on Python 2. While Django is very conservative with regards to backwards compatibility, mistakes are always possible, and it's likely that the massive refactoring work introduced some regressions.
-
-Finally, Django is much more than a web framework — it's an ecosystem of pluggable applications. At this point, few third-party applications support Python 3. Authors are strongly encouraged to port their pluggable applications as soon as possible. Porting tips are available in the documentation.
-
-Posted by Aymeric Augustin on August 19, 2012
-
-Django and security
-Following last week's security releases, we've received a few questions, and also noted some confusion.
-
-To answer those questions and clear up any confusion, today we've added a new section to the Django documentation, outlining Django's security policies in detail. Our hope is for this document to be a one-stop shop for any questions you may have about how the Django project handles security issues; if there's anything missing from it, please let us know. And if you need a convenient, easy-to-remember URL, djangoproject.com/security/ redirects to this document.
-
-In particular, we'd like to encourage all users of Django to read the sections on who receives security notifications, how to request them and what the criteria are for inclusion on our security notification list. For obvious reasons, that list simply cannot include most users of Django, and must be kept small in order to serve its intended purpose.
-
-We also strongly encourage all users of Django to subscribe to the django-announce mailing list, which is a low-traffic list serving only to announce new Django releases.
-
-Posted by James Bennett on August 7, 2012
-
-Django 1.3 bugfix release
-Following Monday's security releases, we began receiving reports that one of the fixes applied was breaking Python 2.4 compatibility for Django 1.3. Since Python 2.4 is a supported Python version for that release series, today we are issuing the following new release:
-
-Django 1.3.3 (download | checksums)
-The patch for this can be viewed in our git repository as well, for review purposes.
-
-Users of the Django 1.3 release series who are on Python 2.4 are encouraged to upgrade to this new package; other users of Django 1.3 are unaffected.
-
-Posted by James Bennett on August 1, 2012
-
-Apply for financial assistance to DjangoCon US
-If you’d like to go to DjangoCon 2012 in Washington, D.C. — or know a talented developer who does — but cannot attend due to financial hardship, please apply for financial aid through DjangoCon. And, if you’re a PyLady (as opposed to a PyLaddie), please indicate that you would like to be considered for a PyLadies grant on that form. Your application will be confidential unless you prefer otherwise.
-
-This year’s conference is from Sept. 3 to Sept. 9. The deadline for the grant submission is Friday, August 3rd. We apologize for the short notice, but we know that people need time to make travel plans/request days off from work, etc. You will hear from us by the end of the week after applications are submitted.
-
-If you know of a talented, deserving developer (of any gender) who might benefit greatly from attending DjangoCon, please encourage them to apply. Many thanks to Lynn Root, PyLadies, the DjangoCon organizers and the Python Software Foundation for helping manage this program.
-
-Posted by Jeremy Dunck on July 30, 2012
-
-{% endcomment %}
 {% endblock body %}
+
+{% block secondary %}
+{% include "includes/sidebar-news.html" %}
+{% endblock %}

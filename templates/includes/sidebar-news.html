@@ -1,0 +1,44 @@
+{% load static %}
+{% load url from future %}
+
+<div>
+	<h2><span>Upcoming Events</span></h2>
+	<ul class="list-events">
+		<li>
+			<i class="icon-calendar"></i>
+			<a href="#">DjangoCon 2013 Call for Papers</a>
+			<span class="meta">April 7th, 2013  |  Berlin, Germany</span>
+		</li>
+		<li>
+			<i class="icon-calendar"></i>
+			<a href="#">DjangoCon Europe 2013 Call for Papers</a>
+			<span class="meta">April 7th, 2013  |  Berlin, Germany</span>
+		</li>
+		<li>
+			<i class="icon-calendar"></i>
+			<a href="#">Call for Papers for DjangoCon 2013</a>
+			<span class="meta">April 7th, 2013  |  Berlin, Germany</span>
+		</li>
+	</ul>
+	<a class="all-events" href="#">All events</a>
+</div>
+
+<!-- TODO: Remove Toolbox image -->
+<hr class="hash" />
+<img class="toolbox" src="{% static 'images/temps/sub-nav.png' %}" alt="temporary navigation placeholder" />
+
+<div class="toolbox">
+	<h2><span>Tags</span></h2>
+	<ul>
+		<li><a href="#">Django Software Foundation</a></li>
+		<li><a href="#">Events</a></li>
+		<li><a href="#">Conferences</a></li>
+		<li><a href="#">Release Announcements</a></li>
+		<li><a href="#">Security</a></li>
+	</ul>
+	<form action="#">
+		<input type="text" placeholder="Search news">
+		<button type="submit">Go</button>
+	</form>
+	<a class="rss" href="/news/rss/">Subscribe to RSS</a>
+</div>
