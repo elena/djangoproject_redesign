@@ -1961,6 +1961,8 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
           text-decoration: none;
           text-transform: uppercase;
           width: 100%; }
+          [role="banner"] .nav-primary li a:hover {
+            color: #b1cb2c; }
         [role="banner"] .nav-primary li i {
           font-size: 20px;
           font-size: 2rem;
@@ -2013,9 +2015,9 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
             right: 0;
             top: 0; }
           [role="banner"] .nav-secondary li a:hover {
-            color: #1e996a; }
+            color: #b1cb2c; }
             [role="banner"] .nav-secondary li a:hover:after {
-              background: #1e996a; }
+              background: #b1cb2c !important; }
         [role="banner"] .nav-secondary li.active a:after {
           background: #092e20; }
 
@@ -2031,10 +2033,9 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
       display: block;
       height: 30px;
       margin: 15px auto;
-      width: 80px; }
-      [role="contentinfo"] .logo img {
-        display: block;
-        width: 100%; }
+      width: 80px;
+      background: url(../images/logo-white.svg) 0 0 no-repeat;
+      background-size: 100%; }
       .no-svg [role="contentinfo"] .logo {
         background: url(../images/logo-white-small.png) 0 0 no-repeat; }
     [role="contentinfo"] .label, [role="contentinfo"] .learn .label {
@@ -2051,7 +2052,7 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
         content: "";
         display: block;
         position: absolute;
-        height: 8px;
+        height: 6px;
         left: 0;
         right: 0;
         bottom: 0;
@@ -2090,7 +2091,7 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
           content: "";
           display: block;
           position: absolute;
-          height: 8px;
+          height: 6px;
           left: 0;
           right: 0;
           bottom: 0;
@@ -2102,24 +2103,22 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
           min-width: 92px; }
         [role="contentinfo"] ul.thanks a {
           display: block;
-          margin: 10px auto; }
+          margin: 10px auto;
+          width: 60px; }
           [role="contentinfo"] ul.thanks a.mediatemple {
             background: url(../images/media-temple.svg) 0 0 no-repeat;
-            height: 32px;
-            width: 80px; }
+            height: 24px; }
             .no-svg [role="contentinfo"] ul.thanks a.mediatemple {
               background: url(../images/media-temple.png) 0 0 no-repeat; }
           [role="contentinfo"] ul.thanks a.threespot {
             background: url(../images/threespot.svg) 0 0 no-repeat;
-            height: 19px;
-            width: 80px;
-            margin: 20px auto; }
+            height: 15px;
+            margin: 18px auto; }
             .no-svg [role="contentinfo"] ul.thanks a.threespot {
               background: url(../images/threespot.png) 0 0 no-repeat; }
           [role="contentinfo"] ul.thanks a.typekit {
             background: url(../images/typekit.png) 0 0 no-repeat;
-            height: 25px;
-            width: 91px;
+            height: 16px;
             margin: 15px auto; }
             .no-svg [role="contentinfo"] ul.thanks a.typekit {
               background: url(../images/typekit.png) 0 0 no-repeat; }
@@ -2138,7 +2137,7 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
           content: "";
           display: block;
           position: absolute;
-          height: 8px;
+          height: 6px;
           left: 0;
           right: 0;
           bottom: 0;
@@ -2239,10 +2238,13 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
       .header > *.toolbox {
         background: none; }
 
-  .nav-pagination {
+  .nav-pagination, .nav-pagination-large {
     display: block;
     width: 100%;
     margin: 30px auto; }
+
+  .nav-pagination-large {
+    display: none; }
 
   img.toolbox {
     display: block;
@@ -2282,7 +2284,7 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
   /*
   * Hide only visually, but have it available for screenreaders: h5bp.com/v
   */
-  .visuallyhidden, [role="banner"] .menu-button span, .no-svg [role="contentinfo"] .logo img {
+  .visuallyhidden, [role="banner"] .menu-button span {
     border: 0;
     clip: rect(0 0 0 0);
     height: 1px;
@@ -2296,10 +2298,9 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
   * Extends the .visuallyhidden class to allow the element to be focusable
   * when navigated to via the keyboard: h5bp.com/p
   */
-  .visuallyhidden.focusable:active, [role="banner"] .menu-button span.focusable:active, .no-svg [role="contentinfo"] .logo img.focusable:active,
+  .visuallyhidden.focusable:active, [role="banner"] .menu-button span.focusable:active,
   .visuallyhidden.focusable:focus,
-  [role="banner"] .menu-button span.focusable:focus,
-  .no-svg [role="contentinfo"] .logo img.focusable:focus {
+  [role="banner"] .menu-button span.focusable:focus {
     clip: auto;
     height: auto;
     margin: 0;
@@ -2362,7 +2363,7 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
       background: url(../images/patterns/hash-dark@2x.png) repeat;
       background-size: 4px 4px; } }
 
-@media only screen and (min-width: 720px) {
+@media only screen and (min-width: 768px) {
   .container {
     width: 91.66667%;
     max-width: 1100px;
@@ -2418,7 +2419,7 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
     float: left;
     width: 32.67045%;
     margin-left: 6.39205%;
-    padding: 0; }
+    padding: 0 0 40px 0; }
 
   [role="contentinfo"] {
     clear: both; }
@@ -2436,6 +2437,17 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
       margin-left: 0; }
     [role="contentinfo"] .copyright {
       clear: both; }
+    [role="contentinfo"] ul.thanks li {
+      width: 12.78409%;
+      margin: 0; }
+      [role="contentinfo"] ul.thanks li:first-child {
+        margin-left: 30.39773%; }
+
+  .nav-pagination {
+    display: none; }
+
+  .nav-pagination-large {
+    display: block; }
 
   /* ==========================================================================
    Helper classes

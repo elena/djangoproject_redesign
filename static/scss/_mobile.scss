@@ -91,6 +91,10 @@
 				text-decoration: none;
 				text-transform: uppercase;
 				width: 100%;
+
+				&:hover {
+					color: $green-medium;
+				}
 			}
 
 			i {
@@ -160,12 +164,11 @@
 					right: 0;
 					top: 0;
 				}
-
 				&:hover {
-					color: lighten($green-dark, 25%);
+					color: $green-medium;
 
 					&:after {
-						background: lighten($green-dark, 25%);
+						background: $green-medium !important;
 					}
 				}
 			}
@@ -198,24 +201,16 @@
 		height: 30px;
 		margin: 15px auto;
 		width: 80px;
-
-		img {
-			display: block;
-			width: 100%;
-		}
+		background: url(../images/logo-white.svg) 0 0 no-repeat;
+		background-size: 100%;
 
 		.no-svg & { // NOTE: Modernizr use
 			background: url(../images/logo-white-small.png) 0 0 no-repeat;
-
-			img {
-				@extend .visuallyhidden;
-			}
 		}
 	}
 
 	.label {
 		@include colfax;
-		@include hash-border-light;
 		color: #FFF; 
 		font-weight: 700;
 		display: block;
@@ -223,6 +218,18 @@
 		position: relative;
 		padding-top: 25px;
 		text-transform: uppercase;
+
+		&:after {
+			@include hash-light;
+			content: "";
+			display: block;
+			position: absolute;
+			height: 6px;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			top: 0;
+		}
 
 		i {
 			@include font-size(30);
@@ -258,13 +265,24 @@
 		}
 
 		&.thanks {
-			@include hash-border-light;
 			@include font-size(11);
 			display: block;
 			height: 20px;
 			margin-top: 35px;
 			padding-top: 40px;
 			position: relative;
+
+			&:after {
+				@include hash-light;
+				content: "";
+				display: block;
+				position: absolute;
+				height: 6px;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				top: 0;
+			}
 
 			li {
 				display: block;
@@ -277,11 +295,11 @@
 				@extend .ir;
 				display: block;
 				margin: 10px auto;
+				width: 60px;
 
 				&.mediatemple {
 					background: url(../images/media-temple.svg) 0 0 no-repeat;
-					height: 32px;
-					width: 80px;
+					height: 24px;
 					
 					.no-svg & {
 						background: url(../images/media-temple.png) 0 0 no-repeat;
@@ -289,9 +307,8 @@
 				}
 				&.threespot {
 					background: url(../images/threespot.svg) 0 0 no-repeat;
-					height: 19px;
-					width: 80px;
-					margin: 20px auto;
+					height: 15px;
+					margin: 18px auto;
 					
 					.no-svg & {
 						background: url(../images/threespot.png) 0 0 no-repeat;
@@ -299,8 +316,7 @@
 				}
 				&.typekit { // TODO: Replace Typekit logo
 					background: url(../images/typekit.png) 0 0 no-repeat;
-					height: 25px;
-					width: 91px;
+					height: 16px;
 					margin: 15px auto;
 					
 					.no-svg & {
@@ -318,10 +334,21 @@
 		margin-top: 25px;
 
 		&.copyright {
-			@include hash-border-light;
 			margin-top: 35px;
 			padding-top: 45px;
 			position: relative;
+
+			&:after {
+				@include hash-light;
+				content: "";
+				display: block;
+				position: absolute;
+				height: 6px;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				top: 0;
+			}
 		}
 
 		a {
@@ -414,7 +441,7 @@
 			top: 0;
 			left: 0;
 			right: 0;
-			bottom: 0;
+			bottom: 0; 
 		}
 
 		&:first-child {
@@ -464,6 +491,11 @@
 	width: 100%;
 	margin: 30px auto;
 }
+.nav-pagination-large {
+	@extend .nav-pagination;
+	display: none;
+}
+
 
 // TODO: Build actual style for sub-nav
 img.toolbox {

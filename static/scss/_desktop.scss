@@ -78,7 +78,7 @@
 	float: left;
 	width: (230/704) * 100%;
 	margin-left: (45/704) * 100%;
-	padding: 0;
+	padding: 0 0 40px 0;
 }
 
 [role="contentinfo"] {
@@ -107,7 +107,33 @@
 	.copyright {
 		clear: both;
 	}
+
+	ul.thanks li {
+		width: (90/704) * 100%;
+		margin: 0;
+
+		&:first-child {
+			margin-left: (214/704) * 100%;
+		}
+	}
 }
+
+
+
+
+
+
+
+// TODO: Insert actual pagination styles
+.nav-pagination {
+	display: none;
+}
+.nav-pagination-large {
+	display: block;
+}
+
+
+
 
 // import helpers for @extend
 @import "helpers";

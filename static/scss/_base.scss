@@ -1,13 +1,9 @@
 // Colors
 $blue: #00acf3; 
-
 $gray-text: #7c7c7c; 
-
 $green-light: #e8f4d0; 
 $green-medium: #b1cb2c;
 $green-dark: #092e20;
-
-
 
 // @font-face
 @font-face {
@@ -75,6 +71,8 @@ $green-dark: #092e20;
 	font-family: 'Colfax', Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
 }
 
+// TODO: Change hash texture to SVG 
+
 // assorted mixins
 @mixin hash-dark {
 	background: url(../images/patterns/hash-dark.png) repeat;
@@ -101,34 +99,6 @@ $green-dark: #092e20;
 			background: url(../images/patterns/hash-light@2x.png) repeat;
 			background-size: 4px 4px;
 		}
-	}
-}
-
-@mixin hash-border-dark {
-	&:after {
-		@include hash-dark;
-		content: "";
-		display: block;
-		position: absolute;
-		height: 6px;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		top: 0;
-	}
-}
-
-@mixin hash-border-light {
-	&:after {
-		@include hash-light;
-		content: "";
-		display: block;
-		position: absolute;
-		height: 8px;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		top: 0;
 	}
 }
 
@@ -246,7 +216,18 @@ h3{
 	position: relative;
 	margin-top: 20px;
 	padding-top: 30px;
-	@include hash-border-dark;
+	
+	&:after {
+		@include hash-dark;
+		content: "";
+		display: block;
+		position: absolute;
+		height: 6px;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		top: 0;
+	}
 }
 
 .meta {
@@ -257,23 +238,6 @@ h3{
 		@include blue-link;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // Pygments Code hightlighting Styles
