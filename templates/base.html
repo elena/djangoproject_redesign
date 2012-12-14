@@ -6,7 +6,7 @@
 <head>{% load compress static %}
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="{% block description %}{% endblock %}">
 	<link rel="shortcut icon" href="{% static "images/favicon.ico" %}" >
 
@@ -38,7 +38,8 @@
 	
 	<div class="container">
 		{% block body %}{% endblock %}
-		<div class="aside">
+		<div class="aside" role="complementary">
+			<h1 class="visuallyhidden">Additional Information</h1>
 			{% block secondary %}{% endblock %}
 		</div>
 	</div>

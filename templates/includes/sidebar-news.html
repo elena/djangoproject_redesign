@@ -1,8 +1,8 @@
 {% load static %}
 {% load url from future %}
 
-<div>
-	<h2><span>Upcoming Events</span></h2>
+<div class="upcomding-events">
+	<h2 class="h2"><span>Upcoming Events</span></h2>
 	<ul class="list-events">
 		<li>
 			<i class="icon-calendar"></i>
@@ -23,7 +23,7 @@
 <img class="toolbox" src="{% static 'images/temps/search.png' %}" alt="temporary navigation placeholder" />
 
 <div class="toolbox">
-	<h2><span>Tags</span></h2>
+	<h2 class="h2"><span>Tags</span></h2>
 	<ul>
 		<li><a href="#">Django Software Foundation</a></li>
 		<li><a href="#">Events</a></li>
@@ -31,7 +31,7 @@
 		<li><a href="#">Release Announcements</a></li>
 		<li><a href="#">Security</a></li>
 	</ul>
-	<form action="#">
+	<form action="#" role="search">
 		<input type="text" placeholder="Search news">
 		<button type="submit">Go</button>
 	</form>

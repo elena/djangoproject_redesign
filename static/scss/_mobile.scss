@@ -1,7 +1,7 @@
 // Header
 [role="banner"] {
 	background: $green-light;
-	@extend .clearfix;
+	@include clearfix;
 	overflow: hidden;
 	padding-top: 80px;
 	padding-bottom: 10px;
@@ -10,8 +10,8 @@
 	
 	// logo
 	.logo {
-		@extend .ir;
-		background: url(../images/logo-white.svg) center center no-repeat $green-medium;
+		@include ir;
+		background: url(../images/logo-white.png) center center no-repeat $green-medium;
 		border-radius: 50%;
 		display: block;
 		left: -50px;
@@ -21,19 +21,8 @@
 		width: 300px;
 		z-index: -1;
 
-		// if they have border radius but no svg
-		.no-svg.borderradius & { // NOTE: Modernizr Usage
-			background: url(../images/logo-white.png) center center no-repeat $green-medium;
-		}
-
-		// if they have svg but no border radius
-		.svg.no-borderradius & { // NOTE: Modernizr Usage
-			background: url(../images/logo-green.svg) center center no-repeat;
-		}
-
-		// if they have neight svg nor border-radius
-		.no-svg.no-borderradius & { // NOTE: Modernizr Usage
-			background: url(../images/logo-green.png) center center no-repeat;
+		.svg & {
+			background: url(../images/logo-white.svg) center center no-repeat $green-medium;
 		}
 	}
 
@@ -56,7 +45,7 @@
 		}
 		
 		span {
-			@extend .visuallyhidden;
+			@include visuallyhidden;
 		}
 	}
 
@@ -186,7 +175,7 @@
 
 // Footer
 [role="contentinfo"] {
-	@extend .clearfix;
+	@include clearfix;
 	@include colfax;
 	background: $green-dark;
 	border-top: 1px solid lighten($green-dark, 20%);
@@ -196,7 +185,7 @@
 	text-align: center;
 
 	.logo {
-		@extend .ir;
+		@include ir;
 		display: block;
 		height: 30px;
 		margin: 15px auto;
@@ -292,26 +281,26 @@
 			}
 
 			a {
-				@extend .ir;
+				@include ir;
 				display: block;
 				margin: 10px auto;
 				width: 60px;
 
 				&.mediatemple {
-					background: url(../images/media-temple.svg) 0 0 no-repeat;
+					background: url(../images/media-temple.png) 0 0 no-repeat;
 					height: 24px;
 					
-					.no-svg & {
-						background: url(../images/media-temple.png) 0 0 no-repeat;
+					.svg & { // NOTE: Modernizr usage
+						background: url(../images/media-temple.svg) 0 0 no-repeat;	
 					}
 				}
-				&.threespot {
-					background: url(../images/threespot.svg) 0 0 no-repeat;
+				&.threespot { 
+					background: url(../images/threespot.png) 0 0 no-repeat;
 					height: 15px;
 					margin: 18px auto;
 					
-					.no-svg & {
-						background: url(../images/threespot.png) 0 0 no-repeat;
+					.svg & { // NOTE: Modernizr usage
+						background: url(../images/threespot.svg) 0 0 no-repeat;
 					}
 				}
 				&.typekit { // TODO: Replace Typekit logo
@@ -319,7 +308,7 @@
 					height: 16px;
 					margin: 15px auto;
 					
-					.no-svg & {
+					.svg & { // NOTE: Modernizr usage
 						background: url(../images/typekit.png) 0 0 no-repeat;
 					}
 				}
@@ -373,10 +362,10 @@
 	li {
 		position: relative;
 		margin-top: 35px;
-		padding-top: 25px;
+		padding-top: 5px;
 
-		h3 {
-			margin: 15px 0;
+		.h3 {
+			margin-bottom: 15px;
 		}
 
 		&:after {
@@ -518,7 +507,3 @@ hr.hash {
 	margin-top: 20px;
 	@include hash-dark;
 }
-
-
-// import helpers so that @extend works
-@import "helpers";

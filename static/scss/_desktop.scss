@@ -74,7 +74,7 @@
 	padding: 0;
 }
 
-.aside {
+[role="complementary"] {
 	float: left;
 	width: (230/704) * 100%;
 	margin-left: (45/704) * 100%;
@@ -131,9 +131,3 @@
 .nav-pagination-large {
 	display: block;
 }
-
-
-
-
-// import helpers for @extend
-@import "helpers";

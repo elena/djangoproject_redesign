@@ -5,6 +5,8 @@ $green-light: #e8f4d0;
 $green-medium: #b1cb2c;
 $green-dark: #092e20;
 
+
+
 // @font-face
 @font-face {
 	font-family: 'Elena';
@@ -63,7 +65,11 @@ $green-dark: #092e20;
 	font-style: normal;
 }
 
-// font mixins
+
+
+
+
+// Font Mixins
 @mixin elena {
 	font-family: 'Elena', Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
 }
@@ -71,11 +77,58 @@ $green-dark: #092e20;
 	font-family: 'Colfax', Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
 }
 
-// TODO: Change hash texture to SVG 
 
-// assorted mixins
+
+
+
+
+
+
+
+// Boilerplate Helper mixins
+@mixin ir { // Image replacement
+	font: 0/0 a;
+	text-shadow: none;
+	color: transparent;
+}
+@mixin hidden { // Hide from both screenreaders and browsers
+	display: none !important;
+	visibility: hidden;
+}
+@mixin visuallyhidden { // Hide only visually
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+@mixin invisible { // Hide visually and from screenreaders, but maintain layout
+	visibility: hidden;
+}
+@mixin clearfix { // Clearfix helper / Used to contain floats
+	&:before,
+	&:after { 
+		content: "";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+	*zoom: 1;
+}
+
+
+
+
+
+
+
+// Custom Mixins
 @mixin hash-dark {
-	background: url(../images/patterns/hash-dark.png) repeat;
+	background: url(../images/patterns/hash-dark.png) repeat; // TODO: Change hash texture to SVG 
 	
 	@media only screen and 
 	(-webkit-min-device-pixel-ratio: 2), 
@@ -87,7 +140,6 @@ $green-dark: #092e20;
 		}
 	}
 }
-
 @mixin hash-light {
 	background: url(../images/patterns/hash-light.png) repeat;
 	
@@ -101,7 +153,6 @@ $green-dark: #092e20;
 		}
 	}
 }
-
 @mixin blue-link {
 	color: $blue;
 	text-decoration: none;
@@ -112,7 +163,15 @@ $green-dark: #092e20;
 	}
 }
 
-// setup font sizing mixin
+
+
+
+
+
+
+
+
+// Setup Font Sizing Mixin
 html {
 	font-size: 62.5%;
 }
@@ -121,7 +180,7 @@ html {
 	font-size: $size/10 + rem; 
 }
 
-// default type / colors
+// Default Type / Colors
 body {
 	background: #FFF;
 	color: $gray-text;
@@ -131,7 +190,7 @@ body {
 	-webkit-font-smoothing: antialiased;
 }
 
-// Small screen (sub-mobile layout items)
+// Small Screen (sub-mobile Layout Items)
 body > * {
 	padding: 0 20px;
 }
@@ -140,7 +199,7 @@ body > * {
 	display: block;
 }
 
-// links
+// Links
 a, 
 a:active, 
 a:focus {
@@ -152,8 +211,8 @@ a:focus {
 	}
 }
 
-// headers
-h1,h2,h3,h4,h5,h6 {
+// Headers
+.h1,.h2,.h3,.h4,.h5,.h6 {
 	@include colfax;
 	font-weight: normal;
 
@@ -161,11 +220,11 @@ h1,h2,h3,h4,h5,h6 {
 		text-decoration: none;
 	}
 }
-h1{
+.h1{
 	@include font-size(30);
 	font-weight: 900;
 }
-h2{
+.h2{
 	@include hash-dark;
 	@include font-size(16);
 	color: $blue;
@@ -184,9 +243,10 @@ h2{
 		padding: 20px 15px 15px 15px;
 	}
 }
-h3{
+.h3{
 	@include font-size(24);
 	color: $blue;	
+	margin-top: 35px;
 
 	a {
 		@include blue-link;
@@ -194,7 +254,7 @@ h3{
 }
 
 
-// recycleable style classes
+// Recycleable Style Classes
 .link-readmore {
 	@include blue-link;
 	@include colfax;
@@ -240,7 +300,7 @@ h3{
 }
 
 
-// Pygments Code hightlighting Styles
+// Pygments Code Hightlighting Styles
 
 .highlight {
 	@include font-size(13);

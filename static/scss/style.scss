@@ -19,9 +19,10 @@
 	@import "desktop";
 }
 
-// .lt-ie9 {
-// 	@import "desktop";
-// }
+.lt-ie9 {
+	@import "mobile";
+	@import "desktop";
+}
 
 // import helpers last
 @import "helpers";
