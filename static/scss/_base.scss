@@ -3,7 +3,7 @@ $blue: #00acf3;
 $gray-text: #7c7c7c; 
 $green-light: #e8f4d0; 
 $green-medium: #b1cb2c;
-$green-dark: #092e20;
+$green-dark: #082d20;
 
 
 
@@ -72,9 +72,15 @@ $green-dark: #092e20;
 // Font Mixins
 @mixin elena {
 	font-family: 'Elena', Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
+
+	// font-family: "freight-text-pro", serif;
+	
 }
 @mixin colfax {
 	font-family: 'Colfax', Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
+
+	// font-family: "freight-sans-pro", sans-serif;
+	
 }
 
 
@@ -128,31 +134,23 @@ $green-dark: #092e20;
 
 // Custom Mixins
 @mixin hash-dark {
-	background: url(../images/patterns/hash-dark.png) repeat; // TODO: Change hash texture to SVG 
-	
-	@media only screen and 
-	(-webkit-min-device-pixel-ratio: 2), 
-	(min-resolution: 192dpi) { 
-		
-		& {
-			background: url(../images/patterns/hash-dark@2x.png) repeat;
-			background-size: 4px 4px;
-		}
+	background: url(../images/patterns/hash-dark@2x.png) repeat; 
+	background-size: 4px;
+
+	.lt-ie9 & {
+		background: url(../images/patterns/hash-dark.png) repeat; 
 	}
 }
+
 @mixin hash-light {
-	background: url(../images/patterns/hash-light.png) repeat;
-	
-	@media only screen and 
-	(-webkit-min-device-pixel-ratio: 2), 
-	(min-resolution: 192dpi) { 
-		
-		& {
-			background: url(../images/patterns/hash-light@2x.png) repeat;
-			background-size: 4px 4px;
-		}
+	background: url(../images/patterns/hash-light@2x.png) repeat;
+	background-size: 4px;
+
+	.lt-ie9 & {
+		background: url(../images/patterns/hash-light.png) repeat;
 	}
 }
+
 @mixin blue-link {
 	color: $blue;
 	text-decoration: none;

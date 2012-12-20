@@ -399,7 +399,8 @@ a:focus {
   font-weight: 900; }
 
 .h2 {
-  background: url(../images/patterns/hash-dark.png) repeat;
+  background: url(../images/patterns/hash-dark@2x.png) repeat;
+  background-size: 4px;
   font-size: 16px;
   font-size: 1.6rem;
   color: #00acf3;
@@ -407,10 +408,8 @@ a:focus {
   margin-top: 35px;
   padding: 8px 6px;
   text-transform: uppercase; }
-  @media only screen and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    .h2 {
-      background: url(../images/patterns/hash-dark@2x.png) repeat;
-      background-size: 4px 4px; } }
+  .lt-ie9 .h2 {
+    background: url(../images/patterns/hash-dark.png) repeat; }
   .h2 span {
     background: #FFF;
     display: inline-block;
@@ -455,7 +454,8 @@ a:focus {
   margin-top: 20px;
   padding-top: 30px; }
   .all-events:after {
-    background: url(../images/patterns/hash-dark.png) repeat;
+    background: url(../images/patterns/hash-dark@2x.png) repeat;
+    background-size: 4px;
     content: "";
     display: block;
     position: absolute;
@@ -464,10 +464,8 @@ a:focus {
     right: 0;
     bottom: 0;
     top: 0; }
-    @media only screen and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-      .all-events:after {
-        background: url(../images/patterns/hash-dark@2x.png) repeat;
-        background-size: 4px 4px; } }
+    .lt-ie9 .all-events:after {
+      background: url(../images/patterns/hash-dark.png) repeat; }
 
 .meta {
   font-family: 'Colfax', Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
@@ -1926,6 +1924,9 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
       z-index: -1; }
       .svg [role="banner"] .logo {
         background: url(../images/logo-white.svg) center center no-repeat #b1cb2c; }
+    [role="banner"] .tagline {
+      position: absolute;
+      left: -9999px; }
     [role="banner"] .menu-button {
       font-size: 20px;
       font-size: 2rem;
@@ -1951,9 +1952,16 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
         padding: 0;
         position: absolute;
         width: 1px; }
-    [role="banner"] .tagline {
-      position: absolute;
-      left: -9999px; }
+    [role="banner"] .nav-menu-on {
+      max-height: 0;
+      overflow: hidden;
+      -webkit-transition: all 0.3s ease-out;
+      -moz-transition: all 0.3s ease-out;
+      -ms-transition: all 0.3s ease-out;
+      -o-transition: all 0.3s ease-out;
+      transition: all 0.3s ease-out; }
+      [role="banner"] .nav-menu-on.active {
+        max-height: 500px; }
     [role="banner"] .nav-primary {
       list-style: none;
       margin: 0;
@@ -1966,7 +1974,7 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
           font-family: 'Colfax', Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
           border-radius: 3px;
           color: #FFF;
-          background: #092e20;
+          background: #082d20;
           font-weight: 700;
           display: block;
           line-height: 1.1;
@@ -1983,11 +1991,11 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
           font-size: 2rem;
           padding-right: 5px; }
         [role="banner"] .nav-primary li:first-child a {
-          background: url(../images/patterns/pattern1.png) center center repeat #092e20; }
+          background: url(../images/patterns/pattern1.png) center center repeat #082d20; }
         [role="banner"] .nav-primary li:nth-child(2) a {
-          background: url(../images/patterns/pattern2.png) center center repeat #092e20; }
+          background: url(../images/patterns/pattern2.png) center center repeat #082d20; }
         [role="banner"] .nav-primary li:nth-child(3) a {
-          background: url(../images/patterns/pattern3.png) center center repeat #092e20; }
+          background: url(../images/patterns/pattern3.png) center center repeat #082d20; }
     [role="banner"] .nav-secondary {
       list-style: none;
       margin: 10px 0 0 0;
@@ -2009,7 +2017,7 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
           border: none;
           margin-left: 0; }
         [role="banner"] .nav-secondary li a {
-          color: #092e20;
+          color: #082d20;
           display: inline-block;
           zoom: 1;
           *display: inline;
@@ -2021,7 +2029,8 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
           position: relative;
           text-decoration: none; }
           [role="banner"] .nav-secondary li a:after {
-            background: url(../images/patterns/hash-dark.png) repeat;
+            background: url(../images/patterns/hash-dark@2x.png) repeat;
+            background-size: 4px;
             content: "";
             bottom: 35px;
             display: block;
@@ -2029,18 +2038,20 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
             position: absolute;
             right: 0;
             top: 0; }
+            .lt-ie9 [role="banner"] .nav-secondary li a:after {
+              background: url(../images/patterns/hash-dark.png) repeat; }
           [role="banner"] .nav-secondary li a:hover {
             color: #b1cb2c; }
             [role="banner"] .nav-secondary li a:hover:after {
               background: #b1cb2c !important; }
         [role="banner"] .nav-secondary li.active a:after {
-          background: #092e20; }
+          background: #082d20; }
 
   [role="contentinfo"] {
     *zoom: 1;
     font-family: 'Colfax', Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
-    background: #092e20;
-    border-top: 1px solid #1a835b;
+    background: #082d20;
+    border-top: 1px solid #17845e;
     color: #e8f4d0;
     margin-top: 40px;
     padding-bottom: 20px;
@@ -2058,10 +2069,10 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
       height: 30px;
       margin: 15px auto;
       width: 80px;
-      background: url(../images/logo-white.svg) 0 0 no-repeat;
-      background-size: 100%; }
-      .no-svg [role="contentinfo"] .logo {
-        background: url(../images/logo-white-small.png) 0 0 no-repeat; }
+      background: url(../images/logo-white-small.png) 0 0 no-repeat; }
+      .svg [role="contentinfo"] .logo {
+        background: url(../images/logo-white.svg) 0 0 no-repeat;
+        background-size: 100%; }
     [role="contentinfo"] .label, [role="contentinfo"] .learn .label, .lt-ie9 [role="contentinfo"] .learn .label {
       font-family: 'Colfax', Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
       color: #FFF;
@@ -2072,7 +2083,8 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
       padding-top: 25px;
       text-transform: uppercase; }
       [role="contentinfo"] .label:after, [role="contentinfo"] .learn .label:after, .lt-ie9 [role="contentinfo"] .learn .label:after {
-        background: url(../images/patterns/hash-light.png) repeat;
+        background: url(../images/patterns/hash-light@2x.png) repeat;
+        background-size: 4px;
         content: "";
         display: block;
         position: absolute;
@@ -2081,6 +2093,8 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
         right: 0;
         bottom: 0;
         top: 0; }
+        .lt-ie9 [role="contentinfo"] .label:after, .lt-ie9 [role="contentinfo"] .learn .label:after, .lt-ie9 [role="contentinfo"] .learn .label:after {
+          background: url(../images/patterns/hash-light.png) repeat; }
       [role="contentinfo"] .label i, [role="contentinfo"] .learn .label i, .lt-ie9 [role="contentinfo"] .learn .label i {
         font-size: 30px;
         font-size: 3rem;
@@ -2111,7 +2125,8 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
         padding-top: 40px;
         position: relative; }
         [role="contentinfo"] ul.thanks:after {
-          background: url(../images/patterns/hash-light.png) repeat;
+          background: url(../images/patterns/hash-light@2x.png) repeat;
+          background-size: 4px;
           content: "";
           display: block;
           position: absolute;
@@ -2120,6 +2135,8 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
           right: 0;
           bottom: 0;
           top: 0; }
+          .lt-ie9 [role="contentinfo"] ul.thanks:after {
+            background: url(../images/patterns/hash-light.png) repeat; }
         [role="contentinfo"] ul.thanks li {
           display: block;
           float: left;
@@ -2147,8 +2164,6 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
             background: url(../images/typekit.png) 0 0 no-repeat;
             height: 16px;
             margin: 15px auto; }
-            .svg [role="contentinfo"] ul.thanks a.typekit {
-              background: url(../images/typekit.png) 0 0 no-repeat; }
     [role="contentinfo"] p {
       font-family: 'Elena', Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
       font-size: 14px;
@@ -2160,7 +2175,8 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
         padding-top: 45px;
         position: relative; }
         [role="contentinfo"] p.copyright:after {
-          background: url(../images/patterns/hash-light.png) repeat;
+          background: url(../images/patterns/hash-light@2x.png) repeat;
+          background-size: 4px;
           content: "";
           display: block;
           position: absolute;
@@ -2169,6 +2185,8 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
           right: 0;
           bottom: 0;
           top: 0; }
+          .lt-ie9 [role="contentinfo"] p.copyright:after {
+            background: url(../images/patterns/hash-light.png) repeat; }
       [role="contentinfo"] p a {
         color: #FFF;
         -webkit-tap-highlight-color: #b1cb2c; }
@@ -2186,7 +2204,8 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
       .list-news li .h3 {
         margin-bottom: 15px; }
       .list-news li:after {
-        background: url(../images/patterns/hash-dark.png) repeat;
+        background: url(../images/patterns/hash-dark@2x.png) repeat;
+        background-size: 4px;
         content: "";
         display: block;
         height: 7px;
@@ -2195,6 +2214,8 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
         left: 0;
         right: 0;
         bottom: 0; }
+        .lt-ie9 .list-news li:after {
+          background: url(../images/patterns/hash-dark.png) repeat; }
       .list-news li:first-child {
         margin-top: 0;
         padding-top: 0; }
@@ -2227,7 +2248,8 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
         top: 30px;
         left: 0; }
       .list-events li:after {
-        background: url(../images/patterns/hash-dark.png) repeat;
+        background: url(../images/patterns/hash-dark@2x.png) repeat;
+        background-size: 4px;
         content: "";
         display: block;
         height: 7px;
@@ -2236,6 +2258,8 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
         left: 0;
         right: 0;
         bottom: 0; }
+        .lt-ie9 .list-events li:after {
+          background: url(../images/patterns/hash-dark.png) repeat; }
       .list-events li:first-child {
         padding-top: 15px; }
         .list-events li:first-child i {
@@ -2256,8 +2280,11 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
         color: #73d6ff; }
 
   .header {
-    background: url(../images/patterns/hash-dark.png) repeat;
+    background: url(../images/patterns/hash-dark@2x.png) repeat;
+    background-size: 4px;
     padding: 20px; }
+    .lt-ie9 .header {
+      background: url(../images/patterns/hash-dark.png) repeat; }
     .header > * {
       background: #FFF;
       margin: 0 auto;
@@ -2289,40 +2316,10 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
     border: none;
     outline: none;
     margin-top: 20px;
-    background: url(../images/patterns/hash-dark.png) repeat; } }
-          @media only screen and (min-device-width: 320px) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-width: 320px) and (min-resolution: 192dpi) {
-            [role="banner"] .nav-secondary li a:after {
-              background: url(../images/patterns/hash-dark@2x.png) repeat;
-              background-size: 4px 4px; } }
-      @media only screen and (min-device-width: 320px) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-width: 320px) and (min-resolution: 192dpi) {
-        [role="contentinfo"] .label:after, .lt-ie9 [role="contentinfo"] .learn .label:after {
-          background: url(../images/patterns/hash-light@2x.png) repeat;
-          background-size: 4px 4px; } }
-        @media only screen and (min-device-width: 320px) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-width: 320px) and (min-resolution: 192dpi) {
-          [role="contentinfo"] ul.thanks:after {
-            background: url(../images/patterns/hash-light@2x.png) repeat;
-            background-size: 4px 4px; } }
-        @media only screen and (min-device-width: 320px) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-width: 320px) and (min-resolution: 192dpi) {
-          [role="contentinfo"] p.copyright:after {
-            background: url(../images/patterns/hash-light@2x.png) repeat;
-            background-size: 4px 4px; } }
-      @media only screen and (min-device-width: 320px) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-width: 320px) and (min-resolution: 192dpi) {
-        .list-news li:after {
-          background: url(../images/patterns/hash-dark@2x.png) repeat;
-          background-size: 4px 4px; } }
-      @media only screen and (min-device-width: 320px) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-width: 320px) and (min-resolution: 192dpi) {
-        .list-events li:after {
-          background: url(../images/patterns/hash-dark@2x.png) repeat;
-          background-size: 4px 4px; } }
-  @media only screen and (min-device-width: 320px) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-width: 320px) and (min-resolution: 192dpi) {
-    .header {
-      background: url(../images/patterns/hash-dark@2x.png) repeat;
-      background-size: 4px 4px; } }
-  @media only screen and (min-device-width: 320px) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-width: 320px) and (min-resolution: 192dpi) {
-    hr.hash {
-      background: url(../images/patterns/hash-dark@2x.png) repeat;
-      background-size: 4px 4px; } }
-
+    background: url(../images/patterns/hash-dark@2x.png) repeat;
+    background-size: 4px; }
+    .lt-ie9 hr.hash {
+      background: url(../images/patterns/hash-dark.png) repeat; } }
 @media only screen and (min-width: 768px) {
   .container {
     width: 91.66667%;
@@ -2351,6 +2348,8 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
       text-transform: uppercase;
       top: 22px;
       width: 25.71429%; }
+    [role="banner"] .nav-menu-on {
+      max-height: none; }
     [role="banner"] .nav-primary li {
       float: left;
       width: 32.28571%;
@@ -2436,6 +2435,9 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
     z-index: -1; }
     .svg .lt-ie9 [role="banner"] .logo {
       background: url(../images/logo-white.svg) center center no-repeat #b1cb2c; }
+  .lt-ie9 [role="banner"] .tagline {
+    position: absolute;
+    left: -9999px; }
   .lt-ie9 [role="banner"] .menu-button {
     font-size: 20px;
     font-size: 2rem;
@@ -2461,9 +2463,16 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
       padding: 0;
       position: absolute;
       width: 1px; }
-  .lt-ie9 [role="banner"] .tagline {
-    position: absolute;
-    left: -9999px; }
+  .lt-ie9 [role="banner"] .nav-menu-on {
+    max-height: 0;
+    overflow: hidden;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out; }
+    .lt-ie9 [role="banner"] .nav-menu-on.active {
+      max-height: 500px; }
   .lt-ie9 [role="banner"] .nav-primary {
     list-style: none;
     margin: 0;
@@ -2476,7 +2485,7 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
         font-family: 'Colfax', Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
         border-radius: 3px;
         color: #FFF;
-        background: #092e20;
+        background: #082d20;
         font-weight: 700;
         display: block;
         line-height: 1.1;
@@ -2493,11 +2502,11 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
         font-size: 2rem;
         padding-right: 5px; }
       .lt-ie9 [role="banner"] .nav-primary li:first-child a {
-        background: url(../images/patterns/pattern1.png) center center repeat #092e20; }
+        background: url(../images/patterns/pattern1.png) center center repeat #082d20; }
       .lt-ie9 [role="banner"] .nav-primary li:nth-child(2) a {
-        background: url(../images/patterns/pattern2.png) center center repeat #092e20; }
+        background: url(../images/patterns/pattern2.png) center center repeat #082d20; }
       .lt-ie9 [role="banner"] .nav-primary li:nth-child(3) a {
-        background: url(../images/patterns/pattern3.png) center center repeat #092e20; }
+        background: url(../images/patterns/pattern3.png) center center repeat #082d20; }
   .lt-ie9 [role="banner"] .nav-secondary {
     list-style: none;
     margin: 10px 0 0 0;
@@ -2519,7 +2528,7 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
         border: none;
         margin-left: 0; }
       .lt-ie9 [role="banner"] .nav-secondary li a {
-        color: #092e20;
+        color: #082d20;
         display: inline-block;
         zoom: 1;
         *display: inline;
@@ -2531,7 +2540,8 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
         position: relative;
         text-decoration: none; }
         .lt-ie9 [role="banner"] .nav-secondary li a:after {
-          background: url(../images/patterns/hash-dark.png) repeat;
+          background: url(../images/patterns/hash-dark@2x.png) repeat;
+          background-size: 4px;
           content: "";
           bottom: 35px;
           display: block;
@@ -2539,21 +2549,19 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
           position: absolute;
           right: 0;
           top: 0; }
-          @media only screen and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-            .lt-ie9 [role="banner"] .nav-secondary li a:after {
-              background: url(../images/patterns/hash-dark@2x.png) repeat;
-              background-size: 4px 4px; } }
+          .lt-ie9 .lt-ie9 [role="banner"] .nav-secondary li a:after {
+            background: url(../images/patterns/hash-dark.png) repeat; }
         .lt-ie9 [role="banner"] .nav-secondary li a:hover {
           color: #b1cb2c; }
           .lt-ie9 [role="banner"] .nav-secondary li a:hover:after {
             background: #b1cb2c !important; }
       .lt-ie9 [role="banner"] .nav-secondary li.active a:after {
-        background: #092e20; }
+        background: #082d20; }
 .lt-ie9 [role="contentinfo"] {
   *zoom: 1;
   font-family: 'Colfax', Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
-  background: #092e20;
-  border-top: 1px solid #1a835b;
+  background: #082d20;
+  border-top: 1px solid #17845e;
   color: #e8f4d0;
   margin-top: 40px;
   padding-bottom: 20px;
@@ -2571,10 +2579,10 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
     height: 30px;
     margin: 15px auto;
     width: 80px;
-    background: url(../images/logo-white.svg) 0 0 no-repeat;
-    background-size: 100%; }
-    .no-svg .lt-ie9 [role="contentinfo"] .logo {
-      background: url(../images/logo-white-small.png) 0 0 no-repeat; }
+    background: url(../images/logo-white-small.png) 0 0 no-repeat; }
+    .svg .lt-ie9 [role="contentinfo"] .logo {
+      background: url(../images/logo-white.svg) 0 0 no-repeat;
+      background-size: 100%; }
   .lt-ie9 [role="contentinfo"] .label, .lt-ie9 [role="contentinfo"] .learn .label {
     font-family: 'Colfax', Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
     color: #FFF;
@@ -2585,7 +2593,8 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
     padding-top: 25px;
     text-transform: uppercase; }
     .lt-ie9 [role="contentinfo"] .label:after, .lt-ie9 [role="contentinfo"] .learn .label:after {
-      background: url(../images/patterns/hash-light.png) repeat;
+      background: url(../images/patterns/hash-light@2x.png) repeat;
+      background-size: 4px;
       content: "";
       display: block;
       position: absolute;
@@ -2594,10 +2603,8 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
       right: 0;
       bottom: 0;
       top: 0; }
-      @media only screen and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-        .lt-ie9 [role="contentinfo"] .label:after, .lt-ie9 [role="contentinfo"] .learn .label:after {
-          background: url(../images/patterns/hash-light@2x.png) repeat;
-          background-size: 4px 4px; } }
+      .lt-ie9 .lt-ie9 [role="contentinfo"] .label:after, .lt-ie9 .lt-ie9 [role="contentinfo"] .learn .label:after {
+        background: url(../images/patterns/hash-light.png) repeat; }
     .lt-ie9 [role="contentinfo"] .label i, .lt-ie9 [role="contentinfo"] .learn .label i {
       font-size: 30px;
       font-size: 3rem;
@@ -2628,7 +2635,8 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
       padding-top: 40px;
       position: relative; }
       .lt-ie9 [role="contentinfo"] ul.thanks:after {
-        background: url(../images/patterns/hash-light.png) repeat;
+        background: url(../images/patterns/hash-light@2x.png) repeat;
+        background-size: 4px;
         content: "";
         display: block;
         position: absolute;
@@ -2637,10 +2645,8 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
         right: 0;
         bottom: 0;
         top: 0; }
-        @media only screen and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-          .lt-ie9 [role="contentinfo"] ul.thanks:after {
-            background: url(../images/patterns/hash-light@2x.png) repeat;
-            background-size: 4px 4px; } }
+        .lt-ie9 .lt-ie9 [role="contentinfo"] ul.thanks:after {
+          background: url(../images/patterns/hash-light.png) repeat; }
       .lt-ie9 [role="contentinfo"] ul.thanks li {
         display: block;
         float: left;
@@ -2668,8 +2674,6 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
           background: url(../images/typekit.png) 0 0 no-repeat;
           height: 16px;
           margin: 15px auto; }
-          .svg .lt-ie9 [role="contentinfo"] ul.thanks a.typekit {
-            background: url(../images/typekit.png) 0 0 no-repeat; }
   .lt-ie9 [role="contentinfo"] p {
     font-family: 'Elena', Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
     font-size: 14px;
@@ -2681,7 +2685,8 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
       padding-top: 45px;
       position: relative; }
       .lt-ie9 [role="contentinfo"] p.copyright:after {
-        background: url(../images/patterns/hash-light.png) repeat;
+        background: url(../images/patterns/hash-light@2x.png) repeat;
+        background-size: 4px;
         content: "";
         display: block;
         position: absolute;
@@ -2690,10 +2695,8 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
         right: 0;
         bottom: 0;
         top: 0; }
-        @media only screen and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-          .lt-ie9 [role="contentinfo"] p.copyright:after {
-            background: url(../images/patterns/hash-light@2x.png) repeat;
-            background-size: 4px 4px; } }
+        .lt-ie9 .lt-ie9 [role="contentinfo"] p.copyright:after {
+          background: url(../images/patterns/hash-light.png) repeat; }
     .lt-ie9 [role="contentinfo"] p a {
       color: #FFF;
       -webkit-tap-highlight-color: #b1cb2c; }
@@ -2710,7 +2713,8 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
     .lt-ie9 .list-news li .h3 {
       margin-bottom: 15px; }
     .lt-ie9 .list-news li:after {
-      background: url(../images/patterns/hash-dark.png) repeat;
+      background: url(../images/patterns/hash-dark@2x.png) repeat;
+      background-size: 4px;
       content: "";
       display: block;
       height: 7px;
@@ -2719,10 +2723,8 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
       left: 0;
       right: 0;
       bottom: 0; }
-      @media only screen and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-        .lt-ie9 .list-news li:after {
-          background: url(../images/patterns/hash-dark@2x.png) repeat;
-          background-size: 4px 4px; } }
+      .lt-ie9 .lt-ie9 .list-news li:after {
+        background: url(../images/patterns/hash-dark.png) repeat; }
     .lt-ie9 .list-news li:first-child {
       margin-top: 0;
       padding-top: 0; }
@@ -2754,7 +2756,8 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
       top: 30px;
       left: 0; }
     .lt-ie9 .list-events li:after {
-      background: url(../images/patterns/hash-dark.png) repeat;
+      background: url(../images/patterns/hash-dark@2x.png) repeat;
+      background-size: 4px;
       content: "";
       display: block;
       height: 7px;
@@ -2763,10 +2766,8 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
       left: 0;
       right: 0;
       bottom: 0; }
-      @media only screen and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-        .lt-ie9 .list-events li:after {
-          background: url(../images/patterns/hash-dark@2x.png) repeat;
-          background-size: 4px 4px; } }
+      .lt-ie9 .lt-ie9 .list-events li:after {
+        background: url(../images/patterns/hash-dark.png) repeat; }
     .lt-ie9 .list-events li:first-child {
       padding-top: 15px; }
       .lt-ie9 .list-events li:first-child i {
@@ -2786,12 +2787,11 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
     .lt-ie9 .list-events a:hover {
       color: #73d6ff; }
 .lt-ie9 .header {
-  background: url(../images/patterns/hash-dark.png) repeat;
+  background: url(../images/patterns/hash-dark@2x.png) repeat;
+  background-size: 4px;
   padding: 20px; }
-  @media only screen and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    .lt-ie9 .header {
-      background: url(../images/patterns/hash-dark@2x.png) repeat;
-      background-size: 4px 4px; } }
+  .lt-ie9 .lt-ie9 .header {
+    background: url(../images/patterns/hash-dark.png) repeat; }
   .lt-ie9 .header > * {
     background: #FFF;
     margin: 0 auto;
@@ -2818,11 +2818,10 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
   border: none;
   outline: none;
   margin-top: 20px;
-  background: url(../images/patterns/hash-dark.png) repeat; }
-  @media only screen and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    .lt-ie9 hr.hash {
-      background: url(../images/patterns/hash-dark@2x.png) repeat;
-      background-size: 4px 4px; } }
+  background: url(../images/patterns/hash-dark@2x.png) repeat;
+  background-size: 4px; }
+  .lt-ie9 .lt-ie9 hr.hash {
+    background: url(../images/patterns/hash-dark.png) repeat; }
 .lt-ie9 .container {
   width: 91.66667%;
   max-width: 1100px;
@@ -2848,6 +2847,8 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
     text-transform: uppercase;
     top: 22px;
     width: 25.71429%; }
+  .lt-ie9 [role="banner"] .nav-menu-on {
+    max-height: none; }
   .lt-ie9 [role="banner"] .nav-primary li {
     float: left;
     width: 32.28571%;

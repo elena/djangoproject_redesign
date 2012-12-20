@@ -22,8 +22,14 @@
 		z-index: -1;
 
 		.svg & {
-			background: url(../images/logo-white.svg) center center no-repeat $green-medium;
+			background: url(../images/logo-white.svg) center center no-repeat $green-medium;	
 		}
+	}
+
+	// tagline
+	.tagline {
+		position: absolute;
+		left: -9999px;
 	}
 
 	.menu-button {
@@ -49,10 +55,18 @@
 		}
 	}
 
-	// tagline
-	.tagline {
-		position: absolute;
-		left: -9999px;
+	.nav-menu-on {
+		max-height: 0;
+		overflow: hidden;
+		-webkit-transition: all 0.3s ease-out;  
+		-moz-transition: all 0.3s ease-out;
+		-ms-transition: all 0.3s ease-out;
+		-o-transition: all 0.3s ease-out;
+		transition: all 0.3s ease-out;
+
+		&.active {
+			max-height: 500px;
+		}
 	}
 
 	// navigation - primary
@@ -172,7 +186,6 @@
 }
 
 
-
 // Footer
 [role="contentinfo"] {
 	@include clearfix;
@@ -190,11 +203,11 @@
 		height: 30px;
 		margin: 15px auto;
 		width: 80px;
-		background: url(../images/logo-white.svg) 0 0 no-repeat;
-		background-size: 100%;
-
-		.no-svg & { // NOTE: Modernizr use
-			background: url(../images/logo-white-small.png) 0 0 no-repeat;
+		background: url(../images/logo-white-small.png) 0 0 no-repeat;
+		
+		.svg & { // NOTE: Modernizr use
+			background: url(../images/logo-white.svg) 0 0 no-repeat;	
+			background-size: 100%;
 		}
 	}
 
@@ -289,27 +302,27 @@
 				&.mediatemple {
 					background: url(../images/media-temple.png) 0 0 no-repeat;
 					height: 24px;
-					
-					.svg & { // NOTE: Modernizr usage
-						background: url(../images/media-temple.svg) 0 0 no-repeat;	
+
+					.svg & { // NOTE: Modernizr use
+						background: url(../images/media-temple.svg) 0 0 no-repeat;
 					}
 				}
 				&.threespot { 
 					background: url(../images/threespot.png) 0 0 no-repeat;
 					height: 15px;
 					margin: 18px auto;
-					
-					.svg & { // NOTE: Modernizr usage
+
+					.svg & { // NOTE: Modernizr use
 						background: url(../images/threespot.svg) 0 0 no-repeat;
 					}
 				}
-				&.typekit { // TODO: Replace Typekit logo
+				&.typekit { 
 					background: url(../images/typekit.png) 0 0 no-repeat;
 					height: 16px;
 					margin: 15px auto;
-					
-					.svg & { // NOTE: Modernizr usage
-						background: url(../images/typekit.png) 0 0 no-repeat;
+
+					.svg & { // NOTE: Modernizr use
+						// TODO: Replace Typekit logo
 					}
 				}
 			}
