@@ -1,8 +1,28 @@
 {% extends 'base.html' %}{% load static pygmentify %}
 {% block title %}Get Started{% endblock %}
+
+{% block extracss %}
+<style>
+    .list-features li {
+        list-style-type: none;
+    }
+    .list-features h3 {
+        cursor: pointer;
+    }
+    .list-features h3:hover {
+        text-decoration: underline;
+    }
+    .list-features {
+        padding: 0;
+    }
+</style>
+{% endblock %}
+
+
 {% block body %}
 
 <h1>Get Started</h1>
+<p>It’s easy to get up and running with Django. Below, we’ve highlighted some helpful features. Depending how new you are to Django, you can also <a href="#install">install Django</a>, <a href="#tutorial">try a tutorial</a>, or just <a href="#docs">dive into the documentation</a>.
 <p>Intro copy about how it's easy to get started. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod deserunt mollit anim id est laborum.</p>
 
 <h2><span>Django's Features</span></h2>
@@ -37,7 +57,7 @@ class Member(models.Model):
 	<li>
 		<h3>URLs and Views</h3>
 		<p>A clean, elegant URL scheme is an important detail in a high-quality Web application. Django encourages beautiful URL design and doesn't put any cruft in URLs, like .php or .asp.</p>
-		<p>To design URLs for an app, you create a Python module called a URLconf. A table of contents for your app, it contains a simple mapping between URL patterns and your views. <a href="https://docs.djangoproject.com/en/dev/topics/http/urls/">Read More</a></p>
+		<p>To design URLs for an application, you create a Python module called a URLconf. Like, a table of contents for your app, it contains a simple mapping between URL patterns and your views. <a href="https://docs.djangoproject.com/en/dev/topics/http/urls/">Read More</a></p>
 
 {% pygment %}
  <pre lang="python">
@@ -58,7 +78,7 @@ def band_listing(request):
 	</li>
 	<li>
 		<h3>Templates</h3>
-		<p>Django’s template language is designed to strike a balance between power and ease. It’s designed to feel comfortable and easy-to-learn to those used to working with HTML, like designers and front-end developers. But it is also flexible and highly extensible, allowing develoeprs to augment the template language as needed. <a href="https://docs.djangoproject.com/en/dev/topics/templates/">Read More</a></p>
+		<p>Django’s template language is designed to strike a balance between power and ease. It’s designed to feel comfortable and easy-to-learn to those used to working with HTML, like designers and front-end developers. But it is also flexible and highly extensible, allowing developers to augment the template language as needed. <a href="https://docs.djangoproject.com/en/dev/topics/templates/">Read More</a></p>
 
 {% pygment %}
 <pre lang="html">
@@ -84,7 +104,7 @@ def band_listing(request):
 	</li>
 	<li>
 		<h3>Forms</h3>
-		<p>Django provides a powerful form-handling library that handles rendering forms as HTML, validating user-submitted data, and converting that data to native Python types. Django also provides a way to generate forms from your existing models and use those forms to create and update data.<a href="https://docs.djangoproject.com/en/dev/topics/forms/">Read More</a></p>
+		<p>Django provides a powerful form library that handles rendering forms as HTML, validating user-submitted data, and converting that data to native Python types. Django also provides a way to generate forms from your existing models and use those forms to create and update data. <a href="https://docs.djangoproject.com/en/dev/topics/forms/">Read More</a></p>
 
 {% pygment %}
  <pre lang="python">
@@ -101,7 +121,7 @@ class BandContactForm(forms.Form):
 	</li>
 	<li>
 		<h3>Authentication</h3>
-		<p>Django comes with a full-featured and secure authentication system. It handles user accounts, groups, permissions and cookie-based user sessions, providing a way create sites that allow users to create acocunts, and safely log in and out.<a href="#">Read More</a></p>
+		<p>Django comes with a full-featured and secure authentication system. It handles user accounts, groups, permissions and cookie-based user sessions, providing a way build sites that allows users to create accounts, and safely log in and out. <a href="#">Read More</a></p>
 
 {% pygment %}
  <pre lang="python">
@@ -114,7 +134,7 @@ Python code TBD
 	</li>
 	<li>
 		<h3>Admin</h3>
-		<p>One of the most powerful parts of Django is the automatic admin interface. It reads metadata in your models to provide a powerful and production-ready interface that content producers can immediately use to start adding content to the site. It's easy to setup, and provides many hooks for customization of the experience.<a href="#">Read More</a></p>
+		<p>One of the most powerful parts of Django is the automatic admin interface. It reads metadata in your models to provide a powerful and production-ready interface that content producers can immediately use to start adding content to the site. It's easy to set up, and provides many hooks for customization of the experience. <a href="#">Read More</a></p>
 
 {% pygment %}
  <pre lang="python">
@@ -127,8 +147,7 @@ Python code TBD
 	</li>
 	<li>
 		<h3>Internationalization</h3>
-		<p>Django was designed from the ground-up to provide ways to offer content in languages and formats tailored to the audience and has full support for translation of text, formatting of dates, times and numbers, and time zones. It allows developers and template authors to specify which parts of their apps should be translated or formatted for local languages and cultures. and uses these hooks to localize Web apps for particular users according to their preferences.
-.<a href="#">Read More</a></p>
+		<p>Django was designed from the ground up to provide ways to offer content in languages and formats tailored to the audience. Django offers full support for the translation of text, and formatting of dates, times, numbers and time zones. It allows developers and template authors to specify which parts of their apps should be translated or formatted for local languages and cultures, and uses these hooks to localize web applications for particular users according to their preferences. <a href="#">Read More</a></p>
 
 {% pygment %}
  <pre lang="python">
@@ -156,7 +175,7 @@ Python code TBD
 	</li>
 </ul>
 
-<h2><span>Install Django</span></h2>
+<h2 id="install"><span>Install Django</span></h2>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -164,16 +183,34 @@ consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-<h2><span>Write your first Django app</span></h2>
-<p><a href="#">Tutorial CTA?</a> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. </p>
+<h2 id="tutorial"><span>Write Your First Django App</span></h2>
+<p>Installed Django already? Good. Now <a href="/docs/">try this tutorial</a>, which walks you through the creation of a basic poll application. It’s got two parts:
+    <ol>
+        <li>A public site that lets people view polls and vote in them.</li>
+        <li>An administrative interface that lets you add, change, and delete polls.</li>
+    </ol>
 
-<h2><span>Read the documentation</span></h2>
-<p><a href="#">Docs CTA?</a> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. </p>
+<h2 id="docs"><span>Explore the Documentation</span></h2>
+<p><a href="/docs/">Learn</a> everything you need to know about Django (and then some).</p>
 
-<h2><span>Join the community</span></h2>
-<p><a href="#">Community CTA?</a> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. </p>
+<h2><span>Join the Community</span></h2>
+<p>You can help <a href="/community/">make us better</a>. Find out about upcoming Django events, learn what’s on other Django developers’ minds, find and post jobs, and more.</p>
 
+{% endblock %}
+
+
+{% block extrajs %}
+<script>
+    var content = $(".list-features p, .list-features pre")
+    content.hide().addClass("hidden");
+    $(".list-features h3").click(function() {
+        var content = $(this).parent().find(".list-features p, .list-features pre")
+        if (content.hasClass("hidden")) {
+            content.show().removeClass("hidden");
+        } else {
+            content.hide().addClass("hidden")
+        }
+    });
+
+</script>
 {% endblock %}
