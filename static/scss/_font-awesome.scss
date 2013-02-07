@@ -305,7 +305,7 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
 .icon-user-md:before              { content: "\f200"; }
 
 
-.lt-ie8 {
+@include old-ie {
   [class^="icon-"],
   [class*=" icon-"] {
     font-family: FontAwesome;

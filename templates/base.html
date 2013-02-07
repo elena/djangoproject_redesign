@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<!--[if lt IE 9]> <html class="lt-ie9" lang="en"> <![endif]-->
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
 <head>{% load compress static %}
 	<meta charset="utf-8">
@@ -11,8 +13,14 @@
 	<title>{% block title %}{% endblock %}</title>
 	
 	{% compress css %}
-		<link rel="stylesheet" href="{% static "css/style.css" %}">
-		<link rel="stylesheet" href="{% static "css/print.css" %}" media="print">
+
+		<!--[if lte IE 8]>
+		    <link rel="stylesheet" href="{% static "css/output-ie.css" %}"> 
+		<![endif]-->
+		<!--[if gt IE 8]><!-->
+		    <link rel="stylesheet" href="{% static "css/output.css" %}"> 
+		<!--<![endif]-->
+		
 		{% block extracss %}
 			{# Extra CSS files that need to be loaded in the <head> go here #}
 		{% endblock %}
@@ -27,8 +35,7 @@
 	<script src="{% static "js/modernizr.js" %}"></script>	
 
 </head>
-<!--[if lt IE 9]> <body class="lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <body> <!--<![endif]-->
+<body>
 
 	{% include "includes/header.html" %}
 

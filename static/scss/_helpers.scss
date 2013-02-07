@@ -1,17 +1,10 @@
-// Boilerplate Helper mixins
-
-.ir { // Image replacement
+// Boilerplate Helper mixins (entered as classes)
+.ir { 
 	@include ir;
 }
-.hidden { // Hide from both screenreaders and browsers
-	@include hidden;
-}
-.visuallyhidden { // Hide only visually
+.visuallyhidden { 
 	@include visuallyhidden;
 }
-.invisible { // Hide visually and from screenreaders, but maintain layout
-	@include invisible;
-}
-.clearfix { // Clearfix helper / Used to contain floats
+.clearfix, .group-container { // include traditional 'clearfix' class name with a more semantic one
 	@include clearfix;
 }

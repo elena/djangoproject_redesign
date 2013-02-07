@@ -1,7 +1,23 @@
+// Container
+@include respond-min(768px) {
+	.container {
+		width: (704/768) * 100%;
+		max-width: 1100px;
+		margin: 0 auto;	
+	}
+}
+
+@include respond-min(768px) {
+	// TODO: Remove Menu button hide
+	.menu-button {
+		display: none !important;
+	}
+}
+
 // Header
 [role="banner"] {
-	background: $green-light;
 	@include clearfix;
+	background: $green-light;
 	overflow: hidden;
 	padding-top: 80px;
 	padding-bottom: 10px;
@@ -45,11 +61,9 @@
 		text-decoration: none;
 		top: 30px;
 		width: 45px;
-
 		&:hover {
 			color: $green-medium;
 		}
-		
 		span {
 			@include visuallyhidden;
 		}

@@ -1,14 +1,7 @@
 //container mixin
-.container {
-	width: (704/768) * 100%;
-	max-width: 1100px;
-	margin: 0 auto;	
-}
 
-// TODO: Remove Menu button hide
-.menu-button {
-	display: none !important;
-}
+
+
 
 [role="banner"] {
 	height: 220px;
