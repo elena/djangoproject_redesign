@@ -21,3 +21,5 @@ pip-log.txt
 
 # Dotcloud stuff
 .dotcloud
+
+local_settings.py

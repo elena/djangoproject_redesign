@@ -8,57 +8,57 @@ $green-dark: #082d20;
 // @font-face
 @font-face {
 	font-family: 'Elena';
-	src: url('../fonts/elena/ElenaWebBasicBold.eot');
-	src: url('../fonts/elena/ElenaWebBasicBold.eot?#iefix') format('embedded-opentype'),
-			 url('../fonts/elena/ElenaWebBasicBold.woff') format('woff');
+	src: url('/static/fonts/elena/ElenaWebBasicBold.eot');
+	src: url('/static/fonts/elena/ElenaWebBasicBold.eot?#iefix') format('embedded-opentype'),
+			 url('/static/fonts/elena/ElenaWebBasicBold.woff') format('woff');
 	font-weight: 700;
 	font-style: normal;
 }
 @font-face {
 	font-family: 'Elena';
-	src: url('../fonts/elena/ElenaWebBasicBoldItalic.eot');
-	src: url('../fonts/elena/ElenaWebBasicBoldItalic.eot?#iefix') format('embedded-opentype'),
-			 url('../fonts/elena/ElenaWebBasicBoldItalic.woff') format('woff');
+	src: url('/static/fonts/elena/ElenaWebBasicBoldItalic.eot');
+	src: url('/static/fonts/elena/ElenaWebBasicBoldItalic.eot?#iefix') format('embedded-opentype'),
+			 url('/static/fonts/elena/ElenaWebBasicBoldItalic.woff') format('woff');
 	font-weight: 700;
 	font-style: italic;
 }
 @font-face {
 	font-family: 'Elena';
-	src: url('../fonts/elena/ElenaWebBasicRegular.eot');
-	src: url('../fonts/elena/ElenaWebBasicRegular.eot?#iefix') format('embedded-opentype'),
-			 url('../fonts/elena/ElenaWebBasicRegular.woff') format('woff');
+	src: url('/static/fonts/elena/ElenaWebBasicRegular.eot');
+	src: url('/static/fonts/elena/ElenaWebBasicRegular.eot?#iefix') format('embedded-opentype'),
+			 url('/static/fonts/elena/ElenaWebBasicRegular.woff') format('woff');
 	font-weight: 400;
 	font-style: normal;
 }
 @font-face {
 	font-family: 'Elena';
-	src: url('../fonts/elena/ElenaWebBasicRegularItalic.eot');
-	src: url('../fonts/elena/ElenaWebBasicRegularItalic.eot?#iefix') format('embedded-opentype'),
-			 url('../fonts/elena/ElenaWebBasicRegularItalic.woff') format('woff');
+	src: url('/static/fonts/elena/ElenaWebBasicRegularItalic.eot');
+	src: url('/static/fonts/elena/ElenaWebBasicRegularItalic.eot?#iefix') format('embedded-opentype'),
+			 url('/static/fonts/elena/ElenaWebBasicRegularItalic.woff') format('woff');
 	font-weight: 400;
 	font-style: italic;
 }
 @font-face {
 	font-family: 'Colfax';
-	src: url('../fonts/colfax/ColfaxWebBlack.eot');
-	src: url('../fonts/colfax/ColfaxWebBlack.eot?#iefix') format('embedded-opentype'),
-			 url('../fonts/colfax/ColfaxWebBlack.woff') format('woff');
+	src: url('/static/fonts/colfax/ColfaxWebBlack.eot');
+	src: url('/static/fonts/colfax/ColfaxWebBlack.eot?#iefix') format('embedded-opentype'),
+			 url('/static/fonts/colfax/ColfaxWebBlack.woff') format('woff');
 	font-weight: 900;
 	font-style: normal;
 }
 @font-face {
 	font-family: 'Colfax';
-	src: url('../fonts/colfax/ColfaxWebBold.eot');
-	src: url('../fonts/colfax/ColfaxWebBold.eot?#iefix') format('embedded-opentype'),
-			 url('../fonts/colfax/ColfaxWebBold.woff') format('woff');
+	src: url('/static/fonts/colfax/ColfaxWebBold.eot');
+	src: url('/static/fonts/colfax/ColfaxWebBold.eot?#iefix') format('embedded-opentype'),
+			 url('/static/fonts/colfax/ColfaxWebBold.woff') format('woff');
 	font-weight: 700;
 	font-style: normal;
 }
 @font-face {
 	font-family: 'Colfax';
-	src: url('../fonts/colfax/ColfaxWebRegular.eot');
-	src: url('../fonts/colfax/ColfaxWebRegular.eot?#iefix') format('embedded-opentype'),
-			 url('../fonts/colfax/ColfaxWebRegular.woff') format('woff');
+	src: url('/static/fonts/colfax/ColfaxWebRegular.eot');
+	src: url('/static/fonts/colfax/ColfaxWebRegular.eot?#iefix') format('embedded-opentype'),
+			 url('/static/fonts/colfax/ColfaxWebRegular.woff') format('woff');
 	font-weight: 400;
 	font-style: normal;
 }
@@ -142,17 +142,17 @@ html {
 
 // Custom Style Mixins
 @mixin hash-dark {
-	background: url(../images/patterns/hash-dark@2x.png) repeat; 
+	background: url(/static/images/patterns/hash-dark@2x.png) repeat; 
 	background-size: 4px;
 	.lt-ie9 & {
-		background: url(../images/patterns/hash-dark.png) repeat; 
+		background: url(/static/images/patterns/hash-dark.png) repeat; 
 	}
 }
 @mixin hash-light {
-	background: url(../images/patterns/hash-light@2x.png) repeat;
+	background: url(/static/images/patterns/hash-light@2x.png) repeat;
 	background-size: 4px;
 	.lt-ie9 & {
-		background: url(../images/patterns/hash-light.png) repeat;
+		background: url(/static/images/patterns/hash-light.png) repeat;
 	}
 }
 @mixin blue-link {

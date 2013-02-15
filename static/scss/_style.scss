@@ -412,7 +412,7 @@ a:focus {
 	.logo {
 		@include font-size(40);
 		@include colfax;
-		background: url(../images/logo-django.png) center center no-repeat;
+		background: url(/static/images/logo-django.png) center center no-repeat;
 		color: $green-dark;
 		display: block;
 		float: left;
@@ -424,7 +424,7 @@ a:focus {
 		width: 142px;
 		
 		.svg & { // NOTE: Modernizr Use
-			background: url(../images/logo-django.svg) center center no-repeat;	
+			background: url(/static/images/logo-django.svg) center center no-repeat;	
 		}
 	}
 
@@ -486,7 +486,7 @@ a:focus {
 	}
 
 	[role="navigation"] {
-		background: url(../images/bg-pattern.jpg) repeat top center $green-dark;
+		background: url(/static/images/bg-pattern.jpg) repeat top center $green-dark;
 		clear: both;
 
 		ul {
@@ -511,10 +511,10 @@ a:focus {
 
 		a {
 			color: #fff;
-			background: url(../images/patterns/hash-light@2x.png) repeat-x top center;
+			background: url(/static/images/patterns/hash-light@2x.png) repeat-x top center;
 			background-size: 4px;
 			@include old-ie {
-				background: url(../images/patterns/hash-light.png) repeat-x top center;
+				background: url(/static/images/patterns/hash-light.png) repeat-x top center;
 			}
 			display: block;
 			padding: 14px 0 8px 0;
@@ -581,13 +581,13 @@ a:focus {
 		height: 30px;
 		margin: 15px;
 		width: 80px;
-		background: url(../images/logo-django.png) 0 0 no-repeat;
+		background: url(/static/images/logo-django.png) 0 0 no-repeat;
 		@include respond-min(768px) { // Desktop Styles
 			margin: 25px 0;
 		}
 
 		.svg & { // NOTE: Modernizr use
-			background: url(../images/logo-django.svg) 0 0 no-repeat;	
+			background: url(/static/images/logo-django.svg) 0 0 no-repeat;	
 			background-size: 100%;
 		}
 	}
@@ -714,24 +714,24 @@ a:focus {
 				width: 60px;
 
 				&.mediatemple {
-					background: url(../images/media-temple.png) 0 0 no-repeat;
+					background: url(/static/images/media-temple.png) 0 0 no-repeat;
 					height: 24px;
 
 					.svg & { // NOTE: Modernizr use
-						background: url(../images/media-temple.svg) 0 0 no-repeat;
+						background: url(/static/images/media-temple.svg) 0 0 no-repeat;
 					}
 				}
 				&.threespot { 
-					background: url(../images/threespot.png) 0 0 no-repeat;
+					background: url(/static/images/threespot.png) 0 0 no-repeat;
 					height: 15px;
 					margin: 18px auto;
 
 					.svg & { // NOTE: Modernizr use
-						background: url(../images/threespot.svg) 0 0 no-repeat;
+						background: url(/static/images/threespot.svg) 0 0 no-repeat;
 					}
 				}
 				&.typekit { 
-					background: url(../images/typekit.png) 0 0 no-repeat;
+					background: url(/static/images/typekit.png) 0 0 no-repeat;
 					height: 16px;
 					margin: 15px auto;
 

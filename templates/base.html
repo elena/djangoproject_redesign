@@ -12,19 +12,16 @@
 
 	<title>{% block title %}{% endblock %}</title>
 	
-	{% compress css %}
-
 		<!--[if lte IE 8]>
-		    <link rel="stylesheet" href="{% static "css/output-ie.css" %}"> 
+			{% compress css %}
+		    <link rel="stylesheet" href="{% static "scss/output-ie.scss" %}" type="text/x-scss"> 
+	   {% endcompress %}
 		<![endif]-->
 		<!--[if gt IE 8]><!-->
-		    <link rel="stylesheet" href="{% static "css/output.css" %}"> 
+			{% compress css %}
+		    <link rel="stylesheet" href="{% static "scss/output.scss" %}" type="text/x-scss">
+	    {% endcompress %}
 		<!--<![endif]-->
-		
-		{% block extracss %}
-			{# Extra CSS files that need to be loaded in the <head> go here #}
-		{% endblock %}
-	{% endcompress %}
 
 	<!-- Typekit 
 		<script type="text/javascript" src="//use.typekit.net/cct4uwo.js"></script>
