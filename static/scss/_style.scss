@@ -367,7 +367,7 @@ a:hover {
 	.meta {
 		background: $green-light;
 		margin-top: 30px;
-		padding: 10px;
+		padding: 10px 0;
 	}
 
 	.logo {
@@ -378,6 +378,8 @@ a:hover {
 		display: block;
 		font-weight: 700;
 		height: 50px;
+		margin: 10px;
+		overflow: hidden;
 		text-decoration: none;
 		text-indent: 100%;
 		width: 142px;
@@ -389,39 +391,62 @@ a:hover {
 		}
 	}
 
-	p {
-		@include elena;
-		@include font-size(14);
-		color: #FFF;
-		margin-top: 25px;
-
-		&.copyright {
-			clear: both;
-			margin-top: 35px;
-			padding-top: 45px;
-			position: relative;
-
-			&:after {
-				@include hash-light;
-				content: "";
-				display: block;
-				position: absolute;
-				height: 6px;
-				left: 0;
-				right: 0;
-				bottom: 0;
-				top: 0;
+	.thanks {
+		@include font-size(12);
+		background: url(/static/images/patterns/hash-dark@2x.png) repeat-x bottom center;
+		background-size: 4px;
+		@include old-ie {
+			background: url(/static/images/patterns/hash-dark.png) repeat-x bottom center;
+		}
+		color: $green-dark;
+		margin: 0;
+		padding: 0 0 20px;
+		
+		li {
+			background: url(/static/images/patterns/hash-dark@2x.png) repeat-x top center;
+			background-size: 4px;
+			@include old-ie {
+				background: url(/static/images/patterns/hash-dark.png) repeat-x top center;
 			}
+			padding: 25px 10px 0;
+			margin: 15px 0 0
 		}
 
 		a {
-			color: #FFF;
-			-webkit-tap-highlight-color: $green-medium;
+			display: inline-block;
+			@include old-ie {
+				display: inline;
+				zoom: 1;
+			}
+			margin-left: 10px;
+			overflow: hidden;
+			position: relative;
+			text-indent: -200px;
 
-			&:hover {
-				color: $green-medium;
+			&.mediatemple {
+				background: url(/static/images/logo-mediatemple.png) no-repeat center center;
+				height: 33px;
+				top: -5px;
+				width: 82px;
+			}
+			&.typekit {
+				background: url(/static/images/logo-typekit.png) no-repeat center center;
+				height: 24px;
+				top: -3px;
+				width: 94px;
+			}
+			&.threespot {
+				background: url(/static/images/logo-threespot.png) no-repeat center center;
+				height: 20px;
+				width: 83px;
 			}
 		}
+	}
+
+	p {
+		@include font-size(12);
+		margin-top: 20px;
+		padding: 0 10px;
 	}
 }
 
