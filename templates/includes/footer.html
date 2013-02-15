@@ -5,10 +5,8 @@
 	<div class="container">
 		<h1 class="visuallyhidden">Django Links</h1>
 
-		<a class="logo" href="{% url 'index'  %}">Django</a>
-
 		<div class="learn">
-			<span class="label"><i class="icon-info-sign"></i> Learn More</span>
+			<h2>Learn More</h2>
 			<ul>
 				<li><a href="#">About Django</a></li>
 				<li><a href="#">Django Software Benefits Foundation</a></li>
@@ -18,7 +16,7 @@
 		</div>
 
 		<div class="involved">
-			<span class="label"><i class="icon-signin"></i> Get Involved</span>
+			<h2>Get Involved</h2>
 			<ul>
 				<li><a href="#">Join a Group</a></li>
 				<li><a href="#">Find a Job</a></li>
@@ -29,7 +27,7 @@
 		</div>
 
 		<div class="follow">
-			<span class="label"><i class="icon-list"></i> Follow Us</span>
+			<h2>Follow Us</h2>
 			<ul>
 				<li><a href="http://github.com/django">Github</a></li>
 				<li><a href="https://twitter.com/djangoproject">Twitter</a></li>
@@ -38,21 +36,21 @@
 			</ul>
 		</div>
 
-		<p class="copyright">&copy;2005&ndash;{% now "Y" %} <a href="#">Django Software Foundation</a> unless otherwise noted.</p> 
-
-		<p>Django is a registered trademark of the Django Software Foundation.</p> 
-
-		<ul class="thanks">
-			<li>Hosting by 
-				<a class="mediatemple" href="http://mediatemple.net">Media Temple</a>
-			</li>
-			<li>Fonts Served by 
-				<a class="typekit" href="#">Typekit</a>
-			</li>
-			<li>Design by 
-				<a class="threespot" href="http://www.threespot.com">Threespot</a>
-			</li>
-		</ul>
+		<div class="meta">
+			<a class="logo" href="{% url 'index'  %}">Django</a>
+			<ul class="thanks">
+				<li>Hosting by 
+					<a class="mediatemple" href="http://mediatemple.net">Media Temple</a>
+				</li>
+				<li>Fonts Served by 
+					<a class="typekit" href="#">Typekit</a>
+				</li>
+				<li>Design by 
+					<a class="threespot" href="http://www.threespot.com">Threespot</a>
+				</li>
+			</ul>
+			<p class="copyright">&copy;2005&ndash;{% now "Y" %} <a href="#">Django Software Foundation</a> unless otherwise noted. Django is a registered trademark of the Django Software Foundation.</p> 
+		</div>
 
 	</div>
 </div>

@@ -3,17 +3,17 @@
 <div role="banner">
 	<div class="container">
 		<a class="logo" href="{% url 'index' %}">Django</a>
-		<p class="tagline">The web framework for perfectionists with deadlines.</p>
 		<div role="navigation">
 			<ul class="nav-primary">
 				<li><a href="{% url 'why' %}"> Why Django</a></li>
 				<li><a href="{% url 'start' %}">Get Started</a></li>
-				<li><a href="https://docs.djangoproject.com">Documentation</a></li>
+				<li><a href="#">Documentation</a></li>
 			</ul>
 			<ul class="nav-secondary">
+				<!-- the class of 'active' should appear on the appropriate <li> -->
 				<li class="active"><a href="{% url 'news_index' %}">News &amp; Events</a></li>
 				<li><a href="#">Community</a></li>
-				<li><a href="https://code.djangoproject.com/">Code</a></li>
+				<li><a href="#">Code</a></li>
 				<li><a href="#">About</a></li>
 			</ul>
 		</div>
