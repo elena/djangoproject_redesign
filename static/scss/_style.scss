@@ -1,69 +1,468 @@
-// Container
-@include respond-min(768px) {
-	.container {
-		width: (704/768) * 100%;
-		max-width: 1100px;
-		margin: 0 auto;	
+
+// Default Type / Colors
+body {
+	@include elena;
+	@include font-size(); 
+	background: #fff;
+	color: $gray-text;
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+}
+a, 
+a:active, 
+a:focus {
+	color: darken($gray-text, 50%);
+	text-decoration: underline;
+
+	&:hover {
+		color: $blue;
 	}
 }
 
+// Headers
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+	@include colfax;
+	font-weight: normal;
+
+	a {
+		text-decoration: none;
+	}
+}
+.h1{
+	@include font-size(30);
+	font-weight: 900;
+}
+.h2{
+	@include hash-dark;
+	@include font-size(16);
+	color: $blue;
+	font-weight: 700;
+	margin-top: 35px;
+	padding: 8px 6px;
+	text-transform: uppercase;
+
+	span {
+		background: #FFF;
+		display: inline-block;
+		@include old-ie {
+			display: inline; 
+			zoom: 1; 
+		}
+		line-height: 1.1;
+		padding: 20px 15px 15px 15px;
+	}
+}
+.h3{
+	@include font-size(24);
+	color: $blue;	
+	margin-top: 35px;
+
+	a {
+		@include blue-link;
+	}
+}
+
+// Recycleable Style Classes
+.link-readmore {
+	@include blue-link;
+	@include colfax;
+	@include font-size(11);
+	display: inline-block;
+	@include old-ie {
+		display: inline; 
+		zoom: 1; 
+	}
+	font-weight: 700;
+	text-transform: uppercase;
+}
+.p-intro {
+	font-style: italic;
+}
+
+.all-events {
+	@extend .link-readmore;
+	display: block;
+	position: relative;
+	margin-top: 20px;
+	padding-top: 30px;
+	
+	&:after {
+		@include hash-dark;
+		content: "";
+		display: block;
+		position: absolute;
+		height: 6px;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		top: 0;
+	}
+}
+
+.meta {
+	@include colfax;
+	@include font-size(16);
+
+	a {
+		@include blue-link;
+	}
+}
+
+
+// Pygments Code Hightlighting Styles
+.highlight {
+	@include font-size(13);
+	border: 1px solid #EAEAEA;
+	background: #F4F4F4;
+	background: #f8f8f8; overflow: auto;
+	border-radius: 4px;
+	margin: 0 20px;
+
+	.hll{
+		background-color: #ffffcc 
+	}
+	.c {
+		color: #408080; font-style: italic 
+	} 
+	/* Comment */
+	.err{
+		border: 1px solid #FF0000 
+	} 
+	/* Error */
+	.k  {
+		color: #008000; font-weight: bold 
+	} 
+	/* Keyword */
+	.o  {
+		color: #666666 
+	} 
+	/* Operator */
+	.cm {
+		color: #408080; font-style: italic 
+	} 
+	/* Comment.Multiline */
+	.cp {
+		color: #BC7A00 
+	} 
+	/* Comment.Preproc */
+	.c1 {
+		color: #408080; font-style: italic 
+	} 
+	/* Comment.Single */
+	.cs {
+		color: #408080; font-style: italic 
+	} 
+	/* Comment.Special */
+	.gd {
+		color: #A00000 
+	} 
+	/* Generic.Deleted */
+	.ge {
+		font-style: italic 
+	} 
+	/* Generic.Emph */
+	.gr {
+		color: #FF0000 
+	} 
+	/* Generic.Error */
+	.gh {
+		color: #000080; font-weight: bold 
+	} 
+	/* Generic.Heading */
+	.gi {
+		color: #00A000 
+	} 
+	/* Generic.Inserted */
+	.go {
+		color: #808080 
+	} 
+	/* Generic.Output */
+	.gp {
+		color: #000080; font-weight: bold 
+	} 
+	/* Generic.Prompt */
+	.gs {
+		font-weight: bold 
+	} 
+	/* Generic.Strong */
+	.gu {
+		color: #800080; font-weight: bold 
+	} 
+	/* Generic.Subheading */
+	.gt {
+		color: #0040D0 
+	} 
+	/* Generic.Traceback */
+	.kc {
+		color: #008000; font-weight: bold 
+	} 
+	/* Keyword.Constant */
+	.kd {
+		color: #008000; font-weight: bold 
+	} 
+	/* Keyword.Declaration */
+	.kn {
+		color: #008000; font-weight: bold 
+	} 
+	/* Keyword.Namespace */
+	.kp {
+		color: #008000 
+	} 
+	/* Keyword.Pseudo */
+	.kr {
+		color: #008000; font-weight: bold 
+	} 
+	/* Keyword.Reserved */
+	.kt {
+		color: #B00040 
+	} 
+	/* Keyword.Type */
+	.m  {
+		color: #666666 
+	} 
+	/* Literal.Number */
+	.s  {
+		color: #BA2121 
+	} 
+	/* Literal.String */
+	.na {
+		color: #7D9029 
+	} 
+	/* Name.Attribute */
+	.nb {
+		color: #008000 
+	} 
+	/* Name.Builtin */
+	.nc {
+		color: #0000FF; font-weight: bold 
+	} 
+	/* Name.Class */
+	.no {
+		color: #880000 
+	} 
+	/* Name.Constant */
+	.nd {
+		color: #AA22FF 
+	} 
+	/* Name.Decorator */
+	.ni {
+		color: #999999; font-weight: bold 
+	} 
+	/* Name.Entity */
+	.ne {
+		color: #D2413A; font-weight: bold 
+	} 
+	/* Name.Exception */
+	.nf {
+		color: #0000FF 
+	} 
+	/* Name.Function */
+	.nl {
+		color: #A0A000 
+	} 
+	/* Name.Label */
+	.nn {
+		color: #0000FF; font-weight: bold 
+	} 
+	/* Name.Namespace */
+	.nt {
+		color: #008000; font-weight: bold 
+	} 
+	/* Name.Tag */
+	.nv {
+		color: #19177C 
+	} 
+	/* Name.Variable */
+	.ow {
+		color: #AA22FF; font-weight: bold 
+	} 
+	/* Operator.Word */
+	.w  {
+		color: #bbbbbb 
+	} 
+	/* Text.Whitespace */
+	.mf {
+		color: #666666 
+	} 
+	/* Literal.Number.Float */
+	.mh {
+		color: #666666 
+	} 
+	/* Literal.Number.Hex */
+	.mi {
+		color: #666666 
+	} 
+	/* Literal.Number.Integer */
+	.mo {
+		color: #666666 
+	} 
+	/* Literal.Number.Oct */
+	.sb {
+		color: #BA2121 
+	} 
+	/* Literal.String.Backtick */
+	.sc {
+		color: #BA2121 
+	} 
+	/* Literal.String.Char */
+	.sd {
+		color: #BA2121; font-style: italic 
+	} 
+	/* Literal.String.Doc */
+	.s2 {
+		color: #BA2121 
+	} 
+	/* Literal.String.Double */
+	.se {
+		color: #BB6622; font-weight: bold 
+	} 
+	/* Literal.String.Escape */
+	.sh {
+		color: #BA2121 
+	} 
+	/* Literal.String.Heredoc */
+	.si {
+		color: #BB6688; font-weight: bold 
+	} 
+	/* Literal.String.Interpol */
+	.sx {
+		color: #008000 
+	} 
+	/* Literal.String.Other */
+	.sr {
+		color: #BB6688 
+	} 
+	/* Literal.String.Regex */
+	.s1 {
+		color: #BA2121 
+	} 
+	/* Literal.String.Single */
+	.ss {
+		color: #19177C 
+	} 
+	/* Literal.String.Symbol */
+	.bp {
+		color: #008000 
+	} 
+	/* Name.Builtin.Pseudo */
+	.vc {
+		color: #19177C 
+	} 
+	/* Name.Variable.Class */
+	.vg {
+		color: #19177C 
+	} 
+	/* Name.Variable.Global */
+	.vi {
+		color: #19177C 
+	} 
+	/* Name.Variable.Instance */
+	.il {
+		color: #666666 
+	} 
+	/* Literal.Number.Integer.Long */
+	.lineno {
+		color: #000000; background-color: #dddddd; 
+	}
+}
+
+
+
+// Container
 @include respond-min(768px) {
-	// TODO: Remove Menu button hide
-	.menu-button {
-		display: none !important;
+	.container {
+		margin: 0 auto;	
+		max-width: 1100px;
+		width: (704/768) * 100%;
+	}
+}
+
+.menu-button {
+	@include respond-min(768px) { // Desktop Styles
+		display: none !important; // TODO: Remove Menu button hide
 	}
 }
 
 // Header
-[role="banner"] {
+[role="banner"] { // TODO: Add in Background Graphic
 	@include clearfix;
 	background: $green-light;
 	overflow: hidden;
-	padding-top: 80px;
-	padding-bottom: 10px;
+	padding: 20px 0 0;
 	position: relative;
 	z-index: 0;
-	
-	// logo
-	.logo {
-		@include ir;
-		background: url(../images/logo-white.png) center center no-repeat $green-medium;
-		border-radius: 50%;
-		display: block;
-		left: -50px;
-		height: 300px;
-		position: absolute;
-		top: -100px;
-		width: 300px;
-		z-index: -1;
+	@include respond-min(768px) { // Desktop Styles
+		height: 220px;
+		margin: 0;
+		padding: 0;
+	}
 
-		.svg & {
-			background: url(../images/logo-white.svg) center center no-repeat $green-medium;	
+	.container {
+		@include respond-min(768px) { // Desktop Styles
+			padding-top: 100px;
+			position: relative;
+		}
+	}
+	
+	.logo {
+		@include font-size(40);
+		@include colfax;
+		background: url(../images/logo-django.png) center center no-repeat;
+		color: $green-dark;
+		display: block;
+		float: left;
+		font-weight: 700;
+		height: 50px;
+		margin: 0 15px 20px;
+		text-decoration: none;
+		text-indent: 100%;
+		width: 142px;
+		
+		.svg & { // NOTE: Modernizr Use
+			background: url(../images/logo-django.svg) center center no-repeat;	
 		}
 	}
 
-	// tagline
 	.tagline {
-		position: absolute;
 		left: -9999px;
+		position: absolute;
+		@include respond-min(768px) { // Desktop Styles
+			@include colfax;
+			color: $green-medium;
+			font-weight: 900;
+			left: 240px;
+			line-height: 1;
+			text-transform: uppercase;
+			top: 22px;
+			width: (180/700) * 100%;
+		}
 	}
 
 	.menu-button {
 		@include font-size(20);
-		background: #FFF;
+		background: $green-dark;
 		border-radius: 50%;
+		color: #fff;
+		cursor: pointer;
 		display: block;
+		float: right;
 		height: 45px;
 		line-height: 48px;
-		position: absolute;
-		right: 30px;
+		margin: 0 15px;
 		text-align: center;
 		text-decoration: none;
-		top: 30px;
 		width: 45px;
-		&:hover {
+		-webkit-tap-highlight-color: transparent;
+		
+		&:active {
 			color: $green-medium;
 		}
+		
 		span {
 			@include visuallyhidden;
 		}
@@ -77,124 +476,88 @@
 		-ms-transition: all 0.3s ease-out;
 		-o-transition: all 0.3s ease-out;
 		transition: all 0.3s ease-out;
-
+		@include respond-min(768px) { // Desktop Styles
+			max-height: none;
+		}
+		
 		&.active {
 			max-height: 500px;
 		}
 	}
 
-	// navigation - primary
+	[role="navigation"] {
+		background: url(../images/bg-pattern.jpg) repeat top center $green-dark;
+		clear: both;
+
+		ul {
+			margin: 0;
+			padding: 0;
+		}
+
+		li {
+			@include colfax;
+			@include font-size(24);
+			display: block;			
+			font-weight: 400;
+			line-height: 1.1;
+			text-align: center;
+			text-transform: uppercase;
+			@include respond-min(768px) { // Desktop Styles
+				float: left;
+				margin-left: (11/700) * 100%;
+				width: (226/700) * 100%;
+			}
+		}
+
+		a {
+			color: #fff;
+			background: url(../images/patterns/hash-light@2x.png) repeat-x top center;
+			background-size: 4px;
+			@include old-ie {
+				background: url(../images/patterns/hash-light.png) repeat-x top center;
+			}
+			display: block;
+			padding: 14px 0 8px 0;
+			text-decoration: none;
+			-webkit-tap-highlight-color: transparent;
+			
+			&:active {
+				color: $green-medium;
+			}
+
+			@include respond-min(768px) {
+				&:hover {
+					color: $green-medium;
+				}	
+			}
+		}
+	}
+
 	.nav-primary {
 		list-style: none;
 		margin: 0;
 		padding: 0;
 
-		li {
-			display: block;
-			margin: 10px 0 0 0;
-			padding: 0;
-
-			a {
-				@include colfax;
-				border-radius: 3px;
-				color: #FFF;
-				background: $green-dark;
-				font-weight: 700;
-				display: block;
-				line-height: 1.1;
-				padding: 24px 0 20px 0;
-				margin-top: 1px;
-				text-align: center;
-				text-decoration: none;
-				text-transform: uppercase;
-				width: 100%;
-
-				&:hover {
-					color: $green-medium;
-				}
-			}
-
-			i {
-				@include font-size(20);
-				padding-right: 5px;
-			}
-
-			&:first-child a {
-				background: url(../images/patterns/pattern1.png) center center repeat $green-dark;
-			}
-
-			&:nth-child(2) a {
-				background: url(../images/patterns/pattern2.png) center center repeat $green-dark;
-			}
-
-			&:nth-child(3) a {
-				background: url(../images/patterns/pattern3.png) center center repeat $green-dark;
-			}
+		li:first-child a {
+			background: none;
+			padding-top: 10px;
 		}
 	}
 
-	// navigation - secondary
 	.nav-secondary {
 		list-style: none;
 		margin: 10px 0 0 0;
 		padding: 0;
 		text-align: center;
+		@include respond-min(768px) { // Desktop Styles
+			position: absolute;
+			right: 0;
+			top: 20px;
+		}
 
-		li {
-			display: inline-block;
-				// IE7 inline-block fix
-				zoom:1; 
-				*display: inline; 
-			@include colfax;
-			@include font-size(11);
-			font-weight: 700;
-			line-height: 1;
-			margin: 10px 0 0 5px;
-			padding: 0;
-			text-transform: uppercase;
-
-			&:first-child {
-				border: none;
-				margin-left: 0;
-			}
-
-			a {
-				color: $green-dark;
-				display: inline-block;
-				// IE7 inline-block fix
-					zoom:1; 
-					*display: inline; 
-					_height: 20px;/*fill in relevant height here*/
-				height: 20px;
-				margin: 0;
-				padding-top: 25px;
-				position: relative;
-				text-decoration: none;
-
-				&:after {
-					@include hash-dark;
-					content: "";
-					bottom: 35px;
-					display: block;
-					left: 0;
-					position: absolute;
-					right: 0;
-					top: 0;
-				}
-				&:hover {
-					color: $green-medium;
-
-					&:after {
-						background: $green-medium !important;
-					}
-				}
-			}
-
-			&.active {
-				a:after {
-					background: $green-dark;
-				}
-			}
+		a {
+			@include font-size(20);
+			color: lighten($gray-text, 10%);
 		}
 	}
 }
@@ -206,24 +569,30 @@
 	@include colfax;
 	background: $green-dark;
 	border-top: 1px solid lighten($green-dark, 20%);
+	clear: both;
 	color: $green-light;
 	margin-top: 40px;
 	padding-bottom: 20px;
 	text-align: center;
 
 	.logo {
-		@include ir;
+		//@include ir;
 		display: block;
 		height: 30px;
-		margin: 15px auto;
+		margin: 15px;
 		width: 80px;
-		background: url(../images/logo-white-small.png) 0 0 no-repeat;
-		
+		background: url(../images/logo-django.png) 0 0 no-repeat;
+		@include respond-min(768px) { // Desktop Styles
+			margin: 25px 0;
+		}
+
 		.svg & { // NOTE: Modernizr use
-			background: url(../images/logo-white.svg) 0 0 no-repeat;	
+			background: url(../images/logo-django.svg) 0 0 no-repeat;	
 			background-size: 100%;
 		}
 	}
+
+	
 
 	.label {
 		@include colfax;
@@ -234,16 +603,19 @@
 		position: relative;
 		padding-top: 25px;
 		text-transform: uppercase;
+		@include respond-min(768px) { // Desktop Styles
+			margin-top: 0;
+		}
 
 		&:after {
 			@include hash-light;
+			bottom: 0;
 			content: "";
 			display: block;
-			position: absolute;
 			height: 6px;
 			left: 0;
+			position: absolute;
 			right: 0;
-			bottom: 0;
 			top: 0;
 		}
 
@@ -255,10 +627,28 @@
 		}
 	}
 
+
 	.learn .label {
 		@extend .label;
 		margin-top: 0;
 	}
+	.learn, .involved, .follow {
+		@include respond-min(768px) { // Desktop Styles
+			float: left;
+			margin-left: (9/704) * 100%;
+			padding-bottom: 50px;
+			text-align: left;
+			width: (228/704) * 100%;
+		}
+	}
+	.learn {
+		@include respond-min(768px) { // Desktop Styles
+			margin-left: 0;
+		}
+	}
+
+
+
 
 	ul {
 		list-style: none;
@@ -287,6 +677,10 @@
 			margin-top: 35px;
 			padding-top: 40px;
 			position: relative;
+			@include respond-min(768px) { // Desktop Styles
+				width: (90/704) * 100%;
+				margin: 0;
+			}
 
 			&:after {
 				@include hash-light;
@@ -300,6 +694,12 @@
 				top: 0;
 			}
 
+			&:first-child {
+				@include respond-min(768px) { // Desktop Styles
+					margin-left: (214/704) * 100%;
+				}
+			}
+
 			li {
 				display: block;
 				float: left;
@@ -308,7 +708,7 @@
 			}
 
 			a {
-				@include ir;
+				//@include ir;
 				display: block;
 				margin: 10px auto;
 				width: 60px;
@@ -350,6 +750,7 @@
 		margin-top: 25px;
 
 		&.copyright {
+			clear: both;
 			margin-top: 35px;
 			padding-top: 45px;
 			position: relative;
@@ -377,6 +778,25 @@
 		}
 	}
 }
+
+
+[role="main"] {
+	@include respond-min(768px) { // Desktop Styles
+		float: left;
+		width: (429/704) * 100%;
+		padding: 0;
+	}
+}
+
+[role="complementary"] {
+	@include respond-min(768px) { // Desktop Styles
+		float: left;
+		width: (230/704) * 100%;
+		margin-left: (45/704) * 100%;
+		padding: 0 0 40px 0;
+	}
+}
+
 
 
 
@@ -489,14 +909,27 @@
 .header {
 	@include hash-dark;
 	padding: 20px;
+	@include respond-min(768px) { // Desktop Styles
+		padding-left: (32/768) * 100%;
+		padding-right: (32/768) * 100%;
+	}
 
 	> * {
 		background: #FFF;
 		margin: 0 auto;
 		padding: 10px;
+		@include respond-min(768px) { // Desktop Styles
+			max-width: 1080px;
+		}
 
 		&.toolbox {
 			background: none;
+		}
+	}
+
+	img {
+		@include respond-min(768px) { // Desktop Styles
+			display: none !important;
 		}
 	}
 }
@@ -506,10 +939,16 @@
 	display: block;
 	width: 100%;
 	margin: 30px auto;
+	@include respond-min(768px) { // Desktop Styles
+		display: none;
+	}
 }
 .nav-pagination-large {
 	@extend .nav-pagination;
 	display: none;
+	@include respond-min(768px) { // Desktop Styles
+		display: block;
+	}
 }
 
 
@@ -533,4 +972,13 @@ hr.hash {
 	outline: none;
 	margin-top: 20px;
 	@include hash-dark;
+}
+
+
+// Boilerplate Helper mixins (entered as classes)
+.visuallyhidden { 
+	@include visuallyhidden;
+}
+.clearfix, .group-container {
+	@include clearfix;
 }

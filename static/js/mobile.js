@@ -21,21 +21,19 @@ tsm=function(e,t){return e={},t={define:function(){var t=arguments,n=function(e,
 
 			init: function(){
 				this.menu.addClass('nav-menu-on');
-				
 				// create menu button
-				this.button = $('<a class="menu-button"><i class="icon-reorder"></i><span>Menu</span></a>').insertBefore(this.menu);
-
+				this.button = $('<span class="menu-button"><i class="icon-reorder"></i><span>Menu</span></span>').insertBefore(this.menu);
 				this.button.on( 'click', tsm.delegate(this.toggleMenu, this) );
 			},
-		
+
 			toggleMenu: function() {
 				this.menu.toggleClass('active');
 			}
-		
+
 		};
 
 		// Export a single instance of our module:
-		return new MobileMenuExport('.nav-menu');
+		return new MobileMenuExport('[role="banner"] [role="navigation"]');
 	});
 
 	tsm.define("main", ["tsm"], function( tsm ) {

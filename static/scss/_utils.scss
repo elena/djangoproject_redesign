@@ -116,11 +116,6 @@ html {
 }
 
 // Boilerplate Helper mixins (https://github.com/h5bp/html5-boilerplate/blob/v4.1.0/doc/css.md)
-@mixin ir {
-	font: 0/0 a;
-	text-shadow: none;
-	color: transparent;
-}
 @mixin visuallyhidden { 
 	border: 0;
 	clip: rect(0 0 0 0);

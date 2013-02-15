@@ -1069,18 +1069,10 @@ body {
   font-family: 'Elena', Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
   font-size: 16px;
   font-size: 1.6rem;
-  background: #FFF;
+  background: #fff;
   color: #7c7c7c;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased; }
-
-body > * {
-  padding: 0 20px; }
-
-.logo {
-  font-size: 40px;
-  font-size: 4rem;
-  display: block; }
 
 a,
 a:active,
@@ -1092,10 +1084,20 @@ a:focus {
   a:focus:hover {
     color: #00acf3; }
 
-.h1, .h2, .h3, .h4, .h5, .h6 {
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
   font-family: 'Colfax', Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
   font-weight: normal; }
-  .h1 a, .h2 a, .h3 a, .h4 a, .h5 a, .h6 a {
+  .h1 a,
+  .h2 a,
+  .h3 a,
+  .h4 a,
+  .h5 a,
+  .h6 a {
     text-decoration: none; }
 
 .h1 {
@@ -1118,8 +1120,6 @@ a:focus {
   .h2 span {
     background: #FFF;
     display: inline-block;
-    zoom: 1;
-    *display: inline;
     line-height: 1.1;
     padding: 20px 15px 15px 15px; }
 
@@ -1143,8 +1143,6 @@ a:focus {
   font-size: 11px;
   font-size: 1.1rem;
   display: inline-block;
-  zoom: 1;
-  *display: inline;
   font-weight: 700;
   text-transform: uppercase; }
   .link-readmore:hover, .all-events:hover {
@@ -1188,294 +1186,230 @@ a:focus {
   font-size: 1.3rem;
   border: 1px solid #EAEAEA;
   background: #F4F4F4;
-  border-radius: 4px;
-  margin: 0 20px; }
-
-.highlight .hll {
-  background-color: #ffffcc; }
-
-.highlight {
   background: #f8f8f8;
-  overflow: auto; }
-
-.highlight .c {
-  color: #408080;
-  font-style: italic; }
-
-/* Comment */
-.highlight .err {
-  border: 1px solid #FF0000; }
-
-/* Error */
-.highlight .k {
-  color: #008000;
-  font-weight: bold; }
-
-/* Keyword */
-.highlight .o {
-  color: #666666; }
-
-/* Operator */
-.highlight .cm {
-  color: #408080;
-  font-style: italic; }
-
-/* Comment.Multiline */
-.highlight .cp {
-  color: #BC7A00; }
-
-/* Comment.Preproc */
-.highlight .c1 {
-  color: #408080;
-  font-style: italic; }
-
-/* Comment.Single */
-.highlight .cs {
-  color: #408080;
-  font-style: italic; }
-
-/* Comment.Special */
-.highlight .gd {
-  color: #A00000; }
-
-/* Generic.Deleted */
-.highlight .ge {
-  font-style: italic; }
-
-/* Generic.Emph */
-.highlight .gr {
-  color: #FF0000; }
-
-/* Generic.Error */
-.highlight .gh {
-  color: #000080;
-  font-weight: bold; }
-
-/* Generic.Heading */
-.highlight .gi {
-  color: #00A000; }
-
-/* Generic.Inserted */
-.highlight .go {
-  color: #808080; }
-
-/* Generic.Output */
-.highlight .gp {
-  color: #000080;
-  font-weight: bold; }
-
-/* Generic.Prompt */
-.highlight .gs {
-  font-weight: bold; }
-
-/* Generic.Strong */
-.highlight .gu {
-  color: #800080;
-  font-weight: bold; }
-
-/* Generic.Subheading */
-.highlight .gt {
-  color: #0040D0; }
-
-/* Generic.Traceback */
-.highlight .kc {
-  color: #008000;
-  font-weight: bold; }
-
-/* Keyword.Constant */
-.highlight .kd {
-  color: #008000;
-  font-weight: bold; }
-
-/* Keyword.Declaration */
-.highlight .kn {
-  color: #008000;
-  font-weight: bold; }
-
-/* Keyword.Namespace */
-.highlight .kp {
-  color: #008000; }
-
-/* Keyword.Pseudo */
-.highlight .kr {
-  color: #008000;
-  font-weight: bold; }
-
-/* Keyword.Reserved */
-.highlight .kt {
-  color: #B00040; }
-
-/* Keyword.Type */
-.highlight .m {
-  color: #666666; }
-
-/* Literal.Number */
-.highlight .s {
-  color: #BA2121; }
-
-/* Literal.String */
-.highlight .na {
-  color: #7D9029; }
-
-/* Name.Attribute */
-.highlight .nb {
-  color: #008000; }
-
-/* Name.Builtin */
-.highlight .nc {
-  color: #0000FF;
-  font-weight: bold; }
-
-/* Name.Class */
-.highlight .no {
-  color: #880000; }
-
-/* Name.Constant */
-.highlight .nd {
-  color: #AA22FF; }
-
-/* Name.Decorator */
-.highlight .ni {
-  color: #999999;
-  font-weight: bold; }
-
-/* Name.Entity */
-.highlight .ne {
-  color: #D2413A;
-  font-weight: bold; }
-
-/* Name.Exception */
-.highlight .nf {
-  color: #0000FF; }
-
-/* Name.Function */
-.highlight .nl {
-  color: #A0A000; }
-
-/* Name.Label */
-.highlight .nn {
-  color: #0000FF;
-  font-weight: bold; }
-
-/* Name.Namespace */
-.highlight .nt {
-  color: #008000;
-  font-weight: bold; }
-
-/* Name.Tag */
-.highlight .nv {
-  color: #19177C; }
-
-/* Name.Variable */
-.highlight .ow {
-  color: #AA22FF;
-  font-weight: bold; }
-
-/* Operator.Word */
-.highlight .w {
-  color: #bbbbbb; }
-
-/* Text.Whitespace */
-.highlight .mf {
-  color: #666666; }
-
-/* Literal.Number.Float */
-.highlight .mh {
-  color: #666666; }
-
-/* Literal.Number.Hex */
-.highlight .mi {
-  color: #666666; }
-
-/* Literal.Number.Integer */
-.highlight .mo {
-  color: #666666; }
-
-/* Literal.Number.Oct */
-.highlight .sb {
-  color: #BA2121; }
-
-/* Literal.String.Backtick */
-.highlight .sc {
-  color: #BA2121; }
-
-/* Literal.String.Char */
-.highlight .sd {
-  color: #BA2121;
-  font-style: italic; }
-
-/* Literal.String.Doc */
-.highlight .s2 {
-  color: #BA2121; }
-
-/* Literal.String.Double */
-.highlight .se {
-  color: #BB6622;
-  font-weight: bold; }
-
-/* Literal.String.Escape */
-.highlight .sh {
-  color: #BA2121; }
-
-/* Literal.String.Heredoc */
-.highlight .si {
-  color: #BB6688;
-  font-weight: bold; }
-
-/* Literal.String.Interpol */
-.highlight .sx {
-  color: #008000; }
-
-/* Literal.String.Other */
-.highlight .sr {
-  color: #BB6688; }
-
-/* Literal.String.Regex */
-.highlight .s1 {
-  color: #BA2121; }
-
-/* Literal.String.Single */
-.highlight .ss {
-  color: #19177C; }
-
-/* Literal.String.Symbol */
-.highlight .bp {
-  color: #008000; }
-
-/* Name.Builtin.Pseudo */
-.highlight .vc {
-  color: #19177C; }
-
-/* Name.Variable.Class */
-.highlight .vg {
-  color: #19177C; }
-
-/* Name.Variable.Global */
-.highlight .vi {
-  color: #19177C; }
-
-/* Name.Variable.Instance */
-.highlight .il {
-  color: #666666; }
-
-/* Literal.Number.Integer.Long */
-.highlight .lineno {
-  color: #000000;
-  background-color: #dddddd; }
+  overflow: auto;
+  border-radius: 4px;
+  margin: 0 20px;
+  /* Comment */
+  /* Error */
+  /* Keyword */
+  /* Operator */
+  /* Comment.Multiline */
+  /* Comment.Preproc */
+  /* Comment.Single */
+  /* Comment.Special */
+  /* Generic.Deleted */
+  /* Generic.Emph */
+  /* Generic.Error */
+  /* Generic.Heading */
+  /* Generic.Inserted */
+  /* Generic.Output */
+  /* Generic.Prompt */
+  /* Generic.Strong */
+  /* Generic.Subheading */
+  /* Generic.Traceback */
+  /* Keyword.Constant */
+  /* Keyword.Declaration */
+  /* Keyword.Namespace */
+  /* Keyword.Pseudo */
+  /* Keyword.Reserved */
+  /* Keyword.Type */
+  /* Literal.Number */
+  /* Literal.String */
+  /* Name.Attribute */
+  /* Name.Builtin */
+  /* Name.Class */
+  /* Name.Constant */
+  /* Name.Decorator */
+  /* Name.Entity */
+  /* Name.Exception */
+  /* Name.Function */
+  /* Name.Label */
+  /* Name.Namespace */
+  /* Name.Tag */
+  /* Name.Variable */
+  /* Operator.Word */
+  /* Text.Whitespace */
+  /* Literal.Number.Float */
+  /* Literal.Number.Hex */
+  /* Literal.Number.Integer */
+  /* Literal.Number.Oct */
+  /* Literal.String.Backtick */
+  /* Literal.String.Char */
+  /* Literal.String.Doc */
+  /* Literal.String.Double */
+  /* Literal.String.Escape */
+  /* Literal.String.Heredoc */
+  /* Literal.String.Interpol */
+  /* Literal.String.Other */
+  /* Literal.String.Regex */
+  /* Literal.String.Single */
+  /* Literal.String.Symbol */
+  /* Name.Builtin.Pseudo */
+  /* Name.Variable.Class */
+  /* Name.Variable.Global */
+  /* Name.Variable.Instance */
+  /* Literal.Number.Integer.Long */ }
+  .highlight .hll {
+    background-color: #ffffcc; }
+  .highlight .c {
+    color: #408080;
+    font-style: italic; }
+  .highlight .err {
+    border: 1px solid red; }
+  .highlight .k {
+    color: #008000;
+    font-weight: bold; }
+  .highlight .o {
+    color: #666666; }
+  .highlight .cm {
+    color: #408080;
+    font-style: italic; }
+  .highlight .cp {
+    color: #bc7a00; }
+  .highlight .c1 {
+    color: #408080;
+    font-style: italic; }
+  .highlight .cs {
+    color: #408080;
+    font-style: italic; }
+  .highlight .gd {
+    color: #a00000; }
+  .highlight .ge {
+    font-style: italic; }
+  .highlight .gr {
+    color: red; }
+  .highlight .gh {
+    color: #000080;
+    font-weight: bold; }
+  .highlight .gi {
+    color: #00a000; }
+  .highlight .go {
+    color: gray; }
+  .highlight .gp {
+    color: #000080;
+    font-weight: bold; }
+  .highlight .gs {
+    font-weight: bold; }
+  .highlight .gu {
+    color: #800080;
+    font-weight: bold; }
+  .highlight .gt {
+    color: #0040d0; }
+  .highlight .kc {
+    color: #008000;
+    font-weight: bold; }
+  .highlight .kd {
+    color: #008000;
+    font-weight: bold; }
+  .highlight .kn {
+    color: #008000;
+    font-weight: bold; }
+  .highlight .kp {
+    color: green; }
+  .highlight .kr {
+    color: #008000;
+    font-weight: bold; }
+  .highlight .kt {
+    color: #b00040; }
+  .highlight .m {
+    color: #666666; }
+  .highlight .s {
+    color: #ba2121; }
+  .highlight .na {
+    color: #7d9029; }
+  .highlight .nb {
+    color: green; }
+  .highlight .nc {
+    color: #0000FF;
+    font-weight: bold; }
+  .highlight .no {
+    color: #880000; }
+  .highlight .nd {
+    color: #aa22ff; }
+  .highlight .ni {
+    color: #999999;
+    font-weight: bold; }
+  .highlight .ne {
+    color: #D2413A;
+    font-weight: bold; }
+  .highlight .nf {
+    color: blue; }
+  .highlight .nl {
+    color: #a0a000; }
+  .highlight .nn {
+    color: #0000FF;
+    font-weight: bold; }
+  .highlight .nt {
+    color: #008000;
+    font-weight: bold; }
+  .highlight .nv {
+    color: #19177c; }
+  .highlight .ow {
+    color: #AA22FF;
+    font-weight: bold; }
+  .highlight .w {
+    color: #bbbbbb; }
+  .highlight .mf {
+    color: #666666; }
+  .highlight .mh {
+    color: #666666; }
+  .highlight .mi {
+    color: #666666; }
+  .highlight .mo {
+    color: #666666; }
+  .highlight .sb {
+    color: #ba2121; }
+  .highlight .sc {
+    color: #ba2121; }
+  .highlight .sd {
+    color: #BA2121;
+    font-style: italic; }
+  .highlight .s2 {
+    color: #ba2121; }
+  .highlight .se {
+    color: #BB6622;
+    font-weight: bold; }
+  .highlight .sh {
+    color: #ba2121; }
+  .highlight .si {
+    color: #BB6688;
+    font-weight: bold; }
+  .highlight .sx {
+    color: green; }
+  .highlight .sr {
+    color: #bb6688; }
+  .highlight .s1 {
+    color: #ba2121; }
+  .highlight .ss {
+    color: #19177c; }
+  .highlight .bp {
+    color: green; }
+  .highlight .vc {
+    color: #19177c; }
+  .highlight .vg {
+    color: #19177c; }
+  .highlight .vi {
+    color: #19177c; }
+  .highlight .il {
+    color: #666666; }
+  .highlight .lineno {
+    color: #000000;
+    background-color: #dddddd; }
 
 @media screen and (min-width: 768px) {
   .container {
-    width: 91.66667%;
+    margin: 0 auto;
     max-width: 1100px;
-    margin: 0 auto; } }
+    width: 91.66667%; } }
 @media screen and (min-width: 768px) {
   .menu-button {
     display: none !important; } }
+
 [role="banner"] {
   background: #e8f4d0;
   overflow: hidden;
-  padding-top: 80px;
-  padding-bottom: 10px;
+  padding: 20px 0 0;
   position: relative;
   z-index: 0; }
   [role="banner"]:before, [role="banner"]:after {
@@ -1483,39 +1417,61 @@ a:focus {
     display: table; }
   [role="banner"]:after {
     clear: both; }
+  @media screen and (min-width: 768px) {
+    [role="banner"] {
+      height: 220px;
+      margin: 0;
+      padding: 0; } }
+  @media screen and (min-width: 768px) {
+    [role="banner"] .container {
+      padding-top: 100px;
+      position: relative; } }
   [role="banner"] .logo {
-    font: 0/0 a;
-    text-shadow: none;
-    color: transparent;
-    background: url(../images/logo-white.png) center center no-repeat #b1cb2c;
-    border-radius: 50%;
+    font-size: 40px;
+    font-size: 4rem;
+    font-family: 'Colfax', Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
+    background: url(../images/logo-django.png) center center no-repeat;
+    color: #082d20;
     display: block;
-    left: -50px;
-    height: 300px;
-    position: absolute;
-    top: -100px;
-    width: 300px;
-    z-index: -1; }
+    float: left;
+    font-weight: 700;
+    height: 50px;
+    margin: 0 15px 20px;
+    text-decoration: none;
+    text-indent: 100%;
+    width: 142px; }
     .svg [role="banner"] .logo {
-      background: url(../images/logo-white.svg) center center no-repeat #b1cb2c; }
+      background: url(../images/logo-django.svg) center center no-repeat; }
   [role="banner"] .tagline {
-    position: absolute;
-    left: -9999px; }
+    left: -9999px;
+    position: absolute; }
+    @media screen and (min-width: 768px) {
+      [role="banner"] .tagline {
+        font-family: 'Colfax', Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
+        color: #b1cb2c;
+        font-weight: 900;
+        left: 240px;
+        line-height: 1;
+        text-transform: uppercase;
+        top: 22px;
+        width: 25.71429%; } }
   [role="banner"] .menu-button {
     font-size: 20px;
     font-size: 2rem;
-    background: #FFF;
+    background: #082d20;
     border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
     display: block;
+    float: right;
     height: 45px;
     line-height: 48px;
-    position: absolute;
-    right: 30px;
+    margin: 0 15px;
     text-align: center;
     text-decoration: none;
-    top: 30px;
-    width: 45px; }
-    [role="banner"] .menu-button:hover {
+    width: 45px;
+    -webkit-tap-highlight-color: transparent; }
+    [role="banner"] .menu-button:active {
       color: #b1cb2c; }
     [role="banner"] .menu-button span {
       border: 0;
@@ -1534,97 +1490,71 @@ a:focus {
     -ms-transition: all 0.3s ease-out;
     -o-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out; }
+    @media screen and (min-width: 768px) {
+      [role="banner"] .nav-menu-on {
+        max-height: none; } }
     [role="banner"] .nav-menu-on.active {
       max-height: 500px; }
+  [role="banner"] [role="navigation"] {
+    background: url(../images/bg-pattern.jpg) repeat top center #082d20;
+    clear: both; }
+    [role="banner"] [role="navigation"] ul {
+      margin: 0;
+      padding: 0; }
+    [role="banner"] [role="navigation"] li {
+      font-family: 'Colfax', Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
+      font-size: 24px;
+      font-size: 2.4rem;
+      display: block;
+      font-weight: 400;
+      line-height: 1.1;
+      text-align: center;
+      text-transform: uppercase; }
+      @media screen and (min-width: 768px) {
+        [role="banner"] [role="navigation"] li {
+          float: left;
+          margin-left: 1.57143%;
+          width: 32.28571%; } }
+    [role="banner"] [role="navigation"] a {
+      color: #fff;
+      background: url(../images/patterns/hash-light@2x.png) repeat-x top center;
+      background-size: 4px;
+      display: block;
+      padding: 14px 0 8px 0;
+      text-decoration: none;
+      -webkit-tap-highlight-color: transparent; }
+      [role="banner"] [role="navigation"] a:active {
+        color: #b1cb2c; }
+      @media screen and (min-width: 768px) {
+        [role="banner"] [role="navigation"] a:hover {
+          color: #b1cb2c; } }
   [role="banner"] .nav-primary {
     list-style: none;
     margin: 0;
     padding: 0; }
-    [role="banner"] .nav-primary li {
-      display: block;
-      margin: 10px 0 0 0;
-      padding: 0; }
-      [role="banner"] .nav-primary li a {
-        font-family: 'Colfax', Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
-        border-radius: 3px;
-        color: #FFF;
-        background: #082d20;
-        font-weight: 700;
-        display: block;
-        line-height: 1.1;
-        padding: 24px 0 20px 0;
-        margin-top: 1px;
-        text-align: center;
-        text-decoration: none;
-        text-transform: uppercase;
-        width: 100%; }
-        [role="banner"] .nav-primary li a:hover {
-          color: #b1cb2c; }
-      [role="banner"] .nav-primary li i {
-        font-size: 20px;
-        font-size: 2rem;
-        padding-right: 5px; }
-      [role="banner"] .nav-primary li:first-child a {
-        background: url(../images/patterns/pattern1.png) center center repeat #082d20; }
-      [role="banner"] .nav-primary li:nth-child(2) a {
-        background: url(../images/patterns/pattern2.png) center center repeat #082d20; }
-      [role="banner"] .nav-primary li:nth-child(3) a {
-        background: url(../images/patterns/pattern3.png) center center repeat #082d20; }
+    [role="banner"] .nav-primary li:first-child a {
+      background: none;
+      padding-top: 10px; }
   [role="banner"] .nav-secondary {
     list-style: none;
     margin: 10px 0 0 0;
     padding: 0;
     text-align: center; }
-    [role="banner"] .nav-secondary li {
-      display: inline-block;
-      zoom: 1;
-      *display: inline;
-      font-family: 'Colfax', Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
-      font-size: 11px;
-      font-size: 1.1rem;
-      font-weight: 700;
-      line-height: 1;
-      margin: 10px 0 0 5px;
-      padding: 0;
-      text-transform: uppercase; }
-      [role="banner"] .nav-secondary li:first-child {
-        border: none;
-        margin-left: 0; }
-      [role="banner"] .nav-secondary li a {
-        color: #082d20;
-        display: inline-block;
-        zoom: 1;
-        *display: inline;
-        _height: 20px;
-        /*fill in relevant height here*/
-        height: 20px;
-        margin: 0;
-        padding-top: 25px;
-        position: relative;
-        text-decoration: none; }
-        [role="banner"] .nav-secondary li a:after {
-          background: url(../images/patterns/hash-dark@2x.png) repeat;
-          background-size: 4px;
-          content: "";
-          bottom: 35px;
-          display: block;
-          left: 0;
-          position: absolute;
-          right: 0;
-          top: 0; }
-          .lt-ie9 [role="banner"] .nav-secondary li a:after {
-            background: url(../images/patterns/hash-dark.png) repeat; }
-        [role="banner"] .nav-secondary li a:hover {
-          color: #b1cb2c; }
-          [role="banner"] .nav-secondary li a:hover:after {
-            background: #b1cb2c !important; }
-      [role="banner"] .nav-secondary li.active a:after {
-        background: #082d20; }
+    @media screen and (min-width: 768px) {
+      [role="banner"] .nav-secondary {
+        position: absolute;
+        right: 0;
+        top: 20px; } }
+    [role="banner"] .nav-secondary a {
+      font-size: 20px;
+      font-size: 2rem;
+      color: #969696; }
 
 [role="contentinfo"] {
   font-family: 'Colfax', Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
   background: #082d20;
   border-top: 1px solid #17845e;
+  clear: both;
   color: #e8f4d0;
   margin-top: 40px;
   padding-bottom: 20px;
@@ -1635,16 +1565,16 @@ a:focus {
   [role="contentinfo"]:after {
     clear: both; }
   [role="contentinfo"] .logo {
-    font: 0/0 a;
-    text-shadow: none;
-    color: transparent;
     display: block;
     height: 30px;
-    margin: 15px auto;
+    margin: 15px;
     width: 80px;
-    background: url(../images/logo-white-small.png) 0 0 no-repeat; }
+    background: url(../images/logo-django.png) 0 0 no-repeat; }
+    @media screen and (min-width: 768px) {
+      [role="contentinfo"] .logo {
+        margin: 25px 0; } }
     .svg [role="contentinfo"] .logo {
-      background: url(../images/logo-white.svg) 0 0 no-repeat;
+      background: url(../images/logo-django.svg) 0 0 no-repeat;
       background-size: 100%; }
   [role="contentinfo"] .label, [role="contentinfo"] .learn .label {
     font-family: 'Colfax', Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
@@ -1655,16 +1585,19 @@ a:focus {
     position: relative;
     padding-top: 25px;
     text-transform: uppercase; }
+    @media screen and (min-width: 768px) {
+      [role="contentinfo"] .label, [role="contentinfo"] .learn .label {
+        margin-top: 0; } }
     [role="contentinfo"] .label:after {
       background: url(../images/patterns/hash-light@2x.png) repeat;
       background-size: 4px;
+      bottom: 0;
       content: "";
       display: block;
-      position: absolute;
       height: 6px;
       left: 0;
+      position: absolute;
       right: 0;
-      bottom: 0;
       top: 0; }
       .lt-ie9 [role="contentinfo"] .label:after {
         background: url(../images/patterns/hash-light.png) repeat; }
@@ -1676,6 +1609,16 @@ a:focus {
       margin: 15px auto 0px auto; }
   [role="contentinfo"] .learn .label {
     margin-top: 0; }
+  @media screen and (min-width: 768px) {
+    [role="contentinfo"] .learn, [role="contentinfo"] .involved, [role="contentinfo"] .follow {
+      float: left;
+      margin-left: 1.27841%;
+      padding-bottom: 50px;
+      text-align: left;
+      width: 32.38636%; } }
+  @media screen and (min-width: 768px) {
+    [role="contentinfo"] .learn {
+      margin-left: 0; } }
   [role="contentinfo"] ul {
     list-style: none;
     margin: 25px 0 0 0;
@@ -1697,6 +1640,10 @@ a:focus {
       margin-top: 35px;
       padding-top: 40px;
       position: relative; }
+      @media screen and (min-width: 768px) {
+        [role="contentinfo"] ul.thanks {
+          width: 12.78409%;
+          margin: 0; } }
       [role="contentinfo"] ul.thanks:after {
         background: url(../images/patterns/hash-light@2x.png) repeat;
         background-size: 4px;
@@ -1710,15 +1657,15 @@ a:focus {
         top: 0; }
         .lt-ie9 [role="contentinfo"] ul.thanks:after {
           background: url(../images/patterns/hash-light.png) repeat; }
+      @media screen and (min-width: 768px) {
+        [role="contentinfo"] ul.thanks:first-child {
+          margin-left: 30.39773%; } }
       [role="contentinfo"] ul.thanks li {
         display: block;
         float: left;
         width: 33%;
         min-width: 92px; }
       [role="contentinfo"] ul.thanks a {
-        font: 0/0 a;
-        text-shadow: none;
-        color: transparent;
         display: block;
         margin: 10px auto;
         width: 60px; }
@@ -1744,6 +1691,7 @@ a:focus {
     color: #FFF;
     margin-top: 25px; }
     [role="contentinfo"] p.copyright {
+      clear: both;
       margin-top: 35px;
       padding-top: 45px;
       position: relative; }
@@ -1765,6 +1713,19 @@ a:focus {
       -webkit-tap-highlight-color: #b1cb2c; }
       [role="contentinfo"] p a:hover {
         color: #b1cb2c; }
+
+@media screen and (min-width: 768px) {
+  [role="main"] {
+    float: left;
+    width: 60.9375%;
+    padding: 0; } }
+
+@media screen and (min-width: 768px) {
+  [role="complementary"] {
+    float: left;
+    width: 32.67045%;
+    margin-left: 6.39205%;
+    padding: 0 0 40px 0; } }
 
 .list-news {
   list-style: none;
@@ -1858,20 +1819,36 @@ a:focus {
   padding: 20px; }
   .lt-ie9 .header {
     background: url(../images/patterns/hash-dark.png) repeat; }
+  @media screen and (min-width: 768px) {
+    .header {
+      padding-left: 4.16667%;
+      padding-right: 4.16667%; } }
   .header > * {
     background: #FFF;
     margin: 0 auto;
     padding: 10px; }
+    @media screen and (min-width: 768px) {
+      .header > * {
+        max-width: 1080px; } }
     .header > *.toolbox {
       background: none; }
+  @media screen and (min-width: 768px) {
+    .header img {
+      display: none !important; } }
 
 .nav-pagination, .nav-pagination-large {
   display: block;
   width: 100%;
   margin: 30px auto; }
+  @media screen and (min-width: 768px) {
+    .nav-pagination, .nav-pagination-large {
+      display: none; } }
 
 .nav-pagination-large {
   display: none; }
+  @media screen and (min-width: 768px) {
+    .nav-pagination-large {
+      display: block; } }
 
 img.toolbox {
   display: block;
@@ -1893,11 +1870,6 @@ hr.hash {
   background-size: 4px; }
   .lt-ie9 hr.hash {
     background: url(../images/patterns/hash-dark.png) repeat; }
-
-.ir {
-  font: 0/0 a;
-  text-shadow: none;
-  color: transparent; }
 
 .visuallyhidden {
   border: 0;
