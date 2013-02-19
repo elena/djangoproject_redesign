@@ -5,16 +5,28 @@
 		<a class="logo" href="{% url 'index' %}">Django</a>
 		<div role="navigation">
 			<ul class="nav-primary">
-				<li><a href="{% url 'why' %}"> Why Django</a></li>
-				<li><a href="{% url 'start' %}">Get Started</a></li>
-				<li><a href="#">Documentation</a></li>
+				<li{% if section == 'why' %} class="active"{% endif %}>
+					<a href="{% url 'start' %}"><a href="{% url 'why' %}"> Why Django</a>
+				</li>
+				<li{% if section == 'get_started' %} class="active"{% endif %}>
+					<a href="{% url 'start' %}">Get Started</a>
+				</li>
+				<li{% if section == 'docs' %} class="active"{% endif %}>
+					<a href="{% url 'start' %}"><a href="#">Documentation</a>
+				</li>
 			</ul>
 			<ul class="nav-secondary">
 				<!-- the class of 'active' should appear on the appropriate <li> -->
-				<li class="active"><a href="{% url 'news_index' %}">News &amp; Events</a></li>
-				<li><a href="#">Community</a></li>
-				<li><a href="#">Code</a></li>
-				<li><a href="#">About</a></li>
+				<li{% if section == 'news' %} class="active"{% endif %}>
+					<a href="{% url 'news_index' %}">News &amp; Events</a></li>
+				<li{% if section == 'community' %} class="active"{% endif %}>
+					<a href="{% url 'start' %}"><a href="#">Community</a></li>
+				<li{% if section == 'code' %} class="active"{% endif %}><a href="{% url 'start' %}">
+					<a href="#">Code</a>
+				</li>
+				<li{% if section == 'about' %} class="active"{% endif %}><a href="{% url 'start' %}">
+					<a href="#">About</a>
+				</li>
 			</ul>
 		</div>
 	</div>

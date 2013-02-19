@@ -33,11 +33,11 @@ def _ddt_check(request):
         return False
     if request.user.is_authenticated():
         return True
-    return False
-    
+    return True
+
 DEBUG_TOOLBAR_CONFIG = {
     'INTERCEPT_REDIRECTS': False,
-    'SHOW_TOOLBAR_CALLBACK': _ddt_check 
+    'SHOW_TOOLBAR_CALLBACK': _ddt_check
 }
 
 # Log sent emails to the console.

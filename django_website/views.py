@@ -1,14 +1,22 @@
 from django.views.generic import TemplateView
 
 
-class Index(TemplateView):
+class BaseSectionView(TemplateView):
+
+    def get_context_data(self, **kwargs):
+        context = super(BaseSectionView, self).get_context_data(**kwargs)
+        context['section'] = getattr(self, 'nav', None)
+        return context
+
+
+class Index(BaseSectionView):
     """
     A view of the homepage.
     """
     template_name = "home.html"
 
 
-class WhyDjango(TemplateView):
+class WhyDjango(BaseSectionView):
     """
     A view of the "Why Django" page.
     """
@@ -16,7 +24,7 @@ class WhyDjango(TemplateView):
     template_name = "why_django.html"
 
 
-class GetStarted(TemplateView):
+class GetStarted(BaseSectionView):
     """
     A view of the "Get Started" page.
     """
@@ -24,14 +32,15 @@ class GetStarted(TemplateView):
     template_name = "get_started.html"
 
 
-class NewsIndex(TemplateView):
+class NewsIndex(BaseSectionView):
     """
     A view of the "News/Events page.
     """
     nav = "news"
     template_name = "news_index.html"
 
-class NewsDetail(TemplateView):
+
+class NewsDetail(BaseSectionView):
     """
     A view of a news or event item.
     """
