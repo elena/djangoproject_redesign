@@ -2,7 +2,7 @@
 $blue: #00acf3; 
 $gray-text: #7c7c7c; 
 $green-light: #e8f4d0; 
-$green-medium: #b1cb2c;
+$green-medium: #83a913; 
 $green-dark: #082d20;
 
 // @font-face
@@ -65,26 +65,14 @@ $green-dark: #082d20;
 
 // Media Queries Mixin (http://jakearchibald.github.com/sass-ie/)
 $fix-mqs: false !default;
-@mixin respond-min($width) {
+@mixin desktop-styles {
 	@if $fix-mqs {
-		@if $fix-mqs >= $width {
+		@if $fix-mqs >= 768px {
 			@content;	
 		}
 	}
 	@else {
-		@media screen and (min-width: $width) {
-			@content;
-		}
-	}
-}
-@mixin respond-max($width) {
-	@if $fix-mqs {
-		@if $fix-mqs < $width {
-			@content;	
-		}
-	}
-	@else {
-		@media screen and (max-width: $width) {
+		@media screen and (min-width: 768px) {
 			@content;
 		}
 	}
@@ -94,6 +82,15 @@ $fix-mqs: false !default;
 $old-ie: false !default; 
 @mixin old-ie {
 	@if $old-ie {
+		@content;
+	}
+}
+
+// Retina media query mixin
+@mixin retina-display {
+	@media only screen and 
+	(-webkit-min-device-pixel-ratio: 2), 
+	(min-resolution: 192dpi) { 
 		@content;
 	}
 }
@@ -140,6 +137,12 @@ html {
 	}
 }
 
+
+
+
+
+
+
 // Custom Style Mixins
 @mixin hash-dark {
 	background: url(/static/images/patterns/hash-dark@2x.png) repeat; 
@@ -163,3 +166,4 @@ html {
 		color: lighten($blue, 25%);
 	}
 }
+

@@ -16,12 +16,12 @@
 			{% compress css %}
 		    <link rel="stylesheet" href="{% static "scss/output-ie.scss" %}" type="text/x-scss"> 
 	   {% endcompress %}
-		<![endif]-->
-		<!--[if gt IE 8]><!-->
-			{% compress css %}
-		    <link rel="stylesheet" href="{% static "scss/output.scss" %}" type="text/x-scss">
-	    {% endcompress %}
-		<!--<![endif]-->
+	   <![endif]-->
+	   <!--[if gt IE 8]><!-->
+	   {% compress css %}
+	   <link rel="stylesheet" href="{% static "scss/output.scss" %}" type="text/x-scss">
+	   {% endcompress %}
+	   <!--<![endif]-->
 
 	<!-- Typekit 
 		<script type="text/javascript" src="//use.typekit.net/cct4uwo.js"></script>
@@ -40,13 +40,19 @@
 		{% block header %}{% endblock %}
 	</div>
 	
-	<div class="container">
-		{% block body %}{% endblock %}
-		<div class="aside" role="complementary">
-			<h1 class="visuallyhidden">Additional Information</h1>
-			{% block secondary %}{% endblock %}
+	<div class="container-main">
+		<div class="container">
+			<div class="internal-container">
+				{% block body %}{% endblock %}
+			</div>
+			<div class="aside" role="complementary">
+				<h1 class="visuallyhidden">Additional Information</h1>
+				{% block secondary %}{% endblock %}
+			</div>
 		</div>
+		<div class="bg-effect"></div>
 	</div>
+
 	
 	{% include "includes/footer.html" %}
 	
@@ -60,7 +66,7 @@
 		// (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
 		// g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
 		// s.parentNode.insertBefore(g,s)}(document,'script'));
-	</script>
+</script>
 
 </body>
 </html>

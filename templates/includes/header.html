@@ -6,13 +6,13 @@
 		<div role="navigation">
 			<ul class="nav-primary">
 				<li{% if section == 'why_django' %} class="active"{% endif %}>
-					<a href="{% url 'start' %}"><a href="{% url 'why' %}"> Why Django</a>
+					<a href="{% url 'why' %}"> Why Django</a>
 				</li>
 				<li{% if section == 'get_started' %} class="active"{% endif %}>
 					<a href="{% url 'start' %}">Get Started</a>
 				</li>
 				<li{% if section == 'docs' %} class="active"{% endif %}>
-					<a href="{% url 'start' %}"><a href="#">Documentation</a>
+					<a href="#">Documentation</a>
 				</li>
 			</ul>
 			<ul class="nav-secondary">
@@ -20,11 +20,11 @@
 				<li{% if section == 'news' %} class="active"{% endif %}>
 					<a href="{% url 'news_index' %}">News &amp; Events</a></li>
 				<li{% if section == 'community' %} class="active"{% endif %}>
-					<a href="{% url 'start' %}"><a href="#">Community</a></li>
-				<li{% if section == 'code' %} class="active"{% endif %}><a href="{% url 'start' %}">
+					<a href="{% url 'start' %}">Community</a></li>
+				<li{% if section == 'code' %} class="active"{% endif %}>
 					<a href="#">Code</a>
 				</li>
-				<li{% if section == 'about' %} class="active"{% endif %}><a href="{% url 'start' %}">
+				<li{% if section == 'about' %} class="active"{% endif %}>
 					<a href="#">About</a>
 				</li>
 			</ul>
