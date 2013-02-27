@@ -20,9 +20,9 @@ tsm=function(e,t){return e={},t={define:function(){var t=arguments,n=function(e,
 		MobileMenuExport.prototype = {
 
 			init: function(){
-				this.menu.addClass('nav-menu-on');
-				// create menu button
-				this.button = $('<span class="menu-button"><i class="icon-reorder"></i><span>Menu</span></span>').insertBefore(this.menu);
+				this.menu.addClass('nav-menu-on'); 
+				this.button = $('<div class="menu-button"><i class="icon-reorder"></i><span>Menu</span></div>');
+				this.button.insertBefore(this.menu);
 				this.button.on( 'click', tsm.delegate(this.toggleMenu, this) );
 			},
 

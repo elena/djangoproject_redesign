@@ -1,6 +1,6 @@
 // Colors
 $blue: #00acf3; 
-$gray-text: #7c7c7c; 
+$gray-text: #7d7d7d; 
 $green-light: #e8f4d0; 
 $green-medium: #83a913; 
 $green-dark: #082d20;
@@ -65,14 +65,14 @@ $green-dark: #082d20;
 
 // Media Queries Mixin (http://jakearchibald.github.com/sass-ie/)
 $fix-mqs: false !default;
-@mixin desktop-styles {
+@mixin respond-min($width) {
 	@if $fix-mqs {
-		@if $fix-mqs >= 768px {
+		@if $fix-mqs >= $width {
 			@content;	
 		}
 	}
 	@else {
-		@media screen and (min-width: 768px) {
+		@media screen and (min-width: $width) {
 			@content;
 		}
 	}
@@ -138,32 +138,15 @@ html {
 }
 
 
-
-
-
-
-
-// Custom Style Mixins
-@mixin hash-dark {
-	background: url(/static/images/patterns/hash-dark@2x.png) repeat; 
-	background-size: 4px;
-	.lt-ie9 & {
-		background: url(/static/images/patterns/hash-dark.png) repeat; 
-	}
-}
-@mixin hash-light {
-	background: url(/static/images/patterns/hash-light@2x.png) repeat;
-	background-size: 4px;
-	.lt-ie9 & {
-		background: url(/static/images/patterns/hash-light.png) repeat;
-	}
-}
+// Custom Mixins
 @mixin blue-link {
 	color: $blue;
 	text-decoration: none;
-	-webkit-tap-highlight-color: lighten($blue, 25%); // TODO: tap highlight color
-	&:hover {
-		color: lighten($blue, 25%);
+	&:hover,
+	&:active,
+	&:focus {
+		color: lighten($blue, 20%);
+		text-decoration: none;
 	}
 }
 
