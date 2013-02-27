@@ -48,3 +48,13 @@ STATIC_URL = "/static/"
 
 # Password that keeps staging under lock and key
 LOCKDOWN_PASSWORD = 'djangopreview'
+
+
+
+
+# Automatically compress/compile Sass files
+COMPRESS_PRECOMPILERS = (
+    ('text/x-sass', '/home/dotcloud/.gem/ruby/1.8/bin/sass {infile} {outfile}'),
+    ('text/x-scss', '/home/dotcloud/.gem/ruby/1.8/bin/sass --scss {infile} {outfile}'),
+)
+

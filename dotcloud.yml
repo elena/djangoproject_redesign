@@ -1,4 +1,6 @@
 www:
     type: python
+    systempackages:
+      - rubygems
 db:
     type: postgresql

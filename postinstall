@@ -16,3 +16,11 @@ mkdir -p /home/dotcloud/data/media
 mkdir -p /home/dotcloud/volatile/static
 ln -sf /home/dotcloud/volatile/static /home/dotcloud/static
 python manage.py collectstatic --noinput --verbosity=0
+sass_bin=/home/dotcloud/.gem/ruby/1.8/bin/sass
+if [[ -e $sass_bin ]]
+    then
+        echo "SASS compiler installed."
+    else
+        echo "Installing SASS gem..."
+        gem install sass
+fi
