@@ -1,41 +1,29 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="lt-ie9 lt-ie8" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+<html lang="en">
 <head>{% load compress static %}
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="{% block description %}{% endblock %}">
 	
-
-
 	<link rel="apple-touch-icon" href="{% static "img/icon-touch.png" %}">
 	<link rel="icon" href="{% static "img/icon-favicon.png" %}">
 	<!--[if IE]><link rel="shortcut icon" href="{% static "img/icon-favicon.ico" %}"><![endif]-->
-	<!-- or, set /favicon.ico for IE10 win -->
 	<meta name="msapplication-TileColor" content="#113228">
 	<meta name="msapplication-TileImage" content="{% static "img/icon-tile.png" %}">
-
 
 	<title>{% block title %}{% endblock %}</title>
 	
 	<!--[if lte IE 8]>
 		{% compress css %}
 			<link rel="stylesheet" href="{% static "scss/output-ie.scss" %}" type="text/x-scss"> 
-	 {% endcompress %}
-	 <![endif]-->
-	 <!--[if gt IE 8]><!-->
-	 {% compress css %}
-	 <link rel="stylesheet" href="{% static "scss/output.scss" %}" type="text/x-scss">
-	 {% endcompress %}
-	 <!--<![endif]-->
-
-	<!-- Typekit 
-		<script type="text/javascript" src="//use.typekit.net/cct4uwo.js"></script>
-		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-	-->
+	 	{% endcompress %}
+ 	<![endif]-->
+	<!--[if gt IE 8]><!-->
+		{% compress css %}
+			<link rel="stylesheet" href="{% static "scss/output.scss" %}" type="text/x-scss">
+		{% endcompress %}
+	<!--<![endif]-->
 	
 	<script src="{% static "js/modernizr.js" %}"></script>	
 
@@ -54,6 +42,7 @@
 			<div class="internal-container">
 				<div role="main">
 					{% block body %}{% endblock %}
+					<a href="#top" class="backtotop"><i class="icon-chevron-up"></i> Back to Top</a>
 				</div>
 			</div>
 
@@ -67,20 +56,18 @@
 		<div class="bg-effect"></div>
 	</div>
 
-	
 	{% include "includes/footer.html" %}
 	
-	<script src="{% static "js/zepto.js" %}"></script>
-	<script src="{% static "js/mobile.js" %}"></script>
-
-	{% block extrajs %}{% endblock %}
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="{% static "js/jquery.js" %}><\/script>')</script>
+	{% compress js %}<script src="{% static "js/mobile.js" %}"></script>{% endcompress %}
 
 	<script>
 		// var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
 		// (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
 		// g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
 		// s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>
+	</script>
 
 </body>
 </html>

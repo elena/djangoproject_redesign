@@ -142,6 +142,9 @@ html {
 @mixin blue-link {
 	color: $blue;
 	text-decoration: none;
+	&:visited {
+		color: $blue;
+	}
 	&:hover,
 	&:active,
 	&:focus {

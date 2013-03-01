@@ -13,11 +13,23 @@ a {
 	text-decoration: underline;
 	-webkit-tap-highlight-color: transparent;
 
+	&:visited {
+		color: lighten($gray-text, 10%);
+	}
+
 	&:active, 
 	&:focus,
 	&:hover {
 		color: lighten($gray-text, 20%);
 	}
+}
+
+// Text Selection Colors
+::selection {
+	background: $green-light; 
+}
+::-moz-selection {
+	background: $green-light; 
 }
 
 // Headers
@@ -54,13 +66,9 @@ h2 {
 	}
 }
 
-
-
-
-
-
 // Recycleable Style Classes
 .container {
+	min-width: 230px;
 	@include respond-min(768px) {
 		margin: 0 auto;	
 		max-width: 1100px;
@@ -70,18 +78,22 @@ h2 {
 		min-width: 768px;
 	}
 }
+.backtotop {
+	@include blue-link;
+	@include colfax;
+	@include font-size(14);
+	display: block;
+	font-weight: bold;
+	margin: 10px 0;
+	padding: 10px 0;
+	text-align: center;
+	text-transform: uppercase;
+	@include respond-min(768px) {
+		display: none;
+	}
+}
 
-
-
-
-
-
-
-
-
-
-
-
+// Banner
 [role="banner"] {
 	@include clearfix;
 	background: $green-light;
@@ -102,7 +114,7 @@ h2 {
 	.logo {
 		@include font-size(40);
 		@include colfax;
-		background: url(/static/img/logo-django.png) center center no-repeat;
+		background: url(/static/img/logo-django.png) 0 0 no-repeat;
 		color: $green-dark;
 		display: block;
 		float: left;
@@ -276,10 +288,9 @@ h2 {
 			}
 		}
 	}
-
 }
 
-
+// Title Header
 .header {
 	@include colfax;
 	background: url(/static/img/bg-pattern.jpg) repeat top center $green-dark;
@@ -314,7 +325,7 @@ h2 {
 	}
 }
 
-
+// Footer
 [role="contentinfo"] {
 	@include clearfix;
 	@include colfax;
@@ -412,7 +423,7 @@ h2 {
 	.logo {
 		@include font-size(40);
 		@include colfax;
-		background: url(/static/img/logo-django.png) center center no-repeat;
+		background: url(/static/img/logo-django.png) 0 0 no-repeat;
 		color: $green-dark;
 		display: block;
 		font-weight: 700;
@@ -443,68 +454,60 @@ h2 {
 		}
 		color: $green-dark;
 		margin: 0;
-		padding: 0 0 20px;
+		padding: 0;
 		@include respond-min(768px) {
 			background: none;
 		}
 		
 		li {
+			@include clearfix;
 			background: url(/static/img/patterns/hash-dark.png) repeat-x top center;
 			@include retina-display {
 				background: url(/static/img/patterns/hash-dark@2x.png) repeat-x top center;
 				background-size: 4px;
 			}
-			margin: 15px 0 0;
-			padding: 25px 10px 0;
+			margin: 0;
+			padding: 17px 10px 11px;
 			@include respond-min(768px) {
 				background: none;
 				float: left;
 				padding: 0 0 0 25px;
-				width: 100px;
+				width: 120px;
 			}
 		}
 
+		span {
+			display: block;
+			float: left;
+			height: 34px;
+			line-height: 33px;
+			padding-right: 12px;
+		}
+
 		a {
-			display: inline-block;
-			@include old-ie {
-				display: inline;
-				zoom: 1;
-			}
-			margin-left: 10px;
+			display: block;
+			height: 33px;
 			overflow: hidden;
-			position: relative;
 			text-indent: -200px;
+			width: 94px;
 			@include respond-min(768px) {
-				display: block;
-				margin: 15px 0 0;
+				clear: both;
+				margin-top: 5px;
 			}
 
 			&.mediatemple {
-				background: url(/static/img/logo-mediatemple.png) no-repeat center center;
-				height: 33px;
-				top: -5px;
-				width: 82px;
-				@include respond-min(768px) {
-					margin-top: 10px;
-				}
-
+				background: url(/static/img/logo-mediatemple.png) no-repeat left center;
 				.mdzr-svg & {
-					background: url(/static/img/logo-mediatemple.svg) no-repeat center center;
+					background: url(/static/img/logo-mediatemple.svg) no-repeat left center;
 				}
 			}
 			&.typekit {
-				background: url(/static/img/logo-typekit.png) no-repeat center center;
-				height: 24px;
-				top: -3px;
-				width: 94px;
+				background: url(/static/img/logo-typekit.png) no-repeat left center;
 			}
 			&.threespot {
-				background: url(/static/img/logo-threespot.png) no-repeat center center;
-				height: 20px;
-				width: 83px;
-
+				background: url(/static/img/logo-threespot.png) no-repeat left center;
 				.mdzr-svg & {
-					background: url(/static/img/logo-threespot.svg) no-repeat center center;
+					background: url(/static/img/logo-threespot.svg) no-repeat left center;
 				}
 			}
 		}
@@ -517,14 +520,10 @@ h2 {
 		padding: 0 10px;
 		@include respond-min(768px) {
 			max-width: 80%;
-			padding-top: 30px;
+			padding-top: 20px;
 		}
 	}
 }
-
-
-
-
 
 // Layout
 .container-main {
@@ -536,6 +535,8 @@ h2 {
 	}
 	.bg-effect {
 		@include respond-min(768px) {
+			-moz-box-shadow: 0px 0 5px 0 rgba(0,0,0,0.11), 5px 0 0 5px #f8f8f8;
+			-webkit-box-shadow: 0px 0 5px 0 rgba(0,0,0,0.11), 5px 0 0 5px #f8f8f8;
 			box-shadow: 0px 0 5px 0 rgba(0,0,0,0.11), 5px 0 0 5px #f8f8f8;
 			position: absolute;
 			top: 0;
@@ -550,10 +551,14 @@ h2 {
 }
 .internal-container {
 	background: #fff;
+	-moz-box-shadow: 0 4px 4px rgba(0,0,0,0.11);
+	-webkit-box-shadow: 0 4px 4px rgba(0,0,0,0.11);
 	box-shadow: 0 4px 4px rgba(0,0,0,0.11);
 	padding: 0 10px;
 	@include respond-min(768px) {
 		border-radius: 5px;
+		-moz-box-shadow: 0 0 5px rgba(0,0,0,0.11);
+		-webkit-box-shadow: 0 0 5px rgba(0,0,0,0.11);
 		box-shadow: 0 0 5px rgba(0,0,0,0.11);
 		float: right;
 		padding: 0;
@@ -580,15 +585,6 @@ h2 {
 		width: (157/704) * 100%;
 	}
 }
-
-
-
-
-
-
-
-
-
 
 // Sidebar Styles
 [role="complementary"] {
@@ -665,6 +661,14 @@ h2 {
 	padding: 20px 0 0;
 	text-transform: uppercase;
 
+	li {
+		margin-top: 10px;
+		@include old-ie {
+			display: block;
+			line-height: 28px;
+		}
+	}
+
 	a {
 		background: url(/static/img/patterns/hash-light.png) repeat top center $blue;
 		@include retina-display {
@@ -678,7 +682,7 @@ h2 {
 			zoom: 1;
 		}
 		line-height: 1.2;
-		margin: 10px 0 0;
+		margin: 0;
 		padding: 8px 10px 5px;
 		text-decoration: none;
 
@@ -690,21 +694,8 @@ h2 {
 	}
 }
 
-
-
-
-
-
-
-
-
-
-
-
 // news list
 .news-search {
-	// border: 1px solid #CCC;
-	// border-radius: 4px;
 	height: 40px;
 	margin: 30px 0 20px;
 	position: relative;
@@ -905,6 +896,7 @@ h2 {
 		}
 
 		.mdzr-no-borderradius & {
+			display: inline;
 			background: none;
 			color: $gray-text;
 			height: auto;
@@ -921,9 +913,6 @@ h2 {
 		}
 	}
 }
-
-
-
 
 // Boilerplate Helper mixins (entered as classes)
 .visuallyhidden { 
