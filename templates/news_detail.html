@@ -3,27 +3,22 @@
 {% block title %}Django 1.5 beta 1 released—News{% endblock %}
 
 {% block header %}
-	<h1 class="h1">News &amp; Events</h1>
-	<!-- TODO: Remove toolbox image -->
-	<img class="toolbox" src="{% static 'img/temps/sub-nav.png' %}" alt="temporary navigation placeholder" />
+<h1 class="h1">News &amp; Events</h1>
 {% endblock %}
 
 {% block body %}
-	<div role="main">
-		<div class="article">
-			<h1 class="h3"><span>Django 1.5 beta 1 released</span></h1>
+<h1>Django 1.5 beta 1 released</h1>
 
-			<span class="meta">Posted by <a href="#" rel="author">James Bennett</a> on <time pubdate datetime="2012-11-27">November 27, 2012</time> in <a href="#">Release Announcements</a></span>
+<span class="meta">Posted by <a href="#" rel="author">James Bennett</a> on <time pubdate datetime="2012-11-27">November 27, 2012</time> in <a href="#">Release Announcements</a></span>
 
-			<p>As part of the Django 1.5 release process, today we've released Django 1.5 beta 1, a preview/testing package that gives a little taste of some of the new stuff coming in Django 1.5. As with all alpha and beta packages, this is not for production use, but if you'd like to try out some of the new goodies coming in 1.5, or if you'd like to pitch in and help us fix bugs before the final 1.5 release (due in December), feel free to grab a copy and give it a spin.</p>
+<p>As part of the Django 1.5 release process, today we've released Django 1.5 beta 1, a preview/testing package that gives a little taste of some of the new stuff coming in Django 1.5. As with all alpha and beta packages, this is not for production use, but if you'd like to try out some of the new goodies coming in 1.5, or if you'd like to pitch in and help us fix bugs before the final 1.5 release (due in December), feel free to grab a copy and give it a spin.</p>
 
-			<p>You can get a copy of the 1.5 beta package from our <a href="https://www.djangoproject.com/download/">downloads page</a>, and we recommend you read the <a href="https://docs.djangoproject.com/en/dev/releases/1.5-beta-1/">release notes</a>. Also, for the security conscious, signed MD5 and SHA1 checksums of the 1.5 alpha package <a href="https://www.djangoproject.com/m/pgp/Django-1.5b1.checksum.txt">are available</a>.</p>
+<p>You can get a copy of the 1.5 beta package from our <a href="https://www.djangoproject.com/download/">downloads page</a>, and we recommend you read the <a href="https://docs.djangoproject.com/en/dev/releases/1.5-beta-1/">release notes</a>. Also, for the security conscious, signed MD5 and SHA1 checksums of the 1.5 alpha package <a href="https://www.djangoproject.com/m/pgp/Django-1.5b1.checksum.txt">are available</a>.</p>
 
-			<p>Also, please note that Django 1.5 now requires a minimum of Python 2.6; Python 2.5 is no longer supported. Python 3.x releases, starting with Python 3.2, are experimentally supported in this release. For more information on Python 3 support, and the testing Django 1.5 will still need, see this <a href="https://www.djangoproject.com/weblog/2012/aug/19/experimental-python-3-support/">blog post</a>.</p>
-		</div>
-	</div>
+<p>Also, please note that Django 1.5 now requires a minimum of Python 2.6; Python 2.5 is no longer supported. Python 3.x releases, starting with Python 3.2, are experimentally supported in this release. For more information on Python 3 support, and the testing Django 1.5 will still need, see this <a href="https://www.djangoproject.com/weblog/2012/aug/19/experimental-python-3-support/">blog post</a>.</p>
+
 {% endblock %}
 
 {% block secondary %}
-	{% include "includes/sidebar-news.html" %}
+{% include "includes/sidebar-news.html" %}
 {% endblock %}

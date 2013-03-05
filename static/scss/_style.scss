@@ -56,7 +56,8 @@ h1 {
 		@include font-size(48);
 	}
 }
-h2 {
+h2,
+[role="main"] h1 {
 	@include font-size(32);
 	color: $blue;	
 	line-height: 1.2;
@@ -526,30 +527,7 @@ h2 {
 }
 
 // Layout
-.container-main {
-	@include respond-min(768px) {
-		@include clearfix;
-		background: none;
-		margin: 20px 0;	
-		position: relative;
-	}
-	.bg-effect {
-		@include respond-min(768px) {
-			-moz-box-shadow: 0px 0 5px 0 rgba(0,0,0,0.11), 5px 0 0 5px #f8f8f8;
-			-webkit-box-shadow: 0px 0 5px 0 rgba(0,0,0,0.11), 5px 0 0 5px #f8f8f8;
-			box-shadow: 0px 0 5px 0 rgba(0,0,0,0.11), 5px 0 0 5px #f8f8f8;
-			position: absolute;
-			top: 0;
-			right: 0;
-			background: #fff;
-			max-height: 100%;
-			width: 50%;
-			height: 9999px;
-			z-index: 0;
-		}
-	}	
-}
-.internal-container {
+[role="main"] {
 	background: #fff;
 	-moz-box-shadow: 0 4px 4px rgba(0,0,0,0.11);
 	-webkit-box-shadow: 0 4px 4px rgba(0,0,0,0.11);
@@ -557,22 +535,24 @@ h2 {
 	padding: 0 10px;
 	@include respond-min(768px) {
 		border-radius: 5px;
-		-moz-box-shadow: 0 0 5px rgba(0,0,0,0.11);
-		-webkit-box-shadow: 0 0 5px rgba(0,0,0,0.11);
-		box-shadow: 0 0 5px rgba(0,0,0,0.11);
+		border: 1px solid #ddd;
 		float: right;
-		padding: 0;
-		width: (514/704) * 100%;
-	}
-	[role="main"] {
-		padding: 1px 0 20px;
-		position: relative;
-		@include respond-min(768px) {
-			background: #fff;
-			border-radius: 5px;
-			padding: 1px 0 20px;
-			padding-left: (32/514) * 100%;	
-			z-index: 1;
+		margin: 20px 0;
+		padding-bottom: 20px;
+		padding-left: (30/704) * 100%;	
+		padding-right: (30/704) * 100%;	
+		width: (450/704) * 100%;
+		.mdzr-boxshadow & {
+			border: none;
+			border-radius: 5px 0 0 5px;
+			
+			-moz-box-shadow: -1px -1px 0 0 #dfdfdf, -1px 1px 0 0 #dfdfdf, 500px 0 0 0 #fff, 1000px 0 0 0 #fff, 500px 0px 0 1px #dfdfdf, 1000px 0px 0 1px #dfdfdf;
+			-webkit-box-shadow: -1px -1px 0 0 #dfdfdf, -1px 1px 0 0 #dfdfdf, 500px 0 0 0 #fff, 1000px 0 0 0 #fff, 500px 0px 0 1px #dfdfdf, 1000px 0px 0 1px #dfdfdf;
+			box-shadow: -1px -1px 0 0 #dfdfdf, -1px 1px 0 0 #dfdfdf, 500px 0 0 0 #fff, 1000px 0 0 0 #fff, 500px 0px 0 1px #dfdfdf, 1000px 0px 0 1px #dfdfdf;
+
+			padding-left: (32/704) * 100%;	
+			padding-right: (0/704) * 100%;	
+			width: (482/704) * 100%;
 		}
 	}
 }
@@ -580,6 +560,7 @@ h2 {
 	padding: 0 10px;
 	@include respond-min(768px) {
 		float: right;
+		margin: 20px 0;
 		margin-right: (32/704) * 100%;
 		padding: 0;
 		width: (157/704) * 100%;
