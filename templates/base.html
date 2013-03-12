@@ -38,22 +38,22 @@
 	<div class="header">
 		{% block header %}{% endblock %}
 	</div>
+
+	{% block copy_banner %}{% endblock %}
 	
-	<div class="container">
+	<div class="{% block layout_class %}container{% endblock %}">
 		
 		<div role="main">
 			{% block body %}{% endblock %}
 			<a href="#top" class="backtotop"><i class="icon-chevron-up"></i> Back to Top</a>
 		</div>
+
+		{% block sidebar %}{% endblock %}
 		
-
-		<h1 class="visuallyhidden">Additional Information</h1>
-		<div role="complementary">
-			{% block secondary %}{% endblock %}
-		</div>
-
 	</div>
-		
+
+	{% block secondary %}{% endblock %}
+	{% block tertiary %}{% endblock %}		
 
 	{% include "includes/footer.html" %}
 	

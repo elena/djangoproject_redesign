@@ -139,7 +139,7 @@ html {
 
 
 // Custom Mixins
-@mixin blue-link {
+@mixin link-blue {
 	color: $blue;
 	text-decoration: none;
 	&:visited {

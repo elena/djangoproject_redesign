@@ -2,62 +2,101 @@
 
 {% block title %}Why Django?{% endblock %}
 
+{% block layout_class %}full-width{% endblock %}
+
+{% block header %}<h1>Why Django?</h1>{% endblock %}
+
+{% block copy_banner %}
+<div class="copy-banner">
+	<div class="container">
+		<p><em>Django</em> was invented to meet fast-moving <em>newsroom deadlines</em>, while satisfying the tough requirements of <em>Python web developers</em>.</p>
+	</div>
+</div>
+{% endblock %}
+
+
 {% block body %}
 
-<h1>Why Django?</h1>
-<p>Django was invented to meet fast-moving newsroom deadlines, while satisfying the tough requirements of Python web developers. With Django, you can take web applications from concept to launch in a matter of hours. It’s nimble web development that keeps your content fresh and your organization productive.</p>
+<div class="layout-2col">
+	<div class="col">
+		<p class="sans-serif">With Django, you can take web applications from concept to launch in a matter of hours. It’s nimble web development that keeps your content fresh and your organization productive.</p>
+	</div>
+	<div class="col">
+		<button class="cta">Get Started <em>With DJango</em></button>
+	</div>
+</div>
 
 <dl class="list-features">
-	<dt>Ridiculously fast.</dt>
+	<dt><i class="icon-bolt"></i> Ridiculously fast.</dt>
 	<dd>Django was designed to help developers take web applications from concept to completion as quickly as possible.</dd>
-	<dt>Fully loaded.</dt>
-	<dd>Django includes dozens of extras that you can use to handle common web development patterns. Django takes care of user authentication, content administration, sitemaps, RSS, user comments, and many more tasks right out of the box.</dd>
-	<dt>Reassuringly secure.</dt>
+	<dd><a href="#">Call To Action Relating to Feature</a></dd>
+	
+	<dt class="even"><i class="icon-briefcase"></i> Fully loaded.</dt>
+	<dd class="even">Django includes dozens of extras that you can use to handle common web development patterns. Django takes care of user authentication, content administration, sitemaps, RSS, user comments, and many more tasks right out of the box.</dd>
+	<dd class="even"><a href="#">Call To Action Relating to Feature</a></dd>
+	
+	<dt><i class="icon-lock"></i> Reassuringly secure.</dt>
 	<dd>Django takes security seriously and helps web developers avoid many of the common security mistakes, including SQL injection, cross-site scripting, cross-site request forgery, clickjacking, and more. Its user authentication system provides a secure way to manage user accounts and passwords.</dd>
-	<dt>Exceedingly scalable.</dt>
-	<dd>Some of the busiest websites leverage Django’s ability to quickly and flexibly scale to meet even the heaviest traffic demands.</dd>
-	<dt>Incredibly versatile.</dt>
+	<dd><a href="#">Call To Action Relating to Feature</a></dd>
+	
+	<dt class="even"><i class="icon-dashboard"></i> Exceedingly scalable.</dt>
+	<dd class="even">Some of the busiest websites leverage Django’s ability to quickly and flexibly scale to meet even the heaviest traffic demands.</dd>
+	<dd class="even"><a href="#">Call To Action Relating to Feature</a></dd>
+	
+	<dt><i class="icon-cogs"></i> Incredibly versatile.</dt>
 	<dd>Companies, organizations, and governments have used Django to build all sorts of things—from content management systems to social networks to scientific computing platforms.</dd>
+	<dd><a href="#">Call To Action Relating to Feature</a></dd>
 </dl>
 
+{% endblock %}
 
-<h2><span>Case Studies</span></h2>
-<p>You’ve probably used a website that uses Django. Find out why Django was the right solution for these organizations.</p>
-<ul class="list-cases">
-	<li>
-		<h3>Knight Foundation</h3>
-		<img src="http://www.ipsumimage.com/220x100?l=Logo+Image" alt="Knight Foundation Logo">
-		<p>When the Knight Foundation began redesigning their <a href="http://www.knightfoundation.org">website</a>, they were on multiple content management systems they’d outgrown, with a site that couldn’t handle traffic spikes. Knight needed a future-proof solution. <a href="#">Read More</a></p>
-	</li>
-	<li>
-		<h3>Mozilla</h3>
-		<img src="http://www.ipsumimage.com/220x100?l=Logo+Image" alt="Mozilla Logo">
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi. <a href="#">Read More</a></p>
-	</li>
-	<li>
-		<h3>Disqus</h3>
-		<img src="http://www.ipsumimage.com/220x100?l=Logo+Image" alt="Disqus Logo">
-		<p>Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <a href="#">Read More</a></p>
-	</li>
-</ul>
+{% block secondary %}
 
-<h3>Other sites that use Django</h3>
-<ul class="logo-soup">
-	<li><a href="http://instagram.com/">Instagram</a></li>
-	<li><a href="http://pinterest.com/">Pinterest</a></li>
-	<li><a href="http://www.lanyrd.com/">Lanyrd</a></li>
-	<li><a href="http://www.rdio.com/">Rdio</a></li>
-	<li><a href="http://www.guardian.co.uk/">The Guardian</a></li>
-	<li><a href="http://www.politifact.com/">PolitiFact.com</a></li>
-	<li><a href="http://www.nationalgeographic.com/">National Geographic</a></li>
-	<li><a href="http://www.nasa.gov">NASA</a></li>
-	<li><a href="http://www.peacecorps.gov">The Peace Corps</a></li>
-	<li><a href="http://www.macfound.org">The MacArthur Foundation</a></li>
-	<li><a href="http://www.openstack.org/">Open Stack</a></li>
-</ul>
+<div class="layout-secondary">
+	<div class="container">
+		<h2><span>Case Studies</span></h2>
+		<p class="sans-serif">You’ve probably used a website that uses Django. Find out why Django was the right solution for these organizations.</p>
+		<ul class="list-case-study">
+			<li>
+				<h3 class="logo" title="Mozilla">Mozilla</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
+				<a href="#">Read More</a>
+			</li>
+			<li>
+				<h3 class="logo" title="Disqus">Disqus</h3>
+				<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<a href="#">Read More</a>
+			</li>
+			<li>
+				<h3 class="logo" title="Knight Foundation">Knight Foundation</h3>
+				<p>When the Knight Foundation began redesigning their <a href="http://www.knightfoundation.org">website</a>, they were on multiple content management systems they’d outgrown, with a site that couldn’t handle traffic spikes. Knight needed a future-proof solution.</p>
+				<a href="#">Read More</a>
+			</li>
+		</ul>
+	</div>
+</div>
+
+{% endblock %}
+
+{% block tertiary %}
+
+<div class="layout-tertiary">
+	<div class="container">
+		<h2>Other Sites Using Django</h2>
+		<ul class="list-link-soup">
+			<li><a href="http://instagram.com/">Instagram</a></li>
+			<li><a href="http://pinterest.com/">Pinterest</a></li>
+			<li><a href="http://www.lanyrd.com/">Lanyrd</a></li>
+			<li><a href="http://www.rdio.com/">Rdio</a></li>
+			<li><a href="http://www.guardian.co.uk/">The Guardian</a></li>
+			<li><a href="http://www.politifact.com/">PolitiFact.com</a></li>
+			<li><a href="http://www.nationalgeographic.com/">National Geographic</a></li>
+			<li><a href="http://www.nasa.gov">NASA</a></li>
+			<li><a href="http://www.peacecorps.gov">The Peace Corps</a></li>
+			<li><a href="http://www.macfound.org">The MacArthur Foundation</a></li>
+			<li><a href="http://www.openstack.org/">Open Stack</a></li>
+		</ul>
+	</div>
+</div>
 
 {% endblock %}

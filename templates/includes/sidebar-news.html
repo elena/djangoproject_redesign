@@ -1,26 +1,29 @@
 {% load static %}
 {% load url from future %}
 
-<h2>Upcoming Events</h2>
-<ul class="sidebar-events">
-	<li>
-		<a href="#">DjangoCon 2013 Call for Papers</a>
-		<span class="meta">April 7th, 2013  |  Berlin, Germany</span>
-		<i class="icon-calendar"></i>
-	</li>
-	<li>
-		<a href="#">DjangoCon Europe 2013 Call for Papers</a>
-		<span class="meta">April 7th, 2013  |  Berlin, Germany</span>
-		<i class="icon-calendar"></i>
-	</li>
-</ul>
+<h1 class="visuallyhidden">Additional Information</h1>
+<div role="complementary">
+	<h2>Upcoming Events</h2>
+	<ul class="sidebar-events">
+		<li itemscope itemtype="http://schema.org/Event">
+			<a itemprop="url" href="#">DjangoCon 2013 Call for Papers</a>
+			<span class="meta"><span itemprop="date">April 7th, 2013</span>  |  Berlin, Germany</span>
+			<i class="icon-calendar"></i>
+		</li>
+		<li>
+			<a href="#">DjangoCon Europe 2013 Call for Papers</a>
+			<span class="meta">April 7th, 2013  |  Berlin, Germany</span>
+			<i class="icon-calendar"></i>
+		</li>
+	</ul>
 
+	<h2 class="h2"><span>Tags</span></h2>
+	<ul class="sidebar-tags">
+		<li><a href="#">Django Software Foundation</a></li>
+		<li><a href="#">Events</a></li>
+		<li><a href="#">Conferences</a></li>
+		<li><a href="#">Release Announcements</a></li>
+		<li><a href="#">Security</a></li>
+	</ul>
 
-<h2 class="h2"><span>Tags</span></h2>
-<ul class="sidebar-tags">
-	<li><a href="#">Django Software Foundation</a></li>
-	<li><a href="#">Events</a></li>
-	<li><a href="#">Conferences</a></li>
-	<li><a href="#">Release Announcements</a></li>
-	<li><a href="#">Security</a></li>
-</ul>
+</div>
