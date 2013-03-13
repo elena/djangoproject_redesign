@@ -17,5 +17,12 @@ The second type of layout is a "full width" layout which contains three content 
 
 ### Header
 The `block header` is where the h1 with the page title should go. Any relevant taglines of the page should be placed here as `<p>` tags. 
+- two column layout module
+- list modules
 
 
+## Interactive (JavaScript) Modules
+
+- Feature List (single instance)
+- Mobile Menu (single instance)
+- Expand/Collapse Menu
