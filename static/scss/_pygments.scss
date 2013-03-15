@@ -5,7 +5,21 @@
 	background: #F4F4F4;
 	background: #f8f8f8; overflow: auto;
 	border-radius: 4px;
-	margin: 0 20px;
+	margin: 20px;
+
+	pre {
+		margin: 10px;
+	}
+
+	li {
+		margin-top: 0;
+		border-left: 1px solid #EAEAEA;
+		padding: 0 0 2px 15px;
+
+		&:first-child {
+			padding-top: 2px;
+		}
+	}
 
 	.hll{
 		background-color: #ffffcc 
@@ -14,7 +28,7 @@
 		color: #408080; font-style: italic 
 	} 
 	/* Comment */
-	.err{
+	.err {
 		border: 1px solid #FF0000 
 	} 
 	/* Error */
