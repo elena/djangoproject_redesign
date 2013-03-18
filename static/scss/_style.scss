@@ -80,10 +80,15 @@ h1 {
 	@include respond-min(768px) {
 		@include font-size(48);
 	}
+
+	[role="main"] & {
+		@include font-size(32);
+		margin: 35px 0 20px;
+		color: $gray-text;
+	}
 }
-h2,
-[role="main"] h1 {
-	@include font-size(32);
+h2 {
+	@include font-size(30);
 	font-weight: bold;
 	color: $gray-text;
 	line-height: 1.2;
@@ -114,6 +119,16 @@ h2,
 		@include font-size(26);
 	}
 }
+h3 {
+	@include font-size(28);
+}
+h4 {
+	@include font-size(18);	
+	@include elena;
+	text-transform: uppercase;
+}
+
+
 
 // Layout
 [role="main"] {
@@ -121,7 +136,7 @@ h2,
 	-moz-box-shadow: 0 4px 4px rgba(0,0,0,0.11);
 	-webkit-box-shadow: 0 4px 4px rgba(0,0,0,0.11);
 	box-shadow: 0 4px 4px rgba(0,0,0,0.11);
-	padding: 0 10px;
+	padding: 1px 10px;
 	@include respond-min(768px) {
 		border-radius: 5px;
 		border: 1px solid #ddd;
@@ -134,11 +149,9 @@ h2,
 		.mdzr-boxshadow & {
 			border: none;
 			border-radius: 5px 0 0 5px;
-			
 			-moz-box-shadow: -1px -1px 0 0 #dfdfdf, -1px 1px 0 0 #dfdfdf, 500px 0 0 0 #fff, 1000px 0 0 0 #fff, 500px 0px 0 1px #dfdfdf, 1000px 0px 0 1px #dfdfdf;
 			-webkit-box-shadow: -1px -1px 0 0 #dfdfdf, -1px 1px 0 0 #dfdfdf, 500px 0 0 0 #fff, 1000px 0 0 0 #fff, 500px 0px 0 1px #dfdfdf, 1000px 0px 0 1px #dfdfdf;
 			box-shadow: -1px -1px 0 0 #dfdfdf, -1px 1px 0 0 #dfdfdf, 500px 0 0 0 #fff, 1000px 0 0 0 #fff, 500px 0px 0 1px #dfdfdf, 1000px 0px 0 1px #dfdfdf;
-
 			padding-left: (32/704) * 100%;	
 			padding-right: (0/704) * 100%;	
 			width: (482/704) * 100%;
@@ -188,6 +201,7 @@ h2,
 	box-shadow: 0 -4px 4px rgba(0,0,0,0.11);
 	padding: 10px 10px 40px;
 }
+
 
 
 // Banner/Header styles
@@ -445,6 +459,7 @@ h2,
 }
 
 
+
 // Footer Styles
 [role="contentinfo"] {
 	@include clearfix;
@@ -646,6 +661,7 @@ h2,
 }
 
 
+
 // Recycleable Style Classes
 .container {
 	@include respond-min(768px) {
@@ -840,6 +856,10 @@ h2,
 	margin: 0;
 	padding: 0;
 
+	h2 {
+		font-weight: normal
+	}
+
 	li {
 		background: url(/static/img/patterns/hash-dark.png) repeat-x top center;
 		@include retina-display {
@@ -974,13 +994,7 @@ h2,
 		padding-top: 25px;
 	}
 	
-	a {
-		@include colfax;
-		@include link-blue;
-		@include font-size(11);
-		font-weight: bold;
-		text-transform: uppercase;
-	}
+	
 
 	i {
 		color: $green-medium;
@@ -1110,6 +1124,58 @@ h2,
 					}
 				}
 			}
+		}
+	}
+}
+.list-collapsing {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	&.active {
+		> li {
+			background: url(/static/img/patterns/hash-dark.png) repeat-x top center;
+			@include retina-display {
+				background: url(/static/img/patterns/hash-dark@2x.png) repeat-x top center;
+				background-size: 4px;
+			}
+			margin: 0;
+			padding: 0;
+		}
+
+		h2 {
+			cursor: pointer;
+			margin: 0;
+			padding: 20px 30px 15px 0;
+			position: relative;
+			
+			&:hover,
+			&:focus,
+			&:active {
+				color: lighten($gray-text, 20%);
+				outline: none;
+			}
+
+			i
+			 {
+				position: absolute;
+				right: 0;
+				top: 20px;
+			}
+		}
+
+		.collapsing-content {
+			overflow: hidden;
+			max-height: 0px;
+
+			-webkit-transition: all 0.5s ease-out;  
+			-moz-transition: all 0.5s ease-out;
+			-ms-transition: all 0.5s ease-out;
+			-o-transition: all 0.5s ease-out;
+			transition: all 0.5s ease-out;
+		}
+		li.active .collapsing-content {
+			max-height: 1000px;
 		}
 	}
 }
