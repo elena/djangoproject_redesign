@@ -11,15 +11,46 @@ define(function(){
 		'mod/mobile-menu' 
 	]; 
 
-	function has( id ) { //id function
-		return document.getElementById(id); 
+
+	function hasID( id ) { //id function
+		return document.getElementById( id ); 
+	}
+	function hasClass( className ) { //id function
+
+		if (!document.getElementsByClassName) { //class name function in old IE
+			document.getElementsByClassName = function(search) {
+				var d = document, elements, pattern, i, results = [];
+				if (d.querySelectorAll) { // IE8
+					return d.querySelectorAll("." + search);
+				}
+				if (d.evaluate) { // IE6, IE7
+					pattern = ".//*[contains(concat(' ', @class, ' '), ' " + search + " ')]";
+					elements = d.evaluate(pattern, d, null, 0, null);
+					while ((i = elements.iterateNext())) {
+						results.push(i);
+					}
+				} else {
+					elements = d.getElementsByTagName("*");
+					pattern = new RegExp("(^|\\s)" + search + "(\\s|$)");
+					for (i = 0; i < elements.length; i++) {
+						if ( pattern.test(elements[i].className) ) {
+							results.push(elements[i]);
+						}
+					}
+				}
+				return results;
+			}
+		}
+
+		return document.getElementsByClassName( className ); 
 	}
 
-	if (has('list-feature')) { //feature list
+
+	if (hasID('list-feature')) { //feature list
 		mods.push('mod/list-feature');
 	}
 
-	if (has('list-collapsing')) { //collapsing list
+	if (hasClass('list-collapsing')) { //collapsing list
 		mods.push('mod/list-collapsing');
 	}
 

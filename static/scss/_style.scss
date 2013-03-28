@@ -127,6 +127,9 @@ h4 {
 	@include elena;
 	text-transform: uppercase;
 }
+tt { // increase size of inline monospace text
+	font-size: 115%;
+}
 
 
 
@@ -434,28 +437,33 @@ h4 {
 	}
 }
 .copy-banner {
-	@include colfax;
-	@include font-size(24);
 	background: $green-light;
-	color: $green-medium;
-	font-weight: 900;
-	line-height: 1.25;
 	padding: 10px;
-	text-transform: uppercase;
-
-	em {
-		font-style: normal;
-	}
-
-	@include respond-min(768px) {
-		@include font-size(42);
-		color: lighten(desaturate($green-medium, 30%), 30%);
-		padding: 20px 0;
+	
+	p {
+		@include colfax;
+		@include font-size(24);
+		color: $green-medium;
+		font-weight: 900;
+		line-height: 1.25;
+		margin: 0;
+		text-transform: uppercase;
 
 		em {
-			color: $green-medium;
+			font-style: normal;
 		}
-	}
+
+		@include respond-min(768px) {
+			@include font-size(42);
+
+			color: lighten(desaturate($green-medium, 30%), 30%);
+			padding: 20px 0;
+
+			em {
+				color: $green-medium;
+			}
+		}
+	}	
 }
 
 
@@ -731,6 +739,8 @@ h4 {
 	text-transform: uppercase;
 }
 .meta {
+	// Re-usable meta class for alternate-style content.
+
 	@include colfax;
 	@include font-size(16);
 	display: block;
@@ -752,7 +762,16 @@ h4 {
 				padding-right: 10%;
 			}
 		}
+		.one-third {
+			width: 30%;
+		}
+		.two-third {
+			width: 60%;
+		}
 	}
+}
+.blue {
+	color: $blue;
 }
 
 
@@ -992,9 +1011,7 @@ h4 {
 			background-size: 4px;
 		}
 		padding-top: 25px;
-	}
-	
-	
+	}	
 
 	i {
 		color: $green-medium;
@@ -1075,8 +1092,6 @@ h4 {
 
 			// Border Radius, SVG, and Animation Enabled
 			.mdzr-svg.mdzr-borderradius.mdzr-cssanimations & {
-				//background-position: -500px -500px;
-
 				-webkit-transition: all 0.3s ease-out;  
 				-moz-transition: all 0.3s ease-out;
 				-ms-transition: all 0.3s ease-out;
@@ -1128,11 +1143,17 @@ h4 {
 	}
 }
 .list-collapsing {
+	background: url(/static/img/patterns/hash-dark.png) repeat-x bottom center;
+	@include retina-display {
+		background: url(/static/img/patterns/hash-dark@2x.png) repeat-x bottom center;
+		background-size: 4px;
+	}
 	list-style: none;
-	margin: 0;
+	margin: 30px 0;
 	padding: 0;
 
 	&.active {
+		
 		> li {
 			background: url(/static/img/patterns/hash-dark.png) repeat-x top center;
 			@include retina-display {
@@ -1144,10 +1165,15 @@ h4 {
 		}
 
 		h2 {
+			@include font-size(20);
 			cursor: pointer;
 			margin: 0;
-			padding: 20px 30px 15px 0;
+			padding: 20px 40px 15px 0;
 			position: relative;
+
+			@include respond-min(768px) {
+				@include font-size(24);
+			}
 			
 			&:hover,
 			&:focus,
@@ -1156,8 +1182,7 @@ h4 {
 				outline: none;
 			}
 
-			i
-			 {
+			.collapsing-icon {
 				position: absolute;
 				right: 0;
 				top: 20px;
@@ -1179,13 +1204,97 @@ h4 {
 		}
 	}
 }
+.list-image {
+	list-style: none;
+	margin: 0;
+	padding: 0;
 
+	li {
+		background: url(/static/img/patterns/hash-dark.png) repeat-x top center;
+		@include retina-display {
+			background: url(/static/img/patterns/hash-dark@2x.png) repeat-x top center;
+			background-size: 4px;
+		}
+		margin-top: 20px;
+		padding-top: 40px;
+		@include respond-min(768px) {
+			@include clearfix;
+			margin-top: 50px;
+			padding-top: 50px;
+		}
 
+		&:first-child {
+			background: none;
+			padding-top: 0;
+		}
+	}
 
+	a {
+		display: block;
+		text-decoration: none;
 
+		&:hover,
+		&:active,
+		&:focus {
+			color: $gray-text;
+		}
+	}
 
+	img {
+		display: block;
+		margin: 0 auto;
+		max-width: 100%;
 
+		@include respond-min(768px) {
+			float: left;
+			margin: 0 50px 0 0;
+		}
+	}
 
+	h2 {
+		margin: 20px 0 10px;	
+		@include respond-min(768px) {
+			margin-top: 0;
+		}
+	}
+}
+.list-outline {
+	// Nested lists to house documentation outline. Meant for use in sidebar.
+
+	@include font-size(18);
+	line-height: 1.2;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	a {
+		text-decoration: none;
+	}
+
+	> li > a { //top level
+		text-transform: uppercase;
+		font-weight: bold;
+	}	
+
+	> li > ul { //second level
+		list-style: none;
+		@include font-size(16);
+		padding: 0 0 0 10px;	
+
+		> li > a {
+			@include link-blue;
+		}
+	}
+
+	> li > ul > li  ul { //third level & down
+		@include font-size(14);
+		padding: 0 0 0 20px;	
+	}
+}
+.list-links { 
+	// Definition lists (<dl>), with links nested in the <dt> element. Can be used globally.
+
+}
 
 // news modules
 .news-search {
@@ -1259,14 +1368,38 @@ h4 {
 		}
 	}
 }
-.results-label {
+.label {
 	@include colfax;
-	@include font-size(12);
+	@include font-size(16);
 	color: lighten($gray-text, 30%);
 	display: block;
 	font-weight: bold;
-	margin: 20px 0;
+	margin: 20px 0 10px;
 	text-transform: uppercase;
+
+	
+	&.form-controls {
+		@include font-size(12);
+		display: block;
+		margin: 0;
+		position: relative;
+		top: 25px;
+		text-align: right;
+
+		@include respond-min(768px) {
+			@include font-size(16);
+		}
+		
+		span {
+			cursor: pointer;
+
+			&:hover,
+			&:active,
+			&:focus {
+				color: lighten($gray-text, 20%);
+			}
+		}
+	}
 }
 .nav-pagination {
 	@include colfax;
@@ -1362,10 +1495,6 @@ h4 {
 		}
 	}
 }
-
-
-
-
 
 // Boilerplate Helper mixins
 .visuallyhidden { 

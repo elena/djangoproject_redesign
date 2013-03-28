@@ -3,7 +3,7 @@
 {% block title %}Django 1.5 beta 1 released—News{% endblock %}
 
 {% block header %}
-<h1 class="h1">News &amp; Events</h1>
+<h1>News &amp; Events</h1>
 {% endblock %}
 
 {% block body %}
@@ -20,5 +20,8 @@
 {% endblock %}
 
 {% block sidebar %}
-	{% include "includes/sidebar-news.html" %}	 
+	<h1 class="visuallyhidden">Additional Information</h1>
+	<div role="complementary">
+		{% include "includes/sidebar-news.html" %}
+	</div>	
 {% endblock %}

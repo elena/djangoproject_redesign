@@ -12,19 +12,19 @@
 					<a href="{% url 'start' %}">Get Started</a>
 				</li>
 				<li{% if section == 'docs' %} class="active"{% endif %}>
-					<a href="#">Documentation</a>
+					<a href="{% url 'docs' %}">Documentation</a>
 				</li>
 			</ul>
 			<ul class="nav-secondary">
 				<li{% if section == 'news' %} class="active"{% endif %}>
 					<a href="{% url 'news_index' %}">News &amp; Events</a></li>
 				<li{% if section == 'community' %} class="active"{% endif %}>
-					<a href="{% url 'start' %}">Community</a></li>
+					<a href="{% url 'community' %}">Community</a></li>
 				<li{% if section == 'code' %} class="active"{% endif %}>
-					<a href="#">Code</a>
+					<a href="{% url 'code' %}">Code</a>
 				</li>
 				<li{% if section == 'about' %} class="active"{% endif %}>
-					<a href="#">About</a>
+					<a href="{% url 'about' %}">About</a>
 				</li>
 			</ul>
 		</div>

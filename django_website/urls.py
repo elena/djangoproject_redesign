@@ -11,6 +11,10 @@ urlpatterns = patterns('',
     url(r'^start/$', views.GetStarted.as_view(), name="start"),
     url(r'^news/$', views.NewsIndex.as_view(), name="news_index"),
     url(r'^news/example/$', views.NewsDetail.as_view(), name="news_detail"),
+    url(r'^about/$', views.About.as_view(), name="about"),
+    url(r'^community/$', views.Community.as_view(), name="community"),
+    url(r'^docs/$', views.Docs.as_view(), name="docs"),
+    url(r'^code/$', views.Code.as_view(), name="code"),
 )
 
 if settings.DEBUG:

@@ -9,18 +9,23 @@
 {% block copy_banner %}
 <div class="copy-banner">
   <div class="container">
-    <p>It’s easy to get up and running with <em>Django</em>. Below, we’ve highlighted some <em>helpful features:</em></p>
+    <div class="layout-2col">
+      <div class="col two-third">
+        <p>It’s easy to get up and running with <em>Django</em>.</p> 
+      </div>
+      <div class="col one-third">
+        <a href="#" class="cta">Install Django <em>Version 1.4.3</em></a>
+      </div>
+    </div>
   </div>
 </div>
 {% endblock %}
 
 {% block body %}
 
-<a href="#" class="cta">Install Django <em>Version 1.4.3</em></a>
+<p>Below, we’ve highlighted some helpful features.</p>
 
-<p>Expand / Collapse</p>
-
-<ul class="list-collapsing" id="list-collapsing">
+<ul class="list-collapsing">
   
   <li>
     <h2>Object-Relational Mapper</h2>
@@ -198,6 +203,8 @@ Python code TBD
   </li>
 </ul> 
 
+<p>Depending how new you are to Django, you can also <a href="#">try a tutorial</a>, or just <a href="#">dive into the documentation</a>.</p>
+
 {% endblock %}
 
 
@@ -221,6 +228,10 @@ Python code TBD
     <h2>Sharpen Your Skills</h2>
     <p>The official <a href="/docs/">Django documentation</a> covers everything you need to know about Django (and then some).</p>
 
+    <h2><span>Join the Community</span></h2>
+    <p>You can help <a href="/community/">make us better</a>. Find out about upcoming Django events, learn what’s on other Django developers’ minds, find and post jobs, and more.</p>
+    <a href="/community/" class="link-readmore">Read More &rsaquo;</a>
+
   </div>
 </div>
 {% endblock %}
@@ -230,50 +241,26 @@ Python code TBD
 {% block tertiary %}
   <div class="layout-tertiary">
     <div class="container">
-  <ul>
-
-
-
-
-
-
-    <li>
-      <a href="http://gettingstartedwithdjango.com/">
-        <img src="{% static 'img/logos/gswd.svg' %}" alt="Getting Started with Django" />
-        <h2>Getting Started With Django</h2> 
-        <p><span class="visuallyhidden">Getting Started With Django</span> is a video series designed to take you to the next level from Django novice.</p>
-        <span class="link-readmore">Read More &rsaquo;</span>
-      </a>
-    </li>
-
-
-
-
-    <li>
-      <a href="http://django.twoscoops.org">
-        <img src="{% static 'img/logos/tsd.png' %}" alt="Two Scools of Django" />
-        <h2>Two Scoops of Django</h2>
-        <p>Two Scoops of Django is an ebook designed for both novices and more advanced users and covers best practices for using Django 1.5.</p>
-        <span class="link-readmore">Read More &rsaquo;</span>
-      </a>
-    </li>
-
-    <li>
-      <a href="/community/">
-        <img src="{% static 'img/logos/stats.png' %}" alt="Community" />
-        <h2>Join the Community</h2>
-        <p>You can help make us better. Find out about upcoming Django events, learn what’s on other Django developers’ minds, find and post jobs, and more.</p>
-        <span class="link-readmore">Read More &rsaquo;</span>
-      </a>
-    </li>
-
-
-
-  
-
-
-</div></div>
-
+      <ul class="list-image">
+        <li>
+          <a href="http://gettingstartedwithdjango.com/">
+            <img src="{% static 'img/demos/start.png' %}" alt="Getting Started with Django" />
+            <h2>Getting Started With Django</h2> 
+            <p><span class="visuallyhidden">Getting Started With Django</span> is a video series designed to take you to the next level from Django novice.</p>
+            <span class="link-readmore">Read More &rsaquo;</span>
+          </a>
+        </li>
+        <li>
+          <a href="http://django.twoscoops.org">
+            <img src="{% static 'img/demos/tsd.png' %}" alt="Two Scools of Django" />
+            <h2>Two Scoops of Django</h2>
+            <p><span class="visuallyhidden">Two Scoops of Django</span> is an ebook designed for both novices and more advanced users and covers best practices for using Django 1.5.</p>
+            <span class="link-readmore">Read More &rsaquo;</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
 {% endblock %}
 
 

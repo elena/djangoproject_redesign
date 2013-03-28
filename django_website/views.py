@@ -46,3 +46,32 @@ class NewsDetail(BaseSectionView):
     """
     nav = "news"
     template_name = "news_detail.html"
+
+class About(BaseSectionView):
+    """
+    About Django page.
+    """
+    nav = "about"
+    template_name = "about.html"
+
+
+class Community(BaseSectionView):
+    """
+    Django Community page.
+    """
+    nav = "community"
+    template_name = "community.html"
+
+class Docs(BaseSectionView):
+    """
+    Django Documentation.
+    """
+    nav = "docs"
+    template_name = "docs.html"
+
+class Code(BaseSectionView):
+    """
+    Django Code.
+    """
+    nav = "code"
+    template_name = "code.html"

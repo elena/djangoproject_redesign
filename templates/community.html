@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Django Community{% endblock %}
+
+{% block header %}<h1>Community</h1>{% endblock %}
+
+{% block copy_banner %}
+<div class="copy-banner">
+	<div class="container">
+		<p><em>888.8 Million</em> Django Developers. <em>75</em> Countries. <em>888.8 Million</em> Packages.</p>
+	</div>
+</div>
+{% endblock %}
+
+{% block body %}
+
+
+<!--
+<h2>Mailing lists</h2>
+<div class="layout-2col">
+	<div class="col">
+		<h3><a href="http://groups.google.com/group/django-users">Django-Users</a></h3>
+		<p>The main list for help and announcements.</p>
+		<form action="http://groups.google.com/group/django-users/boxsubscribe">
+			<input type="text" name="email" size="15"> <input type="submit" value="Subscribe">
+		</form>
+	</div>
+	<div class="col">
+		<h3><a href="http://groups.google.com/group/django-developers">Django-Developers</a></h3>
+		<p>Where the developers of Django itself discuss new features.</p>
+		<form action="http://groups.google.com/group/django-developers/boxsubscribe">
+			<input type="text" name="email" size="15"> <input type="submit" value="Subscribe">
+		</form>
+	</div>
+</div>  -->
+
+<p>Django’s template language is designed to strike a balance between power and ease. It’s designed to feel comfortable and easy-to-learn to those used to working with HTML, like designers and front-end developers. But it is also flexible and highly extensible, allowing developers to augment the template language as needed.</p>
+
+
+<ul class="list-collapsing">
+
+	<li>
+		<h2><i class="icon-rss blue"></i> Community blog posts</h2>
+		<div class="collapsing-content">
+			<dl class="list-links">
+				<dt><a href="#">Now it's your turn</a></dt>
+				<dd>March 29th, 2013 at 4 p.m. by Luke Plant</dd>
+
+				<dt><a href="#">Mails amb Django - III</a></dt>
+				<dd>March 28th, 2013 at 12:18 p.m. by <a href="#">Antoni Aloy López</a></dd>
+
+				<dt><a href="#">Useful Packages for Django projects (part 1)</a></dt>
+				<dd>March 28th, 2013 at 11:40 a.m. by <a href="#">Hector Garcia</a></dd>
+
+				<dt><a href="#">Overloading Django Form Fields</a></dt>
+				<dd>March 27th, 2013 at 4 p.m. by <a href="#">pydanny's blog</a></dd>
+
+				<dt><a href="#">Django MONTH_CHOICES</a></dt>
+				<dd>March 26th, 2013 at 4:10 p.m. by <a href="#">Dustin Davis</a></dd>
+			</dl>
+			<p class="meta"><a href="#">View more</a> or <a href="#">Add to your feed</a></p>
+		</div>
+	</li>
+
+	<li>
+		<h2><i class="icon-rss blue"></i> Object-Relational Mapper</h2>
+		<div class="collapsing-content">
+			<dl class="list-links">
+				<dt><a href="#">Senior Django Developer</a></dt>
+				<dd>March 11th, 2013 at 5:10 p.m. by Django Gigs</dd>
+				<dt><a href="#">Django Developer</a></dt>
+				<dd>March 11th, 2013 at 5:10 p.m. by Django Gigs</dd>
+				<dt><a href="#">Passionate python hacker wanted!</a></dt>
+				<dd>March 11th, 2013 at 5:10 p.m. by Django Gigs</dd>
+				<dt><a href="#">Freelance Django programmer for a food industry web app</a></dt>
+				<dd>March 11th, 2013 at 5:10 p.m. by Django Gigs</dd>
+				<dt><a href="#">Django Developer For Prospect</a></dt>
+				<dd>March 11th, 2013 at 5:10 p.m. by Django Gigs</dd>
+			</dl>
+		</div>
+	</li>
+
+</ul>
+
+
+{% endblock %}
+
+{% block sidebar %}
+<h1 class="visuallyhidden">Additional Information</h1>
+<div role="complementary">
+
+	<h2>Get Involved</h2>
+		<!-- <dl>
+			<dt><a href="#">#django IRC channel</a></dt>
+			<dd>chat with other Django users</dd>
+			<dt><a href="#">Ticket system</a></dt>
+			<dd>report bugs and make feature requests</dd>
+		</dl> -->
+
+		<h2>Tell the World</h2>
+
+		<h2>Improve Django</h2>
+
+		<h2>Get Help</h2>
+
+
+	</div>	
+	{% endblock %}

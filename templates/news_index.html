@@ -3,7 +3,7 @@
 {% block title %}News &amp; Events{% endblock %}
 
 {% block header %}
-<h1 class="h1">News &amp; Events</h1>
+<h1>News &amp; Events</h1>
 <p>Get updates on Django and the Django Software Foundation as well as announcements on upcoming conferences and sprints around the world.</p>
 {% endblock %}
 
@@ -20,7 +20,7 @@
 	</button>
 </form>
 
-<span class="results-label">All News</span>
+<span class="label">All News</span>
 
 <ul class="list-news">
 	<li>
@@ -74,5 +74,8 @@
 {% endblock body %}
 
 {% block sidebar %}
-	{% include "includes/sidebar-news.html" %}
+	<h1 class="visuallyhidden">Additional Information</h1>
+	<div role="complementary">
+		{% include "includes/sidebar-news.html" %}
+	</div>	
 {% endblock %}

@@ -8,20 +8,39 @@ define([
 	};
 	
 	CollapsingList.prototype = {
-		init: function(){				
-			this.headings = this.list.find('> li > h2'); //get headings
+		init: function(){		
+			var self = this; //self = this for functions
+			
+			this.items = this.list.children('li'); //get items
+			this.headings = this.items.children('h2'); //get headings
+			
+			this.buttonExpand = $('<span class="expandall">Expand All</span>'); //build buttons
+			this.buttonCollapse = $('<span class="collapseall">Collapse All</span>'); //build buttons
+			this.buttonContainer = $('<span class="form-controls label"></span>').insertBefore(this.list); //create a button container
+			this.buttonContainer //append container to label
+				.append(this.buttonExpand)
+				.append(' / ')
+				.append(this.buttonCollapse);
+			
 			this.list.addClass('active'); //activate the list styles w/ class
-			this.headings.append(' <i class="icon-plus"></i>').attr('tabindex', '0');
-			this.headings.on( 'click', function() {
-				var self = $(event.target)
-						parent = self.closest('li'); //store target as var
-
+			this.headings.append(' <i class="collapsing-icon icon-plus"></i>').attr('tabindex', '0'); //add icons and tabindexes
+			
+			this.headings.on( 'click', function() { //headings onclick
+				var target = $(event.target)
+						parent = target.closest('li'); //store target as var
 				if (parent.hasClass('active')) { //if currently active
-					self.find('i').removeClass().addClass('icon-plus'); //change icon to a plus
+					target.find('.collapsing-icon').removeClass('icon-minus').addClass('icon-plus'); //change icon to a plus
 				} else {
-					self.find('i').removeClass().addClass('icon-minus'); //otherwise to a minus
+					target.find('.collapsing-icon').removeClass('icon-plus').addClass('icon-minus'); //otherwise to a minus
 				}
 				parent.toggleClass('active'); //toggle active class
+			});
+
+			this.buttonExpand.on( 'click', function() { //expand all onclick
+				self.items.addClass('active').find('i').removeClass().addClass('icon-minus');
+			});
+			this.buttonCollapse.on( 'click', function() { //expand all onclick
+				self.items.removeClass('active').find('i').removeClass().addClass('icon-plus');
 			});
 		}
 	};
