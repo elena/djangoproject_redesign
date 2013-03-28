@@ -73,7 +73,7 @@
 
 {% endblock body %}
 
-{% block sidebar %}
+{% block sidebar %} {# Always include <h1> label and <div> with aria role. #}
 	<h1 class="visuallyhidden">Additional Information</h1>
 	<div role="complementary">
 		{% include "includes/sidebar-news.html" %}

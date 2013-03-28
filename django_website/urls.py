@@ -15,6 +15,7 @@ urlpatterns = patterns('',
     url(r'^community/$', views.Community.as_view(), name="community"),
     url(r'^docs/$', views.Docs.as_view(), name="docs"),
     url(r'^code/$', views.Code.as_view(), name="code"),
+    url(r'^case_study/$', views.CaseStudy.as_view(), name="case_study"),
 )
 
 if settings.DEBUG:

@@ -130,6 +130,11 @@ h4 {
 tt { // increase size of inline monospace text
 	font-size: 115%;
 }
+p { //increase top margin if first item in container
+	[role="main"] &:first-child {
+		margin-top: 30px;
+	}	
+}
 
 
 
@@ -1292,8 +1297,62 @@ tt { // increase size of inline monospace text
 	}
 }
 .list-links { 
-	// Definition lists (<dl>), with links nested in the <dt> element. Can be used globally.
+	//Can be used globally to stack list items either with a <ul>, or with a <dl> using the <dd> to add meta information.
+	@include colfax;
+	list-style: none;
+	margin: 0;
+	padding: 20px 0 0;
 
+	a {
+		@include link-blue;
+	}
+
+	dt,
+	li {
+		@include font-size(26);
+		font-weight: normal;
+		margin-top: 15px;
+
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+
+	dd {
+		@extend .meta;
+		margin-top: 0;
+	}
+
+	[role="complementary"] & {
+
+		padding: 0;
+
+		dt,
+		li {
+			@include font-size(16);
+			background: url(/static/img/patterns/hash-dark.png) repeat-x top center;
+			@include retina-display {
+				background: url(/static/img/patterns/hash-dark@2x.png) repeat-x top center;
+				background-size: 4px;
+			}
+			margin-top: 0;
+			padding-top: 20px;
+
+			&:first-child {
+				background: none;
+				padding-top: 0;
+			}
+		}
+
+		li {
+			padding: 18px 0 10px;
+		}
+
+		dd {
+			@include font-size(14);
+			margin-bottom: 16px;
+		}
+	}
 }
 
 // news modules

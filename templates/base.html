@@ -48,25 +48,18 @@
 			<a href="#top" class="backtotop"><i class="icon-chevron-up"></i> Back to Top</a>
 		</div>
 
-		{% block sidebar %}{% endblock %}
+		{% block sidebar %}{% endblock %} {# Used only with two column pages: News, About, etc #}
 		
 	</div>
 
-	{% block secondary %}{% endblock %}
-	{% block tertiary %}{% endblock %}		
+	{% block secondary %}{% endblock %} {# Used only with one column pages: Why Django, Get Started, etc #}
+	{% block tertiary %}{% endblock %} {# Used only with one column pages: Why Django, Get Started, etc #}
 
 	{% include "includes/footer.html" %}
 	
-	{% compress js %}
+	{% compress js %} {# Using RequireJS to deliver JS dynamically #}
 		<script data-main="{% static "js/main.js" %}" src="{% static "js/lib/require.js" %}"></script>
 	{% endcompress %}
-
-	<script>
-		// var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-		// (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-		// g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-		// s.parentNode.insertBefore(g,s)}(document,'script'));
-	</script>
 
 </body>
 </html>

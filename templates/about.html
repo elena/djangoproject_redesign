@@ -1,80 +1,56 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}About Django{% endblock %}
+{% block title %}About the Django Software Foundation{% endblock %}
 
 {% block header %}
-<h1>About Django</h1>
-<p>Django is an open-source web framework that makes common development tasks fast and easy. Because Django lets you take web applications from conception to launch within hours, your organization can be more productive.</p>
+<h1>About the Django Software Foundation</h1>
 {% endblock %}
 
 {% block body %}
 
-<p></p>
-
-<h2>Our History</h2>
-
-<p>In fall 2003, developers Adrian Holovaty and Simon Willison ditched PHP and began using Python to develop websites for World Online (the web department at the World Company in Lawrence, Kansas). As Holovaty and Willison built intensive, richly interactive sites such as Lawrence.com, they began to extract a generic web development framework that let them build web applications more quickly, following the best practices of web development. In summer 2005, World Online decided to open-source the resulting software, Django.</p>
-
-<h2>Django Software Foundation</h2>
-
-<p>Django is supported by the Django Software Foundation, an independent 501(c)(3) non-profit. We promote, support, and advance the open-source Django web framework by:</p>
-
+<p>Development of Django is supported by an independent foundation established as a 501(c)(3) non-profit. Like most open-source foundations, the goal of the Django Software Foundation is to promote, support, and advance its open-source project: in our case, the Django Web framework.</p>
+<p>The foundation's goals are to:</p>
 <ul>
-	<li>Fostering the development of Django by sponsoring sprints, meetups, gatherings, and community events.</li>
-	<li>Promoting the use of Django among the world-wide web development community.</li>
-	<li>Protecting the intellectual property and the framework's long-term viability.</li>
-	<li>Advancing state-of-the-art web development.</li>
+	<li>Support development of Django by sponsoring sprints, meetups, gatherings and community events.</li>
+	<li>Promote the use of Django among the world-wide Web development community.</li>
+	<li>Protect the intellectual property and the framework's long-term viability.</li>
+	<li>Advance the state of the art in Web development.</li>
 </ul>
 
-<h3>The Board</h3>
-<ul>
-	<li>Adrian Holovaty (Co-BDFL of Django and Founder, EveryBlock).</li>
-	<li>Jacob Kaplan-Moss (Co-BDFL of Django and Software Architect, Revolution Systems).</li>
-	<li>Russell Keith-Magee (Member of Django core team and CTO of Second Chair Systems.)</li>
-	<li>Alex Gaynor (Member of Django core team and Software Engineer at Rdio.)</li>
-</ul>
+<h2>Corporate Members</h2>
+<p>The Django Software Foundation would not be able to operate without the generous financial support of our <a href="#">corporate members</a>. If you are interested in becoming a corporate member of the DSF, you can find out more on our <a href="#">corporate membership page</a>.</p>
 
-<h3>Officers</h3>
-<ul>
-	<li>President: Russell Keith-Magee</li>
-	<li>Secretary: Jeremy Dunck</li>
-	<li>Treasurer: Joseph Kocherhans</li>
-</ul>
 
-<h3>Corporate Members</h3>
-	
-	<p>The Django Software Foundation would not be able to operate without the generous financial support of our corporate members.. If you are interested in becoming a corporate member of the DSF, you can find out more on our corporate membership page Corporate Membership Page</p>
+<h2>Developer Members</h2>
+<p><a href="#">Developer members</a> are appointed to the Django Software Foundation in recognition of their contributions to the Django community. If you know of someone that you think should be a developer member, <a href="#">get in touch</a> and the DSF will consider adding them.</p>
 
-	<h3>Developer Members</h3>
-	<p>Developer members are appointed to the Django Software Foundation in recognition of their contributions to the Django community. If you know of someone that you think should be a developer member, get in touch and the DSF will consider adding them.</p>
 
-	<h3>Support Django</h3>
-	<p>[[Promo to donate to the Foundation.]]</p>
+<h2>Code of Conduct Requirement</h2>
+<p>The DSF will only financially support events which publish and adhere to a <a href="#">Code of Conduct</a>.</p>
+
+
 
 
 
 
 {% endblock %}
 
-{% block sidebar %}
+{% block sidebar %} {# Always include <h1> label and <div> with aria role. #}
 <h1 class="visuallyhidden">Additional Information</h1>
 <div role="complementary">
-	<h2>Websites Powered by Django</h2>
-	<p>Description: Rotating carousel of logos for high-profile organizations using the Django framework. Will include a link to case study where available.</p>
-	<ul>
-		<li><a href="#">Mozilla logo</a></li>
-		<li><a href="#">Knight Foundation logo</a></li>
-		<li><a href="#">Pinterest logo</a></li>
-		<li><a href="#">Disqus logo</a></li>
-		<li><a href="#">Instagram logo</a></li>
-		<li><a href="#">OpenStack logo</a></li>
+
+	<h2>About the foundation</h2>
+	<ul class="list-links">
+		<li><a href="#">FAQ</a>
+		<li><a href="#">Records</a>
+		<li><a href="#">Contact us</a>
+			<li><a href="#">Contributor license agreements</a></li>
 	</ul>
-	<h2>Other Information</h2>
-	<p>Description: Feature that includes links to pages with other relevant information, including:</p>
-	<ul>
-		<li><a href="#">Logos and Collateral page</a></li>
-		<li><a href="#">Contributor License Agreements</a></li>
-		<li><a href="#">DSF Public Records</a></li>
-	</ul>
+	
+	<h2>Support Django</h2>
+	<p>Read more about <a href="#">donating to the DSF</a>.</p>
+
+	
+
 </div>
 {% endblock %}

@@ -75,3 +75,10 @@ class Code(BaseSectionView):
     """
     nav = "code"
     template_name = "code.html"
+
+class CaseStudy(BaseSectionView):
+    """
+    Django Example Case Study.
+    """
+    nav = "case_study"
+    template_name = "case_study.html"
