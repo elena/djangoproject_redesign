@@ -131,9 +131,28 @@ tt { // increase size of inline monospace text
 	font-size: 115%;
 }
 p { //increase top margin if first item in container
-	[role="main"] &:first-child {
+	[role="main"] > &:first-child {
 		margin-top: 30px;
 	}	
+}
+blockquote {
+	@include colfax;
+	@include font-size(22);
+
+	p:first-child {
+		margin-top: 0;
+	}
+
+	.meta {
+		@include font-size(16);
+	}
+
+	@include respond-min(768px) {
+		@include font-size(28);
+		float: right;
+		margin: 0 0 0 40px;
+		width: 33%;
+	}
 }
 
 
@@ -229,6 +248,22 @@ p { //increase top margin if first item in container
 			position: relative;
 		}
 	}
+
+	.meta {
+		@include font-size(15);
+		color: $green-medium;
+		font-weight: bold;
+		left: -9999px;
+		line-height: 1.15;
+		position: absolute;
+		text-transform: uppercase;
+		top: 15px;
+		width: 320px;
+
+		@include respond-min(1100px) {
+			left: 260px;
+		}
+	}
 	
 	.logo {
 		@include font-size(40);
@@ -245,7 +280,7 @@ p { //increase top margin if first item in container
 		text-indent: 100%;
 		width: 142px;
 		@include respond-min(768px) {
-			margin: 20px 10px 10px;
+			margin: 0 10px 10px;
 		}
 		
 		.mdzr-svg & { // NOTE: Modernizr Use
@@ -359,7 +394,7 @@ p { //increase top margin if first item in container
 			@include respond-min(768px) {
 				position: absolute;
 				right: 0;
-				top: 55px;
+				top: 35px;
 			}
 			
 			li:first-child a {
@@ -386,7 +421,7 @@ p { //increase top margin if first item in container
 			@include respond-min(768px) {
 				position: absolute;
 				right: 0;
-				top: 20px;
+				top: 10px;
 			}
 
 			a {
@@ -462,7 +497,7 @@ p { //increase top margin if first item in container
 			@include font-size(42);
 
 			color: lighten(desaturate($green-medium, 30%), 30%);
-			padding: 20px 0;
+			padding: 20px 0 15px;
 
 			em {
 				color: $green-medium;
@@ -778,7 +813,6 @@ p { //increase top margin if first item in container
 .blue {
 	color: $blue;
 }
-
 
 // List Modules
 .list-events {
@@ -1355,8 +1389,8 @@ p { //increase top margin if first item in container
 	}
 }
 
-// news modules
-.news-search {
+// form modules
+.form-input {
 	height: 40px;
 	margin: 30px 0 20px;
 	position: relative;
@@ -1366,7 +1400,8 @@ p { //increase top margin if first item in container
 	}
 
 	input[type="search"],
-	input[type="text"] {
+	input[type="text"], 
+	input[type="email"] {
 		@include colfax;
 		@include font-size(16);
 		-webkit-appearance: none;
@@ -1425,6 +1460,18 @@ p { //increase top margin if first item in container
 			color: $blue;
 			outline: none;
 		}
+	}
+}
+.form-email {
+	h3 {
+		@include font-size(22);
+		margin: 0;
+	}
+	.meta {
+		margin: 0;
+	}
+	form {
+		margin: 10px 0 40px;
 	}
 }
 .label {

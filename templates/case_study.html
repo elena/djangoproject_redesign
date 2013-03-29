@@ -1,27 +1,46 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}Django 1.5 beta 1 released—News{% endblock %}
+{% block title %}Django Case Study: Knight Foundation {% endblock %}
 
 {% block header %}
-<h1>News &amp; Events</h1>
+<h1>Case Study: Knight Foundation </h1>
 {% endblock %}
 
 {% block body %}
-<h1>Django 1.5 beta 1 released</h1>
 
-<span class="meta">Posted by <a href="#" rel="author">James Bennett</a> on <time pubdate datetime="2012-11-27">November 27, 2012</time> in <a href="#">Release Announcements</a></span>
+<h2>The Challenge </h2>
 
-<p>As part of the Django 1.5 release process, today we've released Django 1.5 beta 1, a preview/testing package that gives a little taste of some of the new stuff coming in Django 1.5. As with all alpha and beta packages, this is not for production use, but if you'd like to try out some of the new goodies coming in 1.5, or if you'd like to pitch in and help us fix bugs before the final 1.5 release (due in December), feel free to grab a copy and give it a spin.</p>
+<blockquote>
+	<p>The biggest benefit [of Django] was the speed at which we were able to concept and develop out our CMS.</p>
+	<p class="meta">—Eric Schoenborn | Creative Director, Knight Foundation</p>
+</blockquote>
 
-<p>You can get a copy of the 1.5 beta package from our <a href="https://www.djangoproject.com/download/">downloads page</a>, and we recommend you read the <a href="https://docs.djangoproject.com/en/dev/releases/1.5-beta-1/">release notes</a>. Also, for the security conscious, signed MD5 and SHA1 checksums of the 1.5 alpha package <a href="https://www.djangoproject.com/m/pgp/Django-1.5b1.checksum.txt">are available</a>.</p>
+<p>When the Knight Foundation began redesigning their website (<a href="#">KnightFoundation.org</a>), they were on multiple content management systems they’d outgrown, and the site couldn’t handle traffic spikes. Knight needed a future-proof solution that could accommodate myriad pieces of content and content types (blogs, grant data, publications, grantee profiles)—but also layouts, interactions, and more. </p>
 
-<p>Also, please note that Django 1.5 now requires a minimum of Python 2.6; Python 2.5 is no longer supported. Python 3.x releases, starting with Python 3.2, are experimentally supported in this release. For more information on Python 3 support, and the testing Django 1.5 will still need, see this <a href="https://www.djangoproject.com/weblog/2012/aug/19/experimental-python-3-support/">blog post</a>.</p>
+<h2>Why Django?  </h2>
+
+<p>The versatility of Django’s applications meant Knight wouldn’t have to re-platform years later, as unanticipated content and functionality needs cropped up. This versatility would allow Knight to work in an exploratory manner while facilitating speedy development.</p>
+
+<h2>The Development Process </h2>
+
+<p>The actual development process took only four months. Django enabled the front-end developers to write markup following best practices, rather than being constrained by prescribed practices. They were also able to automatically test everything (Django deploys a new version of a site in less than a minute). Scalability meant that the developers could build high-performance features without increasing server load or crashing under traffic. So Knight didn’t have to spend lots of money on hardware, despite their high number of users.</p>
+
+<h2>The Results</h2>
+
+<p>Since the Django-based <a href="#">KnightFoundation.org</a> launched in June 2011, pageviews have increased 55%, unique visitors to the site have grown by 58%, and the homepage bounce rate improved by 30%. Site stability during traffic spikes is no longer a problem.</p>
 
 {% endblock %}
 
 {% block sidebar %} {# Always include <h1> label and <div> with aria role. #}
 	<h1 class="visuallyhidden">Additional Information</h1>
 	<div role="complementary">
-		{% include "includes/sidebar-news.html" %}
+		<h2>Other Case Studies</h2>
+		<ul class="list-links">
+			<li><a href="#">Mozilla</a></li>
+			<li><a href="#">Instagram</a></li>
+			<li><a href="#">Discus</a></li>
+			<li><a href="#">OpenStack</a></li>
+			<li><a href="#">TheGuardian</a></li>
+		</ul>
 	</div>	
 {% endblock %}
