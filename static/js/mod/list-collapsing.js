@@ -25,8 +25,8 @@ define([
 			this.list.addClass('active'); //activate the list styles w/ class
 			this.headings.append(' <i class="collapsing-icon icon-plus"></i>').attr('tabindex', '0'); //add icons and tabindexes
 			
-			this.headings.on( 'click', function() { //headings onclick
-				var target = $(event.target)
+			this.headings.on( 'click', function( ev ) { //headings onclick (passing event)
+				var target = $(ev.target).closest('h2'),
 						parent = target.closest('li'); //store target as var
 				if (parent.hasClass('active')) { //if currently active
 					target.find('.collapsing-icon').removeClass('icon-minus').addClass('icon-plus'); //change icon to a plus
@@ -37,10 +37,10 @@ define([
 			});
 
 			this.buttonExpand.on( 'click', function() { //expand all onclick
-				self.items.addClass('active').find('i').removeClass().addClass('icon-minus');
+				self.items.addClass('active').find('.collapsing-icon').removeClass('icon-plus').addClass('icon-minus');
 			});
 			this.buttonCollapse.on( 'click', function() { //expand all onclick
-				self.items.removeClass('active').find('i').removeClass().addClass('icon-plus');
+				self.items.removeClass('active').find('.collapsing-icon').removeClass('icon-minus').addClass('icon-plus');
 			});
 		}
 	};

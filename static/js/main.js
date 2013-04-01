@@ -1,3 +1,5 @@
+// Require.js Module Loader - http://requirejs.org
+
 requirejs.config({
 	paths: {
 		"jquery": "lib/jquery",
@@ -8,15 +10,11 @@ requirejs.config({
 define(function(){
 
 	var mods = [
-		'mod/mobile-menu' 
+		'mod/mobile-menu' //require mobile menu automatically
 	]; 
 
-
-	function hasID( id ) { //id function
-		return document.getElementById( id ); 
-	}
-	function hasClass( className ) { //id function
-
+	//detect Class function
+	function hasClass( className ) { 
 		if (!document.getElementsByClassName) { //class name function in old IE
 			document.getElementsByClassName = function(search) {
 				var d = document, elements, pattern, i, results = [];
@@ -41,12 +39,10 @@ define(function(){
 				return results;
 			}
 		}
-
 		return document.getElementsByClassName( className ); 
 	}
 
-
-	if (hasID('list-feature')) { //feature list
+	if (hasClass('list-feature')) { //feature list
 		mods.push('mod/list-feature');
 	}
 

@@ -1,5 +1,11 @@
+/* 
+CSS Written by Jes Gundy
+Threespot, Washington DC 
+---
+CSS rendered with Sass 3.2.7
+*/
 
-// Default Type / Colors
+// Globals
 body {
 	@include elena;
 	@include font-size(20); 
@@ -28,8 +34,7 @@ a {
 		color: lighten($gray-text, 20%);
 	}
 }
-// Text Selection Colors
-::selection {
+::selection { // Text Selection Colors
 	background: $green-light; 
 }
 ::-moz-selection {
@@ -44,7 +49,7 @@ dl {
 
 	dt {
 		@include colfax;
-		font-weight: bold;
+		font-weight: 700;
 		margin-top: 22px;
 	}
 
@@ -60,7 +65,7 @@ h4,
 h5,
 h6 {
 	@include colfax;
-	font-weight: normal;
+	font-weight: 400;
 
 	a {
 		text-decoration: none;
@@ -89,7 +94,7 @@ h1 {
 }
 h2 {
 	@include font-size(30);
-	font-weight: bold;
+	font-weight: 700;
 	color: $gray-text;
 	line-height: 1.2;
 	margin: 35px 0 20px;
@@ -101,7 +106,7 @@ h2 {
 	.layout-secondary & {
 		@include font-size(32);
 		background: url(/static/img/patterns/hash-dark.png) repeat-x bottom center;
-		font-weight: normal;
+		font-weight: 400;
 		@include retina-display {
 			background: url(/static/img/patterns/hash-dark@2x.png) repeat-x bottom center;
 			background-size: 4px;
@@ -130,7 +135,8 @@ h4 {
 tt { // increase size of inline monospace text
 	font-size: 115%;
 }
-p { //increase top margin if first item in container
+p { 
+	//increase top margin if first item in container
 	[role="main"] > &:first-child {
 		margin-top: 30px;
 	}	
@@ -154,8 +160,6 @@ blockquote {
 		width: 33%;
 	}
 }
-
-
 
 // Layout
 [role="main"] {
@@ -202,6 +206,7 @@ blockquote {
 	}
 }
 .full-width {
+	// High-level class denoting full-width layout
 	-moz-box-shadow: 0 4px 4px rgba(0,0,0,0.11);
 	-webkit-box-shadow: 0 4px 4px rgba(0,0,0,0.11);
 	box-shadow: 0 4px 4px rgba(0,0,0,0.11);
@@ -219,20 +224,33 @@ blockquote {
 	}
 }
 .layout-secondary {
+	// Secondary (gray) content area on full-width pages
 	padding: 10px 10px 40px;
 }
 .layout-tertiary {
+	// Tertiary (white) content area on full-width pages
 	background: #fff;
 	-moz-box-shadow: 0 -4px 4px rgba(0,0,0,0.11);
 	-webkit-box-shadow: 0 -4px 4px rgba(0,0,0,0.11);
 	box-shadow: 0 -4px 4px rgba(0,0,0,0.11);
 	padding: 10px 10px 40px;
 }
+.container { 
+	//reusable container class to center content
+	@include respond-min(768px) {
+		margin: 0 auto;	
+		max-width: 1100px;
+		width: (704/768) * 100%;
+	}
+	@include old-ie {
+		min-width: 768px;
+	}
+}
 
 
-
-// Banner/Header styles
+// Site Chrome (Header/Footer)
 [role="banner"] {
+	// Includes global navigation, logo, and tagline at top of document
 	@include clearfix;
 	background: $green-light;
 	overflow: hidden;
@@ -252,7 +270,7 @@ blockquote {
 	.meta {
 		@include font-size(15);
 		color: $green-medium;
-		font-weight: bold;
+		font-weight: 700;
 		left: -9999px;
 		line-height: 1.15;
 		position: absolute;
@@ -283,7 +301,7 @@ blockquote {
 			margin: 0 10px 10px;
 		}
 		
-		.mdzr-svg & { // NOTE: Modernizr Use
+		.mdzr-svg & { // deliver svg logo if applicable
 			background: url(/static/img/logo-django.svg) center center no-repeat;	
 		}
 	}
@@ -321,14 +339,13 @@ blockquote {
 		overflow: hidden;
 		-webkit-transition: all 0.3s ease-out;  
 		-moz-transition: all 0.3s ease-out;
-		-ms-transition: all 0.3s ease-out;
 		-o-transition: all 0.3s ease-out;
 		transition: all 0.3s ease-out;
 		@include respond-min(768px) {
+			// turn off animations if on a desktop width
 			max-height: none;
 			-webkit-transition: none;  
 			-moz-transition: none;
-			-ms-transition: none;
 			-o-transition: none;
 			transition: none;
 		}
@@ -341,7 +358,8 @@ blockquote {
 	[role="navigation"] {
 		background: url(/static/img/bg-pattern.jpg) repeat top center $green-dark;
 		clear: both;
-		@include retina-display { //double density for retina display
+		@include retina-display { 
+			//double density for retina display
 			background-size: 250px 250px;
 		}
 		@include respond-min(768px) {
@@ -359,6 +377,7 @@ blockquote {
 			display: block;			
 			font-weight: 400;
 			line-height: 1.1;
+			margin-top: 0;
 			text-align: center;
 			text-transform: uppercase;
 			@include respond-min(768px) {
@@ -394,7 +413,7 @@ blockquote {
 			@include respond-min(768px) {
 				position: absolute;
 				right: 0;
-				top: 35px;
+				top: 45px;
 			}
 			
 			li:first-child a {
@@ -421,7 +440,7 @@ blockquote {
 			@include respond-min(768px) {
 				position: absolute;
 				right: 0;
-				top: 10px;
+				top: 20px;
 			}
 
 			a {
@@ -444,6 +463,7 @@ blockquote {
 	}
 }
 .header {
+	// dark green bar containing the page title
 	@include colfax;
 	background: url(/static/img/bg-pattern.jpg) repeat top center $green-dark;
 	margin: 0;
@@ -477,6 +497,7 @@ blockquote {
 	}
 }
 .copy-banner {
+	// Large green callout at the top of the page
 	background: $green-light;
 	padding: 10px;
 	
@@ -505,11 +526,8 @@ blockquote {
 		}
 	}	
 }
-
-
-
-// Footer Styles
 [role="contentinfo"] {
+	// Global Footer at bottom of page
 	@include clearfix;
 	@include colfax;
 	background: url(/static/img/bg-pattern.jpg) repeat top center $green-dark;
@@ -621,7 +639,7 @@ blockquote {
 			margin: 20px 90px 0 2%;
 		}
 		
-		.mdzr-svg & { // NOTE: Modernizr Use
+		.mdzr-svg & { 
 			background: url(/static/img/logo-django.svg) center center no-repeat;
 			height: 39px;
 			width: 109px;
@@ -709,24 +727,14 @@ blockquote {
 }
 
 
-
 // Recycleable Style Classes
-.container {
-	@include respond-min(768px) {
-		margin: 0 auto;	
-		max-width: 1100px;
-		width: (704/768) * 100%;
-	}
-	@include old-ie {
-		min-width: 768px;
-	}
-}
 .backtotop {
+	// Back to top link (in base.html after block body)
 	@include link-blue;
 	@include colfax;
 	@include font-size(14);
 	display: block;
-	font-weight: bold;
+	font-weight: 700;
 	margin: 10px 0;
 	padding: 10px 0;
 	text-align: center;
@@ -736,6 +744,7 @@ blockquote {
 	}
 }
 .cta, a.cta {
+	// Call To Action buttons
 	@include colfax;
 	-webkit-appearance: none;
 	-moz-appearance: none;
@@ -766,6 +775,7 @@ blockquote {
 	}
 }
 .link-readmore {
+	// Read More links. Should exist outside of <p> tag, and include the '&rsaquo;' arrow after the text.
 	@include link-blue;
 	@include colfax;
 	@include font-size(13);
@@ -780,7 +790,6 @@ blockquote {
 }
 .meta {
 	// Re-usable meta class for alternate-style content.
-
 	@include colfax;
 	@include font-size(16);
 	display: block;
@@ -791,7 +800,8 @@ blockquote {
 		@include link-blue;
 	}
 }
-.layout-2col {
+.layout-2col { 
+	//two column layout module
 	@include respond-min(768px) {
 		@include clearfix;
 		.col {
@@ -811,11 +821,47 @@ blockquote {
 	}
 }
 .blue {
+	// overide blue color class
 	color: $blue;
+}
+.label {
+	// Label style associated with forms and other global elements.
+	@include colfax;
+	@include font-size(16);
+	color: lighten($gray-text, 30%);
+	display: block;
+	font-weight: 700;
+	margin: 20px 0 10px;
+	text-transform: uppercase;
+
+	
+	&.form-controls {
+		@include font-size(12);
+		display: block;
+		margin: 0;
+		position: relative;
+		top: 25px;
+		text-align: right;
+
+		@include respond-min(768px) {
+			@include font-size(16);
+		}
+		
+		span {
+			cursor: pointer;
+
+			&:hover,
+			&:active,
+			&:focus {
+				color: lighten($gray-text, 20%);
+			}
+		}
+	}
 }
 
 // List Modules
-.list-events {
+.list-events { 
+	// reusable event list style class, for use in the sidebar. (See sidebar-news.html include.)
 	@include colfax;
 	list-style: none;
 	margin: 0;
@@ -869,9 +915,10 @@ blockquote {
 	}
 }
 .list-tags {
+	// Tag list style with blue block links. (See sidebar-news.html include.)
 	@include colfax;
 	@include font-size(12);
-	font-weight: bold;
+	font-weight: 700;
 	list-style: none;
 	margin: 0;
 	padding: 0;
@@ -910,12 +957,13 @@ blockquote {
 	}
 }
 .list-news {
+	// News article listing style. (See News & Events Page.)
 	list-style: none;
 	margin: 0;
 	padding: 0;
 
 	h2 {
-		font-weight: normal
+		font-weight: 400;
 	}
 
 	li {
@@ -935,6 +983,7 @@ blockquote {
 	}
 }
 .list-case-study {
+	// Three column list for Case Studies that switches to one column on mobile. (See Why Django Page.)
 	@include clearfix;
 	list-style: none;
 	margin: 0;
@@ -967,7 +1016,7 @@ blockquote {
 		@include colfax;
 		@include link-blue;
 		@include font-size(11);
-		font-weight: bold;
+		font-weight: 700;
 		margin-top: 10px;
 		text-transform: uppercase;
 	}
@@ -1014,6 +1063,7 @@ blockquote {
 	}
 }
 .list-link-soup {
+	// Basic link-soup list style. Three Column on Desktop, two column on mobile. (See Why Django Page.)
 	@include colfax;
 	@include clearfix;
 	@include font-size(18);
@@ -1025,7 +1075,6 @@ blockquote {
 	list-style: none;
 	margin: 20px 0 0;
 	padding: 20px 0 10px;
-
 
 	li {
 		float: left;
@@ -1042,6 +1091,7 @@ blockquote {
 	}
 }
 .list-features {
+	// Animated Feature List from the Why Django Page. Require looks for the 'list-features' class to load the appropriate scripts to animate the icons. Degrades gracefully into mobile.
 	dt {
 		@include font-size(26);
 		background: url(/static/img/patterns/hash-dark.png) repeat-x top center;
@@ -1133,17 +1183,17 @@ blockquote {
 			.mdzr-svg.mdzr-borderradius.mdzr-cssanimations & {
 				-webkit-transition: all 0.3s ease-out;  
 				-moz-transition: all 0.3s ease-out;
-				-ms-transition: all 0.3s ease-out;
 				-o-transition: all 0.3s ease-out;
 				transition: all 0.3s ease-out;
-
 				-moz-transform: rotate(0.5turn);
 				-webkit-transform: rotate(0.5turn);
+				-ms-transform: rotate(0.5turn);
 				transform: rotate(0.5turn);
 
 				&.inview {
 					-moz-transform: rotate(0turn);
 					-webkit-transform: rotate(0turn);
+					-ms-transform: rotate(0turn);
 					transform: rotate(0turn);
 				}
 				
@@ -1182,6 +1232,7 @@ blockquote {
 	}
 }
 .list-collapsing {
+	// reusable accordion style collapsing list, as seen on the Get Started Page. 'Expand/Collapse All' toggle is generated by the javascript. H2 is used for label, and 'collapsing-content' class is used to identify all content that should expand and collapse onclick.
 	background: url(/static/img/patterns/hash-dark.png) repeat-x bottom center;
 	@include retina-display {
 		background: url(/static/img/patterns/hash-dark@2x.png) repeat-x bottom center;
@@ -1234,7 +1285,6 @@ blockquote {
 
 			-webkit-transition: all 0.5s ease-out;  
 			-moz-transition: all 0.5s ease-out;
-			-ms-transition: all 0.5s ease-out;
 			-o-transition: all 0.5s ease-out;
 			transition: all 0.5s ease-out;
 		}
@@ -1244,6 +1294,7 @@ blockquote {
 	}
 }
 .list-image {
+	// list style for large, clickable images accompanied by text. (See Get Started Page.)
 	list-style: none;
 	margin: 0;
 	padding: 0;
@@ -1298,8 +1349,7 @@ blockquote {
 	}
 }
 .list-outline {
-	// Nested lists to house documentation outline. Meant for use in sidebar.
-
+	// Nested lists to house documentation outline. Meant for use in sidebar. (See Documentation Page.)
 	@include font-size(18);
 	line-height: 1.2;
 	list-style: none;
@@ -1312,7 +1362,7 @@ blockquote {
 
 	> li > a { //top level
 		text-transform: uppercase;
-		font-weight: bold;
+		font-weight: 700;
 	}	
 
 	> li > ul { //second level
@@ -1331,7 +1381,7 @@ blockquote {
 	}
 }
 .list-links { 
-	//Can be used globally to stack list items either with a <ul>, or with a <dl> using the <dd> to add meta information.
+	//Can be used globally to stack list items either with a <ul>, or with a <dl> using the <dd> to add meta information.  (See Community Page - sidebar and block body.)
 	@include colfax;
 	list-style: none;
 	margin: 0;
@@ -1344,7 +1394,7 @@ blockquote {
 	dt,
 	li {
 		@include font-size(26);
-		font-weight: normal;
+		font-weight: 400;
 		margin-top: 15px;
 
 		&:first-child {
@@ -1389,8 +1439,9 @@ blockquote {
 	}
 }
 
-// form modules
+// Forms
 .form-input {
+	// Specific class for single-entry form with <button> submit element utilizing a font-awesome icon. See examples on Community and News & Events pages.
 	height: 40px;
 	margin: 30px 0 20px;
 	position: relative;
@@ -1411,7 +1462,7 @@ blockquote {
 		border-radius: 4px;
 		cursor: auto;
 		display: block;
-		font-weight: normal;
+		font-weight: 400;
 		height: 30px;
 		line-height: 30px;
 		margin: 0;
@@ -1463,6 +1514,7 @@ blockquote {
 	}
 }
 .form-email {
+	// Email submission forms on Community page.
 	h3 {
 		@include font-size(22);
 		margin: 0;
@@ -1474,40 +1526,8 @@ blockquote {
 		margin: 10px 0 40px;
 	}
 }
-.label {
-	@include colfax;
-	@include font-size(16);
-	color: lighten($gray-text, 30%);
-	display: block;
-	font-weight: bold;
-	margin: 20px 0 10px;
-	text-transform: uppercase;
-
-	
-	&.form-controls {
-		@include font-size(12);
-		display: block;
-		margin: 0;
-		position: relative;
-		top: 25px;
-		text-align: right;
-
-		@include respond-min(768px) {
-			@include font-size(16);
-		}
-		
-		span {
-			cursor: pointer;
-
-			&:hover,
-			&:active,
-			&:focus {
-				color: lighten($gray-text, 20%);
-			}
-		}
-	}
-}
 .nav-pagination {
+	// Pagination style for use with the News & Events pages.
 	@include colfax;
 	@include font-size(14);
 	background: url(/static/img/patterns/hash-dark.png) repeat-x top center;
@@ -1515,7 +1535,7 @@ blockquote {
 		background: url(/static/img/patterns/hash-dark@2x.png) repeat-x top center;
 		background-size: 4px;
 	}
-	font-weight: bold;
+	font-weight: 700;
 	line-height: 31px;
 	list-style: none;
 	margin: 30px 0;
@@ -1602,7 +1622,7 @@ blockquote {
 	}
 }
 
-// Boilerplate Helper mixins
+// Boilerplate Helper mixins (rendered as classes)
 .visuallyhidden { 
 	@include visuallyhidden;
 }

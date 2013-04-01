@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="{% block description %}{% endblock %}">
 	
+	<!-- Favicons -->
 	<link rel="apple-touch-icon" href="{% static "img/icon-touch.png" %}">
 	<link rel="icon" href="{% static "img/icon-favicon.png" %}">
 	<!--[if IE]><link rel="shortcut icon" href="{% static "img/icon-favicon.ico" %}"><![endif]-->
@@ -34,7 +35,7 @@
 <body>
 
 	{% include "includes/header.html" %}
-
+	
 	<div class="header">
 		{% block header %}{% endblock %}
 	</div>

@@ -1,8 +1,6 @@
 {% extends 'base.html' %}{% load static pygmentify %}
-
 {% block layout_class %}full-width{% endblock %}
-
-{% block title %}Get Started{% endblock %}
+{% block title %}Django Get Started{% endblock %}
 
 {% block header %}<h1>Get Started</h1>{% endblock %}
 
@@ -25,8 +23,7 @@
 
 <p>Below, we’ve highlighted some helpful features.</p>
 
-<ul class="list-collapsing">
-  
+<ul class="list-collapsing">  
   <li>
     <h2>Object-Relational Mapper</h2>
     <div class="collapsing-content">
@@ -54,15 +51,12 @@ class Member(models.Model):
       {% endpygment %}
     </div>
   </li>
-
-
   <li>
     <h2>URLs and Views</h2>
     <div class="collapsing-content">
       <p>A clean, elegant URL scheme is an important detail in a high-quality Web application. Django encourages beautiful URL design and doesn't put any cruft in URLs, like .php or .asp.</p>
       <p>To design URLs for an application, you create a Python module called a URLconf. Like, a table of contents for your app, it contains a simple mapping between URL patterns and your views.</p>
       <a class="link-readmore" href="https://docs.djangoproject.com/en/dev/topics/http/urls/">Read More &rsaquo;</a>
-
       {% pygment %}
         <pre lang="python">
 urlpatterns = patterns('',
@@ -80,15 +74,11 @@ def band_listing(request):
       {% endpygment %}
     </div>
   </li>
-  
-
-
   <li>
     <h2>Templates</h2>
     <div class="collapsing-content">
       <p>Django’s template language is designed to strike a balance between power and ease. It’s designed to feel comfortable and easy-to-learn to those used to working with HTML, like designers and front-end developers. But it is also flexible and highly extensible, allowing developers to augment the template language as needed.</p>
       <a class="link-readmore" href="https://docs.djangoproject.com/en/dev/topics/templates/">Read More &rsaquo;</a>
-
       {% pygment %}
         <pre lang="html">
 &lt;html&gt;
@@ -111,9 +101,6 @@ def band_listing(request):
       {% endpygment %}
     </div>
   </li>
-
-
-
   <li>
     <h2>Forms</h2>
     <div class="collapsing-content">
@@ -132,9 +119,6 @@ class BandContactForm(forms.Form):
       {% endpygment %}
     </div>
   </li>
-
-
-
   <li>
     <h2>Authentication</h2>
     <div class="collapsing-content">
@@ -149,9 +133,6 @@ Python code TBD
       {% endpygment %}
     </div>
   </li>
-
-
-
   <li>
     <h2>Admin</h2>
     <div class="collapsing-content">
@@ -166,8 +147,6 @@ Python code TBD
       {% endpygment %}
     </div>
   </li>
-  
-
   <li>
     <h2>Internationalization</h2>
     <div class="collapsing-content">
@@ -183,9 +162,6 @@ Python code TBD
       {% endpygment %}
     </div>
   </li>
-  
-
-
   <li>
     <h2>Security</h2>
     <div class="collapsing-content">
@@ -208,34 +184,27 @@ Python code TBD
 {% endblock %}
 
 
-
 {% block secondary %}
 <div class="layout-secondary">
   <div class="container">
-
     <h2>Install Django</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
     <a class="link-readmore" href="/docs/">Read More &rsaquo;</a>
-
     <h2>Write Your First Django App</h2>
     <p>Installed Django already? Good. Now <a href="/docs/">try this tutorial</a>, which walks you through the creation of a basic poll application. It’s got two parts:</p>
     <ol>
       <li>A public site that lets people view polls and vote in them.</li>
       <li>An administrative interface that lets you add, change, and delete polls.</li>
     </ol>
-    <a class="link-readmore" href="/docs/">Read More &rsaquo;</a>
-    
+    <a class="link-readmore" href="/docs/">Read More &rsaquo;</a>    
     <h2>Sharpen Your Skills</h2>
     <p>The official <a href="/docs/">Django documentation</a> covers everything you need to know about Django (and then some).</p>
-
     <h2><span>Join the Community</span></h2>
     <p>You can help <a href="/community/">make us better</a>. Find out about upcoming Django events, learn what’s on other Django developers’ minds, find and post jobs, and more.</p>
     <a href="/community/" class="link-readmore">Read More &rsaquo;</a>
-
   </div>
 </div>
 {% endblock %}
-
 
 
 {% block tertiary %}
@@ -261,21 +230,4 @@ Python code TBD
       </ul>
     </div>
   </div>
-{% endblock %}
-
-
-{% block extrajs %}
-<script>
-  var content = $(".list-features p, .list-features pre")
-  content.hide().addClass("hidden");
-  $(".list-features h3").click(function() {
-    var content = $(this).parent().find(".list-features p, .list-features pre")
-    if (content.hasClass("hidden")) {
-      content.show().removeClass("hidden");
-    } else {
-      content.hide().addClass("hidden")
-    }
-  });
-
-</script>
 {% endblock %}

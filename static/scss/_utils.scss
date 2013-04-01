@@ -5,7 +5,7 @@ $green-light: #e8f4d0;
 $green-medium: #83a913; 
 $green-dark: #082d20;
 
-// @font-face
+// @font-face declarations
 @font-face {
 	font-family: 'Elena';
 	src: url('/static/fonts/elena/ElenaWebBasicBold.eot');
@@ -137,13 +137,7 @@ html {
 	}
 }
 
-@mixin box-shadow ( $shadow ) {
-	-moz-box-shadow: $shadow;
-	-webkit-box-shadow: $shadow;
-	box-shadow: $shadow;
-}
-
-// Custom Mixins
+// Custom Blue Link Mixin
 @mixin link-blue {
 	color: $blue;
 	text-decoration: none;
@@ -157,4 +151,3 @@ html {
 		text-decoration: none;
 	}
 }
-
