@@ -9,7 +9,7 @@
   <div class="container">
     <div class="layout-2col">
       <div class="col two-third">
-        <p>It’s easy to get up and running with <em>Django</em>.</p> 
+        <p>It’s easy to get up and running with <em>Django</em>.</p>
       </div>
       <div class="col one-third">
         <a href="#" class="cta">Install Django <em>Version 1.4.3</em></a>
@@ -21,9 +21,9 @@
 
 {% block body %}
 
-<p>Below, we’ve highlighted some helpful features.</p>
+<p>Take a tour of some prominent Django features:</p>
 
-<ul class="list-collapsing">  
+<ul class="list-collapsing">
   <li>
     <h2>Object-Relational Mapper</h2>
     <div class="collapsing-content">
@@ -68,7 +68,7 @@ urlpatterns = patterns('',
       <pre lang="python">
 def band_listing(request):
   """ A view of all bands."""
-  bands =models.Band.objects.all()
+  bands = models.Band.objects.all()
   return render_to_response('bands/band_listing.html', {'bands': band})
         </pre>
       {% endpygment %}
@@ -165,19 +165,20 @@ Python code TBD
   <li>
     <h2>Security</h2>
     <div class="collapsing-content">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-      <a class="link-readmore" href="#">Read More &rsaquo;</a>
+      <p>Security is a topic of paramount importance in the development of Web applications and Django provides multiple protection tools against:</p>
+      <ul>
+        <li>Clickjacking</li>
+        <li>Cross Site Scripting</li>
+        <li>Cross Site Request Forgery</li>
+        <li>SQL Injection</li>
+        <li>Remote Code Execution</li>
+      </ul>
 
-      {% pygment %}
-        <pre lang="python">
-"""
-Python code TBD
-"""
-        </pre>
-      {% endpygment %}
+      <a class="link-readmore" href="https://docs.djangoproject.com/en/dev/topics/security/">Read More &rsaquo;</a>
+
     </div>
   </li>
-</ul> 
+</ul>
 
 <p>Depending how new you are to Django, you can also <a href="#">try a tutorial</a>, or just <a href="#">dive into the documentation</a>.</p>
 
@@ -196,12 +197,13 @@ Python code TBD
       <li>A public site that lets people view polls and vote in them.</li>
       <li>An administrative interface that lets you add, change, and delete polls.</li>
     </ol>
-    <a class="link-readmore" href="/docs/">Read More &rsaquo;</a>    
+    <a class="link-readmore" href="/docs/">Take the Tutorial &rsaquo;</a>
     <h2>Sharpen Your Skills</h2>
     <p>The official <a href="/docs/">Django documentation</a> covers everything you need to know about Django (and then some).</p>
+     <a href="/docs/" class="link-readmore">Read the Docs &rsaquo;</a>
     <h2><span>Join the Community</span></h2>
     <p>You can help <a href="/community/">make us better</a>. Find out about upcoming Django events, learn what’s on other Django developers’ minds, find and post jobs, and more.</p>
-    <a href="/community/" class="link-readmore">Read More &rsaquo;</a>
+    <a href="/community/" class="link-readmore">Join Us &rsaquo;</a>
   </div>
 </div>
 {% endblock %}
@@ -210,21 +212,22 @@ Python code TBD
 {% block tertiary %}
   <div class="layout-tertiary">
     <div class="container">
+      <h2>Other Django Resources</h2>
       <ul class="list-image">
         <li>
           <a href="http://gettingstartedwithdjango.com/">
             <img src="{% static 'img/demos/start.png' %}" alt="Getting Started with Django" />
-            <h2>Getting Started With Django</h2> 
-            <p><span class="visuallyhidden">Getting Started With Django</span> is a video series designed to take you to the next level from Django novice.</p>
-            <span class="link-readmore">Read More &rsaquo;</span>
+            <h3>Getting Started With Django</h3>
+            <p><span class="visuallyhidden">Getting Started With Django is</span> a series of video-based lessons meant to take you from novice to competent, or maybe even beyond. Each lesson covers many facets and best practices of modern Django web development and features a video and a text transcript to follow along. Every video is available for download or online streaming and there's a forum for help if you get stuck.</p>
+            <span class="link-readmore">Get Started &rsaquo;</span>
           </a>
         </li>
         <li>
-          <a href="http://django.twoscoops.org">
+          <a href="https://django.2scoops.org/">
             <img src="{% static 'img/demos/tsd.png' %}" alt="Two Scools of Django" />
-            <h2>Two Scoops of Django</h2>
-            <p><span class="visuallyhidden">Two Scoops of Django</span> is an ebook designed for both novices and more advanced users and covers best practices for using Django 1.5.</p>
-            <span class="link-readmore">Read More &rsaquo;</span>
+            <h3>Two Scoops of Django</h3>
+            <p><span class="visuallyhidden">Two Scoops of Django is</span> an ebook designed for both novices and more advanced users, covering best practices for using Django 1.5.</p>
+            <span class="link-readmore">Get the Book &rsaquo;</span>
           </a>
         </li>
       </ul>
