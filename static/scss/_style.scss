@@ -1193,9 +1193,9 @@ blockquote {
 			// Border Radius Enabled 
 			.mdzr-borderradius & {
 				background: $green-medium;
-				-moz-border-radius: 50%;
-				-webkit-border-radius: 50%;
-				border-radius: 50%;
+				-moz-border-radius: 100px;
+				-webkit-border-radius: 100px;
+				border-radius: 100px;
 				color: #fff;
 			}
 			
@@ -1520,7 +1520,6 @@ blockquote {
 		display: block;
 		font-weight: 400;
 		height: 30px;
-		line-height: 30px;
 		margin: 0;
 		padding: 8px 14% 6px 0;
 		text-indent: 10px;
