@@ -13,24 +13,9 @@
 		text-decoration: underline;
 	}
 
-	a[href]:after {
-		content: " (" attr(href) ")";
-	}
-
-	abbr[title]:after {
-		content: " (" attr(title) ")";
-	}
-
 	/*
 	* Don't show links for images, or javascript/internal links
 	*/
-
-	.ir a:after,
-	a[href^="javascript:"]:after,
-	a[href^="#"]:after,
-	[role="banner"] a:after {
-		content: "";
-	}
 
 	pre,
 	blockquote {
@@ -81,7 +66,8 @@
 	[role="contentinfo"] .logo,
 	.thanks,
 	[role="complementary"],
-	[role="navigation"] {
+	[role="navigation"],
+	.form-input {
 		display: none !important;
 	}
 

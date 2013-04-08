@@ -2,7 +2,8 @@
 
 requirejs.config({
 	paths: {
-		"jquery": "lib/jquery",
+		"jquery": "//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min",
+		// "jquery": "lib/jquery",  --  local version of jquery if desired.
 		"jquery.inview": "lib/jquery.inview"
 	}
 });
@@ -39,14 +40,16 @@ define(function(){
 				return results;
 			}
 		}
-		return document.getElementsByClassName( className ); 
+		return !!document.getElementsByClassName( className ).length; //return a boolean
 	}
 
-	if (hasClass('list-feature')) { //feature list
+	//feature list
+	if (hasClass('list-features')) { 
 		mods.push('mod/list-feature');
 	}
 
-	if (hasClass('list-collapsing')) { //collapsing list
+	//collapsing list
+	if (hasClass('list-collapsing')) { 
 		mods.push('mod/list-collapsing');
 	}
 

@@ -8,8 +8,7 @@
 	
 	<!-- Favicons -->
 	<link rel="apple-touch-icon" href="{% static "img/icon-touch.png" %}">
-	<link rel="icon" href="{% static "img/favicon.png" %}">
-	<!--[if IE]><link rel="shortcut icon" href="{% static "img/favicon.ico" %}"><![endif]-->
+	<link rel="shortcut icon" href="{% static "img/favicon.ico" %}">
 	<meta name="msapplication-TileColor" content="#113228">
 	<meta name="msapplication-TileImage" content="{% static "img/icon-tile.png" %}">
 
@@ -55,9 +54,8 @@
 
 	{% include "includes/footer.html" %}
 	
-	{% compress js %} {# Using RequireJS to deliver JS dynamically #}
-		<script data-main="{% static "js/main.js" %}" src="{% static "js/lib/require.js" %}"></script>
-	{% endcompress %}
+	{# Require JS #}
+	<script data-main="{% static "js/main.js" %}" src="{% static "js/lib/require.js" %}"></script>	
 
 </body>
 </html>

@@ -1,5 +1,5 @@
 define([
-	'jquery.inview'
+	'jquery.inview' //required inview plugin
 ], function( $ ) {
 
 	var FeatureList = function(list) {
@@ -10,7 +10,6 @@ define([
 	FeatureList.prototype = {
 		init: function(){
 			this.icons = this.list.find('dt i'); //go get icons
-
 			this.icons.bind('inview', function(event, isInView, visiblePartX, visiblePartY) {
 				if (isInView && visiblePartY != 'top' && visiblePartY != 'bottom') { // element completely visible
 					$(this).addClass('inview'); //new class

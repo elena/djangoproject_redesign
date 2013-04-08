@@ -1333,6 +1333,17 @@ blockquote {
 				right: 0;
 				top: 20px;
 			}
+
+			&.bullet-icon {
+				// H2 class for using icons as 'bullets' much like the layout of a list. When the line breaks, the text won't fold under the icon. See the community page for an example.
+				padding: 20px 40px 15px 1.5em;
+
+				> i:first-child {
+					position: absolute;
+					top: 20px;
+					left: 0;
+				}
+			}
 		}
 
 		.collapsing-content {
@@ -1524,11 +1535,11 @@ blockquote {
 		padding: 8px 14% 6px 10px;
 		text-indent: 0;
 		vertical-align: middle;
-		width: 85%;		
+		width: 82%;		
 
 		@include respond-min(768px) {
 			padding: 8px 7% 6px 10px;
-			width: 92%;
+			width: 90%;
 		}
 
 		&::-webkit-input-placeholder,
@@ -1586,6 +1597,8 @@ blockquote {
 		margin: 10px 0 40px;
 	}
 }
+
+// Pagination
 .nav-pagination {
 	// Pagination style for use with the News & Events pages.
 	@include colfax;
