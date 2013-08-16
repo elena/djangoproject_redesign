@@ -8,9 +8,9 @@ CSS rendered with Sass 3.2.7
 // Globals
 body {
 	@include elena;
-	@include font-size(20); 
+	@include font-size(18); 
 	background: #f8f8f8;
-	color: $gray-text;
+	color: $text;
 	line-height: 1.4;
 	-webkit-font-smoothing: antialiased;
 
@@ -20,18 +20,18 @@ body {
 	}
 }
 a {
-	color: darken($gray-text, 10%);
+	color: #000;
 	text-decoration: underline;
 	-webkit-tap-highlight-color: transparent;
 
 	&:visited {
-		color: lighten($gray-text, 10%);
+		color: lighten($text, 10%);
 	}
 
 	&:active, 
 	&:focus,
 	&:hover {
-		color: lighten($gray-text, 20%);
+		color: lighten($text, 10%);
 	}
 }
 ::selection { // Text Selection Colors
@@ -69,7 +69,7 @@ h6 {
 
 	a {
 		text-decoration: none;
-		@include link-blue;
+		@include link-green;
 	}
 
 	.layout-secondary &,
@@ -105,12 +105,8 @@ h2 {
 	[role="complementary"] &,
 	.layout-secondary & {
 		@include font-size(32);
-		background: url(/static/img/bg-hash-dark.png) repeat-x bottom center;
+		border-bottom: 1px solid $gray-line;
 		font-weight: 400;
-		@include retina-display {
-			background: url(/static/img/bg-hash-dark@2x.png) repeat-x bottom center;
-			background-size: 4px;
-		}
 		padding-bottom: 20px;
 
 		&:first-child {
@@ -150,7 +146,7 @@ blockquote {
 	}
 
 	.meta {
-		@include font-size(16);
+		@include font-size(14);
 	}
 
 	@include respond-min(768px) {
@@ -161,15 +157,12 @@ blockquote {
 // Layout
 [role="main"] {
 	background: #fff;
-	-moz-box-shadow: 0 4px 4px rgba(0,0,0,0.11);
-	-webkit-box-shadow: 0 4px 4px rgba(0,0,0,0.11);
-	box-shadow: 0 4px 4px rgba(0,0,0,0.11);
 	padding: 1px 10px;
 	@include respond-min(768px) {
-		border-radius: 5px;
+		border-radius: 0px;
 		border: 1px solid #ddd;
 		float: right;
-		margin: 20px 0;
+		margin: 0;
 		padding-bottom: 20px;
 		padding-left: (30/704) * 100%;	
 		padding-right: (30/704) * 100%;	
@@ -177,9 +170,9 @@ blockquote {
 		.mdzr-boxshadow & {
 			border: none;
 			border-radius: 5px 0 0 5px;
-			-moz-box-shadow: -1px -1px 0 0 #dfdfdf, -1px 1px 0 0 #dfdfdf, 500px 0 0 0 #fff, 1000px 0 0 0 #fff, 500px 0px 0 1px #dfdfdf, 1000px 0px 0 1px #dfdfdf;
-			-webkit-box-shadow: -1px -1px 0 0 #dfdfdf, -1px 1px 0 0 #dfdfdf, 500px 0 0 0 #fff, 1000px 0 0 0 #fff, 500px 0px 0 1px #dfdfdf, 1000px 0px 0 1px #dfdfdf;
-			box-shadow: -1px -1px 0 0 #dfdfdf, -1px 1px 0 0 #dfdfdf, 500px 0 0 0 #fff, 1000px 0 0 0 #fff, 500px 0px 0 1px #dfdfdf, 1000px 0px 0 1px #dfdfdf;
+			-moz-box-shadow: 0px 0px 0 0 #fff, 0px 0px 0 0 #fff, 500px 0 0 0 #fff, 1000px 0 0 0 #fff, 500px 0px 0 0px #fff, 1000px 0px 0 0px #fff;
+			-webkit-box-shadow: 0px 0px 0 0 #fff, 0px 0px 0 0 #dfdfdf, 500px 0 0 0 #fff, 1000px 0 0 0 #fff, 500px 0px 0 0px #fff, 1000px 0px 0 0px #fff;
+			box-shadow: 0px 0px 0 0 #fff, 0px 0px 0 0 #fff, 500px 0 0 0 #fff, 1000px 0 0 0 #fff, 500px 0px 0 0px #fff, 1000px 0px 0 0px #fff;
 			padding-left: (32/704) * 100%;	
 			padding-right: (0/704) * 100%;	
 			width: (482/704) * 100%;
@@ -451,7 +444,7 @@ blockquote {
 		@include font-size(24);
 		color: $green-dark;
 		font-weight: 900;
-		line-height: 1.1;
+		line-height: 1.2;
 		margin: 0;
 		text-transform: uppercase;
 
@@ -460,7 +453,7 @@ blockquote {
 		}
 
 		@include respond-min(768px) {
-			@include font-size(42);
+			@include font-size(32);
 
 			color: darken($green, 10%);
 			padding: 20px 0 15px;
@@ -675,7 +668,7 @@ blockquote {
 // Recycleable Style Classes
 .backtotop {
 	// Back to top link (in base.html after block body)
-	@include link-blue;
+	@include link-green;
 	@include colfax;
 	@include font-size(14);
 	display: block;
@@ -694,10 +687,7 @@ blockquote {
 	font-weight: 700;
 	-webkit-appearance: none;
 	-moz-appearance: none;
-	background: url(/static/img/bg-pattern.jpg) repeat top center $green-dark;
-	@include retina-display { //double density for retina display
-		background-size: 250px 250px;
-	}
+	background: #29AC55;
 	border: none;
 	border-radius: 5px;
 	color: #fff;
@@ -712,21 +702,21 @@ blockquote {
 	}
 
 	em {
-		color: $green-medium;
+		color: $green-light;
 		font-style: normal;
 	}
 
 	&:hover {
-		opacity: 0.8;
+		background: lighten($green, 2%);
 	}
 }
-.link-blue {
-	// class render of the link-blue mixin
-	@include link-blue;
+.link-green {
+	// class render of the link-green mixin
+	@include link-green;
 }
 .link-readmore {
 	// Read More links. Should exist outside of <p> tag, and include the '&rsaquo;' arrow after the text.
-	@include link-blue;
+	@include link-green;
 	@include colfax;
 	@include font-size(13);
 	display: inline-block;
@@ -741,13 +731,13 @@ blockquote {
 .meta {
 	// Re-usable meta class for alternate-style content.
 	@include colfax;
-	@include font-size(16);
+	@include font-size(14);
 	display: block;
 	line-height: 1.3;
 	margin: 25px 0 20px;
 
 	a {
-		@include link-blue;
+		@include link-green;
 	}
 }
 .layout-2col { 
@@ -772,7 +762,7 @@ blockquote {
 }
 .blue {
 	// overide blue color class
-	color: $blue;
+	color: $green;
 }
 .label {
 	// Label style associated with forms and other global elements.
@@ -851,11 +841,7 @@ blockquote {
 
 	li {
 		@include font-size(18);
-		background: url(/static/img/bg-hash-dark@2x.png) repeat-x top center;
-		background-size: 4px;
-		@include old-ie {
-			background: url(/static/img/bg-hash-dark.png) repeat-x top center;
-		}
+		border-top: 1px solid $gray-line;
 		display: block;
 		line-height: 1.3;
 		margin: 0;
@@ -864,10 +850,10 @@ blockquote {
 
 		i {
 			@include font-size(24);
-			color: $gray-text;
+			color: $gray-medium;
 			display: block;
 			left: 0;
-			line-height: 33px;
+			line-height: 28px;
 			height: 30px;
 			position: absolute;
 			text-align: center;
@@ -876,7 +862,7 @@ blockquote {
 		}
 
 		&:first-child {
-			background: none;
+			border-top: 0;
 			padding-top: 0;
 
 			i {
@@ -887,13 +873,13 @@ blockquote {
 
 	.meta {
 		@include colfax;
-		@include font-size(16);
+		@include font-size(14);
 		display: block;
 		margin-top: 10px;
 	}
 
 	a {
-		@include link-blue;
+		@include link-green;
 	}
 }
 .list-tags {
@@ -915,11 +901,7 @@ blockquote {
 	}
 
 	a {
-		background: url(/static/img/bg-hash-light.png) repeat top center $blue;
-		@include retina-display {
-			background: url(/static/img/bg-hash-light@2x.png) repeat top center $blue;
-			background-size: 4px;
-		}
+		background: $gray-medium;
 		color: #fff;
 		display: inline-block;
 		@include old-ie {
@@ -933,7 +915,7 @@ blockquote {
 		&:hover,
 		&:active,
 		&:focus {
-			background-color: lighten($blue, 10%);
+			background-color: $green;
 		}
 	}
 }
@@ -945,6 +927,7 @@ blockquote {
 
 	h2 {
 		font-weight: 400;
+		margin-bottom: 5px;
 	}
 
 	li {
@@ -960,6 +943,15 @@ blockquote {
 			background: none;
 			margin-top: 0;
 			padding-top: 0;
+		}
+	}
+
+	.meta {
+		margin-top: 10px;
+		color: $gray-medium;
+		a:link {
+			color: $gray-text;
+			text-decoration: underline;
 		}
 	}
 }
@@ -995,7 +987,7 @@ blockquote {
 
 	li > a {
 		@include colfax;
-		@include link-blue;
+		@include link-green;
 		@include font-size(11);
 		font-weight: 700;
 		margin-top: 10px;
@@ -1068,7 +1060,7 @@ blockquote {
 	}
 
 	a {
-		@include link-blue;
+		@include link-green;
 	}
 }
 .list-features {
@@ -1378,7 +1370,7 @@ blockquote {
 		padding: 0 0 0 10px;	
 
 		> li > a {
-			@include link-blue;
+			@include link-green;
 		}
 	}
 
@@ -1395,7 +1387,7 @@ blockquote {
 	padding: 20px 0 0;
 
 	a {
-		@include link-blue;
+		@include link-green;
 	}
 
 	dt,
@@ -1496,7 +1488,7 @@ blockquote {
 		&:active,
 		&:focus {
 			outline: none;
-			border-color: $blue;
+			border-color: $green;
 		}
 	}
 
@@ -1519,7 +1511,7 @@ blockquote {
 		&:hover,
 		&:focus,
 		&:active {
-			color: $blue;
+			color: $green;
 			outline: none;
 		}
 	}
@@ -1609,7 +1601,7 @@ blockquote {
 		&:active,
 		&.active {
 			background: none;
-			color: $blue;
+			color: $green;
 			@include respond-min(320px) {
 				background: lighten($gray-text, 30%);
 				color: $gray-text;
@@ -1629,7 +1621,7 @@ blockquote {
 			&:focus,
 			&.active {
 				background: none;
-				color: $blue;
+				color: $green;
 			}
 		}
 	}

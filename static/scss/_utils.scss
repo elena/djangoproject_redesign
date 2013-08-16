@@ -1,6 +1,9 @@
 // Colors
-$blue: #00acf3;
+$green: #00acf3;
+$gray-medium: #BABABA;
+$text: #555555;
 $gray-text: #7d7d7d;
+$gray-line: #DADADA;
 $green: #29AC55;
 $green-light: #B3FFCC; 
 $green-medium: #93DEAD; 
@@ -139,7 +142,7 @@ html {
 }
 
 // Custom Blue Link Mixin
-@mixin link-blue {
+@mixin link-green {
 	color: $green;
 	text-decoration: none;
 	&:visited {
@@ -148,7 +151,7 @@ html {
 	&:hover,
 	&:active,
 	&:focus {
-		color: lighten($green, 20%);
+		color: lighten($green, 5%);
 		text-decoration: none;
 	}
 }
