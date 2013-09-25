@@ -672,7 +672,7 @@ blockquote {
 	font-weight: 700;
 	-webkit-appearance: none;
 	-moz-appearance: none;
-	background: $green;
+	background: darken($green, 2%);;
 	border: none;
 	border-radius: 5px;
 	color: #fff;
@@ -692,7 +692,7 @@ blockquote {
 	}
 
 	&:hover {
-		background: darken($green, 2%);
+		background: darken($green, 4%);
 	}
 }
 .link-green {
