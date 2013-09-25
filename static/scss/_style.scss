@@ -251,7 +251,7 @@ blockquote {
 [role="banner"] {
 	// Includes global navigation, logo, and tagline at top of document
 	@include clearfix;
-	background: $green;
+	background: $green-dark;
 	overflow: hidden;
 	margin: 0;
 	padding: 10px 0;
@@ -382,7 +382,7 @@ blockquote {
 			}
 
 			&.active a {
-				color: $green-dark;
+				color: $green-medium;
 			}
 		}
 
@@ -436,13 +436,13 @@ blockquote {
 }
 .copy-banner {
 	// Large green callout at the top of the page
-	background: $green-dark;
+	background: $green-medium;
 	padding: 10px 0;
 	
 	p {
 		@include colfax;
 		@include font-size(24);
-		color: $green-dark;
+		color: $green-light;
 		font-weight: 900;
 		line-height: 1.2;
 		margin: 0;
@@ -455,11 +455,11 @@ blockquote {
 		@include respond-min(768px) {
 			@include font-size(32);
 
-			color: darken($green, 7%);
+			color: $green-light;
 			padding: 20px 0 15px;
 
 			em {
-				color: lighten($green, 2%);
+				color: $white;
 			}
 		}
 	}	
@@ -468,7 +468,7 @@ blockquote {
 	// Global Footer at bottom of page
 	@include clearfix;
 	@include colfax;
-	background: url(/static/img/bg-pattern.jpg) repeat top center $green-dark;
+	background: $green-medium;
 	clear: both;
 	margin-top: 0px;
 	@include retina-display { //double density for retina display
@@ -498,12 +498,12 @@ blockquote {
 	}
 	
 	h2 {
-		@include font-size(26);
+		@include font-size(16);
 		border-top: 1px solid $gray-line;
 		color: #fff; 
-		font-weight: 400;
-		margin-top: 30px;
-		padding: 25px 10px 0;
+		font-weight: 700;
+		margin-top: 20px;
+		padding: 30px 10px 0;
 		@include respond-min(768px) {
 			border: none;
 			margin-top: 0;	
@@ -515,12 +515,13 @@ blockquote {
 	}
 
 	ul {
-		@include font-size(18);
+		@include font-size(14);
+		font-weight: 400;
 		list-style: none;
-		margin: 25px 0 0 0;
-		padding: 0 10px;
+		margin: 15px 0 0 0;
+		padding: 0 10px 30px;
 		@include respond-min(768px) {
-			margin-bottom: 40px;
+			margin-bottom: 20px;
 		}
 
 		li {
@@ -529,19 +530,19 @@ blockquote {
 		}
 
 		a {
-			color: lighten($gray-text, 10%);
+			color: $white;
 			text-decoration: none;
 			
 			&:hover, 
 			&:active,
 			&:focus {
-				color: $green-medium;
+				text-decoration: underline;
 			}
 		}
 	}
 
 	.footer {
-		background: $green-light;
+		background: $green-dark;
 		margin-top: 20px;
 		padding: 10px 0;
 
@@ -671,7 +672,7 @@ blockquote {
 	font-weight: 700;
 	-webkit-appearance: none;
 	-moz-appearance: none;
-	background: #29AC55;
+	background: $green;
 	border: none;
 	border-radius: 5px;
 	color: #fff;
@@ -691,7 +692,7 @@ blockquote {
 	}
 
 	&:hover {
-		background: lighten($green, 2%);
+		background: darken($green, 2%);
 	}
 }
 .link-green {
@@ -899,7 +900,7 @@ blockquote {
 		&:hover,
 		&:active,
 		&:focus {
-			background-color: $green;
+			background-color: $green-medium;
 		}
 	}
 }
@@ -1409,7 +1410,7 @@ blockquote {
 		-webkit-appearance: none;
 		-moz-appearance: none;
 		background: #fff;
-		border: 1px solid #CCC;
+		border: 1px solid $gray-line;
 		border-radius: 4px;
 		cursor: auto;
 		display: block;
@@ -1426,13 +1427,6 @@ blockquote {
 			width: 90%;
 		}
 
-		&::-webkit-input-placeholder,
-		&:-moz-placeholder,
-		&::-moz-placeholder,
-		&:-ms-input-placeholder {
-			color: #bebebe;
-		}
-
 		&::-ms-clear {
 			display: none;
 		}
@@ -1447,7 +1441,7 @@ blockquote {
 	button {
 		background: none;
 		border: none;
-		color: lighten($gray-text, 20%);
+		color: $green-medium;
 		height: 40px;
 		padding: 0;
 		position: absolute;
@@ -1468,6 +1462,14 @@ blockquote {
 		}
 	}
 }
+
+::-webkit-input-placeholder,
+:-moz-placeholder,
+::-moz-placeholder,
+:-ms-input-placeholder {
+	color: $gray-medium;
+}
+
 .form-email {
 	// Email submission forms on Community page.
 	h3 {
