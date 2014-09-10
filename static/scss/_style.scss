@@ -20,12 +20,12 @@ body {
 	}
 }
 a {
-	color: #000;
+	color: $text;
 	text-decoration: underline;
 	-webkit-tap-highlight-color: transparent;
 
 	&:visited {
-		color: lighten($text, 10%);
+		color: lighten($text, 20%);
 	}
 
 	&:active, 
@@ -92,15 +92,12 @@ h1 {
 		color: $gray-text;
 	}
 }
-h2 {
-	@include font-size(30);
+h3 {
+	@include font-size(18);
 	font-weight: 700;
-	color: $gray-text;
+	color: $text;
 	line-height: 1.2;
 	margin: 35px 0 20px;
-	@include respond-min(768px) {
-		@include font-size(26);
-	}
 
 	[role="complementary"] &,
 	.layout-secondary & {
@@ -120,8 +117,21 @@ h2 {
 		@include font-size(20);
 	}
 }
-h3 {
-	@include font-size(28);
+h2 {
+	@include font-size(24);
+	[role="complementary"] &,
+	.layout-secondary & {
+		@include font-size(24);
+		border-bottom: 1px solid $gray-line;
+		font-weight: 400;
+		padding-bottom: 20px;
+
+		&:first-child {
+			@include respond-min(768px) {
+				margin-top: 20px;
+			}
+		}
+	}
 }
 h4 {
 	@include font-size(18);	
@@ -129,7 +139,8 @@ h4 {
 	text-transform: uppercase;
 }
 tt { // increase size of inline monospace text
-	font-size: 115%;
+	font-family: Courier, monospace;
+	color: $green-dark;
 }
 p { 
 	//increase top margin if first item in container
@@ -163,7 +174,7 @@ blockquote {
 		border: 1px solid #ddd;
 		float: right;
 		margin: 0;
-		padding-bottom: 20px;
+		padding-bottom: 80px;
 		padding-left: (30/704) * 100%;	
 		padding-right: (30/704) * 100%;	
 		width: (410/704) * 100%;
@@ -203,9 +214,9 @@ blockquote {
 	background: #fff;
 	.mdzr-boxshadow & {
 		border: none;
-		-moz-box-shadow: 0 4px 4px rgba(0,0,0,0.11);
-		-webkit-box-shadow: 0 4px 4px rgba(0,0,0,0.11);
-		box-shadow: 0 4px 4px rgba(0,0,0,0.11);
+		-moz-box-shadow: 0 4px 4px rgba(0,0,0,0.05);
+		-webkit-box-shadow: 0 4px 4px rgba(0,0,0,0.05);
+		box-shadow: 0 4px 4px rgba(0,0,0,0.05);
 	}
 }
 [role="complementary"] {
@@ -229,9 +240,9 @@ blockquote {
 	padding: 10px 10px 40px;
 	.mdzr-boxshadow & {
 		border: none;
-		-moz-box-shadow: 0 -4px 4px rgba(0,0,0,0.11);
-		-webkit-box-shadow: 0 -4px 4px rgba(0,0,0,0.11);
-		box-shadow: 0 -4px 4px rgba(0,0,0,0.11);
+		-moz-box-shadow: 0 -4px 4px rgba(0,0,0,0.05);
+		-webkit-box-shadow: 0 -4px 4px rgba(0,0,0,0.05);
+		box-shadow: 0 -4px 4px rgba(0,0,0,0.05);
 	}
 }
 .container { 
@@ -464,6 +475,7 @@ blockquote {
 	}
 
 	a.cta, .cta {
+		margin-top: 30px;
 		background: $green-medium-dark;
 		&:hover {
 			background: darken($green-medium-dark, 2%);
@@ -490,7 +502,6 @@ blockquote {
 	.involved, 
 	.follow {
 		@include respond-min(768px) {
-			border-top: 1px solid $gray-line;
 			float: left;
 			margin-bottom: -999px;
 			padding: 0 2% 999px;
@@ -509,7 +520,7 @@ blockquote {
 		color: #fff; 
 		font-weight: 700;
 		margin-top: 20px;
-		padding: 30px 10px 0;
+		padding: 30px 0 10px;
 		@include respond-min(768px) {
 			border: none;
 			margin-top: 0;	
@@ -525,7 +536,7 @@ blockquote {
 		font-weight: 400;
 		list-style: none;
 		margin: 15px 0 0 0;
-		padding: 0 10px 30px;
+		padding: 0 0 30px;
 		@include respond-min(768px) {
 			margin-bottom: 20px;
 		}
@@ -551,11 +562,7 @@ blockquote {
 		background: $green-dark;
 		margin-top: 20px;
 		padding: 10px 0;
-
-		@include respond-min(768px) {
-			background: url(/static/img/bg-footer.svg) no-repeat bottom right $green-light;
-			margin-top: 0;
-		}
+		color: $green-medium-dark;
 	}
 
 	.logo {
@@ -585,8 +592,7 @@ blockquote {
 
 	.thanks {
 		@include font-size(12);
-		border-bottom: 1px solid $gray-line;
-		color: $green-dark;
+		color: $green-medium-dark;
 		margin: 0;
 		padding: 0;
 		@include respond-min(768px) {
@@ -595,7 +601,6 @@ blockquote {
 		
 		li {
 			@include clearfix;
-			border-top: 1px solid $gray-line;
 			margin: 0;
 			padding: 17px 10px 11px;
 			@include respond-min(768px) {
@@ -709,7 +714,7 @@ blockquote {
 	// Read More links. Should exist outside of <p> tag, and include the '&rsaquo;' arrow after the text.
 	@include link-green;
 	@include colfax;
-	@include font-size(13);
+	@include font-size(14);
 	display: inline-block;
 	margin: 10px 0;
 	@include old-ie {
@@ -767,17 +772,13 @@ blockquote {
 
 	
 	&.form-controls {
-		@include font-size(12);
+		@include font-size(14);
 		display: block;
 		margin: 0;
 		position: relative;
-		top: 25px;
+		top: 20px;
 		text-align: right;
 
-		@include respond-min(768px) {
-			@include font-size(16);
-		}
-		
 		span {
 			cursor: pointer;
 
@@ -971,7 +972,7 @@ blockquote {
 	li > a {
 		@include colfax;
 		@include link-green;
-		@include font-size(11);
+		@include font-size(12);
 		font-weight: 700;
 		margin-top: 10px;
 		text-transform: uppercase;
@@ -1022,7 +1023,7 @@ blockquote {
 	// Basic link-soup list style. Three Column on Desktop, two column on mobile. (See Why Django Page.)
 	@include colfax;
 	@include clearfix;
-	@include font-size(18);
+	@include font-size(16);
 	border-top: 1px solid $gray-line;
 	list-style: none;
 	margin: 20px 0 0;
@@ -1045,7 +1046,7 @@ blockquote {
 .list-features {
 	// Animated Feature List from the Why Django Page. Require looks for the 'list-features' class to load the appropriate scripts to animate the icons. Degrades gracefully into mobile.
 	dt {
-		@include font-size(26);
+		@include font-size(24);
 		border-top: 1px solid $gray-line;
 		padding-top: 25px;
 	}	
@@ -1194,6 +1195,7 @@ blockquote {
 		}
 	}
 }
+
 .list-collapsing {
 	// reusable accordion style collapsing list, as seen on the Get Started Page. 'Expand/Collapse All' toggle is generated by the javascript. H2 is used for label, and 'collapsing-content' class is used to identify all content that should expand and collapse onclick.
 	border-bottom: 1px solid $gray-line;
@@ -1216,10 +1218,6 @@ blockquote {
 			padding: 20px 40px 15px 0;
 			position: relative;
 
-			@include respond-min(768px) {
-				@include font-size(24);
-			}
-			
 			&:hover,
 			&:focus,
 			&:active {
@@ -1259,6 +1257,7 @@ blockquote {
 		}
 	}
 }
+
 .list-image {
 	// list style for large, clickable images accompanied by text. (See Get Started Page.)
 	list-style: none;
@@ -1310,9 +1309,11 @@ blockquote {
 		}
 	}
 }
+
+//Documentation styles
 .list-outline {
 	// Nested lists to house documentation outline. Meant for use in sidebar. (See Documentation Page.)
-	@include font-size(18);
+	@include font-size(16);
 	line-height: 1.2;
 	list-style: none;
 	margin: 0;
@@ -1330,7 +1331,7 @@ blockquote {
 	> li > ul { //second level
 		list-style: none;
 		@include font-size(16);
-		padding: 0 0 0 10px;	
+		padding: 5px 0 0 10px;	
 
 		> li > a {
 			@include link-green;
@@ -1342,6 +1343,30 @@ blockquote {
 		padding: 0 0 0 20px;	
 	}
 }
+
+.section h2 {
+	margin: 60px 0 30px;
+}
+
+.section h3 {
+	margin: 40px 0 20px;
+}
+
+.note {
+		background: $white;
+		padding: 15px 20px;
+		border: 1px solid $gray-line;
+		margin: 25px 20px;
+		.first {
+			margin-top: 0;
+			font-weight: bold;
+		}
+		.last {
+			margin-bottom: 10px;
+		}
+		border-radius: 4px;
+}
+
 .list-links { 
 	//Can be used globally to stack list items either with a <ul>, or with a <dl> using the <dd> to add meta information.  (See Community Page - sidebar and block body.)
 	@include colfax;
