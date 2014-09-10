@@ -19,30 +19,41 @@
 
 {% block body %}
 
+  <div class="section">
+    <h1>Getting started with Django</h1>
 
-  <h1>Getting started with Django</h1>
+    <p>Depending how new you are to Django, you can also <a href="#">try a tutorial</a>, or just <a href="#">dive into the documentation</a>.</p>
+  </div>
+
+  <div class="section">
+    <h2>Install Django</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <a class="link-readmore" href="/docs/">Read More &rsaquo;</a>
+  </div>
+
+  <div class="section">
+    <h2>Write Your First Django App</h2>
+    <p>Installed Django already? Good. Now <a href="/docs/">try this tutorial</a>, which walks you through the creation of a basic poll application. It’s got two parts:</p>
+    <ol>
+      <li>A public site that lets people view polls and vote in them.</li>
+      <li>An administrative interface that lets you add, change, and delete polls.</li>
+    </ol>
+    <a class="link-readmore" href="/docs/">Take the Tutorial &rsaquo;</a>
+  </div>
+
+  <div class="section">
+    <h2>Sharpen Your Skills</h2>
+    <p>The official <a href="/docs/">Django documentation</a> covers everything you need to know about Django (and then some).</p>
+     <a href="/docs/" class="link-readmore">Read the Docs &rsaquo;</a>
+  </div>
+
+  <div class="section">
+    <h2><span>Join the Community</span></h2>
+    <p>You can help <a href="/community/">make us better</a>. Find out about upcoming Django events, learn what’s on other Django developers’ minds, find and post jobs, and more.</p>
+    <a href="/community/" class="link-readmore">Join Us &rsaquo;</a>
+  </div>
 
 
-
-<p>Depending how new you are to Django, you can also <a href="#">try a tutorial</a>, or just <a href="#">dive into the documentation</a>.</p>
-
-<h2>Install Django</h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-<a class="link-readmore" href="/docs/">Read More &rsaquo;</a>
-<h2>Write Your First Django App</h2>
-<p>Installed Django already? Good. Now <a href="/docs/">try this tutorial</a>, which walks you through the creation of a basic poll application. It’s got two parts:</p>
-<ol>
-  <li>A public site that lets people view polls and vote in them.</li>
-  <li>An administrative interface that lets you add, change, and delete polls.</li>
-</ol>
-<a class="link-readmore" href="/docs/">Take the Tutorial &rsaquo;</a>
-<h2>Sharpen Your Skills</h2>
-<p>The official <a href="/docs/">Django documentation</a> covers everything you need to know about Django (and then some).</p>
- <a href="/docs/" class="link-readmore">Read the Docs &rsaquo;</a>
-<h2><span>Join the Community</span></h2>
-<p>You can help <a href="/community/">make us better</a>. Find out about upcoming Django events, learn what’s on other Django developers’ minds, find and post jobs, and more.</p>
-<a href="/community/" class="link-readmore">Join Us &rsaquo;</a>
-  
   <ul class="list-collapsing">
   <li>
     <h2>Object-Relational Mapper</h2>
@@ -211,24 +222,25 @@ Python code TBD
 
 
 {% block tertiary %}
-  <div class="layout-tertiary">
+  <div class="layout-secondary">
     <div class="container">
       <h2>Other Django Resources</h2>
       <ul class="list-image">
         <li>
           <a href="http://gettingstartedwithdjango.com/">
             <img src="{% static 'img/demos/start.png' %}" alt="Getting Started with Django" />
-            <h3>Getting Started With Django</h3>
-            <p><span class="visuallyhidden">Getting Started With Django is</span> a series of video-based lessons meant to take you from novice to competent, or maybe even beyond. Each lesson covers many facets and best practices of modern Django web development and features a video and a text transcript to follow along. Every video is available for download or online streaming and there's a forum for help if you get stuck.</p>
-            <span class="link-readmore">Get Started &rsaquo;</span>
           </a>
+          <h3>Getting Started With Django</h3>
+          <p><span class="visuallyhidden">Getting Started With Django is</span> a series of video-based lessons meant to take you from novice to competent, or maybe even beyond. Each lesson covers many facets and best practices of modern Django web development and features a video and a text transcript to follow along. Every video is available for download or online streaming and there's a forum for help if you get stuck.</p>
+          <a href="http://gettingstartedwithdjango.com/" class="link-readmore">Get Started &rsaquo;</span>
         </li>
         <li>
           <a href="https://django.2scoops.org/">
             <img src="{% static 'img/demos/tsd.png' %}" alt="Two Scoops of Django" />
-            <h3>Two Scoops of Django</h3>
-            <p><span class="visuallyhidden">Two Scoops of Django is</span> an ebook designed for both novices and more advanced users, covering best practices for using Django 1.5.</p>
-            <span class="link-readmore">Get the Book &rsaquo;</span>
+          </a>
+          <h3>Two Scoops of Django</h3>
+          <p><span class="visuallyhidden">Two Scoops of Django is</span> an ebook designed for both novices and more advanced users, covering best practices for using Django 1.5.</p>
+          <a href="https://django.2scoops.org/" class="link-readmore">Get the Book &rsaquo;</span>
           </a>
         </li>
       </ul>
