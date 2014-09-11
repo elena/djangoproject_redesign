@@ -9,7 +9,7 @@ CSS rendered with Sass 3.2.7
 body {
 	@include elena;
 	@include font-size(18); 
-	background: #f8f8f8;
+	background: $green-background;
 	color: $text;
 	line-height: 1.4;
 	-webkit-font-smoothing: antialiased;
@@ -275,13 +275,13 @@ blockquote {
 	}
 
 	.meta {
-		@include font-size(14);
+		@include font-size(12);
 		color: $green-medium;
 		font-weight: 700;
 		text-transform: uppercase;
 		width: auto;
 		float: left;
-		margin: 10px 0 0 10px;
+		margin: 12px 0 0 10px;
 		display: none;
 		@include respond-min(1150px) {
 				width: 260px;
@@ -384,9 +384,6 @@ blockquote {
 			margin-top: 0;
 			text-align: center;
 			text-transform: uppercase;
-			@include respond-min(856px) {
-				@include font-size(14);
-			}
 			@include respond-min(768px) {
 				float: left;
 			}
@@ -497,19 +494,23 @@ blockquote {
 		overflow: hidden;
 	}
 
-	.learn, 
-	.involved, 
-	.follow {
-		@include respond-min(768px) {
-			float: left;
-			margin-bottom: -999px;
-			padding: 0 2% 999px;
-			width: 29%;
-		}
-	}
-	.follow {
-		@include respond-min(768px) {
-			border: none;
+	.subfooter {
+		div {
+			@include respond-min(768px) {
+				float: left;
+				margin-bottom: -999px;
+				padding: 0 2% 999px;
+				width: 29%;
+			}
+
+			&:first-child {
+				margin-left: 0;
+				padding-left: 0;
+			}
+			&:last-child {
+				margin-right: 0;
+				padding-right: 0;
+			}
 		}
 	}
 	
@@ -525,10 +526,6 @@ blockquote {
 			margin-top: 0;	
 		}
 	}
-	.learn h2 {
-		background: none;
-		margin-top: 0;
-	}
 
 	ul {
 		@include font-size(14);
@@ -536,9 +533,6 @@ blockquote {
 		list-style: none;
 		margin: 15px 0 0 0;
 		padding: 0 0 30px;
-		@include respond-min(768px) {
-			margin-bottom: 20px;
-		}
 
 		li {
 			margin: 10px 0 0;
@@ -561,7 +555,16 @@ blockquote {
 		background: $green-dark;
 		margin-top: 20px;
 		padding: 10px 0;
-		color: $green-medium-dark;
+		color: $green-dark-text;
+
+		.logo {
+			.mdzr-svg & { 
+				background-position: left center;
+				width: 30.2%;
+				margin-right: 0;
+				margin-top: 34px;
+			}
+		}
 	}
 
 	.logo {
@@ -579,7 +582,7 @@ blockquote {
 		width: 142px;
 		@include respond-min(768px) {
 			float: left;
-			margin: 20px 90px 0 2%;
+			margin: 20px 90px 0 0;
 		}
 		
 		.mdzr-svg & { 
@@ -591,7 +594,7 @@ blockquote {
 
 	.thanks {
 		@include font-size(12);
-		color: $green-medium-dark;
+		color: $green-dark-text;
 		margin: 0;
 		padding: 0;
 		@include respond-min(768px) {
@@ -606,7 +609,7 @@ blockquote {
 				background: none;
 				float: left;
 				padding: 0 0 0 25px;
-				width: 120px;
+				width: 14.35%;
 			}
 		}
 
@@ -648,13 +651,13 @@ blockquote {
 	}
 
 	.copyright {
+
 		@include font-size(12);
 		clear: both;
 		margin-top: 20px;
-		padding: 0 10px;
 		@include respond-min(768px) {
 			max-width: 80%;
-			padding-top: 20px;
+			padding-top: 30px;
 		}
 	}
 }
@@ -1325,6 +1328,7 @@ blockquote {
 	> li > a { //top level
 		text-transform: uppercase;
 		font-weight: 700;
+		@include link-green;
 	}	
 
 	> li > ul { //second level

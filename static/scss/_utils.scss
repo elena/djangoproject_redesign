@@ -1,15 +1,17 @@
 // Colors
 
 $gray-medium: #859D94;
-$text: #0C3C26;
+$text: #0C4B33;
 $gray-text: #163A29;
 $gray-line: #CFE3DC;
+$green-background: #F4FFFA;
 $green: #20AA76;
 $green-very-light: #A4DCC4;
 $green-light: #A9EBC9; 
 $green-medium: #44B78B;
 $green-medium-dark: #2B8C67;
-$green-dark: #0C4B33;
+$green-dark: #0C3C26;
+$green-dark-text: #336951;
 $white: #F1FFF7;
 
 // @font-face declarations
@@ -146,7 +148,7 @@ html {
 
 // Custom Blue Link Mixin
 @mixin link-green {
-	color: $green;
+	color: $green-medium-dark;
 	text-decoration: none;
 	&:visited {
 		color: $green;
