@@ -2,14 +2,13 @@
 
 $gray-medium: #859D94;
 $text: #0C4B33;
-$gray-text: #163A29;
+$text-light: #1F4C37;
 $gray-line: #CFE3DC;
-$green-background: #F4FFFA;
-$green: #20AA76;
-$green-very-light: #A4DCC4;
-$green-light: #A9EBC9; 
+$green-very-light: #A9EBC9; 
+$green-light: #93D7B7;
 $green-medium: #44B78B;
 $green-medium-dark: #2B8C67;
+$green: #20AA76;
 $green-dark: #0C3C26;
 $green-dark-text: #336951;
 $white: #F1FFF7;
@@ -146,17 +145,27 @@ html {
 	}
 }
 
-// Custom Blue Link Mixin
+// Green Link Mixin
 @mixin link-green {
 	color: $green-medium-dark;
 	text-decoration: none;
-	&:visited {
-		color: $green;
-	}
 	&:hover,
 	&:active,
 	&:focus {
 		color: lighten($green, 5%);
 		text-decoration: none;
 	}
+}
+
+// Secondary content box-shadow: 
+@mixin secondary-shadow-top {
+	-moz-box-shadow: 0 4px 8px rgba(12,60,38,0.07);
+	-webkit-box-shadow: 0 4px 8px rgba(12,60,38,0.07);
+	box-shadow: 0 4px 8px rgba(12,60,38,0.07);
+}
+
+@mixin secondary-shadow-bottom {
+	-moz-box-shadow: 0 -4px 8px rgba(12,60,38,0.07);
+	-webkit-box-shadow: 0 -4px 8px rgba(12,60,38,0.07);
+	box-shadow: 0 -4px 8px rgba(12,60,38,0.07);
 }
