@@ -486,21 +486,19 @@ blockquote {
 		color: $green-very-light;
 		font-weight: 400;
 		line-height: 1.3;
-		margin: 0;
+		padding: 1px 0;
 
 		em {
 			font-style: normal;
+			color: white;
 		}
 
 		@include respond-min(768px) {
 			@include font-size(32);
 
 			color: $green-very-light;
-			padding: 25px 0 30px;
+			padding: 1px 0;
 
-			em {
-				color: $white;
-			}
 		}
 	}
 
@@ -785,8 +783,11 @@ blockquote {
 }
 .layout-2col { 
 	//two column layout module
+	margin: 20px 0;
+
 	@include respond-min(768px) {
 		@include clearfix;
+		margin: 0;
 		.col {
 			float: left;
 			width: 45%;
@@ -1513,8 +1514,8 @@ blockquote {
 		width: 82%;		
 
 		@include respond-min(768px) {
-			padding: 8px 7% 6px 10px;
-			width: 90%;
+			padding: 8px 18% 6px 10px;
+			width: 80%;
 		}
 
 		&::-ms-clear {
@@ -1535,9 +1536,13 @@ blockquote {
 		height: 40px;
 		padding: 0;
 		position: absolute;
-		right: 1.5%;
+		right: 2%;
 		top: 4px;
 		width: 40px;
+
+		@include respond-min(768px) {
+			right: 1.3%;
+		}
 
 		i {
 			@include font-size(24);
