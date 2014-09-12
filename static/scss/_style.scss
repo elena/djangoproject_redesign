@@ -9,7 +9,7 @@ CSS rendered with Sass 3.2.7
 body {
 	@include elena;
 	@include font-size(18); 
-	background: $white;
+	background: #f8f8f8;
 	color: $text;
 	line-height: 1.4;
 	-webkit-font-smoothing: antialiased;
@@ -259,13 +259,13 @@ blockquote {
 }
 .layout-secondary {
 	// Secondary (gray) content area on full-width pages
-	padding: 10px 10px 40px;
+	padding: 20px 10px 50px;
 }
 .layout-tertiary {
 	// Tertiary (white) content area on full-width pages
 	background: #fff;
 	border-top: 1px solid #ddd;
-	padding: 10px 10px 40px;
+	padding: 20px 10px 50px;
 	.mdzr-boxshadow & {
 		border: none;
 		@include secondary-shadow-bottom;
@@ -1101,7 +1101,15 @@ blockquote {
 	}	
 
 	i {
-		color: $green-medium;
+		color: $white;
+		margin-right: 10px;
+		width: 40px;
+		height: 40px;
+		border-radius: 25px;
+		background: $green;
+		line-height: 42px;
+		display: inline-block;
+		text-align: center;
 	}
 
 	@include respond-min(768px) {
@@ -1109,7 +1117,7 @@ blockquote {
 
 		dt {
 			margin-top: 90px;
-			padding: 70px 0 0 245px;
+			padding: 60px 0 0 245px;
 			position: relative;
 
 			&:first-child {
@@ -1146,6 +1154,7 @@ blockquote {
 			text-align: center;
 			top: 50px;
 			width: 200px;
+			margin-right: 0;
 
 			// Border Radius Enabled 
 			.mdzr-borderradius & {
@@ -1164,7 +1173,7 @@ blockquote {
 					background-position: -150px -269px;
 				}
 				&.icon-briefcase {
-					background-position: -384px 17px;
+					background-position: -354px -7px;
 				}
 				&.icon-lock {
 					background-position: -36px -96px;
@@ -1173,7 +1182,7 @@ blockquote {
 					background-position: -270px -9px;
 				}
 				&.icon-cogs {
-					background-position: -370px -20px;
+					background-position: -334px -12px;
 				}
 			}
 
@@ -1196,7 +1205,7 @@ blockquote {
 				}
 				
 				&.icon-bolt {
-					background-position: 20px -359px;
+					background-position: 40px -369px;
 					&.inview {
 						background-position: -150px -269px;
 					}
@@ -1204,7 +1213,7 @@ blockquote {
 				&.icon-briefcase {
 					background-position: -494px 207px;
 					&.inview {
-						background-position: -384px 17px;
+						background-position: -354px -7px;
 					}
 				}
 				&.icon-lock {
@@ -1222,7 +1231,7 @@ blockquote {
 				&.icon-cogs {
 					background-position: -500px -180px;
 					&.inview {
-						background-position: -370px -20px;
+						background-position: -334px -12px;
 					}
 				}
 			}
