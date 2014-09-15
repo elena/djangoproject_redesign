@@ -8,9 +8,9 @@ CSS rendered with Sass 3.2.7
 // Globals
 body {
 	@include elena;
-	@include font-size(20); 
+	@include font-size(18); 
 	background: #f8f8f8;
-	color: $gray-text;
+	color: $text;
 	line-height: 1.4;
 	-webkit-font-smoothing: antialiased;
 
@@ -20,27 +20,27 @@ body {
 	}
 }
 a {
-	color: darken($gray-text, 10%);
+	color: $text;
 	text-decoration: underline;
 	-webkit-tap-highlight-color: transparent;
 
 	&:visited {
-		color: lighten($gray-text, 10%);
+		color: lighten($text, 10%);
 	}
 
 	&:active, 
 	&:focus,
 	&:hover {
-		color: lighten($gray-text, 20%);
+		color: lighten($text, 20%);
 	}
 }
 ::selection { // Text Selection Colors
-	background: $green-light; 
+	background: lighten($green-very-light,10%); 
 }
 ::-moz-selection {
-	background: $green-light; 
+	background: lighten($green-very-light,10%); 
 }
-ol li, ul li { //list styles
+ol li, ul li { //list style
 	margin-top: 10px;
 }
 dl {
@@ -69,7 +69,7 @@ h6 {
 
 	a {
 		text-decoration: none;
-		@include link-blue;
+		@include link-green;
 	}
 
 	.layout-secondary &,
@@ -78,40 +78,28 @@ h6 {
 	}
 }
 h1 {
-	@include font-size(40);
+	@include font-size(28);
 	color: #fff;
 	letter-spacing: -1px;
 	line-height: 1.1;
 	@include respond-min(768px) {
-		@include font-size(48);
+		@include font-size(32);
 	}
 
 	[role="main"] & {
 		@include font-size(32);
-		margin: 35px 0 20px;
-		color: $gray-text;
+		margin: 40px 0 20px;
+		color: $text-light;
 	}
 }
 h2 {
-	@include font-size(30);
-	font-weight: 700;
-	color: $gray-text;
-	line-height: 1.2;
-	margin: 35px 0 20px;
-	@include respond-min(768px) {
-		@include font-size(26);
-	}
-
+	@include font-size(24);
 	[role="complementary"] &,
 	.layout-secondary & {
-		@include font-size(32);
-		background: url(/static/img/bg-hash-dark.png) repeat-x bottom center;
+		@include font-size(24);
+		border-bottom: 1px solid $gray-line;
 		font-weight: 400;
-		@include retina-display {
-			background: url(/static/img/bg-hash-dark@2x.png) repeat-x bottom center;
-			background-size: 4px;
-		}
-		padding-bottom: 20px;
+		padding-bottom: 15px;
 
 		&:first-child {
 			@include respond-min(768px) {
@@ -120,20 +108,43 @@ h2 {
 		}
 	}
 
-	[role="complementary"] & {
-		@include font-size(26);
+	[role="main"] & {
+		margin-top: 40px;
 	}
 }
 h3 {
-	@include font-size(28);
+	@include font-size(20);
+	font-weight: 700;
+	color: $text;
+	line-height: 1.2;
+	margin: 35px 0 20px;
+
+	[role="complementary"] &,
+	.layout-secondary & {
+		@include font-size(20);
+		font-weight: 400;
+		padding-bottom: 15px;
+
+		&:first-child {
+			@include respond-min(768px) {
+				margin-top: 12px;
+			}
+		}
+	}
+
+	[role="complementary"] & {
+		@include font-size(20);
+	}
 }
+
 h4 {
 	@include font-size(18);	
 	@include elena;
 	text-transform: uppercase;
 }
 tt { // increase size of inline monospace text
-	font-size: 115%;
+	font-family: Courier, monospace;
+	color: $green-dark;
 }
 p { 
 	//increase top margin if first item in container
@@ -150,7 +161,7 @@ blockquote {
 	}
 
 	.meta {
-		@include font-size(16);
+		@include font-size(14);
 	}
 
 	@include respond-min(768px) {
@@ -161,28 +172,40 @@ blockquote {
 // Layout
 [role="main"] {
 	background: #fff;
-	-moz-box-shadow: 0 4px 4px rgba(0,0,0,0.11);
-	-webkit-box-shadow: 0 4px 4px rgba(0,0,0,0.11);
-	box-shadow: 0 4px 4px rgba(0,0,0,0.11);
 	padding: 1px 10px;
 	@include respond-min(768px) {
-		border-radius: 5px;
+		min-height: 800px;
 		border: 1px solid #ddd;
 		float: right;
-		margin: 20px 0;
-		padding-bottom: 20px;
+		margin: 0;
+		padding-bottom: 80px;
 		padding-left: (30/704) * 100%;	
 		padding-right: (30/704) * 100%;	
-		width: (450/704) * 100%;
+		width: (410/704) * 100%;
 		.mdzr-boxshadow & {
 			border: none;
-			border-radius: 5px 0 0 5px;
-			-moz-box-shadow: -1px -1px 0 0 #dfdfdf, -1px 1px 0 0 #dfdfdf, 500px 0 0 0 #fff, 1000px 0 0 0 #fff, 500px 0px 0 1px #dfdfdf, 1000px 0px 0 1px #dfdfdf;
-			-webkit-box-shadow: -1px -1px 0 0 #dfdfdf, -1px 1px 0 0 #dfdfdf, 500px 0 0 0 #fff, 1000px 0 0 0 #fff, 500px 0px 0 1px #dfdfdf, 1000px 0px 0 1px #dfdfdf;
-			box-shadow: -1px -1px 0 0 #dfdfdf, -1px 1px 0 0 #dfdfdf, 500px 0 0 0 #fff, 1000px 0 0 0 #fff, 500px 0px 0 1px #dfdfdf, 1000px 0px 0 1px #dfdfdf;
+			-moz-box-shadow: 0px 0px 0 0 #fff, 0px 0px 0 0 #fff, 500px 0 0 0 #fff, 1000px 0 0 0 #fff, 0px 600px 0 0px #fff, 500px 600px 0 0px #fff;
+			-webkit-box-shadow: 0px 0px 0 0 #fff, 0px 0px 0 0 #fff, 500px 0 0 0 #fff, 1000px 0 0 0 #fff, 0px 600px 0 0px #fff, 500px 600px 0 0px #fff;
+			box-shadow: 0px 0px 0 0 #fff, 0px 0px 0 0 #fff, 500px 0 0 0 #fff, 1000px 0 0 0 #fff, 0px 600px 0 0px #fff, 500px 600px 0 0px #fff;
 			padding-left: (32/704) * 100%;	
 			padding-right: (0/704) * 100%;	
-			width: (482/704) * 100%;
+			width: (442/704) * 100%;
+		}
+
+		.sidebar-right & {
+			float: left;
+			padding-left: (30/704) * 100%;	
+			padding-right: (30/704) * 100%;	
+			width: (410/704) * 100%;
+			.mdzr-boxshadow & {
+				border: none;
+				-moz-box-shadow: 0px 0px 0 0 #fff, 0px 0px 0 0 #fff, -500px 0 0 0 #fff, -1000px 0 0 0 #fff, 0px 600px 0 0px #fff, -500px 600px 0 0px #fff;
+				-webkit-box-shadow: 0px 0px 0 0 #fff, 0px 0px 0 0 #fff, -500px 0 0 0 #fff, -1000px 0 0 0 #fff, 0px 600px 0 0px #fff, -500px 600px 0 0px #fff;
+				box-shadow: 0px 0px 0 0 #fff, 0px 0px 0 0 #fff, -500px 0 0 0 #fff, -1000px 0 0 0 #fff, 0px 600px 0 0px #fff, -500px 600px 0 0px #fff;
+				padding-right: (32/704) * 100%;	
+				padding-left: (0/704) * 100%;	
+				width: (442/704) * 100%;
+			}
 		}
 	}
 
@@ -197,22 +220,24 @@ blockquote {
 		width: auto;
 
 		@include respond-min(768px) {
-			max-width: 1100px;
+			max-width: 700px;
 			padding: 20px 0;
 			width: (704/768) * 100%;
 		}
 	}
 }
 .full-width {
+	&.container {
+		width: 100%;
+		max-width: none;
+	}
 	// High-level class denoting full-width layout
 	@include clearfix;
 	border-bottom: 1px solid #ddd;
 	background: #fff;
 	.mdzr-boxshadow & {
 		border: none;
-		-moz-box-shadow: 0 4px 4px rgba(0,0,0,0.11);
-		-webkit-box-shadow: 0 4px 4px rgba(0,0,0,0.11);
-		box-shadow: 0 4px 4px rgba(0,0,0,0.11);
+		@include secondary-shadow-top;
 	}
 }
 [role="complementary"] {
@@ -222,23 +247,28 @@ blockquote {
 		margin: 20px 0;
 		margin-right: (32/704) * 100%;
 		padding: 0 0 40px;
-		width: (157/704) * 100%;
+		width: (197/704) * 100%;
+
+		.sidebar-right & {
+			margin-left: (32/704) * 100%;
+			margin-right: 0;
+		}
 	}
+
+
 }
 .layout-secondary {
 	// Secondary (gray) content area on full-width pages
-	padding: 10px 10px 40px;
+	padding: 20px 10px 50px;
 }
 .layout-tertiary {
 	// Tertiary (white) content area on full-width pages
 	background: #fff;
 	border-top: 1px solid #ddd;
-	padding: 10px 10px 40px;
+	padding: 20px 10px 50px;
 	.mdzr-boxshadow & {
 		border: none;
-		-moz-box-shadow: 0 -4px 4px rgba(0,0,0,0.11);
-		-webkit-box-shadow: 0 -4px 4px rgba(0,0,0,0.11);
-		box-shadow: 0 -4px 4px rgba(0,0,0,0.11);
+		@include secondary-shadow-bottom;
 	}
 }
 .container { 
@@ -258,57 +288,56 @@ blockquote {
 [role="banner"] {
 	// Includes global navigation, logo, and tagline at top of document
 	@include clearfix;
-	background: $green-light;
+	background: $green-dark;
 	overflow: hidden;
 	margin: 0;
-	padding: 0 0 10px;
+	padding: 10px 0;
 	position: relative;
 	z-index: 0;
 
 	.container {
-		background: url(/static/img/bg-header.svg) no-repeat 130px 0px;
-		padding-top: 20px;
 		@include respond-min(768px) {
 			position: relative;
 		}
 	}
 
 	.meta {
-		@include font-size(15);
+		@include font-size(12);
 		color: $green-medium;
 		font-weight: 700;
-		left: -9999px;
-		line-height: 1.15;
-		position: absolute;
 		text-transform: uppercase;
-		top: 15px;
-		width: 320px;
-
-		@include respond-min(1100px) {
-			left: 260px;
-		}
+		width: auto;
+		float: left;
+		margin: 12px 0 0 10px;
+		display: none;
+		@include respond-min(1150px) {
+				width: 260px;
+				display: inline;
+			}
 	}
+
 	
 	.logo {
 		@include font-size(40);
 		@include colfax;
 		background: url(/static/img/logo-django.png) 0 0 no-repeat;
-		color: $green-dark;
+		color: #FFF;
 		display: block;
 		float: left;
 		font-weight: 700;
-		height: 50px;
-		margin: 0 10px 10px;
+		margin: 10px;
 		overflow: hidden;
 		text-decoration: none;
 		text-indent: 100%;
-		width: 142px;
-		@include respond-min(768px) {
-			margin: 0 10px 10px;
-		}
-		
+		width: 104px;
+		height: 36px;
+
 		.mdzr-svg & { // deliver svg logo if applicable
-			background: url(/static/img/logo-django.svg) center center no-repeat;	
+			background: url(/static/img/logo-django.svg) center center no-repeat;
+		}
+
+		@include respond-min(768px) {
+			margin-left: 0;
 		}
 	}
 
@@ -363,7 +392,7 @@ blockquote {
 
 	[role="navigation"] {
 		background: url(/static/img/bg-pattern.jpg) repeat top center $green-dark;
-		clear: both;
+		float: right;
 		@include retina-display { 
 			//double density for retina display
 			background-size: 250px 250px;
@@ -379,10 +408,10 @@ blockquote {
 
 		li {
 			@include colfax;
-			@include font-size(24);
+			@include font-size(12);
 			display: block;			
-			font-weight: 400;
-			line-height: 1.1;
+			font-weight: 700;
+			line-height: 16px;
 			margin-top: 0;
 			text-align: center;
 			text-transform: uppercase;
@@ -397,21 +426,12 @@ blockquote {
 
 		a {
 			color: #fff;
-			background: url(/static/img/bg-hash-light.png) repeat-x top center;
-			@include retina-display {
-				background: url(/static/img/bg-hash-light@2x.png) repeat-x top center;
-				background-size: 4px;
-			}
 			display: block;
-			padding: 18px 10px 11px;
+			padding: 20px 10px;
 			text-decoration: none;
-			@include respond-min(768px) {
-				color: $green-dark;
-				font-weight: 700;
-			}
 
 			&:active, &:hover {
-				color: $green-medium;
+				color: $green-very-light;
 			}			
 		}
 
@@ -420,82 +440,32 @@ blockquote {
 				position: absolute;
 				right: 0;
 				top: 45px;
-			}
-			
-			li:first-child a {
-				background: none;
-				padding-top: 14px;
-			}
-
-			li a, 
-			li:first-child a {
-				@include respond-min(768px) {
-					@include font-size(17);
-					background: url(/static/img/bg-hash-dark.png) repeat-x top center;
-					@include retina-display {
-						background: url(/static/img/bg-hash-dark@2x.png) repeat-x top center;
-						background-size: 4px;
-					}
-					margin: 0 0 0 35px;
-					padding: 10px 0 0;
-				}
 			}	
-		}
-
-		.nav-secondary {
-			@include respond-min(768px) {
-				position: absolute;
-				right: 0;
-				top: 20px;
-			}
-
-			a {
-				@include font-size(20);
-				color: lighten($gray-text, 10%);
-				padding: 14px 10px 7px;
-				@include respond-min(768px) {
-					@include font-size(13);
-					color: $green-dark;
-					margin: 0 0 0 25px;
-					padding: 0;
-				}
-
-				&:hover,
-				&:active {
-					color: $green-medium;
-				}
-			}
 		}
 	}
 }
 .header {
 	// dark green bar containing the page title
 	@include colfax;
-	background: url(/static/img/bg-pattern.jpg) repeat top center $green-dark;
+	background: $green-dark;
 	margin: 0;
-	padding: 11px 10px 8px;
+	padding: 11px 0px 8px;
 	position: relative;
 
-	@include retina-display {
-		background-size: 250px 250px;
-	}
-
-	> * {
-		@extend .container;
-		margin: 5px auto;
-		@include respond-min(768px) {
-			margin: 10px auto;
-		}
+	h1 {
+		margin: 0.4em 0;
 	}
 
 	p {
-		@include font-size(17);
+		@include elena;
+		@include font-size(18);
 		color: #fff;
 		left: -9999px;
-		line-height: 1.6;
+		line-height: 1.5;
 		padding: 0 0 10px;
 		position: absolute;
 		top: 0;
+		max-width: 660px;
 
 		@include respond-min(768px) {
 			position: static;
@@ -504,39 +474,48 @@ blockquote {
 }
 .copy-banner {
 	// Large green callout at the top of the page
-	background: $green-light;
-	padding: 10px;
+	background: $green-medium;
+	padding: 2px 10px;
+	@include respond-min(768px) {
+		padding: 2px 0;
+	}
 	
 	p {
 		@include colfax;
 		@include font-size(24);
-		color: $green-medium;
-		font-weight: 900;
-		line-height: 1.25;
-		margin: 0;
-		text-transform: uppercase;
+		color: $green-very-light;
+		font-weight: 400;
+		line-height: 1.3;
+		padding: 1px 0;
 
 		em {
 			font-style: normal;
+			color: white;
 		}
 
 		@include respond-min(768px) {
-			@include font-size(42);
+			@include font-size(32);
 
-			color: lighten(desaturate($green-medium, 30%), 30%);
-			padding: 20px 0 15px;
+			color: $green-very-light;
+			padding: 1px 0;
 
-			em {
-				color: $green-medium;
-			}
 		}
-	}	
+	}
+
+	a.cta, .cta {
+		margin-top: 30px;
+		background: $green-medium-dark;
+		&:hover {
+			background: darken($green-medium-dark, 2%);
+		}
+	}
 }
 [role="contentinfo"] {
 	// Global Footer at bottom of page
 	@include clearfix;
 	@include colfax;
-	background: url(/static/img/bg-pattern.jpg) repeat top center $green-dark;
+	position: relative;
+	background: $green-medium;
 	clear: both;
 	margin-top: 0px;
 	@include retina-display { //double density for retina display
@@ -548,56 +527,55 @@ blockquote {
 		overflow: hidden;
 	}
 
-	.learn, 
-	.involved, 
-	.follow {
-		@include respond-min(768px) {
-			background: url(/static/img/bg-hash-light.png) repeat-y top right;
-			@include retina-display {
-				background: url(/static/img/bg-hash-light@2x.png) repeat-y top right;
-				background-size: 4px;
+	.subfooter {
+		padding: 0 10px;
+
+		div {
+			&:first-child {
+				h2 {
+					border-top: 0;
+				}
 			}
-			float: left;
-			margin-bottom: -999px;
-			padding: 0 2% 999px;
-			width: 29%;
+			@include respond-min(768px) {
+				float: left;
+				margin-bottom: -999px;
+				padding: 0 2% 999px;
+				width: 29%;
+			}
+
+			&:first-child {
+				margin-left: 0;
+				padding-left: 0;
+			}
+			&:last-child {
+				margin-right: 0;
+				padding-right: 0;
+			}
 		}
-	}
-	.follow {
 		@include respond-min(768px) {
-			background: none;
+			padding: 0;
 		}
 	}
 	
 	h2 {
-		@include font-size(26);
-		background: url(/static/img/bg-hash-light.png) repeat-x top center;
-		@include retina-display {
-			background: url(/static/img/bg-hash-light@2x.png) repeat-x top center;
-			background-size: 4px;
-		}
+		@include font-size(16);
+		border-top: 1px solid $gray-line;
 		color: #fff; 
-		font-weight: 400;
-		margin-top: 30px;
-		padding: 25px 10px 0;
+		font-weight: 700;
+		margin-top: 20px;
+		padding: 30px 0 10px;
 		@include respond-min(768px) {
-			background: none;
+			border: none;
 			margin-top: 0;	
 		}
 	}
-	.learn h2 {
-		background: none;
-		margin-top: 0;
-	}
 
 	ul {
-		@include font-size(18);
+		@include font-size(14);
+		font-weight: 400;
 		list-style: none;
-		margin: 25px 0 0 0;
-		padding: 0 10px;
-		@include respond-min(768px) {
-			margin-bottom: 40px;
-		}
+		margin: 15px 0 0 0;
+		padding: 0 0 30px;
 
 		li {
 			margin: 10px 0 0;
@@ -605,25 +583,30 @@ blockquote {
 		}
 
 		a {
-			color: lighten($gray-text, 10%);
+			color: $white;
 			text-decoration: none;
 			
 			&:hover, 
 			&:active,
 			&:focus {
-				color: $green-medium;
+				text-decoration: underline;
 			}
 		}
 	}
 
 	.footer {
-		background: $green-light;
+		background: $green-dark;
 		margin-top: 20px;
 		padding: 10px 0;
+		color: $green-dark-text;
 
-		@include respond-min(768px) {
-			background: url(/static/img/bg-footer.svg) no-repeat bottom right $green-light;
-			margin-top: 0;
+		.logo {
+			.mdzr-svg & { 
+				background-position: left center;
+				width: 30.2%;
+				margin-right: 0;
+				margin-top: 34px;
+			}
 		}
 	}
 
@@ -642,7 +625,7 @@ blockquote {
 		width: 142px;
 		@include respond-min(768px) {
 			float: left;
-			margin: 20px 90px 0 2%;
+			margin: 20px 90px 0 0;
 		}
 		
 		.mdzr-svg & { 
@@ -654,38 +637,27 @@ blockquote {
 
 	.thanks {
 		@include font-size(12);
-		background: url(/static/img/bg-hash-dark.png) repeat-x bottom center;
-		@include retina-display {
-			background: url(/static/img/bg-hash-dark@2x.png) repeat-x bottom center;
-			background-size: 4px;
-		}
-		color: $green-dark;
+		color: $green-dark-text;
 		margin: 0;
 		padding: 0;
 		@include respond-min(768px) {
-			background: none;
+			border: none;
 		}
 		
 		li {
 			@include clearfix;
-			background: url(/static/img/bg-hash-dark.png) repeat-x top center;
-			@include retina-display {
-				background: url(/static/img/bg-hash-dark@2x.png) repeat-x top center;
-				background-size: 4px;
-			}
 			margin: 0;
 			padding: 17px 10px 11px;
 			@include respond-min(768px) {
 				background: none;
 				float: left;
 				padding: 0 0 0 25px;
-				width: 120px;
+				width: 14.35%;
 			}
 		}
 
 		span {
 			display: block;
-			float: left;
 			height: 34px;
 			line-height: 33px;
 			padding-right: 12px;
@@ -721,13 +693,14 @@ blockquote {
 	}
 
 	.copyright {
+
 		@include font-size(12);
 		clear: both;
-		margin-top: 20px;
-		padding: 0 10px;
+		margin: 20px 0 0 10px;
 		@include respond-min(768px) {
 			max-width: 80%;
-			padding-top: 20px;
+			padding-top: 30px;
+			margin: 0;
 		}
 	}
 }
@@ -736,7 +709,7 @@ blockquote {
 // Recycleable Style Classes
 .backtotop {
 	// Back to top link (in base.html after block body)
-	@include link-blue;
+	@include link-green;
 	@include colfax;
 	@include font-size(14);
 	display: block;
@@ -752,19 +725,17 @@ blockquote {
 .cta, a.cta {
 	// Call To Action buttons
 	@include colfax;
+	font-weight: 700;
 	-webkit-appearance: none;
 	-moz-appearance: none;
-	background: url(/static/img/bg-pattern.jpg) repeat top center $green-dark;
-	@include retina-display { //double density for retina display
-		background-size: 250px 250px;
-	}
+	background: $green-medium;
 	border: none;
 	border-radius: 5px;
 	color: #fff;
 	display: block;
 	-webkit-font-smoothing: subpixel-antialiased;
 	margin: 30px auto 0;
-	padding: 25px;
+	padding: 1em 1.5em;
 	text-align: center;
 	text-decoration: none;
 	@include respond-min(768px) {
@@ -772,23 +743,23 @@ blockquote {
 	}
 
 	em {
-		color: $green-medium;
+		color: $green-very-light;
 		font-style: normal;
 	}
 
 	&:hover {
-		opacity: 0.8;
+		background: darken($green-medium, 2%);
 	}
 }
-.link-blue {
-	// class render of the link-blue mixin
-	@include link-blue;
+.link-green {
+	// class render of the link-green mixin
+	@include link-green;
 }
 .link-readmore {
 	// Read More links. Should exist outside of <p> tag, and include the '&rsaquo;' arrow after the text.
-	@include link-blue;
+	@include link-green;
 	@include colfax;
-	@include font-size(13);
+	@include font-size(14);
 	display: inline-block;
 	margin: 10px 0;
 	@include old-ie {
@@ -801,19 +772,22 @@ blockquote {
 .meta {
 	// Re-usable meta class for alternate-style content.
 	@include colfax;
-	@include font-size(16);
+	@include font-size(14);
 	display: block;
 	line-height: 1.3;
 	margin: 25px 0 20px;
 
 	a {
-		@include link-blue;
+		@include link-green;
 	}
 }
 .layout-2col { 
 	//two column layout module
+	margin: 20px 0;
+
 	@include respond-min(768px) {
 		@include clearfix;
+		margin: 0;
 		.col {
 			float: left;
 			width: 45%;
@@ -832,13 +806,13 @@ blockquote {
 }
 .blue {
 	// overide blue color class
-	color: $blue;
+	color: $green;
 }
 .label {
 	// Label style associated with forms and other global elements.
 	@include colfax;
 	@include font-size(16);
-	color: lighten($gray-text, 30%);
+	color: lighten($text-light, 30%);
 	display: block;
 	font-weight: 700;
 	margin: 20px 0 10px;
@@ -846,24 +820,20 @@ blockquote {
 
 	
 	&.form-controls {
-		@include font-size(12);
+		@include font-size(14);
 		display: block;
 		margin: 0;
 		position: relative;
-		top: 25px;
+		top: 20px;
 		text-align: right;
 
-		@include respond-min(768px) {
-			@include font-size(16);
-		}
-		
 		span {
 			cursor: pointer;
 
 			&:hover,
 			&:active,
 			&:focus {
-				color: lighten($gray-text, 20%);
+				color: lighten($text-light, 20%);
 			}
 		}
 	}
@@ -911,32 +881,28 @@ blockquote {
 
 	li {
 		@include font-size(18);
-		background: url(/static/img/bg-hash-dark@2x.png) repeat-x top center;
-		background-size: 4px;
-		@include old-ie {
-			background: url(/static/img/bg-hash-dark.png) repeat-x top center;
-		}
+		border-top: 1px solid $gray-line;
 		display: block;
 		line-height: 1.3;
 		margin: 0;
-		padding: 30px 0 0 40px;
+		padding: 30px 0 0 30px;
 		position: relative;
 
 		i {
-			@include font-size(24);
-			color: $gray-text;
+			@include font-size(20);
+			color: $green-light;
 			display: block;
 			left: 0;
-			line-height: 33px;
+			line-height: 28px;
 			height: 30px;
 			position: absolute;
 			text-align: center;
 			top: 28px;
-			width: 30px;
+			width: 24px;
 		}
 
 		&:first-child {
-			background: none;
+			border-top: 0;
 			padding-top: 0;
 
 			i {
@@ -947,13 +913,13 @@ blockquote {
 
 	.meta {
 		@include colfax;
-		@include font-size(16);
+		@include font-size(14);
 		display: block;
 		margin-top: 10px;
 	}
 
 	a {
-		@include link-blue;
+		@include link-green;
 	}
 }
 .list-tags {
@@ -975,12 +941,8 @@ blockquote {
 	}
 
 	a {
-		background: url(/static/img/bg-hash-light.png) repeat top center $blue;
-		@include retina-display {
-			background: url(/static/img/bg-hash-light@2x.png) repeat top center $blue;
-			background-size: 4px;
-		}
-		color: #fff;
+		background: $green-light;
+		color: $white;
 		display: inline-block;
 		@include old-ie {
 			display: block;
@@ -993,7 +955,8 @@ blockquote {
 		&:hover,
 		&:active,
 		&:focus {
-			background-color: lighten($blue, 10%);
+			background-color: $green-medium;
+			color: #fff;
 		}
 	}
 }
@@ -1005,21 +968,27 @@ blockquote {
 
 	h2 {
 		font-weight: 400;
+		margin-bottom: 5px;
 	}
 
 	li {
-		background: url(/static/img/bg-hash-dark.png) repeat-x top center;
-		@include retina-display {
-			background: url(/static/img/bg-hash-dark@2x.png) repeat-x top center;
-			background-size: 4px;
-		}
+		border-top: 1px solid $gray-line;
 		margin-top: 35px;
 		padding-top: 10px;
 
 		&:first-child {
-			background: none;
+			border: none;
 			margin-top: 0;
 			padding-top: 0;
+		}
+	}
+
+	.meta {
+		margin-top: 10px;
+		color: $gray-medium;
+		a:link {
+			color: $text-light;
+			text-decoration: underline;
 		}
 	}
 }
@@ -1037,15 +1006,11 @@ blockquote {
 	}
 
 	li {
-		background: url(/static/img/bg-hash-dark.png) repeat-x top center;
-		@include retina-display {
-			background: url(/static/img/bg-hash-dark@2x.png) repeat-x top center;
-			background-size: 4px;
-		}
+		border-top: 1px solid $gray-line;
 		margin-top: 20px;
 		padding-top: 20px;
 		@include respond-min(768px) {
-			background: none;
+			border: none;
 			float: left;
 			padding-right: 5%;
 			padding-top: 0;
@@ -1055,8 +1020,8 @@ blockquote {
 
 	li > a {
 		@include colfax;
-		@include link-blue;
-		@include font-size(11);
+		@include link-green;
+		@include font-size(12);
 		font-weight: 700;
 		margin-top: 10px;
 		text-transform: uppercase;
@@ -1107,12 +1072,8 @@ blockquote {
 	// Basic link-soup list style. Three Column on Desktop, two column on mobile. (See Why Django Page.)
 	@include colfax;
 	@include clearfix;
-	@include font-size(18);
-	background: url(/static/img/bg-hash-dark.png) repeat-x top center;
-	@include retina-display {
-		background: url(/static/img/bg-hash-dark@2x.png) repeat-x top center;
-		background-size: 4px;
-	}
+	@include font-size(16);
+	border-top: 1px solid $gray-line;
 	list-style: none;
 	margin: 20px 0 0;
 	padding: 20px 0 10px;
@@ -1128,23 +1089,27 @@ blockquote {
 	}
 
 	a {
-		@include link-blue;
+		@include link-green;
 	}
 }
 .list-features {
 	// Animated Feature List from the Why Django Page. Require looks for the 'list-features' class to load the appropriate scripts to animate the icons. Degrades gracefully into mobile.
 	dt {
-		@include font-size(26);
-		background: url(/static/img/bg-hash-dark.png) repeat-x top center;
-		@include retina-display {
-			background: url(/static/img/bg-hash-dark@2x.png) repeat-x top center;
-			background-size: 4px;
-		}
+		@include font-size(24);
+		border-top: 1px solid $gray-line;
 		padding-top: 25px;
 	}	
 
 	i {
-		color: $green-medium;
+		color: $white;
+		margin-right: 10px;
+		width: 40px;
+		height: 40px;
+		border-radius: 25px;
+		background: $green;
+		line-height: 42px;
+		display: inline-block;
+		text-align: center;
 	}
 
 	@include respond-min(768px) {
@@ -1152,7 +1117,7 @@ blockquote {
 
 		dt {
 			margin-top: 90px;
-			padding: 70px 0 0 245px;
+			padding: 60px 0 0 245px;
 			position: relative;
 
 			&:first-child {
@@ -1189,6 +1154,7 @@ blockquote {
 			text-align: center;
 			top: 50px;
 			width: 200px;
+			margin-right: 0;
 
 			// Border Radius Enabled 
 			.mdzr-borderradius & {
@@ -1207,7 +1173,7 @@ blockquote {
 					background-position: -150px -269px;
 				}
 				&.icon-briefcase {
-					background-position: -384px 17px;
+					background-position: -354px -7px;
 				}
 				&.icon-lock {
 					background-position: -36px -96px;
@@ -1216,7 +1182,7 @@ blockquote {
 					background-position: -270px -9px;
 				}
 				&.icon-cogs {
-					background-position: -370px -20px;
+					background-position: -334px -12px;
 				}
 			}
 
@@ -1239,7 +1205,7 @@ blockquote {
 				}
 				
 				&.icon-bolt {
-					background-position: 20px -359px;
+					background-position: 40px -369px;
 					&.inview {
 						background-position: -150px -269px;
 					}
@@ -1247,7 +1213,7 @@ blockquote {
 				&.icon-briefcase {
 					background-position: -494px 207px;
 					&.inview {
-						background-position: -384px 17px;
+						background-position: -354px -7px;
 					}
 				}
 				&.icon-lock {
@@ -1265,7 +1231,7 @@ blockquote {
 				&.icon-cogs {
 					background-position: -500px -180px;
 					&.inview {
-						background-position: -370px -20px;
+						background-position: -334px -12px;
 					}
 				}
 			}
@@ -1287,13 +1253,10 @@ blockquote {
 		}
 	}
 }
+
 .list-collapsing {
 	// reusable accordion style collapsing list, as seen on the Get Started Page. 'Expand/Collapse All' toggle is generated by the javascript. H2 is used for label, and 'collapsing-content' class is used to identify all content that should expand and collapse onclick.
-	background: url(/static/img/bg-hash-dark.png) repeat-x bottom center;
-	@include retina-display {
-		background: url(/static/img/bg-hash-dark@2x.png) repeat-x bottom center;
-		background-size: 4px;
-	}
+	border-bottom: 1px solid $gray-line;
 	list-style: none;
 	margin: 30px 0;
 	padding: 0;
@@ -1301,11 +1264,7 @@ blockquote {
 	&.active {
 		
 		> li {
-			background: url(/static/img/bg-hash-dark.png) repeat-x top center;
-			@include retina-display {
-				background: url(/static/img/bg-hash-dark@2x.png) repeat-x top center;
-				background-size: 4px;
-			}
+			border-top: 1px solid $gray-line;
 			margin: 0;
 			padding: 0;
 		}
@@ -1317,14 +1276,10 @@ blockquote {
 			padding: 20px 40px 15px 0;
 			position: relative;
 
-			@include respond-min(768px) {
-				@include font-size(24);
-			}
-			
 			&:hover,
 			&:focus,
 			&:active {
-				color: lighten($gray-text, 20%);
+				color: lighten($text-light, 20%);
 				outline: none;
 			}
 
@@ -1360,6 +1315,7 @@ blockquote {
 		}
 	}
 }
+
 .list-image {
 	// list style for large, clickable images accompanied by text. (See Get Started Page.)
 	list-style: none;
@@ -1367,11 +1323,7 @@ blockquote {
 	padding: 0;
 
 	li {
-		background: url(/static/img/bg-hash-dark.png) repeat-x top center;
-		@include retina-display {
-			background: url(/static/img/bg-hash-dark@2x.png) repeat-x top center;
-			background-size: 4px;
-		}
+		border-top: 1px solid $gray-line;
 		margin-top: 20px;
 		padding-top: 40px;
 		@include respond-min(768px) {
@@ -1381,7 +1333,7 @@ blockquote {
 		}
 
 		&:first-child {
-			background: none;
+			border: none;
 			padding-top: 0;
 		}
 	}
@@ -1393,7 +1345,7 @@ blockquote {
 		&:hover,
 		&:active,
 		&:focus {
-			color: $gray-text;
+			color: $text-light;
 		}
 	}
 
@@ -1415,10 +1367,12 @@ blockquote {
 		}
 	}
 }
+
+//Documentation styles
 .list-outline {
 	// Nested lists to house documentation outline. Meant for use in sidebar. (See Documentation Page.)
-	@include font-size(18);
-	line-height: 1.2;
+	@include font-size(16);
+	line-height: 1.3;
 	list-style: none;
 	margin: 0;
 	padding: 0;
@@ -1427,26 +1381,57 @@ blockquote {
 		text-decoration: none;
 	}
 
+	> li > ul > li {
+		margin-top: 18px;
+	}
+
 	> li > a { //top level
 		text-transform: uppercase;
 		font-weight: 700;
+		@include link-green;
 	}	
 
 	> li > ul { //second level
 		list-style: none;
-		@include font-size(16);
-		padding: 0 0 0 10px;	
-
+		@include font-size(12);
+		padding: 5px 0 0 10px;
 		> li > a {
-			@include link-blue;
+			font-weight: 700;
+			text-transform: uppercase;
+			@include link-green;
 		}
 	}
 
 	> li > ul > li  ul { //third level & down
 		@include font-size(14);
-		padding: 0 0 0 20px;	
+		padding: 0 0 0 20px;
+
 	}
 }
+
+.section h2 {
+	margin: 60px 0 30px;
+}
+
+.section h3 {
+	margin: 40px 0 20px;
+}
+
+.note {
+		background: $white;
+		padding: 15px 20px;
+		border: 1px solid $gray-line;
+		margin: 25px 0;
+		.first {
+			margin-top: 0;
+			font-weight: bold;
+		}
+		.last {
+			margin-bottom: 10px;
+		}
+		border-radius: 4px;
+}
+
 .list-links { 
 	//Can be used globally to stack list items either with a <ul>, or with a <dl> using the <dd> to add meta information.  (See Community Page - sidebar and block body.)
 	@include colfax;
@@ -1455,7 +1440,7 @@ blockquote {
 	padding: 20px 0 0;
 
 	a {
-		@include link-blue;
+		@include link-green;
 	}
 
 	dt,
@@ -1481,28 +1466,28 @@ blockquote {
 		dt,
 		li {
 			@include font-size(16);
-			background: url(/static/img/bg-hash-dark.png) repeat-x top center;
-			@include retina-display {
-				background: url(/static/img/bg-hash-dark@2x.png) repeat-x top center;
-				background-size: 4px;
-			}
+			border-top: 1px solid $gray-line;
 			margin-top: 0;
 			padding-top: 20px;
 
 			&:first-child {
-				background: none;
+				border: none;
 				padding-top: 0;
 			}
 		}
 
 		li {
-			padding: 18px 0 10px;
+			padding: 14px 0 10px;
 		}
 
 		dd {
 			@include font-size(14);
 			margin-bottom: 16px;
 		}
+	}
+
+	+ h2 {
+		margin-top: 34px;
 	}
 }
 
@@ -1525,7 +1510,7 @@ blockquote {
 		-webkit-appearance: none;
 		-moz-appearance: none;
 		background: #fff;
-		border: 1px solid #CCC;
+		border: 1px solid $gray-line;
 		border-radius: 4px;
 		cursor: auto;
 		display: block;
@@ -1538,15 +1523,8 @@ blockquote {
 		width: 82%;		
 
 		@include respond-min(768px) {
-			padding: 8px 7% 6px 10px;
-			width: 90%;
-		}
-
-		&::-webkit-input-placeholder,
-		&:-moz-placeholder,
-		&::-moz-placeholder,
-		&:-ms-input-placeholder {
-			color: #bebebe;
+			padding: 8px 18% 6px 10px;
+			width: 80%;
 		}
 
 		&::-ms-clear {
@@ -1556,45 +1534,57 @@ blockquote {
 		&:active,
 		&:focus {
 			outline: none;
-			border-color: $blue;
+			border-color: $green;
 		}
 	}
 
 	button {
 		background: none;
 		border: none;
-		color: lighten($gray-text, 20%);
+		color: $green-medium;
 		height: 40px;
 		padding: 0;
 		position: absolute;
-		right: 1.5%;
+		right: 2%;
 		top: 4px;
 		width: 40px;
 
+		@include respond-min(768px) {
+			right: 1.3%;
+		}
+
 		i {
-			@include font-size(30);
-			line-height: 1.4;
+			@include font-size(24);
+			line-height: 1.7;
 		}
 
 		&:hover,
 		&:focus,
 		&:active {
-			color: $blue;
+			color: $green;
 			outline: none;
 		}
 	}
 }
+
+::-webkit-input-placeholder,
+:-moz-placeholder,
+::-moz-placeholder,
+:-ms-input-placeholder {
+	color: $gray-medium;
+}
+
 .form-email {
 	// Email submission forms on Community page.
 	h3 {
 		@include font-size(22);
-		margin: 0;
+		margin: 10px 0;
 	}
 	.meta {
 		margin: 0;
 	}
 	form {
-		margin: 10px 0 40px;
+		margin: 10px 0 30px;
 	}
 }
 
@@ -1603,11 +1593,7 @@ blockquote {
 	// Pagination style for use with the News & Events pages.
 	@include colfax;
 	@include font-size(14);
-	background: url(/static/img/bg-hash-dark.png) repeat-x top center;
-	@include retina-display {
-		background: url(/static/img/bg-hash-dark@2x.png) repeat-x top center;
-		background-size: 4px;
-	}
+	border-top: 1px solid $gray-line;
 	font-weight: 700;
 	line-height: 31px;
 	list-style: none;
@@ -1623,8 +1609,8 @@ blockquote {
 		}
 	}
 	a {
-		background: none;
-		color: $gray-text;
+		border: none;
+		color: $text-light;
 		height: auto;
 		width: auto;
 		margin: 0 5px;
@@ -1632,7 +1618,7 @@ blockquote {
 		display: block;
 		text-decoration: none; 
 		@include respond-min(320px) {
-			background: $gray-text;
+			background: $text-light;
 			color: #fff;
 			height: 30px;
 			margin: 0 2px;
@@ -1641,17 +1627,16 @@ blockquote {
 
 		&.previous,
 		&.next {
-			@include font-size(20);
+			@include font-size(16);
 			@include respond-min(320px) {
-				border-radius: 25px;
-				height: 50px;
-				line-height: 52px;
-				width: 50px;
+				border-radius: 20px;
+				height: 40px;
+				line-height: 43px;
+				width: 40px;
 			}
 		}
 		&.previous {
 			margin-right: 10px;
-			text-indent: -1px;
 			@include respond-min(768px) {
 				margin-right: 70px;
 			}
@@ -1669,17 +1654,17 @@ blockquote {
 		&:active,
 		&.active {
 			background: none;
-			color: $blue;
+			color: $green;
 			@include respond-min(320px) {
-				background: lighten($gray-text, 30%);
-				color: $gray-text;
+				background: lighten($text-light, 30%);
+				color: $text-light;
 			}
 		}
 
 		.mdzr-no-borderradius & {
 			display: inline;
 			background: none;
-			color: $gray-text;
+			color: $text-light;
 			height: auto;
 			width: auto;
 			margin: 0 5px !important;
@@ -1689,7 +1674,7 @@ blockquote {
 			&:focus,
 			&.active {
 				background: none;
-				color: $blue;
+				color: $green;
 			}
 		}
 	}

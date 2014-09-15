@@ -4,10 +4,10 @@
 	<div class="container">
 		<a class="logo" href="{% url 'index' %}">Django</a>
 		<p class="meta">The web framework for perfectionists with deadlines.</p>
-		<div role="navigation">
-			<ul class="nav-primary">
+		<nav role="navigation">
+			<ul>
 				<li{% if section == 'why_django' %} class="active"{% endif %}>
-					<a href="{% url 'why' %}"> Why Django</a>
+					<a href="{% url 'why' %}">Overview</a>
 				</li>
 				<li{% if section == 'get_started' %} class="active"{% endif %}>
 					<a href="{% url 'start' %}">Get Started</a>
@@ -15,10 +15,8 @@
 				<li{% if section == 'docs' %} class="active"{% endif %}>
 					<a href="{% url 'docs' %}">Documentation</a>
 				</li>
-			</ul>
-			<ul class="nav-secondary">
 				<li{% if section == 'news' %} class="active"{% endif %}>
-					<a href="{% url 'news_index' %}">News &amp; Events</a></li>
+					<a href="{% url 'news_index' %}">News</a></li>
 				<li{% if section == 'community' %} class="active"{% endif %}>
 					<a href="{% url 'community' %}">Community</a></li>
 				<li{% if section == 'code' %} class="active"{% endif %}>
@@ -28,6 +26,6 @@
 					<a href="{% url 'about' %}">About</a>
 				</li>
 			</ul>
-		</div>
+		</nav>
 	</div>
 </div>

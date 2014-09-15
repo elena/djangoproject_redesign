@@ -23,3 +23,7 @@ pip-log.txt
 .dotcloud
 
 local_settings.py
+
+*.DS_Store
+.sass-cache/
+collected_static/
