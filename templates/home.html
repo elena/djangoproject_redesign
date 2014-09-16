@@ -1,9 +1,77 @@
 {% extends 'base.html' %}{% load url from future %}
 {% block title %}Django: The Web Framework for Perfectionists With Deadlines{% endblock %}
+{% block body_class %}homepage{% endblock %}
 {% block layout_class %}sidebar-right{% endblock %}
 
 {% block header %}<h1>Django</h1>{% endblock %}
 
+{% block copy_banner %}
+<div class="copy-banner">
+  <div class="container">
+    <p>
+      <em>Django makes it easier to build better Web apps more quickly and with less code</em>
+    </p>
+    <p>
+      <a href="{% url 'start' %}" class="cta white">Get Started with Django</a>
+    </p>
+    <p class="small">
+      Used by these great companies, and more
+      <ul class="django-companies">
+        <li><a href="{% url 'case_study' %}" class="company-mozilla">Mozilla</a></li>
+        <li><a href="{% url 'case_study' %}" class="company-pinterest">Pinterest</a></li>
+        <li><a href="{% url 'case_study' %}" class="company-theguardian">The Guardian</a></li>
+        <li><a href="{% url 'case_study' %}" class="company-instagram">Instagram</a></li>
+        <li><a href="{% url 'case_study' %}" class="company-rdio">Rdio</a></li>
+      </ul>
+    </p>
+  </div>
+</div>
+{% endblock %}
+
 {% block body %}
-	<h2>Django Home Page</h2>
+  <div class="section">
+  	<h1>Meet Django</h1>
+    <p>
+      Developed by a fast-moving online-news operation, Django was designed to handle the intensive deadlines of a newsroom and the stringent requirements of the Web developers who wrote it.
+    </p>
+    <dl class="list-features">
+      <dt><i class="icon-bolt"></i> Ridiculously fast.</dt>
+      <dd>
+        <p>Django was designed to help developers take web applications from concept to completion as quickly as possible.</p>
+      </dd>
+
+      <dt><i class="icon-briefcase"></i> Fully loaded.</dt>
+      <dd>
+        <p>Django includes dozens of extras that you can use to handle common web development patterns.</p>
+      </dd>
+
+      <dt><i class="icon-lock"></i> Reassuringly secure.</dt>
+      <dd>
+        <p>Django takes security seriously and helps web developers avoid many of the common security mistakes.</p>
+      </dd>
+
+      <dt><i class="icon-dashboard"></i> Exceedingly scalable.</dt>
+      <dd>
+        <p>Some of the busiest websites on the web leverage Django's ability to quickly and flexibly scale.</p>
+      </dd>
+
+      <dd>
+        <a href="{% url 'why' %}" class="cta">Learn more about choosing Django</a>
+      </dd>
+
+    </dl>
+  </div>
+
+  <div class="section">
+  <h1>Who is Django for?</h1>
+
+  </div>
+{% endblock %}
+
+{% block sidebar %}
+  <div role="complementary">
+    <a href="#" class="cta">
+      Download <em>Latest Release 1.5.4</em>
+    </a>
+  </div>
 {% endblock %}

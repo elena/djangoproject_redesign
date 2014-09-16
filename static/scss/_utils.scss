@@ -145,6 +145,13 @@ html {
 	}
 }
 
+@mixin svg-image ( $name ) {
+	background-image: url('/static/img/'+$name+'.png');
+	.mdzr-svg & {
+		background-image: url('/static/img/'+$name+'.svg');
+	}
+}
+
 // Green Link Mixin
 @mixin link-green {
 	color: $green-medium-dark;
