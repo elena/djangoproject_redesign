@@ -154,14 +154,18 @@ html {
 
 // Green Link Mixin
 @mixin link-green {
-	color: $green-medium-dark;
+	color: $green;
 	text-decoration: none;
+	&:visited {
+		color: $green;
+	}
 	&:hover,
 	&:active,
 	&:focus {
-		color: lighten($green, 5%);
+		color: lighten($green, 10%);
 		text-decoration: none;
 	}
+	
 }
 
 // Secondary content box-shadow: 
