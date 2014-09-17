@@ -1,5 +1,5 @@
 {% extends 'base.html' %}{% load static pygmentify %}
-{% block layout_class %}full-width{% endblock %}
+{% block layout_class %}sidebar-right{% endblock %}
 {% block title %}Django Get Started{% endblock %}
 
 {% block copy_banner %}
@@ -10,7 +10,7 @@
         <p>It’s quick &amp; easy to get up and running with <em>Django</em>.</p>
       </div>
       <div class="col one-third">
-        <a href="#" class="cta">Download <em>Version 1.5.1</em></a>
+        <a href="#" class="cta">Download <em>Version 1.7</em></a>
       </div>
     </div>
   </div>
@@ -27,8 +27,8 @@
 
   <div class="section">
     <h2>Install Django</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    <a class="link-readmore" href="/docs/">Read More &rsaquo;</a>
+    <p>Before you can use Django, you’ll need to get it installed. We have a complete installation guide that covers all the possibilities; this guide will guide you to a simple, minimal installation that’ll work while you walk through the introduction.</p>
+    <a class="link-readmore" href="#install">Django Installation Guide</a>
   </div>
 
   <div class="section">
@@ -38,28 +38,29 @@
       <li>A public site that lets people view polls and vote in them.</li>
       <li>An administrative interface that lets you add, change, and delete polls.</li>
     </ol>
-    <a class="link-readmore" href="/docs/">Take the Tutorial &rsaquo;</a>
+    <a class="link-readmore" href="/docs/">Take the Tutorial</a>
   </div>
 
   <div class="section">
     <h2>Sharpen Your Skills</h2>
     <p>The official <a href="/docs/">Django documentation</a> covers everything you need to know about Django (and then some).</p>
-     <a href="/docs/" class="link-readmore">Read the Docs &rsaquo;</a>
+     <a href="/docs/" class="link-readmore">Read the Docs</a>
   </div>
 
   <div class="section">
     <h2><span>Join the Community</span></h2>
     <p>You can help <a href="/community/">make us better</a>. Find out about upcoming Django events, learn what’s on other Django developers’ minds, find and post jobs, and more.</p>
-    <a href="/community/" class="link-readmore">Join Us &rsaquo;</a>
+    <a href="/community/" class="link-readmore">Join Us</a>
   </div>
 
 
+  <h2><span>Intro to Django</span></h2>
   <ul class="list-collapsing">
   <li>
     <h2>Object-Relational Mapper</h2>
     <div class="collapsing-content">
       <p>Deﬁne your data models entirely in Python. You get a rich, dynamic database-access API for free - but you can still write SQL if needed.</p>
-      <a class="link-readmore" href="https://docs.djangoproject.com/en/dev/topics/db/models/">Read More &rsaquo;</a>
+      <a class="link-readmore" href="https://docs.djangoproject.com/en/dev/topics/db/models/">Read More</a>
       {% pygment %}
         <pre lang="python">
 class Band(models.Model):
@@ -87,7 +88,7 @@ class Member(models.Model):
     <div class="collapsing-content">
       <p>A clean, elegant URL scheme is an important detail in a high-quality Web application. Django encourages beautiful URL design and doesn't put any cruft in URLs, like .php or .asp.</p>
       <p>To design URLs for an application, you create a Python module called a URLconf. Like, a table of contents for your app, it contains a simple mapping between URL patterns and your views.</p>
-      <a class="link-readmore" href="https://docs.djangoproject.com/en/dev/topics/http/urls/">Read More &rsaquo;</a>
+      <a class="link-readmore" href="https://docs.djangoproject.com/en/dev/topics/http/urls/">Read More</a>
       {% pygment %}
         <pre lang="python">
 urlpatterns = patterns('',
@@ -109,7 +110,7 @@ def band_listing(request):
     <h2>Templates</h2>
     <div class="collapsing-content">
       <p>Django’s template language is designed to strike a balance between power and ease. It’s designed to feel comfortable and easy-to-learn to those used to working with HTML, like designers and front-end developers. But it is also flexible and highly extensible, allowing developers to augment the template language as needed.</p>
-      <a class="link-readmore" href="https://docs.djangoproject.com/en/dev/topics/templates/">Read More &rsaquo;</a>
+      <a class="link-readmore" href="https://docs.djangoproject.com/en/dev/topics/templates/">Read More</a>
       {% pygment %}
         <pre lang="html">
 &lt;html&gt;
@@ -136,7 +137,7 @@ def band_listing(request):
     <h2>Forms</h2>
     <div class="collapsing-content">
       <p>Django provides a powerful form library that handles rendering forms as HTML, validating user-submitted data, and converting that data to native Python types. Django also provides a way to generate forms from your existing models and use those forms to create and update data.</p>
-      <a class="link-readmore" href="https://docs.djangoproject.com/en/dev/topics/forms/">Read More &rsaquo;</a>
+      <a class="link-readmore" href="https://docs.djangoproject.com/en/dev/topics/forms/">Read More</a>
       {% pygment %}
         <pre lang="python">
 from django import forms
@@ -154,7 +155,7 @@ class BandContactForm(forms.Form):
     <h2>Authentication</h2>
     <div class="collapsing-content">
       <p>Django comes with a full-featured and secure authentication system. It handles user accounts, groups, permissions and cookie-based user sessions, providing a way build sites that allows users to create accounts, and safely log in and out.</p>
-      <a class="link-readmore" href="#">Read More &rsaquo;</a>
+      <a class="link-readmore" href="#">Read More</a>
       {% pygment %}
         <pre lang="python">
 """
@@ -168,7 +169,7 @@ Python code TBD
     <h2>Admin</h2>
     <div class="collapsing-content">
       <p>One of the most powerful parts of Django is the automatic admin interface. It reads metadata in your models to provide a powerful and production-ready interface that content producers can immediately use to start adding content to the site. It's easy to set up, and provides many hooks for customization of the experience.</p>
-      <a class="link-readmore" href="#">Read More &rsaquo;</a>
+      <a class="link-readmore" href="#">Read More</a>
       {% pygment %}
         <pre lang="python">
 """
@@ -182,7 +183,7 @@ Python code TBD
     <h2>Internationalization</h2>
     <div class="collapsing-content">
       <p>Django was designed from the ground up to provide ways to offer content in languages and formats tailored to the audience. Django offers full support for the translation of text, and formatting of dates, times, numbers and time zones. It allows developers and template authors to specify which parts of their apps should be translated or formatted for local languages and cultures, and uses these hooks to localize web applications for particular users according to their preferences.</p>
-      <a class="link-readmore" href="#">Read More &rsaquo;</a>
+      <a class="link-readmore" href="#">Read More</a>
 
       {% pygment %}
         <pre lang="python">
@@ -205,7 +206,7 @@ Python code TBD
         <li>Remote Code Execution</li>
       </ul>
 
-      <a class="link-readmore" href="https://docs.djangoproject.com/en/dev/topics/security/">Read More &rsaquo;</a>
+      <a class="link-readmore" href="https://docs.djangoproject.com/en/dev/topics/security/">Read More</a>
 
     </div>
   </li>
@@ -214,36 +215,26 @@ Python code TBD
 {% endblock %}
 
 
-{% block secondary %}
-
-
-
-{% endblock %}
-
-
-{% block tertiary %}
-  <div class="layout-secondary">
-    <div class="container">
-      <h2>Other Django Resources</h2>
-      <ul class="list-image">
-        <li>
-          <a href="http://gettingstartedwithdjango.com/">
-            <img src="{% static 'img/demos/start.png' %}" alt="Getting Started with Django" />
-          </a>
-          <h3>Getting Started With Django</h3>
-          <p><span class="visuallyhidden">Getting Started With Django is</span> a series of video-based lessons meant to take you from novice to competent, or maybe even beyond. Each lesson covers many facets and best practices of modern Django web development and features a video and a text transcript to follow along. Every video is available for download or online streaming and there's a forum for help if you get stuck.</p>
-          <a href="http://gettingstartedwithdjango.com/" class="link-readmore">Get Started &rsaquo;</span>
-        </li>
-        <li>
-          <a href="https://django.2scoops.org/">
-            <img src="{% static 'img/demos/tsd.png' %}" alt="Two Scoops of Django" />
-          </a>
-          <h3>Two Scoops of Django</h3>
-          <p><span class="visuallyhidden">Two Scoops of Django is</span> an ebook designed for both novices and more advanced users, covering best practices for using Django 1.5.</p>
-          <a href="https://django.2scoops.org/" class="link-readmore">Get the Book &rsaquo;</span>
-          </a>
-        </li>
-      </ul>
-    </div>
+{% block sidebar %}
+  <div role="complementary">
+    <h2>Other Django Resources</h2>
+    <ul class="list-image">
+      <li>
+        <a href="http://gettingstartedwithdjango.com/">
+          <img src="{% static 'img/demos/start.png' %}" alt="Getting Started with Django" />
+        </a>
+        <h3>Getting Started With Django</h3>
+        <p><span class="visuallyhidden">Getting Started With Django is</span> a series of video-based lessons meant to take you from novice to competent, or maybe even beyond. Each lesson covers many facets and best practices of modern Django web development and features a video and a text transcript to follow along. Every video is available for download or online streaming and there's a forum for help if you get stuck.</p>
+        <a href="http://gettingstartedwithdjango.com/" class="link-readmore">Get Started</a>
+      </li>
+      <li>
+        <a href="https://django.2scoops.org/">
+          <img src="{% static 'img/demos/tsd.png' %}" alt="Two Scoops of Django" />
+        </a>
+        <h3>Two Scoops of Django</h3>
+        <p><span class="visuallyhidden">Two Scoops of Django is</span> an ebook designed for both novices and more advanced users, covering best practices for using Django 1.5.</p>
+        <a href="https://django.2scoops.org/" class="link-readmore">Get the Book</a>
+      </li>
+    </ul>
   </div>
 {% endblock %}

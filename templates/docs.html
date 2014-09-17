@@ -1143,57 +1143,65 @@ about your database.</p>
 
 {% block sidebar %} {# Always include <h1> label and <div> with aria role. #}
 	<h1 class="visuallyhidden">Additional Information</h1>
-	<div role="complementary">			
-	<h2>Contents</h2>		
-	<ul class="list-outline">
-		<li><a class="reference internal" href="#">Making queries</a><ul>
-		<li><a class="reference internal" href="#creating-objects">Creating objects</a></li>
-		<li><a class="reference internal" href="#saving-changes-to-objects">Saving changes to objects</a><ul>
-		<li><a class="reference internal" href="#saving-foreignkey-and-manytomanyfield-fields">Saving <tt class="docutils literal"><span class="pre">ForeignKey</span></tt> and <tt class="docutils literal"><span class="pre">ManyToManyField</span></tt> fields</a></li>
+	<div role="complementary">
+		<form action="#" class="form-input" role="search">
+			<label class="visuallyhidden" for="news-search">Search:</label>
+			<input type="text" name="news-search" id="news-search" placeholder="Search Documentaion">
+			<button type="submit">
+				<i class="icon-search"></i>
+				<span class="visuallyhidden">Search</span>
+			</button>
+		</form>
+		<h2>Contents</h2>		
+		<ul class="list-outline">
+			<li><a class="reference internal" href="#">Making queries</a><ul>
+			<li><a class="reference internal" href="#creating-objects">Creating objects</a></li>
+			<li><a class="reference internal" href="#saving-changes-to-objects">Saving changes to objects</a><ul>
+			<li><a class="reference internal" href="#saving-foreignkey-and-manytomanyfield-fields">Saving <tt class="docutils literal"><span class="pre">ForeignKey</span></tt> and <tt class="docutils literal"><span class="pre">ManyToManyField</span></tt> fields</a></li>
+			</ul>
+			</li>
+			<li><a class="reference internal" href="#retrieving-objects">Retrieving objects</a><ul>
+			<li><a class="reference internal" href="#retrieving-all-objects">Retrieving all objects</a></li>
+			<li><a class="reference internal" href="#retrieving-specific-objects-with-filters">Retrieving specific objects with filters</a><ul>
+			<li><a class="reference internal" href="#chaining-filters">Chaining filters</a></li>
+			<li><a class="reference internal" href="#filtered-querysets-are-unique">Filtered QuerySets are unique</a></li>
+			<li><a class="reference internal" href="#querysets-are-lazy">QuerySets are lazy</a></li>
+			</ul>
+			</li>
+			<li><a class="reference internal" href="#retrieving-a-single-object-with-get">Retrieving a single object with get</a></li>
+			<li><a class="reference internal" href="#other-queryset-methods">Other QuerySet methods</a></li>
+			<li><a class="reference internal" href="#limiting-querysets">Limiting QuerySets</a></li>
+			<li><a class="reference internal" href="#field-lookups">Field lookups</a></li>
+			<li><a class="reference internal" href="#lookups-that-span-relationships">Lookups that span relationships</a><ul>
+			<li><a class="reference internal" href="#spanning-multi-valued-relationships">Spanning multi-valued relationships</a></li>
+			</ul>
+			</li>
+			<li><a class="reference internal" href="#filters-can-reference-fields-on-the-model">Filters can reference fields on the model</a></li>
+			<li><a class="reference internal" href="#the-pk-lookup-shortcut">The pk lookup shortcut</a></li>
+			<li><a class="reference internal" href="#escaping-percent-signs-and-underscores-in-like-statements">Escaping percent signs and underscores in LIKE statements</a></li>
+			<li><a class="reference internal" href="#caching-and-querysets">Caching and QuerySets</a></li>
+			</ul>
+			</li>
+			<li><a class="reference internal" href="#complex-lookups-with-q-objects">Complex lookups with Q objects</a></li>
+			<li><a class="reference internal" href="#comparing-objects">Comparing objects</a></li>
+			<li><a class="reference internal" href="#deleting-objects">Deleting objects</a></li>
+			<li><a class="reference internal" href="#copying-model-instances">Copying model instances</a></li>
+			<li><a class="reference internal" href="#updating-multiple-objects-at-once">Updating multiple objects at once</a></li>
+			<li><a class="reference internal" href="#related-objects">Related objects</a><ul>
+			<li><a class="reference internal" href="#one-to-many-relationships">One-to-many relationships</a><ul>
+			<li><a class="reference internal" href="#forward">Forward</a></li>
+			<li><a class="reference internal" href="#following-relationships-backward">Following relationships “backward”</a></li>
+			</ul>
+			</li>
+			<li><a class="reference internal" href="#many-to-many-relationships">Many-to-many relationships</a></li>
+			<li><a class="reference internal" href="#one-to-one-relationships">One-to-one relationships</a></li>
+			<li><a class="reference internal" href="#how-are-the-backward-relationships-possible">How are the backward relationships possible?</a></li>
+			<li><a class="reference internal" href="#queries-over-related-objects">Queries over related objects</a></li>
+			</ul>
+			</li>
+			<li><a class="reference internal" href="#falling-back-to-raw-sql">Falling back to raw SQL</a></li>
+			</ul>
+			</li>
 		</ul>
-		</li>
-		<li><a class="reference internal" href="#retrieving-objects">Retrieving objects</a><ul>
-		<li><a class="reference internal" href="#retrieving-all-objects">Retrieving all objects</a></li>
-		<li><a class="reference internal" href="#retrieving-specific-objects-with-filters">Retrieving specific objects with filters</a><ul>
-		<li><a class="reference internal" href="#chaining-filters">Chaining filters</a></li>
-		<li><a class="reference internal" href="#filtered-querysets-are-unique">Filtered QuerySets are unique</a></li>
-		<li><a class="reference internal" href="#querysets-are-lazy">QuerySets are lazy</a></li>
-		</ul>
-		</li>
-		<li><a class="reference internal" href="#retrieving-a-single-object-with-get">Retrieving a single object with get</a></li>
-		<li><a class="reference internal" href="#other-queryset-methods">Other QuerySet methods</a></li>
-		<li><a class="reference internal" href="#limiting-querysets">Limiting QuerySets</a></li>
-		<li><a class="reference internal" href="#field-lookups">Field lookups</a></li>
-		<li><a class="reference internal" href="#lookups-that-span-relationships">Lookups that span relationships</a><ul>
-		<li><a class="reference internal" href="#spanning-multi-valued-relationships">Spanning multi-valued relationships</a></li>
-		</ul>
-		</li>
-		<li><a class="reference internal" href="#filters-can-reference-fields-on-the-model">Filters can reference fields on the model</a></li>
-		<li><a class="reference internal" href="#the-pk-lookup-shortcut">The pk lookup shortcut</a></li>
-		<li><a class="reference internal" href="#escaping-percent-signs-and-underscores-in-like-statements">Escaping percent signs and underscores in LIKE statements</a></li>
-		<li><a class="reference internal" href="#caching-and-querysets">Caching and QuerySets</a></li>
-		</ul>
-		</li>
-		<li><a class="reference internal" href="#complex-lookups-with-q-objects">Complex lookups with Q objects</a></li>
-		<li><a class="reference internal" href="#comparing-objects">Comparing objects</a></li>
-		<li><a class="reference internal" href="#deleting-objects">Deleting objects</a></li>
-		<li><a class="reference internal" href="#copying-model-instances">Copying model instances</a></li>
-		<li><a class="reference internal" href="#updating-multiple-objects-at-once">Updating multiple objects at once</a></li>
-		<li><a class="reference internal" href="#related-objects">Related objects</a><ul>
-		<li><a class="reference internal" href="#one-to-many-relationships">One-to-many relationships</a><ul>
-		<li><a class="reference internal" href="#forward">Forward</a></li>
-		<li><a class="reference internal" href="#following-relationships-backward">Following relationships “backward”</a></li>
-		</ul>
-		</li>
-		<li><a class="reference internal" href="#many-to-many-relationships">Many-to-many relationships</a></li>
-		<li><a class="reference internal" href="#one-to-one-relationships">One-to-one relationships</a></li>
-		<li><a class="reference internal" href="#how-are-the-backward-relationships-possible">How are the backward relationships possible?</a></li>
-		<li><a class="reference internal" href="#queries-over-related-objects">Queries over related objects</a></li>
-		</ul>
-		</li>
-		<li><a class="reference internal" href="#falling-back-to-raw-sql">Falling back to raw SQL</a></li>
-		</ul>
-		</li>
-	</ul>
-</div>
+	</div>
 {% endblock %}
