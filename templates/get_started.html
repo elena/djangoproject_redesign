@@ -1,5 +1,5 @@
 {% extends 'base.html' %}{% load static pygmentify %}
-{% block layout_class %}sidebar-right{% endblock %}
+{% block layout_class %}full-width{% endblock %}
 {% block title %}Django Get Started{% endblock %}
 
 {% block copy_banner %}
@@ -215,26 +215,28 @@ Python code TBD
 {% endblock %}
 
 
-{% block sidebar %}
-  <div role="complementary">
-    <h2>Other Django Resources</h2>
-    <ul class="list-image">
-      <li>
-        <a href="http://gettingstartedwithdjango.com/">
-          <img src="{% static 'img/demos/start.png' %}" alt="Getting Started with Django" />
-        </a>
-        <h3>Getting Started With Django</h3>
-        <p><span class="visuallyhidden">Getting Started With Django is</span> a series of video-based lessons meant to take you from novice to competent, or maybe even beyond. Each lesson covers many facets and best practices of modern Django web development and features a video and a text transcript to follow along. Every video is available for download or online streaming and there's a forum for help if you get stuck.</p>
-        <a href="http://gettingstartedwithdjango.com/" class="link-readmore">Get Started</a>
-      </li>
-      <li>
-        <a href="https://django.2scoops.org/">
-          <img src="{% static 'img/demos/tsd.png' %}" alt="Two Scoops of Django" />
-        </a>
-        <h3>Two Scoops of Django</h3>
-        <p><span class="visuallyhidden">Two Scoops of Django is</span> an ebook designed for both novices and more advanced users, covering best practices for using Django 1.5.</p>
-        <a href="https://django.2scoops.org/" class="link-readmore">Get the Book</a>
-      </li>
-    </ul>
+{% block secondary %}
+  <div class="full-width">
+    <div role="secondary">
+      <h2>Other Django Resources</h2>
+      <ul class="list-image">
+        <li>
+          <a href="http://gettingstartedwithdjango.com/">
+            <img src="{% static 'img/demos/start.png' %}" alt="Getting Started with Django" />
+          </a>
+          <h3>Getting Started With Django</h3>
+          <p><span class="visuallyhidden">Getting Started With Django is</span> a series of video-based lessons meant to take you from novice to competent, or maybe even beyond. Each lesson covers many facets and best practices of modern Django web development and features a video and a text transcript to follow along. Every video is available for download or online streaming and there's a forum for help if you get stuck.</p>
+          <a href="http://gettingstartedwithdjango.com/" class="link-readmore">Get Started</a>
+        </li>
+        <li>
+          <a href="https://django.2scoops.org/">
+            <img src="{% static 'img/demos/tsd.png' %}" alt="Two Scoops of Django" />
+          </a>
+          <h3>Two Scoops of Django</h3>
+          <p><span class="visuallyhidden">Two Scoops of Django is</span> an ebook designed for both novices and more advanced users, covering best practices for using Django 1.5.</p>
+          <a href="https://django.2scoops.org/" class="link-readmore">Get the Book</a>
+        </li>
+      </ul>
+    </div>
   </div>
 {% endblock %}

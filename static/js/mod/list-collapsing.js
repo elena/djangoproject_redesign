@@ -23,24 +23,24 @@ define([
 				.append(this.buttonCollapse);
 			
 			this.list.addClass('active'); //activate the list styles w/ class
-			this.headings.append(' <i class="collapsing-icon icon-plus"></i>').attr('tabindex', '0'); //add icons and tabindexes
+			this.headings.append(' <i class="collapsing-icon icon icon-plus"></i>').attr('tabindex', '0'); //add icons and tabindexes
 			
 			this.headings.on( 'click', function( ev ) { //headings onclick (passing event)
 				var target = $(ev.target).closest('h2'),
 						parent = target.closest('li'); //store target as var
 				if (parent.hasClass('active')) { //if currently active
-					target.find('.collapsing-icon').removeClass('icon-minus').addClass('icon-plus'); //change icon to a plus
+					target.find('.collapsing-icon').removeClass('icon icon-minus').addClass('icon icon-plus'); //change icon to a plus
 				} else {
-					target.find('.collapsing-icon').removeClass('icon-plus').addClass('icon-minus'); //otherwise to a minus
+					target.find('.collapsing-icon').removeClass('icon icon-plus').addClass('icon icon-minus'); //otherwise to a minus
 				}
 				parent.toggleClass('active'); //toggle active class
 			});
 
 			this.buttonExpand.on( 'click', function() { //expand all onclick
-				self.items.addClass('active').find('.collapsing-icon').removeClass('icon-plus').addClass('icon-minus');
+				self.items.addClass('active').find('.collapsing-icon').removeClass('icon icon-plus').addClass('icon icon-minus');
 			});
 			this.buttonCollapse.on( 'click', function() { //expand all onclick
-				self.items.removeClass('active').find('.collapsing-icon').removeClass('icon-minus').addClass('icon-plus');
+				self.items.removeClass('active').find('.collapsing-icon').removeClass('icon icon-minus').addClass('icon icon-plus');
 			});
 		}
 	};

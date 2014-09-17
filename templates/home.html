@@ -143,12 +143,35 @@
     <a href="{% url 'start' %}" class="link-readmore">Explore more features</a>
 
     <h3>Get Involved</h3>
-    <dl>
+    <dl class="list-links-small">
       <dt><a href="#">#django IRC channel</a></dt>
       <dd>
         Chat with other Django users
       </dd>
+
+      <dt><a href="#">Ticket system</a></dt>
+      <dd>
+        Report bugs and make feature requests
+      </dd>
     </dl>
+    <a href="{% url 'community' %}" class="link-readmore">Inside the Djagno Community</a>
+
+    <h3>The Django Software Foundation</h3>
+    <dl class="list-links-small">
+      <dt><a href="#">About the Foundation</a></dt>
+      <dd>
+        Django is open-source &amp; non-profit
+      </dd>
+
+      <dt><a href="#">Support Django</a></dt>
+      <dd>
+        Your contribution makes Django stronger
+      </dd>
+
+      <dt><a href="#">Contact the Django Software Foundation</a></dt>
+      <dd></dd>
+    </dl>
+    <a href="{% url 'about' %}" class="link-readmore">More about the DSF</a>
 
   </div>
 {% endblock %}

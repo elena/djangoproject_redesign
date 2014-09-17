@@ -44,7 +44,7 @@ ol li, ul li { //list style
 	margin-top: 10px;
 }
 dl {
-	margin: 20px 0 40px;
+	margin: 20px 0 10px;
 
 	dt {
 		@include colfax;
@@ -52,8 +52,11 @@ dl {
 	}
 
 	dd {
-		margin: 5px 0 0;
+		margin: 0.2em 0 1.2em;
 		padding: 0;
+		&:last-of-type {
+			margin-bottom: 0;
+		}
 	}
 }
 h1,
@@ -248,11 +251,12 @@ blockquote {
 	&.container {
 		width: 100%;
 		max-width: none;
+		border-bottom: 1px solid #ddd;
+		background: #fff;
 	}
 	// High-level class denoting full-width layout
 	@include clearfix;
-	border-bottom: 1px solid #ddd;
-	background: #fff;
+	
 	.mdzr-boxshadow & {
 		border: none;
 		@include secondary-shadow-top;
@@ -273,7 +277,13 @@ blockquote {
 			margin-right: 0;
 		}
 	}
+}
 
+[role="secondary"] {
+	.full-width & {
+		max-width: 700px;
+		margin: 0 auto;
+	}
 }
 
 .layout-secondary {
@@ -1527,8 +1537,8 @@ h2 + .list-collapsing {
 		padding-top: 40px;
 		@include respond-min(768px) {
 			@include clearfix;
-			margin-top: 50px;
-			padding-top: 50px;
+			margin-top: 20px;
+			padding-top: 20px;
 		}
 
 		&:first-child {
@@ -1556,6 +1566,8 @@ h2 + .list-collapsing {
 		@include respond-min(768px) {
 			float: left;
 			margin: 0 50px 0 0;
+			max-width: 200px;
+			max-height: 200px;
 		}
 	}
 
@@ -1697,6 +1709,7 @@ h2 + .list-collapsing {
 
 .list-links-small {
 	padding-left: 0;
+	list-style: none;
 	a {
 		@include link-green;
 		text-decoration: none;
@@ -1713,6 +1726,10 @@ h2 + .list-collapsing {
 				font-style: normal;
 				margin-right: 10px;
 			}
+		}
+
+		dt {
+			font-weight: 400;
 		}
 	}
 }
