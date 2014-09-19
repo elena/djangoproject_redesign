@@ -280,9 +280,14 @@ blockquote {
 }
 
 [role="secondary"] {
-	.full-width & {
-		max-width: 700px;
-		margin: 0 auto;
+	margin: 0 10px;
+	padding: 40px 0 60px;
+
+	@include respond-min(768px) {
+		.full-width & {
+			max-width: 700px;
+			margin: 0 auto;
+		}
 	}
 }
 
@@ -613,6 +618,47 @@ blockquote {
 		}
 	}
 }
+
+[role="alert"] {
+	clear: both;
+	background: $green-very-light;
+	position: relative;
+
+	a {
+		@include link-green;
+		&.link-readmore {
+			margin: 0;
+		}
+	}
+
+	dl {
+		margin: 0 10px;
+		padding: 20px 0 25px;
+		@include clearfix;
+		dt {
+			float: left;
+			width: 32.5%;
+			padding-right: 2%;
+			i.icon {
+				color: $green;
+				margin-right: 8px;
+			}
+		}
+		dd {
+			float: left;
+			width: 60%;
+			margin-top: 0;
+		}
+	}
+
+	@include respond-min(768px) {
+		dl {
+			margin: 0;
+		}
+	}
+
+}
+
 [role="contentinfo"] {
 	// Global Footer at bottom of page
 	@include clearfix;
@@ -643,7 +689,7 @@ blockquote {
 				float: left;
 				margin-bottom: -999px;
 				padding: 0 2% 999px;
-				width: 29%;
+				width: 30.5%;
 			}
 
 			&:first-child {
@@ -700,13 +746,19 @@ blockquote {
 	.footer {
 		background: $green-dark;
 		margin-top: 20px;
-		padding: 10px 0;
+		padding: 10px 0 30px;
 		color: $green-dark-text;
 
+		.footer-logo {
+			float: left;
+			width: 32.5%;
+		}
+
 		.logo {
+			margin-right: 0;
+			margin-top: 28px;
 			.mdzr-svg & { 
 				background-position: left center;
-				width: 30.2%;
 				margin-right: 0;
 				margin-top: 28px;
 			}
@@ -1538,7 +1590,7 @@ h2 + .list-collapsing {
 		@include respond-min(768px) {
 			@include clearfix;
 			margin-top: 20px;
-			padding-top: 20px;
+			padding-top: 40px;
 		}
 
 		&:first-child {
@@ -1562,8 +1614,10 @@ h2 + .list-collapsing {
 		display: block;
 		margin: 0 auto;
 		max-width: 100%;
+	}
 
-		@include respond-min(768px) {
+	@include respond-min(768px) {
+		img {
 			float: left;
 			margin: 0 50px 0 0;
 			max-width: 200px;
@@ -1571,12 +1625,10 @@ h2 + .list-collapsing {
 		}
 	}
 
-	h2 {
-		margin: 20px 0 10px;	
-		@include respond-min(768px) {
-			margin-top: 0;
-		}
+	h3 {
+		margin: 20px 0 10px;
 	}
+
 }
 
 //Documentation styles

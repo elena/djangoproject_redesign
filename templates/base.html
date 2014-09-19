@@ -48,6 +48,10 @@
 	{% block secondary %}{% endblock %} {# Used only with one column pages: Why Django, Get Started, etc #}
 	{% block tertiary %}{% endblock %} {# Used only with one column pages: Why Django, Get Started, etc #}
 
+	{# Used to display urgent news, events, and alerts #}
+	{% block alert %}
+	{% endblock %} 
+
 	{% include "includes/footer.html" %}
 	
 	{# Require JS #}
