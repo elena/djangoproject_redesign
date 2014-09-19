@@ -912,7 +912,9 @@ blockquote {
 		+ .link-readmore {
 			display: block;
 			text-align: center;
-			margin-top: -10px;
+			@include respond-min(768px) {
+				margin-top: -10px;
+			}
 		}
 	}
 }
@@ -1767,21 +1769,75 @@ h2 + .list-collapsing {
 		text-decoration: none;
 	}
 
+	li > a,
+	dt > a {
+		&:before {
+			font-family: FontAwesome;
+			font-weight: normal;
+			font-style: normal;
+			float: left;
+			width: 23px;
+			height: 20px;
+		}
+	}
+
+	dt {
+		font-weight: 400;
+	}
+
+	dd {
+		color: $text-light;
+		padding-top: 2px;
+	}
+
 	// Add document icon before list item link
 	&.docs-list {
 		list-style: none;
-		li > a {
+		li > a,
+		dt > a {
 			&:before {
 				content: "\f0f6";
-				font-family: FontAwesome;
-				font-weight: normal;
-				font-style: normal;
-				margin-right: 10px;
 			}
 		}
 
-		dt {
-			font-weight: 400;
+		dd {
+			padding-left: 24px;
+		}
+	}
+
+	// Add news icon before list item link
+	&.news-list {
+		list-style: none;
+		li > a,
+		dt > a {
+			&:before {
+				content: "\f0a1";
+			}
+		}
+
+		dt.event > a {
+			&:before {
+				content: "\f133";
+			}
+		}
+
+		dd {
+			padding-left: 24px;
+		}
+	}
+
+	// Add link icon before list item link
+	&.resource-list {
+		list-style: none;
+		li > a,
+		dt > a {
+			&:before {
+				content: "\f0c1";
+			}
+		}
+
+		dd {
+			padding-left: 24px;
 		}
 	}
 }
