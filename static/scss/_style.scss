@@ -11,7 +11,7 @@ body {
 	@include font-size(18); 
 	background: #f8f8f8;
 	color: $text;
-	line-height: 1.4;
+	line-height: 1.6;
 	-webkit-font-smoothing: antialiased;
 
 	.layout-secondary,
@@ -563,7 +563,7 @@ blockquote {
 			max-width: 700px;
 			margin-left: auto;
 			margin-right: auto;
-			margin: .8em auto .5em;
+			margin: 1em auto .5em;
 			@include font-size(36);
 			&.small {
 				color: $green-very-light;
