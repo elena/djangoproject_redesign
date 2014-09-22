@@ -12,20 +12,6 @@ DATABASES = {
     }
 }
 
-# Django debug toolbar and Django extensions are both highly useful
-# utilities. To install them, run::
-#
-#    ?> pip install /Volumes/Data/src/djangoproject_env/django_website/requirements/development.txt
-#
-INSTALLED_APPS_ENV_ADDITIONS = (
-    'debug_toolbar',
-    'django_extensions',
-)
-
-MIDDLEWARE_CLASSES_ENV_ADDITIONS = (
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
-)
-
 # This function is used to determine when the debug toolbar should be
 # displayed: when the user is logged in and not in the admin.
 def _ddt_check(request):

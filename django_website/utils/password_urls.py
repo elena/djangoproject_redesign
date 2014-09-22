@@ -2,7 +2,7 @@
 A URLconf module for views that allow admin users to reset passwords.
 """
 
-from django.conf.urls.defaults import patterns, url
+from django.conf.urls import patterns, url, include
 
 urlpatterns = patterns('',
     url(r'^reset/$',
