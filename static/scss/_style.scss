@@ -5,6 +5,12 @@ Threespot, Washington DC
 CSS rendered with Sass 3.2.7
 */
 
+@import "compass/css3/border-radius";
+@import "compass/css3/box-shadow";
+@import "compass/css3/transition";
+@import "compass/css3/transform";
+
+
 // Globals
 body {
 	@include elena;
@@ -90,7 +96,7 @@ h1 {
 	[role="main"] & {
 		@include font-size(32);
 		margin: 40px 0 20px;
-		color: $text-light;
+		color: $text;
 	}
 }
 h2 {
@@ -156,7 +162,7 @@ p {
 }
 
 ul {
-	padding-left: 0;
+	padding-left: 20px;
 }
 
 blockquote {
@@ -176,6 +182,29 @@ blockquote {
 	}
 }
 
+.headerlink {
+	opacity: 0;
+	padding-left: 10px;
+	font-size: 0.8em;
+	position: relative;
+	top: -0.17em;
+	font-weight: 700;
+
+}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		&:hover {
+			.headerlink {
+				opacity: 1;
+			}
+		}
+	}
+
 // Layout
 [role="main"] {
 	background: #fff;
@@ -191,9 +220,7 @@ blockquote {
 		width: (410/704) * 100%;
 		.mdzr-boxshadow & {
 			border: none;
-			-moz-box-shadow: 0px 0px 0 0 #fff, 0px 0px 0 0 #fff, 500px 0 0 0 #fff, 1000px 0 0 0 #fff, 0px 600px 0 0px #fff, 500px 600px 0 0px #fff;
-			-webkit-box-shadow: 0px 0px 0 0 #fff, 0px 0px 0 0 #fff, 500px 0 0 0 #fff, 1000px 0 0 0 #fff, 0px 600px 0 0px #fff, 500px 600px 0 0px #fff;
-			box-shadow: 0px 0px 0 0 #fff, 0px 0px 0 0 #fff, 500px 0 0 0 #fff, 1000px 0 0 0 #fff, 0px 600px 0 0px #fff, 500px 600px 0 0px #fff;
+			@include box-shadow(0px 0px 0 0 #fff, 0px 0px 0 0 #fff, 500px 0 0 0 #fff, 1000px 0 0 0 #fff, 0px 600px 0 0px #fff, 500px 600px 0 0px #fff);
 			padding-left: (32/704) * 100%;	
 			padding-right: (0/704) * 100%;	
 			width: (442/704) * 100%;
@@ -206,9 +233,7 @@ blockquote {
 			width: (410/704) * 100%;
 			.mdzr-boxshadow & {
 				border: none;
-				-moz-box-shadow: 0px 0px 0 0 #fff, 0px 0px 0 0 #fff, -500px 0 0 0 #fff, -1000px 0 0 0 #fff, 0px 600px 0 0px #fff, -500px 600px 0 0px #fff;
-				-webkit-box-shadow: 0px 0px 0 0 #fff, 0px 0px 0 0 #fff, -500px 0 0 0 #fff, -1000px 0 0 0 #fff, 0px 600px 0 0px #fff, -500px 600px 0 0px #fff;
-				box-shadow: 0px 0px 0 0 #fff, 0px 0px 0 0 #fff, -500px 0 0 0 #fff, -1000px 0 0 0 #fff, 0px 600px 0 0px #fff, -500px 600px 0 0px #fff;
+				@include box-shadow(0px 0px 0 0 #fff, 0px 0px 0 0 #fff, -500px 0 0 0 #fff, -1000px 0 0 0 #fff, 0px 600px 0 0px #fff, -500px 600px 0 0px #fff);
 				padding-right: (32/704) * 100%;	
 				padding-left: (0/704) * 100%;	
 				width: (442/704) * 100%;
@@ -218,9 +243,7 @@ blockquote {
 
 	.full-width & {
 		border: none;
-		-moz-box-shadow: none;
-		-webkit-box-shadow: none;
-		box-shadow: none;
+		@include box-shadow(none);
 		float: none;
 		margin: 0 auto;
 		padding: 0 10px;
@@ -378,7 +401,7 @@ blockquote {
 	.menu-button {
 		@include font-size(20);
 		background: $green-dark;
-		border-radius: 23px;
+		@include border-radius(23px);
 		color: #fff;
 		cursor: pointer;
 		display: block;
@@ -406,17 +429,12 @@ blockquote {
 	.nav-menu-on {
 		max-height: 0;
 		overflow: hidden;
-		-webkit-transition: all 0.3s ease-out;  
-		-moz-transition: all 0.3s ease-out;
-		-o-transition: all 0.3s ease-out;
-		transition: all 0.3s ease-out;
+		@include transition(all 0.3s ease-out);
+		
 		@include respond-min(768px) {
 			// turn off animations if on a desktop width
 			max-height: none;
-			-webkit-transition: none;  
-			-moz-transition: none;
-			-o-transition: none;
-			transition: none;
+			@include transition(none);
 		}
 		
 		&.active {
@@ -885,7 +903,7 @@ blockquote {
 	-moz-appearance: none;
 	background: $green-medium;
 	border: none;
-	border-radius: 5px;
+	@include border-radius(5px);
 	color: #fff;
 	display: block;
 	-webkit-font-smoothing: subpixel-antialiased;
@@ -1063,15 +1081,15 @@ blockquote {
 		position: relative;
 
 		i {
-			@include font-size(20);
+			@include font-size(16);
 			color: $green-light;
 			display: block;
 			left: 0;
-			line-height: 28px;
+			line-height: 26px;
 			height: 30px;
 			position: absolute;
 			text-align: center;
-			top: 28px;
+			top: 26px;
 			width: 24px;
 		}
 
@@ -1080,7 +1098,7 @@ blockquote {
 			padding-top: 0;
 
 			i {
-				top: -2px;
+				top: -3px;
 			}
 		}
 	}
@@ -1298,7 +1316,7 @@ blockquote {
 		margin-right: 10px;
 		width: 40px;
 		height: 40px;
-		border-radius: 25px;
+		@include border-radius(25px);
 		background: $green;
 		line-height: 1.68em;
 		display: inline-block;
@@ -1357,9 +1375,7 @@ blockquote {
 			// Border Radius Enabled 
 			.mdzr-borderradius & {
 				background: $green-medium;
-				-moz-border-radius: 100px;
-				-webkit-border-radius: 100px;
-				border-radius: 100px;
+				@include border-radius(100px);
 				color: #fff;
 			}
 			
@@ -1386,20 +1402,11 @@ blockquote {
 
 			// Border Radius, SVG, and Animation Enabled
 			.mdzr-svg.mdzr-borderradius.mdzr-cssanimations & {
-				-webkit-transition: all 0.3s ease-out;  
-				-moz-transition: all 0.3s ease-out;
-				-o-transition: all 0.3s ease-out;
-				transition: all 0.3s ease-out;
-				-moz-transform: rotate(0.5turn);
-				-webkit-transform: rotate(0.5turn);
-				-ms-transform: rotate(0.5turn);
-				transform: rotate(0.5turn);
+				@include transition(all 0.3s ease-out);
+				@include transform(rotate(0.5turn));
 
 				&.inview {
-					-moz-transform: rotate(0turn);
-					-webkit-transform: rotate(0turn);
-					-ms-transform: rotate(0turn);
-					transform: rotate(0turn);
+					@include transform(rotate(0turn));
 				}
 				
 				&.icon-bolt {
@@ -1439,14 +1446,8 @@ blockquote {
 			:-o-prefocus,
 			& { 
 				background: $green-medium !important;
-				-webkit-transition: none !important;  
-				-moz-transition: none !important;
-				-o-transition: none !important;
-				transition: none !important;
-				-moz-transform: none !important;
-				-webkit-transform: none !important;
-				-ms-transform: none !important;
-				transform: none !important;
+				@include transition(none !important);
+				@include transform(none !important);
 			}
 		}
 	}
@@ -1465,21 +1466,15 @@ blockquote {
 				width: 40px;
 				height: 40px;
 				top: 10px;
-				border-radius: 20px;
+				@include border-radius(20px);
 				background: $green;
 				display: inline-block;
 				text-align: center;
 				@include font-size(24);
 
 				.mdzr-svg.mdzr-borderradius.mdzr-cssanimations & {
-					-webkit-transition: none;  
-					-moz-transition: none;
-					-o-transition: none;
-					transition: none;
-					-moz-transform: rotate(0);
-					-webkit-transform: rotate(0);
-					-ms-transform: rotate(0);
-					transform: rotate(0);
+					@include transition(none);
+					@include transform(rotate(0));
 				}
 			}
 
@@ -1505,7 +1500,7 @@ blockquote {
 				width: 80px;
 				height: 80px;
 				top: 20px;
-				border-radius: 40px;
+				@include border-radius(40px);
 				@include font-size(46);
 			}
 		}
@@ -1567,11 +1562,7 @@ h2 + .list-collapsing {
 		.collapsing-content {
 			overflow: hidden;
 			max-height: 0px;
-
-			-webkit-transition: all 0.5s ease-out;  
-			-moz-transition: all 0.5s ease-out;
-			-o-transition: all 0.5s ease-out;
-			transition: all 0.5s ease-out;
+			@include transition(all 0.5s ease-out);
 		}
 		li.active .collapsing-content {
 			max-height: 1000px;
@@ -1686,7 +1677,7 @@ h2 + .list-collapsing {
 		background: $white;
 		padding: 15px 20px;
 		border: 1px solid $gray-line;
-		border-radius: 4px;
+		@include border-radius(4px);
 		margin: 25px 0;
 		p {
 			margin: 0.8em 0;
@@ -1862,7 +1853,7 @@ h2 + .list-collapsing {
 		-moz-appearance: none;
 		background: #fff;
 		border: 1px solid $gray-line;
-		border-radius: 4px;
+		@include border-radius(4px);
 		cursor: auto;
 		display: block;
 		font-weight: 400;
@@ -1987,7 +1978,7 @@ h2 + .list-collapsing {
 		height: auto;
 		width: auto;
 		margin: 0 5px;
-		border-radius: 15px;
+		@include border-radius(15px);
 		display: block;
 		text-decoration: none; 
 		@include respond-min(320px) {
@@ -2002,7 +1993,7 @@ h2 + .list-collapsing {
 		&.next {
 			@include font-size(16);
 			@include respond-min(320px) {
-				border-radius: 20px;
+				@include border-radius(20px);
 				height: 40px;
 				line-height: 43px;
 				width: 40px;
