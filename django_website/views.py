@@ -62,12 +62,19 @@ class Community(BaseSectionView):
     nav = "community"
     template_name = "community.html"
 
-class Docs(BaseSectionView):
+class DocsIndex(BaseSectionView):
     """
     Django Documentation.
     """
-    nav = "docs"
-    template_name = "docs.html"
+    nav = "docs_index"
+    template_name = "docs_index.html"
+
+class DocsDetail(BaseSectionView):
+    """
+    Django Documentation.
+    """
+    nav = "docs_detail"
+    template_name = "docs_detail.html"
 
 class Code(BaseSectionView):
     """
