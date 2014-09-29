@@ -19,10 +19,10 @@
 <span id="getting-help"></span><h2>Getting help<a class="headerlink" href="#getting-help" title="Permalink to this headline">¶</a></h2>
 <p>Having trouble? We’d like to help!</p>
 <ul class="simple">
-<li>Try the <a class="reference internal" href="faq/"><em>FAQ</em></a> – it’s got answers to many common questions.</li>
-<li>Looking for specific information? Try the <a class="reference internal" href="genindex/"><em>Index</em></a>, <a class="reference internal" href="py-modindex/"><em>Module Index</em></a> or
-the <a class="reference internal" href="contents/"><em>detailed table of contents</em></a>.</li>
-<li>Search for information in the archives of the <a class="reference internal" href="internals/mailing-lists/#django-users-mailing-list"><em>django-users</em></a> mailing list, or
+<li>Try the <a class="reference internal" href="{% url 'docs_detail' %}"><em>FAQ</em></a> – it’s got answers to many common questions.</li>
+<li>Looking for specific information? Try the <a class="reference internal" href="{% url 'docs_detail' %}"><em>Index</em></a>, <a class="reference internal" href="{% url 'docs_detail' %}"><em>Module Index</em></a> or
+the <a class="reference internal" href="{% url 'docs_detail' %}"><em>detailed table of contents</em></a>.</li>
+<li>Search for information in the archives of the <a class="reference internal" href="{% url 'docs_detail' %}"><em>django-users</em></a> mailing list, or
 <a class="reference external" href="https://groups.google.com/d/forum/django-users">post a question</a>.</li>
 <li>Ask a question in the <a class="reference external" href="irc://irc.freenode.net/django">#django IRC channel</a>, or search the <a class="reference external" href="http://django-irc-logs.com/">IRC logs</a> to see
 if it’s been asked before.</li>
@@ -320,16 +320,16 @@ you can contribute:</p>
     <ul>
       
         
-          <li>Prev: <a href="contents/">Django documentation contents</a></li>
+          <li>Prev: <a href="{% url 'docs_detail' %}">Django documentation contents</a></li>
         
         
-          <li>Next: <a href="intro/">Getting started</a></li>
+          <li>Next: <a href="{% url 'docs_detail' %}">Getting started</a></li>
         
-        <li><a href="/en/1.7/contents/">Table of contents</a></li>
+        <li><a href="{% url 'docs_detail' %}">Table of contents</a></li>
         
-          <li><a href="/en/1.7/genindex/">General Index</a></li>
+          <li><a href="{% url 'docs_detail' %}">General Index</a></li>
         
-          <li><a href="/en/1.7/py-modindex/">Python Module Index</a></li>
+          <li><a href="{% url 'docs_detail' %}">Python Module Index</a></li>
         
       
     </ul>
@@ -340,7 +340,7 @@ you can contribute:</p>
     <ul>
       
         <li>
-          <a href="/en/1.7/">Django 1.7 documentation</a>
+          <a href="{% url 'docs_detail' %}">Django 1.7 documentation</a>
           
           <ul><li>Django documentation</li></ul>
           
@@ -361,5 +361,7 @@ you can contribute:</p>
       </span>
       </p>
     
+      <a href="#top" class="backtotop"><i class="icon icon-chevron-up"></i> Back to Top</a>
+
 	</div>
 {% endblock %}
