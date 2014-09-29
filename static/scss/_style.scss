@@ -1703,13 +1703,13 @@ h2 + .list-collapsing {
 
 	dt,
 	li {
-		@include font-size(14);
-		font-weight: 700;
+		@include font-size(16);
 		margin-top: 15px;
 
 		&:first-child {
 			margin-top: 0;
 		}
+		font-weight: 400;
 	}
 
 	dd {
