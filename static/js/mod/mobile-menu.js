@@ -14,7 +14,9 @@ define([
 			self.button = $('<div class="menu-button"><i class="icon icon-reorder"></i><span>Menu</span></div>');
 			self.button.insertBefore(self.menu);
 			self.button.on( 'click', function(){
+				alert('active');
 				self.menu.toggleClass('active');
+				self.button.toggleClass('active');
 			});
 		}
 	};
