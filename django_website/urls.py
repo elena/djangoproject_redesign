@@ -17,6 +17,7 @@ urlpatterns = patterns('',
     url(r'^docs/example$', views.DocsDetail.as_view(), name="docs_detail"),
     url(r'^code/$', views.Code.as_view(), name="code"),
     url(r'^case_study/$', views.CaseStudy.as_view(), name="case_study"),
+    url(r'^test/$', views.TestTemplate.as_view(), name="test_template"),
 )
 
 if settings.DEBUG:

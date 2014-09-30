@@ -587,6 +587,21 @@ blockquote {
 		&:hover {
 			background: darken($green-medium-dark, 2%);
 		}
+
+		background: none;
+		border: 1px solid white;
+		color: $white;
+		em {
+			color: white;
+		}
+		&:hover {
+			background: $white;
+			color: $green;
+			em {
+				color: $green;
+			}
+		}
+
 		&.white {
 			background: $white;
 			color: $green;
@@ -684,6 +699,9 @@ blockquote {
 			float: left;
 			width: 60%;
 			margin-top: 0;
+		}
+		.link-readmore {
+			margin-left: 10px;
 		}
 	}
 
@@ -801,7 +819,7 @@ blockquote {
 			.mdzr-svg & { 
 				background-position: left center;
 				margin-right: 0;
-				margin-top: 28px;
+				margin-top: 20px;
 			}
 		}
 	}
@@ -844,9 +862,12 @@ blockquote {
 			@include clearfix;
 			margin: 0;
 			padding: 17px 10px 11px;
+			display: block;
+			clear: both;
 			@include respond-min(768px) {
 				background: none;
 				float: left;
+				clear: none;
 				padding: 0 0 0 25px;
 				width: 14.35%;
 			}
@@ -870,10 +891,10 @@ blockquote {
 				margin-top: 5px;
 			}
 
-			&.mediatemple {
-				background: url(/static/img/logo-mediatemple.png) no-repeat left center;
+			&.rackspace {
+				background: url(/static/img/logo-rackspace.png) no-repeat left center;
 				.mdzr-svg & {
-					background: url(/static/img/logo-mediatemple.svg) no-repeat left center;
+					background: url(/static/img/logo-rackspace.svg) no-repeat left center;
 				}
 			}
 			&.typekit {
@@ -956,6 +977,16 @@ blockquote {
 			@include respond-min(768px) {
 				margin-top: -10px;
 			}
+		}
+	}
+
+	&.outline {
+		background: none;
+		border: 1px solid $green;
+		color: $green;
+		&:hover {
+			border-color: darken($green-medium, 2%);
+			color: darken($green-medium, 2%);
 		}
 	}
 }
@@ -1657,6 +1688,10 @@ blockquote {
 
 		h2, h3, h4, p {
 			padding-left: 240px;
+		}
+
+		h3 {
+			margin-top: 10px;
 		}
 
 	}

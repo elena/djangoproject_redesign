@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 {% load static %}
 {% block title %}Django Community{% endblock %}
-
-{% block header %}<h1>Community</h1>{% endblock %}
+{% block layout_class %}sidebar-right{% endblock %}
 
 {% block copy_banner %}
 <div class="copy-banner">
 	<div class="container">
+		<h1 class="visuallyhidden">Community</h1>
 		<!-- This could ideally be pulled from Django People and Django Packages -->
 		<p><em>9,513</em> Django Developers. <em>75</em> Countries. <em>1,701</em> Packages and Projects.</p>
 	</div>

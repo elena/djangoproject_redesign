@@ -89,3 +89,10 @@ class CaseStudy(BaseSectionView):
     """
     nav = "case_study"
     template_name = "case_study.html"
+
+class TestTemplate(BaseSectionView):
+    """
+    Test template for old markup
+    """
+    nav = "test"
+    template_name = "test_template.html"
