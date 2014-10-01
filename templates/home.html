@@ -3,29 +3,24 @@
 {% block body_class %}homepage{% endblock %}
 {% block layout_class %}sidebar-right{% endblock %}
 
-{% block header %}<h1>Django</h1>{% endblock %}
-
-{% block copy_banner %}
-<div class="copy-banner">
-  <div class="container">
-    <p>
-      <em>Django makes it easier to build better Web apps more quickly and with less code</em>
-    </p>
-    <p>
-      <a href="{% url 'start' %}" class="cta white">Get Started with Django</a>
-    </p>
-    <p class="small">
-      Used by these great companies, and many more
-      <ul class="django-companies">
-        <li><a href="{% url 'case_study' %}" class="company-mozilla">Mozilla</a></li>
-        <li><a href="{% url 'case_study' %}" class="company-pinterest">Pinterest</a></li>
-        <li><a href="{% url 'case_study' %}" class="company-theguardian">The Guardian</a></li>
-        <li><a href="{% url 'case_study' %}" class="company-instagram">Instagram</a></li>
-        <li><a href="{% url 'case_study' %}" class="company-rdio">Rdio</a></li>
-      </ul>
-    </p>
-  </div>
-</div>
+{% block header %}
+  <h1 class="visuallyhidden">Django</h1>
+  <p>
+    <em>Django makes it easier to build better Web apps more quickly and with less code</em>
+  </p>
+  <p>
+    <a href="{% url 'start' %}" class="cta white">Get Started with Django</a>
+  </p>
+  <p class="small">
+    Used by these great companies, and many more
+    <ul class="django-companies">
+      <li><a href="{% url 'case_study' %}" class="company-mozilla">Mozilla</a></li>
+      <li><a href="{% url 'case_study' %}" class="company-pinterest">Pinterest</a></li>
+      <li><a href="{% url 'case_study' %}" class="company-theguardian">The Guardian</a></li>
+      <li><a href="{% url 'case_study' %}" class="company-instagram">Instagram</a></li>
+      <li><a href="{% url 'case_study' %}" class="company-rdio">Rdio</a></li>
+    </ul>
+  </p>
 {% endblock %}
 
 {% block body %}
@@ -68,17 +63,17 @@
       <li>
         <h3 class="logo" title="Mozilla">Mozilla</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
-        <a href="#">Read Case Study</a>
+        <a href="{% url 'case_study' %}">Read Case Study</a>
       </li>
       <li>
         <h3 class="logo" title="Disqus">Disqus</h3>
         <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <a href="#">Read Case Study</a>
+        <a href="{% url 'case_study' %}">Read Case Study</a>
       </li>
       <li>
         <h3 class="logo" title="Knight Foundation">Knight Foundation</h3>
         <p>When the Knight Foundation began redesigning their <a href="http://www.knightfoundation.org">website</a>, they were on multiple content management systems they’d outgrown, with a site that couldn’t handle traffic spikes. Knight needed a future-proof solution.</p>
-        <a href="#">Read Case Study</a>
+        <a href="{% url 'case_study' %}">Read Case Study</a>
       </li>
     </ul>
 

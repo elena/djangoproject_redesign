@@ -32,7 +32,12 @@
 
 	{% include "includes/header.html" %}
 
-	{% block copy_banner %}{% endblock %}
+
+	<div class="copy-banner">
+		<div class="container">
+			{% block header %}{% endblock %}
+		</div>
+	</div>
 	
 	<div class="container {% block layout_class %}{% endblock %}">
 		

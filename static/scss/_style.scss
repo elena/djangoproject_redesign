@@ -868,8 +868,31 @@ blockquote {
 				background: none;
 				float: left;
 				clear: none;
-				padding: 0 0 0 25px;
-				width: 14.35%;
+				padding: 0 0 0 2.2%;
+				width: 14.95%;
+
+				&.design {
+					width: 31%;
+
+					span, a {
+						float: left;
+						clear: none;
+						&.threespot {
+							clear: both;
+						}
+
+						&.ampersand {
+							position: relative;
+							top: 6px;
+							margin: 0 6px;
+							line-height: 36px;
+						}
+					}
+				}
+			}
+
+			span.ampersand {
+				line-height: 24px;
 			}
 		}
 
@@ -904,6 +927,13 @@ blockquote {
 				background: url(/static/img/logo-threespot.png) no-repeat left center;
 				.mdzr-svg & {
 					background: url(/static/img/logo-threespot.svg) no-repeat left center;
+				}
+			}
+
+			&.andrevv {
+				background: url(/static/img/logo-andrevv.png) no-repeat left center;
+				.mdzr-svg & {
+					background: url(/static/img/logo-andrevv.svg) no-repeat left center;
 				}
 			}
 		}
@@ -984,6 +1014,7 @@ blockquote {
 		background: none;
 		border: 1px solid $green;
 		color: $green;
+		font-weight: 400;
 		&:hover {
 			border-color: darken($green-medium, 2%);
 			color: darken($green-medium, 2%);
@@ -1087,7 +1118,7 @@ blockquote {
 .callout-right {
 	@include respond-min(768px) {
 		float: right;
-		margin: 35px 0 0 35px;
+		margin: 26px 0 0 35px;
 		width: 33%;
 
 		&.two-thirds {
@@ -1103,7 +1134,7 @@ blockquote {
 .callout-left {
 	@include respond-min(768px) {
 		float: left;
-		margin: 35px 35px 0 0;
+		margin: 26px 35px 0 0;
 		width: 33%;
 
 		&.two-thirds {

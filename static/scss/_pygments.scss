@@ -1,4 +1,27 @@
 // Pygments Code Hightlighting Styles
+
+pre.literal-block {
+	@include font-size(13);
+	border: 1px solid #EAEAEA;
+	background: #F4F4F4;
+	background: #f8f8f8; overflow: auto;
+	border-radius: 4px;
+	margin: 25px 0;
+	padding: 10px 15px;
+	color: $green-dark;
+}
+
+.snippet-filename {
+	background: $green-medium-dark;
+	color: white;
+	font-family: monospace;
+	padding: 5px 15px;
+
+	+ .highlight {
+		margin-top: 0;
+	}
+}
+
 .highlight {
 	@include font-size(13);
 	border: 1px solid #EAEAEA;

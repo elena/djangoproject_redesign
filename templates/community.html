@@ -3,14 +3,10 @@
 {% block title %}Django Community{% endblock %}
 {% block layout_class %}sidebar-right{% endblock %}
 
-{% block copy_banner %}
-<div class="copy-banner">
-	<div class="container">
-		<h1 class="visuallyhidden">Community</h1>
-		<!-- This could ideally be pulled from Django People and Django Packages -->
-		<p><em>9,513</em> Django Developers. <em>75</em> Countries. <em>1,701</em> Packages and Projects.</p>
-	</div>
-</div>
+{% block header %}
+	<h1 class="visuallyhidden">Community</h1>
+	<!-- This could ideally be pulled from Django People and Django Packages -->
+	<p><em>9,513</em> Django Developers. <em>75</em> Countries. <em>1,701</em> Packages and Projects.</p>
 {% endblock %}
 
 {% block body %}
@@ -43,7 +39,10 @@
 
 <p>Django’s template language is designed to strike a balance between power and ease. It’s designed to feel comfortable and easy-to-learn to those used to working with HTML, like designers and front-end developers. But it is also flexible and highly extensible, allowing developers to augment the template language as needed.</p>
 
-<h2>Django RSS Feeds</h2>
+
+<div class="list-collapsing-header">
+	<h2>Django RSS Feeds</h2>
+</div>
 
 <ul class="list-collapsing">
 	<li>

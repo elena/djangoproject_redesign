@@ -90,6 +90,13 @@ class CaseStudy(BaseSectionView):
     nav = "case_study"
     template_name = "case_study.html"
 
+class Download(BaseSectionView):
+    """
+    Django Download page.
+    """
+    nav = "download"
+    template_name = "download.html"
+
 class TestTemplate(BaseSectionView):
     """
     Test template for old markup
