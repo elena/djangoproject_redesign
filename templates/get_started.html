@@ -1,5 +1,5 @@
 {% extends 'base.html' %}{% load static pygmentify %}
-{% block layout_class %}full-width{% endblock %}
+{% block layout_class %}sidebar-right{% endblock %}
 {% block title %}Django Get Started{% endblock %}
 
 {% block header %}
@@ -213,9 +213,8 @@ Python code TBD
 {% endblock %}
 
 
-{% block secondary %}
-  <div class="full-width">
-    <div role="secondary">
+{% block sidebar %}
+    <div role="complementary">
       <h2>Other Django Resources</h2>
       <dl class="list-image">
         <li>
@@ -240,5 +239,4 @@ Python code TBD
         </li>
       </ul>
     </div>
-  </div>
 {% endblock %}

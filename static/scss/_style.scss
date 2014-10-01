@@ -24,6 +24,11 @@ body {
 	[role="complementary"] {
 		@include colfax; // reverse font style on sidebar and secondary areas
 	}
+
+	// don't activate mobile styles for larger screens
+	@include device-min(768px) {
+		min-width: 768px;
+	}
 }
 a {
 	color: $text;
@@ -89,7 +94,7 @@ h1 {
 	color: #fff;
 	letter-spacing: -1px;
 	line-height: 1.1;
-	@include respond-min(768px) {
+	@include device-min(768px) {
 		@include font-size(32);
 	}
 
@@ -114,7 +119,7 @@ h2 {
 		}
 
 		&:first-child {
-			@include respond-min(768px) {
+			@include device-min(768px) {
 				margin-top: 20px;
 			}
 		}
@@ -138,14 +143,14 @@ h3 {
 		padding-bottom: 15px;
 
 		&:first-child {
-			@include respond-min(768px) {
+			@include device-min(768px) {
 				margin-top: 12px;
 			}
 		}
 	}
 
 	[role="complementary"] & {
-		@include font-size(20);
+		@include font-size(18);
 		border-bottom: 1px solid $gray-line;
 	}
 }
@@ -183,7 +188,7 @@ blockquote {
 		@include font-size(14);
 	}
 
-	@include respond-min(768px) {
+	@include device-min(768px) {
 		@include font-size(28);
 	}
 }
@@ -214,35 +219,31 @@ blockquote {
 // Layout
 [role="main"] {
 	background: #fff;
-	padding: 1px 10px;
-	@include respond-min(768px) {
+	padding: 1px 10px 40px;
+	@include device-min(768px) {
 		min-height: 800px;
 		border: 1px solid #ddd;
 		float: right;
 		margin: 0;
 		padding-bottom: 80px;
-		padding-left: (30/704) * 100%;	
-		padding-right: (30/704) * 100%;	
-		width: (410/704) * 100%;
+		padding-left: (3/100) * 100%;	
+		padding-right: (3/100) * 100%;	
+		width: (60/100) * 100%;
 		.mdzr-boxshadow & {
 			border: none;
 			@include box-shadow(0px 0px 0 0 #fff, 0px 0px 0 0 #fff, 500px 0 0 0 #fff, 1000px 0 0 0 #fff, 0px 600px 0 0px #fff, 500px 600px 0 0px #fff);
-			padding-left: (32/704) * 100%;	
-			padding-right: (0/704) * 100%;	
-			width: (442/704) * 100%;
+			padding-left: (4/100) * 100%;	
+			padding-right: 0;	
+			width: (62/100) * 100%;
 		}
 
 		.sidebar-right & {
 			float: left;
-			padding-left: (30/704) * 100%;	
-			padding-right: (30/704) * 100%;	
-			width: (410/704) * 100%;
 			.mdzr-boxshadow & {
 				border: none;
 				@include box-shadow(0px 0px 0 0 #fff, 0px 0px 0 0 #fff, -500px 0 0 0 #fff, -1000px 0 0 0 #fff, 0px 600px 0 0px #fff, -500px 600px 0 0px #fff);
-				padding-right: (32/704) * 100%;	
-				padding-left: (0/704) * 100%;	
-				width: (442/704) * 100%;
+				padding-left: 10px;
+				padding-right: (4/100) * 100%;	
 			}
 		}
 	}
@@ -252,12 +253,12 @@ blockquote {
 		@include box-shadow(none);
 		float: none;
 		margin: 0 auto;
-		padding: 0 10px;
+		padding: 0 10px 40px;
 		width: auto;
 
-		@include respond-min(768px) {
+		@include device-min(768px) {
 			max-width: 700px;
-			padding: 20px 0;
+			padding: 20px 0 40px;
 			width: (704/768) * 100%;
 		}
 	}
@@ -294,15 +295,15 @@ blockquote {
 [role="complementary"] {
 	padding: 0 10px 20px;
 	@include font-size(14);
-	@include respond-min(768px) {
+	@include device-min(768px) {
 		float: right;
 		margin: 20px 0;
-		margin-right: (32/704) * 100%;
-		padding: 0 0 40px;
-		width: (197/704) * 100%;
+		margin-right: (3/100) * 100%;
+		padding: 0 0 40px 0;
+		width: (30/100) * 100%;
 
 		.sidebar-right & {
-			margin-left: (32/704) * 100%;
+			margin-left: (3/100) * 100%;
 			margin-right: 0;
 		}
 	}
@@ -312,7 +313,7 @@ blockquote {
 	margin: 0 10px;
 	padding: 40px 0 60px;
 
-	@include respond-min(768px) {
+	@include device-min(768px) {
 		.full-width & {
 			max-width: 700px;
 			margin: 0 auto;
@@ -336,10 +337,11 @@ blockquote {
 }
 .container { 
 	//reusable container class to center content
-	@include respond-min(768px) {
+	@include device-min(768px) {
 		margin: 0 auto;	
 		max-width: 1100px;
 		width: (704/768) * 100%;
+		min-width: 768px;
 	}
 	@include old-ie {
 		min-width: 768px;
@@ -359,7 +361,7 @@ blockquote {
 	z-index: 0;
 
 	.container {
-		@include respond-min(768px) {
+		@include device-min(768px) {
 			position: relative;
 		}
 	}
@@ -373,10 +375,14 @@ blockquote {
 		float: left;
 		margin: 12px 0 0 10px;
 		display: none;
+
 		@include respond-min(1150px) {
-				width: 260px;
-				display: inline;
-			}
+			float: none;
+			width: 260px;
+			display: inline-block;
+		}
+
+
 	}
 
 	
@@ -399,7 +405,7 @@ blockquote {
 			background: url(/static/img/logo-django.svg) center center no-repeat;
 		}
 
-		@include respond-min(768px) {
+		@include device-min(768px) {
 			margin-left: 0;
 		}
 	}
@@ -419,7 +425,7 @@ blockquote {
 		text-decoration: none;
 		width: 45px;		
 
-		@include respond-min(768px) {
+		@include device-min(768px) {
 			display: none; 
 		}
 
@@ -441,7 +447,7 @@ blockquote {
 		overflow: hidden;
 		@include transition(all 0.3s ease-out);
 		
-		@include respond-min(768px) {
+		@include device-min(768px) {
 			// turn off animations if on a desktop width
 			max-height: none;
 			@include transition(none);
@@ -457,7 +463,7 @@ blockquote {
 
 		width: 100%;
 
-		@include respond-min(768px) {
+		@include device-min(768px) {
 			width: auto;
 			float: right;
 		}
@@ -466,7 +472,7 @@ blockquote {
 			margin: 10px 0 0;
 			padding: 0;
 
-			@include respond-min(768px) {
+			@include device-min(768px) {
 				margin: 0;
 			}
 		}
@@ -482,7 +488,7 @@ blockquote {
 			margin: 0 10px;
 			border-top: 1px solid lighten($green-dark, 5%);
 
-			@include respond-min(768px) {
+			@include device-min(768px) {
 				margin: 0;
 				border: 0;
 				float: left;
@@ -504,13 +510,13 @@ blockquote {
 				color: $green-very-light;
 			}
 
-			@include respond-min(768px) {
+			@include device-min(768px) {
 				padding: 20px 10px;
 			}
 		}
 
 		.nav-primary {
-			@include respond-min(768px) {
+			@include device-min(768px) {
 				position: absolute;
 				right: 0;
 				top: 45px;
@@ -541,7 +547,7 @@ blockquote {
 		top: 0;
 		max-width: 660px;
 
-		@include respond-min(768px) {
+		@include device-min(768px) {
 			position: static;
 		}
 	}
@@ -550,9 +556,6 @@ blockquote {
 	// Large green callout at the top of the page
 	background: $green-medium;
 	padding: 2px 10px;
-	@include respond-min(768px) {
-		padding: 2px 0;
-	}
 	
 	p {
 		@include colfax;
@@ -568,7 +571,7 @@ blockquote {
 			color: white;
 		}
 
-		@include respond-min(768px) {
+		@include device-min(768px) {
 			@include font-size(32);
 
 			color: $green-very-light;
@@ -590,14 +593,16 @@ blockquote {
 		}
 
 		background: none;
-		border: 1px solid white;
-		color: $white;
+		border: 1px solid $green-very-light;
+		color: $green-very-light;
+		font-weight: 400;
 		em {
 			color: white;
 		}
 		&:hover {
 			background: $white;
 			color: $green;
+			border-color: $white;
 			em {
 				color: $green;
 			}
@@ -606,6 +611,8 @@ blockquote {
 		&.white {
 			background: $white;
 			color: $green;
+			font-weight: 700;
+			border: 0;
 			&:hover {
 				background: #fff;
 			}
@@ -678,6 +685,7 @@ blockquote {
 	clear: both;
 	background: $green-very-light;
 	position: relative;
+	padding: 0 10px;
 
 	a {
 		@include link-green;
@@ -706,10 +714,10 @@ blockquote {
 		}
 	}
 
-	@include respond-min(768px) {
+	@include device-min(768px) {
 		dt {
 			float: left;
-			width: 32.5%;
+			width: 31%;
 			padding-right: 2%;
 		}
 		dl {
@@ -727,9 +735,6 @@ blockquote {
 	background: $green-medium;
 	clear: both;
 	margin-top: 0px;
-	@include retina-display { //double density for retina display
-		background-size: 250px 250px;
-	}
 
 	.container {
 		@include clearfix;
@@ -738,18 +743,19 @@ blockquote {
 
 	.subfooter {
 		padding: 0 10px;
+		@include clearfix;
 
-		div {
+		.col {
 			&:first-child {
 				h2 {
 					border-top: 0;
 				}
 			}
-			@include respond-min(768px) {
+			@include device-min(768px) {
 				float: left;
 				margin-bottom: -999px;
-				padding: 0 2% 999px;
-				width: 30.5%;
+				padding: 0 3% 999px 0;
+				width: 30%;
 			}
 
 			&:first-child {
@@ -761,9 +767,7 @@ blockquote {
 				padding-right: 0;
 			}
 		}
-		@include respond-min(768px) {
-			padding: 0;
-		}
+
 	}
 	
 	h2 {
@@ -773,7 +777,7 @@ blockquote {
 		font-weight: 700;
 		margin-top: 20px;
 		padding: 30px 0 10px;
-		@include respond-min(768px) {
+		@include device-min(768px) {
 			border: none;
 			margin-top: 0;	
 		}
@@ -806,12 +810,12 @@ blockquote {
 	.footer {
 		background: $green-dark;
 		margin-top: 20px;
-		padding: 10px 0 30px;
+		padding: 10px 10px 30px;
 		color: $green-dark-text;
 
 		.footer-logo {
 			float: left;
-			width: 32.5%;
+			width: 33%;
 		}
 
 		.logo {
@@ -838,7 +842,7 @@ blockquote {
 		text-decoration: none;
 		text-indent: 100%;
 		width: 142px;
-		@include respond-min(768px) {
+		@include device-min(768px) {
 			float: left;
 			margin: 20px 90px 0 0;
 		}
@@ -855,7 +859,7 @@ blockquote {
 		color: $green-dark-text;
 		margin: 0;
 		padding: 0;
-		@include respond-min(768px) {
+		@include device-min(768px) {
 			border: none;
 		}
 		
@@ -865,19 +869,19 @@ blockquote {
 			padding: 17px 10px 11px;
 			display: block;
 			clear: both;
-			@include respond-min(768px) {
+			@include device-min(768px) {
 				background: none;
 				float: left;
 				clear: none;
-				padding: 0 0 0 2.2%;
-				width: 14.95%;
+				padding: 0 2.2% 0 0;
+				width: 14.1%;
 
 				&.design {
-					width: 31%;
+					width: 30.5%;
 
-					span, a {
-						float: left;
-						clear: none;
+					span.ampersand, a {
+						display: inline-block;
+						vertical-align: top;
 						&.threespot {
 							clear: both;
 						}
@@ -902,6 +906,7 @@ blockquote {
 			height: 24px;
 			line-height: 36px;
 			padding-right: 12px;
+			white-space: nowrap;
 		}
 
 		a {
@@ -910,7 +915,7 @@ blockquote {
 			overflow: hidden;
 			text-indent: -200px;
 			width: 94px;
-			@include respond-min(768px) {
+			@include device-min(768px) {
 				clear: both;
 				margin-top: 5px;
 			}
@@ -945,7 +950,7 @@ blockquote {
 		@include font-size(12);
 		clear: both;
 		margin: 20px 0 0 10px;
-		@include respond-min(768px) {
+		@include device-min(768px) {
 			max-width: 80%;
 			padding-top: 30px;
 			margin: 0;
@@ -966,7 +971,7 @@ blockquote {
 	padding: 10px 0;
 	text-align: center;
 	text-transform: uppercase;
-	@include respond-min(768px) {
+	@include device-min(768px) {
 		display: none;
 	}
 }
@@ -986,7 +991,7 @@ blockquote {
 	padding: 1em 1.5em;
 	text-align: center;
 	text-decoration: none;
-	@include respond-min(768px) {
+	@include device-min(768px) {
 		margin: 20px 0;
 	}
 
@@ -1005,7 +1010,7 @@ blockquote {
 		+ .link-readmore {
 			display: block;
 			text-align: center;
-			@include respond-min(768px) {
+			@include device-min(768px) {
 				margin-top: -10px;
 			}
 		}
@@ -1016,9 +1021,17 @@ blockquote {
 		border: 1px solid $green;
 		color: $green;
 		font-weight: 400;
+
+		em {
+			color: $green-dark;
+		}
+
 		&:hover {
-			border-color: darken($green-medium, 2%);
-			color: darken($green-medium, 2%);
+			background: $green;
+			color: white;
+			em {
+				color: white;
+			}
 		}
 	}
 }
@@ -1064,19 +1077,19 @@ blockquote {
 	//two column layout module
 	margin: 20px 0;
 
-	@include respond-min(768px) {
+	@include device-min(768px) {
 		@include clearfix;
 		margin: 0;
 		.col {
 			float: left;
-			width: 45%;
+			width: 46%;
 
 			&:first-child {
-				padding-right: 10%;
+				padding-right: 7%;
 			}
 		}
 		.one-third {
-			width: 30%;
+			width: 33%;
 		}
 		.two-third {
 			width: 60%;
@@ -1117,7 +1130,7 @@ blockquote {
 	}
 }
 .callout-right {
-	@include respond-min(768px) {
+	@include device-min(768px) {
 		float: right;
 		margin: 26px 0 0 35px;
 		width: 33%;
@@ -1133,7 +1146,7 @@ blockquote {
 	}
 }
 .callout-left {
-	@include respond-min(768px) {
+	@include device-min(768px) {
 		float: left;
 		margin: 26px 35px 0 0;
 		width: 33%;
@@ -1286,7 +1299,7 @@ blockquote {
 		border-top: 1px solid $gray-line;
 		margin-top: 20px;
 		padding-top: 20px;
-		@include respond-min(768px) {
+		@include device-min(768px) {
 			border: none;
 			float: left;
 			padding-right: 5%;
@@ -1378,7 +1391,7 @@ blockquote {
 		float: left;
 		margin: 10px 5% 0 0;
 		width: 45%;
-		@include respond-min(768px) {
+		@include device-min(768px) {
 			margin-right: 3%;
 			width: 30%;
 		}
@@ -1390,6 +1403,9 @@ blockquote {
 }
 .list-features {
 	// Animated Feature List from the Why Django Page. Require looks for the 'list-features' class to load the appropriate scripts to animate the icons. Degrades gracefully into mobile.
+	
+	margin: 50px 0 20px;
+
 	dt {
 		@include font-size(24);
 		border-top: 1px solid $gray-line;
@@ -1414,11 +1430,11 @@ blockquote {
 		}
 	}
 
-	@include respond-min(768px) {
+	@include device-min(768px) {
 		padding-bottom: 40px;
 
 		dt {
-			margin-top: 90px;
+			margin-top: 60px;
 			padding: 60px 0 0 245px;
 			position: relative;
 
@@ -1453,7 +1469,7 @@ blockquote {
 			left: 0;
 			position: absolute;
 			text-align: center;
-			top: 50px;
+			top: 60px;
 			width: 200px;
 			margin-right: 0;
 
@@ -1563,7 +1579,7 @@ blockquote {
 				}
 			}
 
-		@include respond-min(768px) {
+		@include device-min(768px) {
 
 			dt {
 				padding: 20px 0 0px 110px;
@@ -1592,7 +1608,7 @@ blockquote {
 	}
 }
 
-@include respond-min(768px) {
+@include device-min(768px) {
 
 	.list-collapsing-header {
 		float: left;
@@ -1678,7 +1694,7 @@ blockquote {
 		border-top: 1px solid $gray-line;
 		margin-top: 20px;
 		padding-top: 40px;
-		@include respond-min(768px) {
+		@include device-min(768px) {
 			@include clearfix;
 			margin-top: 20px;
 			padding-top: 40px;
@@ -1710,7 +1726,7 @@ blockquote {
 		max-width: 100%;
 	}
 
-	@include respond-min(768px) {
+	@include device-min(768px) {
 		img {
 			float: left;
 			margin: 0 40px 0 0;
@@ -1726,6 +1742,30 @@ blockquote {
 			margin-top: 10px;
 		}
 
+	}
+
+	.layout-secondary &,
+	[role="complementary"] & {
+		img {
+			float: left;
+			max-width: 40%;
+			max-height: 120px;
+			margin: 0 20px 10px 0;
+		}
+
+		h2, h3, h4, p {
+			padding-left: 0px;
+			border: 0;
+		}
+
+		h3 {
+			@include font-size(14);
+			margin-top: 0;
+			margin-bottom: 1em;
+			padding-bottom: 0;
+			@include colfax;
+			font-weight: 700;
+		}
 	}
 
 }
@@ -1772,11 +1812,11 @@ blockquote {
 }
 
 .section h2 {
-	margin: 50px 0 30px;
+	margin: 50px 0 40px;
 }
 
 .section h3 {
-	margin: 40px 0 20px;
+	margin: 40px 0 30px;
 }
 
 .note {
@@ -1991,7 +2031,7 @@ blockquote {
 		vertical-align: middle;
 		width: 82%;		
 
-		@include respond-min(768px) {
+		@include device-min(768px) {
 			padding: 8px 18% 6px 10px;
 			width: 80%;
 		}
@@ -2018,7 +2058,7 @@ blockquote {
 		top: 6%;
 		width: 40px;
 
-		@include respond-min(768px) {
+		@include device-min(768px) {
 			right: 1%;
 		}
 
@@ -2048,7 +2088,7 @@ blockquote {
 			height: 30px;
 			width: 30px;
 			top: 3px;
-			@include respond-min(768px) {
+			@include device-min(768px) {
 				right: 0;
 			}
 			i {
@@ -2108,7 +2148,7 @@ blockquote {
 		@include border-radius(15px);
 		display: block;
 		text-decoration: none; 
-		@include respond-min(320px) {
+		@include device-min(320px) {
 			background: $text-light;
 			color: #fff;
 			height: 30px;
@@ -2119,7 +2159,7 @@ blockquote {
 		&.previous,
 		&.next {
 			@include font-size(16);
-			@include respond-min(320px) {
+			@include device-min(320px) {
 				@include border-radius(20px);
 				height: 40px;
 				line-height: 43px;
@@ -2128,14 +2168,14 @@ blockquote {
 		}
 		&.previous {
 			margin-right: 10px;
-			@include respond-min(768px) {
+			@include device-min(768px) {
 				margin-right: 70px;
 			}
 		}
 		&.next {
 			margin-left: 10px;
 			text-indent: 1px;
-			@include respond-min(768px) {
+			@include device-min(768px) {
 				margin-left: 70px;
 			}
 		}
@@ -2146,7 +2186,7 @@ blockquote {
 		&.active {
 			background: none;
 			color: $green;
-			@include respond-min(320px) {
+			@include device-min(320px) {
 				background: lighten($text-light, 30%);
 				color: $text-light;
 			}

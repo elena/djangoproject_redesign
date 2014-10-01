@@ -2,29 +2,19 @@
 {% block title %}Why Django?{% endblock %}
 {% block layout_class %}full-width{% endblock %}
 
-{% block header %}<h1>Why Django?</h1>{% endblock %}
-
 {% block header %}
-<div class="copy-banner">
 	<h1 class="visuallyhidden">Why Django?</h1>
-	<div class="container">
-		<p><em>Django</em> was invented to meet fast-moving <em>newsroom deadlines</em>, while satisfying the tough requirements of <em>Python web developers</em>.</p>
-	</div>
-</div>
+	<p><em>Django</em> was invented to meet fast-moving <em>newsroom deadlines</em>, while satisfying the tough requirements of <em>Python web developers</em>.</p>
 {% endblock %}
 
 {% block body %}
 
-<h1>Why Django?</h1>
 
-<div class="layout-2col">
-	<div class="col">
-		<p>With Django, you can take web applications from concept to launch in a matter of hours. It’s nimble web development that keeps your content fresh and your organization productive.</p>
-	</div>
-	<div class="col">
-		<a href="{% url 'start' %}" class="cta">Get Started <em>With Django</em></a>
-	</div>
-</div>
+	<h1>Why Django?</h1>
+
+	<p>With Django, you can take web applications from concept to launch in a matter of hours. It’s nimble web development that keeps your content fresh and your organization productive.</p>
+
+
 
 <dl class="list-features">
 	<dt><i class="icon icon-bolt"></i> Ridiculously fast.</dt>
@@ -58,8 +48,9 @@
 
 </dl>
 
-<a href="{% url 'start' %}" class="cta">Get started <em>with Django</em></a>
-
+<div class="section">
+	<a href="{% url 'start' %}" class="cta outline">Get started <em>with Django</em></a>
+</div>
 {% endblock %}
 
 {% block secondary %}

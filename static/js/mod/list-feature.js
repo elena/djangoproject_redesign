@@ -11,7 +11,7 @@ define([
 		init: function(){
 			this.icons = this.list.find('dt i'); //go get icons
 			this.icons.bind('inview', function(event, isInView, visiblePartX, visiblePartY) {
-				if (isInView && visiblePartY == 'bottom') { // element completely visible
+				if (isInView && visiblePartY != 'top' && visiblePartY != 'bottom') { // element completely visible
 					$(this).addClass('inview'); //new class
 				} 
 			});

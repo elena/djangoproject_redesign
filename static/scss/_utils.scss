@@ -86,6 +86,19 @@ $fix-mqs: false !default;
 	}
 }
 
+@mixin device-min($width) {
+	@if $fix-mqs {
+		@if $fix-mqs >= $width {
+			@content;	
+		}
+	}
+	@else {
+		@media screen and (min-device-width: $width) {
+			@content;
+		}
+	}
+}
+
 // OLD IE Mixin (http://jakearchibald.github.com/sass-ie/)
 $old-ie: false !default; 
 @mixin old-ie {

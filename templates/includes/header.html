@@ -12,6 +12,9 @@
 				<li{% if section == 'get_started' %} class="active"{% endif %}>
 					<a href="{% url 'start' %}">Get Started</a>
 				</li>
+				<li{% if section == 'download' %} class="active"{% endif %}>
+					<a href="{% url 'download' %}">Download</a>
+				</li>
 				<li{% if section == 'docs' %} class="active"{% endif %}>
 					<a href="{% url 'docs' %}">Documentation</a>
 				</li>
