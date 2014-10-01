@@ -7,18 +7,22 @@ pre.literal-block {
 	background: #f8f8f8; overflow: auto;
 	border-radius: 4px;
 	margin: 25px 0;
-	padding: 10px 15px;
+	padding: 10px 20px;
 	color: $green-dark;
 }
 
 .snippet-filename {
-	background: $green-medium-dark;
-	color: white;
-	font-family: monospace;
-	padding: 5px 15px;
+	background: $green-very-light;
+	color: $green-dark;
+	font-family: monospace, serif;
+	@include font-size(13);
+	padding: 5px 20px;
+	@include border-radius(4px 4px 0 0);
 
 	+ .highlight {
 		margin-top: 0;
+		@include border-radius(0 0 4px 4px);
+		border-top: 0;
 	}
 }
 
