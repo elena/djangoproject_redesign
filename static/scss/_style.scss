@@ -10,8 +10,8 @@ CSS rendered with Sass 3.2.7
 @import "compass/css3/transition";
 @import "compass/css3/transform";
 
-
 // Globals
+
 body {
 	@include elena;
 	@include font-size(18); 
@@ -226,23 +226,23 @@ blockquote {
 		float: right;
 		margin: 0;
 		padding-bottom: 80px;
-		padding-left: (3/100) * 100%;	
-		padding-right: (3/100) * 100%;	
-		width: (60/100) * 100%;
+		padding-left: 3%;	
+		padding-right: 3%;
+		width: 60%;
 		.mdzr-boxshadow & {
 			border: none;
-			@include box-shadow(0px 0px 0 0 #fff, 0px 0px 0 0 #fff, 500px 0 0 0 #fff, 1000px 0 0 0 #fff, 0px 600px 0 0px #fff, 500px 600px 0 0px #fff);
-			padding-left: (4/100) * 100%;	
+			@include box-shadow(0px 0px 0 0 #fff, 0px 0px 0 0 #fff, 460px 0 0 0 #fff, 1000px 0 0 0 #fff, 0px 600px 0 0px #fff, 460px 600px 0 0px #fff);
+			padding-left: 4%;	
 			padding-right: 0;	
-			width: (62/100) * 100%;
+			width: 62%;
 		}
 
 		.sidebar-right & {
 			float: left;
 			.mdzr-boxshadow & {
 				border: none;
-				@include box-shadow(0px 0px 0 0 #fff, 0px 0px 0 0 #fff, -500px 0 0 0 #fff, -1000px 0 0 0 #fff, 0px 600px 0 0px #fff, -500px 600px 0 0px #fff);
-				padding-left: 10px;
+				@include box-shadow(0px 0px 0 0 #fff, 0px 0px 0 0 #fff, -460px 0 0 0 #fff, -1000px 0 0 0 #fff, 0px 600px 0 0px #fff, -460px 600px 0 0px #fff);
+				padding-left: 0;
 				padding-right: (4/100) * 100%;	
 			}
 		}
@@ -298,12 +298,12 @@ blockquote {
 	@include device-min(768px) {
 		float: right;
 		margin: 20px 0;
-		margin-right: (3/100) * 100%;
+		margin-right: (4/100) * 100%;
 		padding: 0 0 40px 0;
 		width: (30/100) * 100%;
 
 		.sidebar-right & {
-			margin-left: (3/100) * 100%;
+			margin-left: (4/100) * 100%;
 			margin-right: 0;
 		}
 	}
@@ -335,13 +335,14 @@ blockquote {
 		@include secondary-shadow-bottom;
 	}
 }
-.container { 
+.container {
+	@include clearfix;
 	//reusable container class to center content
 	@include device-min(768px) {
 		margin: 0 auto;	
 		max-width: 1100px;
-		width: (704/768) * 100%;
-		min-width: 768px;
+		padding: 0 (32/768) * 100%;
+		min-width: (704/768) * 100%;
 	}
 	@include old-ie {
 		min-width: 768px;
@@ -377,9 +378,9 @@ blockquote {
 		display: none;
 
 		@include respond-min(1150px) {
-			float: none;
+			float: left;
 			width: 260px;
-			display: inline-block;
+			display: block;
 		}
 
 
@@ -555,7 +556,7 @@ blockquote {
 .copy-banner {
 	// Large green callout at the top of the page
 	background: $green-medium;
-	padding: 2px 10px;
+	padding: 2px 0;
 	
 	p {
 		@include colfax;
@@ -685,7 +686,6 @@ blockquote {
 	clear: both;
 	background: $green-very-light;
 	position: relative;
-	padding: 0 10px;
 
 	a {
 		@include link-green;
@@ -737,12 +737,10 @@ blockquote {
 	margin-top: 0px;
 
 	.container {
-		@include clearfix;
 		overflow: hidden;
 	}
 
 	.subfooter {
-		padding: 0 10px;
 		@include clearfix;
 
 		.col {
@@ -810,7 +808,7 @@ blockquote {
 	.footer {
 		background: $green-dark;
 		margin-top: 20px;
-		padding: 10px 10px 30px;
+		padding: 10px 0 30px;
 		color: $green-dark-text;
 
 		.footer-logo {
@@ -1845,7 +1843,7 @@ blockquote {
 #s-getting-help {
 	float: right;
 	width: 40%;
-	margin: 10px 0 30px 2%;
+	margin: 10px 0 30px 3%;
 	padding: 0 20px 20px;
 	background: $white;
 	@include font-size(14);
