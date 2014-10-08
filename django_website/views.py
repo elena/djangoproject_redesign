@@ -16,12 +16,12 @@ class Index(BaseSectionView):
     template_name = "home.html"
 
 
-class WhyDjango(BaseSectionView):
+class Overview(BaseSectionView):
     """
     A view of the "Why Django" page.
     """
-    nav = "why_django"
-    template_name = "why_django.html"
+    nav = "overview"
+    template_name = "overview.html"
 
 
 class GetStarted(BaseSectionView):
@@ -82,6 +82,13 @@ class Code(BaseSectionView):
     """
     nav = "code"
     template_name = "code.html"
+
+class CaseStudyIndex(BaseSectionView):
+    """
+    Django Example Case Study.
+    """
+    nav = "case_study_index"
+    template_name = "case_study_index.html"
 
 class CaseStudy(BaseSectionView):
     """

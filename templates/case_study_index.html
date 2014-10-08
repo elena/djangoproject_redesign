@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Django Case Studies{% endblock %}
+{% block layout_class %}sidebar-right{% endblock %}
+
+{% block header %}
+	<h1>Case Studies</h1>
+{% endblock %}
+
+{% block body %}
+
+
+<h2>
+		You’ve probably used a website that uses Django.
+</h2>
+<p>
+  Find out why Django was the right solution for these organizations, and why you should start building your project with Django today.
+</p>
+
+<ul class="list-case-study">
+  <li>
+    <h3 class="logo" title="Mozilla">Mozilla</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
+    <a href="{% url 'case_study' %}">Read Case Study</a>
+  </li>
+  <li>
+    <h3 class="logo" title="Disqus">Disqus</h3>
+    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <a href="{% url 'case_study' %}">Read Case Study</a>
+  </li>
+  <li>
+    <h3 class="logo" title="Knight Foundation">Knight Foundation</h3>
+    <p>When the Knight Foundation began redesigning their <a href="http://www.knightfoundation.org">website</a>, they were on multiple content management systems they’d outgrown, with a site that couldn’t handle traffic spikes. Knight needed a future-proof solution.</p>
+    <a href="{% url 'case_study' %}">Read Case Study</a>
+  </li>
+  <li>
+    <h3 class="logo" title="Mozilla">Mozilla</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
+    <a href="{% url 'case_study' %}">Read Case Study</a>
+  </li>
+  <li>
+    <h3 class="logo" title="Disqus">Disqus</h3>
+    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <a href="{% url 'case_study' %}">Read Case Study</a>
+  </li>
+  <li>
+    <h3 class="logo" title="Knight Foundation">Knight Foundation</h3>
+    <p>When the Knight Foundation began redesigning their <a href="http://www.knightfoundation.org">website</a>, they were on multiple content management systems they’d outgrown, with a site that couldn’t handle traffic spikes. Knight needed a future-proof solution.</p>
+    <a href="{% url 'case_study' %}">Read Case Study</a>
+  </li>
+</ul>
+
+{% endblock %}
+
+{% block sidebar %}
+
+<div role="complementary">
+	<h2>More Sites Using Django</h2>
+	<ul class="list-links-small resource-list">
+		<li><a href="http://instagram.com/">Instagram</a></li>
+		<li><a href="http://pinterest.com/">Pinterest</a></li>
+		<li><a href="http://www.lanyrd.com/">Lanyrd</a></li>
+		<li><a href="http://www.rdio.com/">Rdio</a></li>
+		<li><a href="http://www.guardian.co.uk/">The Guardian</a></li>
+		<li><a href="http://www.politifact.com/">PolitiFact.com</a></li>
+		<li><a href="http://www.nationalgeographic.com/">National Geographic</a></li>
+		<li><a href="http://www.nasa.gov">NASA</a></li>
+		<li><a href="http://www.peacecorps.gov">The Peace Corps</a></li>
+		<li><a href="http://www.macfound.org">The MacArthur Foundation</a></li>
+		<li><a href="http://www.openstack.org/">Open Stack</a></li>
+	</ul>
+</div>
+
+{% endblock %}

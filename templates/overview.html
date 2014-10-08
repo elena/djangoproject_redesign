@@ -1,9 +1,9 @@
 {% extends 'base.html' %}{% load url from future %}
-{% block title %}Why Django?{% endblock %}
+{% block title %}Django Overview{% endblock %}
 {% block layout_class %}full-width{% endblock %}
 
 {% block header %}
-	<h1 class="visuallyhidden">Why Django?</h1>
+	<h1 class="visuallyhidden">Django Overview</h1>
 	<p><em>Django</em> was invented to meet fast-moving <em>newsroom deadlines</em>, while satisfying the tough requirements of <em>Python web developers</em>.</p>
 {% endblock %}
 
@@ -13,7 +13,6 @@
 	<h1>Why Django?</h1>
 
 	<p>With Django, you can take web applications from concept to launch in a matter of hours. It’s nimble web development that keeps your content fresh and your organization productive.</p>
-
 
 
 <dl class="list-features">
@@ -49,7 +48,7 @@
 </dl>
 
 <div class="section">
-	<a href="{% url 'start' %}" class="cta outline">Get started <em>with Django</em></a>
+	<a href="{% url 'start' %}" class="cta">Get started <em>with Django</em></a>
 </div>
 {% endblock %}
 
@@ -57,7 +56,7 @@
 
 <div class="layout-secondary">
 	<div class="container">
-		<h2><span>Case Studies</span></h2>
+		<h1><span>Case Studies</span></h1>
 		<p>You’ve probably used a website that uses Django. Find out why Django was the right solution for these organizations.</p>
 		<ul class="list-case-study">
 			<li>

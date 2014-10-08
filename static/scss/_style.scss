@@ -2,13 +2,11 @@
 CSS Written by Jes Gundy
 Threespot, Washington DC 
 ---
+Ammended and appended by Andrew McCarthy
+http://andrevv.com/
+---
 CSS rendered with Sass 3.2.7
 */
-
-@import "compass/css3/border-radius";
-@import "compass/css3/box-shadow";
-@import "compass/css3/transition";
-@import "compass/css3/transform";
 
 // Globals
 
@@ -98,6 +96,10 @@ h1 {
 		@include font-size(32);
 	}
 
+	.layout-secondary & {
+		color: $text;
+	}
+
 	[role="main"] & {
 		@include font-size(32);
 		margin: 40px 0 20px;
@@ -122,6 +124,10 @@ h2 {
 			@include device-min(768px) {
 				margin-top: 20px;
 			}
+		}
+
+		.full-width & {
+			@include font-size(24);
 		}
 	}
 
@@ -280,6 +286,7 @@ blockquote {
 .full-width {
 	&.container {
 		width: 100%;
+		padding: 0;
 		max-width: none;
 		border-bottom: 1px solid #ddd;
 		background: #fff;
@@ -742,6 +749,7 @@ blockquote {
 
 	.subfooter {
 		@include clearfix;
+		padding: 0 10px;
 
 		.col {
 			&:first-child {
@@ -808,7 +816,7 @@ blockquote {
 	.footer {
 		background: $green-dark;
 		margin-top: 20px;
-		padding: 10px 0 30px;
+		padding: 10px 10px 30px;
 		color: $green-dark-text;
 
 		.footer-logo {
@@ -1282,7 +1290,7 @@ blockquote {
 	}
 }
 .list-case-study {
-	// Three column list for Case Studies that switches to one column on mobile. (See Why Django Page.)
+	// Three column list for Case Studies that switches to one column on mobile. (See Overview page.)
 	@include clearfix;
 	list-style: none;
 	margin: 0;
@@ -1297,12 +1305,20 @@ blockquote {
 		border-top: 1px solid $gray-line;
 		margin-top: 20px;
 		padding-top: 20px;
-		@include device-min(768px) {
+		@include respond-min(1024px) {
 			border: none;
 			float: left;
 			padding-right: 5%;
 			padding-top: 0;
 			width: 28%;
+			&:nth-child(3) {
+				&:after {
+					clear: both;
+					content: "";
+					display: block;
+					margin-bottom: 30px;
+				}
+			}
 		}
 	}
 
@@ -1324,7 +1340,7 @@ blockquote {
 		padding: 0;
 
 		&.logo {
-			text-indent: 100%;
+			text-indent: -1000%;
 			overflow: hidden;
 		}
 	}
@@ -1360,7 +1376,7 @@ blockquote {
 		}
 	}
 
-	.homepage & {
+	&.single-col {
 		li {
 			margin-top: 0;
 			margin-bottom: 30px;
@@ -1375,6 +1391,14 @@ blockquote {
 		}
 	}
 }
+
+.case-study-logo {
+	max-width: 50%;
+	max-height: 70px;
+	height: auto;
+	margin: 40px 0 0;
+}
+
 .list-link-soup {
 	// Basic link-soup list style. Three Column on Desktop, two column on mobile. (See Why Django Page.)
 	@include colfax;
@@ -1398,7 +1422,20 @@ blockquote {
 	a {
 		@include link-green;
 	}
+
+	[role="complementary"] & {
+		li {
+			float: none;
+		}
+	}
 }
+
+
+h2 + .list-link-soup {
+	border-top: 0;
+}
+
+
 .list-features {
 	// Animated Feature List from the Why Django Page. Require looks for the 'list-features' class to load the appropriate scripts to animate the icons. Degrades gracefully into mobile.
 	

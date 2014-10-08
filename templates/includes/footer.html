@@ -12,17 +12,17 @@
 			<div class="col learn">
 				<h2>Learn More</h2>
 				<ul>
-					<li><a href="#">About Django</a></li>
-					<li><a href="#">Django Software Benefits Foundation</a></li>
-					<li><a href="#">Case Studies</a></li>
-					<li><a href="#">Getting Started with Django</a></li>
+					<li><a href="{% url 'overview' %}">About Django</a></li>
+					<li><a href="{% url 'about' %}">Django Software Benefits Foundation</a></li>
+					<li><a href="{% url 'case_study_index' %}">Case Studies</a></li>
+					<li><a href="{% url 'start' %}">Getting Started with Django</a></li>
 				</ul>
 			</div>
 
 			<div class="col involved">
 				<h2>Get Involved</h2>
 				<ul>
-					<li><a href="#">Join a Group</a></li>
+					<li><a href="{% url 'community' %}">Join a Group</a></li>
 					<li><a href="#">Find a Job</a></li>
 					<li><a href="#">Submit a Bug</a></li>
 					<li><a href="#">Report a Security Issue</a></li>

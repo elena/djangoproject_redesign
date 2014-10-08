@@ -7,7 +7,7 @@ from django_website import views
 
 urlpatterns = patterns('',
     url(r'^$', views.Index.as_view(), name="index"),
-    url(r'^why/$', views.WhyDjango.as_view(), name="why"),
+    url(r'^overview/$', views.Overview.as_view(), name="overview"),
     url(r'^start/$', views.GetStarted.as_view(), name="start"),
     url(r'^news/$', views.NewsIndex.as_view(), name="news_index"),
     url(r'^news/example/$', views.NewsDetail.as_view(), name="news_detail"),
@@ -16,7 +16,8 @@ urlpatterns = patterns('',
     url(r'^docs/$', views.DocsIndex.as_view(), name="docs"),
     url(r'^docs/example$', views.DocsDetail.as_view(), name="docs_detail"),
     url(r'^code/$', views.Code.as_view(), name="code"),
-    url(r'^case_study/$', views.CaseStudy.as_view(), name="case_study"),
+    url(r'^case_studies/$', views.CaseStudyIndex.as_view(), name="case_study_index"),
+    url(r'^case_studies/example/$', views.CaseStudy.as_view(), name="case_study"),
     url(r'^download/$', views.Download.as_view(), name="download"),
     url(r'^test/$', views.TestTemplate.as_view(), name="test_template"),
 )
