@@ -36,6 +36,9 @@
 {% block sidebar %} {# Always include <h1> label and <div> with aria role. #}
 	<h1 class="visuallyhidden">Additional Information</h1>
 	<div role="complementary">
+
+		<a href="{% url 'case_study_index' %}" class="link-readmore back-link">Case study index</a>
+
 		<h2>Other Case Studies</h2>
 		<ul class="list-links">
 			<li><a href="#">Mozilla</a></li>
@@ -43,6 +46,21 @@
 			<li><a href="#">Discus</a></li>
 			<li><a href="#">OpenStack</a></li>
 			<li><a href="#">TheGuardian</a></li>
+		</ul>
+
+		<h2>More Sites Using Django</h2>
+		<ul class="list-links-small resource-list">
+			<li><a href="http://instagram.com/">Instagram</a></li>
+			<li><a href="http://pinterest.com/">Pinterest</a></li>
+			<li><a href="http://www.lanyrd.com/">Lanyrd</a></li>
+			<li><a href="http://www.rdio.com/">Rdio</a></li>
+			<li><a href="http://www.guardian.co.uk/">The Guardian</a></li>
+			<li><a href="http://www.politifact.com/">PolitiFact.com</a></li>
+			<li><a href="http://www.nationalgeographic.com/">National Geographic</a></li>
+			<li><a href="http://www.nasa.gov">NASA</a></li>
+			<li><a href="http://www.peacecorps.gov">The Peace Corps</a></li>
+			<li><a href="http://www.macfound.org">The MacArthur Foundation</a></li>
+			<li><a href="http://www.openstack.org/">Open Stack</a></li>
 		</ul>
 	</div>	
 {% endblock %}
