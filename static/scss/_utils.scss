@@ -79,10 +79,10 @@ $old-ie: false !default;
 
 // Font Family Mixins
 @mixin serif {
-	font-family: "Hoefler Text", "Book Antiqua", Cambria, Times, "Times New Roman", serif;
+	font-family: "Hoefler Text", "Lucida Bright", Cambria, "Book Antiqua", Georgia, Times, "Times New Roman", serif;
 }
 @mixin sans-serif {
-	font-family: 'Colfax', Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
+	font-family: "Colfax", Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
 }
 
 // Font Sizing Mixin (http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/)

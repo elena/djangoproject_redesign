@@ -42,7 +42,6 @@
 {% block sidebar %} {# Always include <h1> label and <div> with aria role. #}
 	<h1 class="visuallyhidden">Additional Information</h1>
 	<div role="complementary">
-    <a href="{% url 'news_index' %}" class="link-readmore back-link">All News &amp; Events</a>
     <form action="#" class="form-input" role="search">
       <label class="visuallyhidden" for="news-search">Search:</label>
       <input type="text" name="news-search" id="news-search" placeholder="Search News &amp; Events">
@@ -51,6 +50,8 @@
         <span class="visuallyhidden">Search</span>
       </button>
     </form>
+    <a href="{% url 'news_index' %}" class="link-readmore back-link">All News &amp; Events</a>
+
 		{% include "includes/sidebar-news.html" %}
 	</div>	
 {% endblock %}
