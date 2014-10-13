@@ -14,51 +14,12 @@ $green-dark-text: #3C8866;
 $white: #F1FFF7;
 
 // @font-face declarations
-@font-face {
-	font-family: 'Elena';
-	src: url('/static/fonts/elena/ElenaWebBasicBold.eot');
-	src: url('/static/fonts/elena/ElenaWebBasicBold.eot?#iefix') format('embedded-opentype'),
-			 url('/static/fonts/elena/ElenaWebBasicBold.woff') format('woff');
-	font-weight: 700;
-	font-style: normal;
-}
-@font-face {
-	font-family: 'Elena';
-	src: url('/static/fonts/elena/ElenaWebBasicBoldItalic.eot');
-	src: url('/static/fonts/elena/ElenaWebBasicBoldItalic.eot?#iefix') format('embedded-opentype'),
-			 url('/static/fonts/elena/ElenaWebBasicBoldItalic.woff') format('woff');
-	font-weight: 700;
-	font-style: italic;
-}
-@font-face {
-	font-family: 'Elena';
-	src: url('/static/fonts/elena/ElenaWebBasicRegular.eot');
-	src: url('/static/fonts/elena/ElenaWebBasicRegular.eot?#iefix') format('embedded-opentype'),
-			 url('/static/fonts/elena/ElenaWebBasicRegular.woff') format('woff');
-	font-weight: 400;
-	font-style: normal;
-}
-@font-face {
-	font-family: 'Elena';
-	src: url('/static/fonts/elena/ElenaWebBasicRegularItalic.eot');
-	src: url('/static/fonts/elena/ElenaWebBasicRegularItalic.eot?#iefix') format('embedded-opentype'),
-			 url('/static/fonts/elena/ElenaWebBasicRegularItalic.woff') format('woff');
-	font-weight: 400;
-	font-style: italic;
-}
+
 @font-face {
 	font-family: 'Colfax';
-	src: url('/static/fonts/colfax/ColfaxWebBlack.eot');
-	src: url('/static/fonts/colfax/ColfaxWebBlack.eot?#iefix') format('embedded-opentype'),
-			 url('/static/fonts/colfax/ColfaxWebBlack.woff') format('woff');
-	font-weight: 900;
-	font-style: normal;
-}
-@font-face {
-	font-family: 'Colfax';
-	src: url('/static/fonts/colfax/ColfaxWebBold.eot');
-	src: url('/static/fonts/colfax/ColfaxWebBold.eot?#iefix') format('embedded-opentype'),
-			 url('/static/fonts/colfax/ColfaxWebBold.woff') format('woff');
+	src: url('/static/fonts/colfax/ColfaxWebMedium.eot');
+	src: url('/static/fonts/colfax/ColfaxWebMedium.eot?#iefix') format('embedded-opentype'),
+			 url('/static/fonts/colfax/ColfaxWebMedium.woff') format('woff');
 	font-weight: 700;
 	font-style: normal;
 }
@@ -117,10 +78,10 @@ $old-ie: false !default;
 }
 
 // Font Family Mixins
-@mixin elena {
-	font-family: 'Elena', Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
+@mixin serif {
+	font-family: "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
 }
-@mixin colfax {
+@mixin sans-serif {
 	font-family: 'Colfax', Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
 }
 
