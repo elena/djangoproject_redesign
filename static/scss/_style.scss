@@ -82,10 +82,7 @@ h6 {
 		@include link-green;
 	}
 
-	.layout-secondary &,
-	[role="complementary"] & {
-		@include serif; // reverse font style on sidebar and secondary areas
-	}
+
 }
 h1 {
 	@include font-size(28);
@@ -715,6 +712,7 @@ blockquote {
 			float: left;
 			width: 60%;
 			margin-top: 0;
+			@include sans-serif;
 		}
 		.link-readmore {
 			margin-left: 10px;
@@ -1815,6 +1813,11 @@ h2 + .list-link-soup {
 }
 
 //Documentation styles
+
+#s-django-documentation {
+	@include sans-serif;
+}
+
 .list-outline {
 	// Nested lists to house documentation outline. Meant for use in sidebar. (See Documentation Page.)
 	@include font-size(16);

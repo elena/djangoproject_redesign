@@ -1,6 +1,7 @@
 // Pygments Code Hightlighting Styles
 
-pre.literal-block {
+pre.literal-block,
+.literal-block {
 	@include font-size(13);
 	border: 1px solid #EAEAEA;
 	background: #F4F4F4;
