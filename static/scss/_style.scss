@@ -628,6 +628,7 @@ blockquote {
 		padding: 50px 0;
 		background: white;
 		text-align: center;
+		border-bottom: 1px solid $gray-line;
 		p {
 			max-width: 700px;
 			margin-left: auto;
@@ -648,7 +649,7 @@ blockquote {
 			display: inline-block;
 			padding-left: 40px;
 			padding-right: 40px;
-			margin-bottom: 50px;
+			margin-bottom: 40px;
 		}
 		
 		.django-companies {
@@ -1004,7 +1005,8 @@ blockquote {
 	text-align: center;
 	text-decoration: none;
 	@include device-min(768px) {
-		margin: 20px 0;
+		margin: 20px auto;
+		max-width: 400px;
 	}
 
 	em {
@@ -1040,6 +1042,7 @@ blockquote {
 
 		&:hover {
 			background: $green;
+			border-color: $green;
 			color: white;
 			em {
 				color: white;
@@ -1181,6 +1184,16 @@ blockquote {
 		display: block;
 		max-width: 100%;
 	}
+}
+
+.codedump {
+	background: #f8f8f8;
+	border: 1px solid $gray-line;
+	padding: 10px;
+	@include border-radius(4px);
+	@include sans-serif;
+	@include font-size(14);
+	line-height: 1.6em;
 }
 
 // List Modules
@@ -1454,7 +1467,7 @@ h2 + .list-link-soup {
 .list-features {
 	// Animated Feature List from the Why Django Page. Require looks for the 'list-features' class to load the appropriate scripts to animate the icons. Degrades gracefully into mobile.
 	
-	margin: 50px 0 20px;
+	margin: 50px 0 40px;
 
 	dt {
 		@include font-size(24);

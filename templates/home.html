@@ -45,11 +45,9 @@
         <p>Some of the busiest websites on the web leverage Django's ability to quickly and flexibly scale.</p>
       </dd>
 
-      <dd>
-        <a href="{% url 'overview' %}" class="cta outline">Learn more about Django</a>
-      </dd>
-
     </dl>
+
+    <a href="{% url 'overview' %}" class="cta outline">Learn more about Django</a>
   </div>
 
   <div class="section">
@@ -59,7 +57,7 @@
       You’ve probably used a website that uses Django. Find out why Django was the right solution for these organizations, and why you should start building your project with Django today.
     </p>
 
-    <ul class="list-case-study single-col">
+    <ul class="list-case-study">
       <li>
         <h3 class="logo" title="Mozilla">Mozilla</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
@@ -76,6 +74,8 @@
         <a href="{% url 'case_study' %}">Read Case Study</a>
       </li>
     </ul>
+
+    <a href="{% url 'case_study_index' %}" class="cta outline">See all case studies</a>
 
   </div>
 
@@ -116,7 +116,7 @@
 
 {% block sidebar %}
   <div role="complementary">
-    <a href="#" class="cta">
+    <a href="{% url 'download' %}" class="cta">
       Download <em>Latest Release 1.7</em>
     </a>
     <a href="{% url 'docs' %}" class="link-readmore">Django Documentation</a>
@@ -168,22 +168,36 @@
     </dl>
     <a href="{% url 'about' %}" class="link-readmore">More about the DSF</a>
 
-    <h3>Latest News &amp; Events</h3>
+    <h3>Upcoming Events</h3>
     <dl class="list-links-small news-list">
       <dt class="event"><a href="#">DjangoCon 2013 Call for Papers</a></dt>
       <dd>
         April 7th, 2013 | Berlin, Germany
       </dd>
 
+      <dt class="event"><a href="#">DjangoCon 2013 Call for Papers</a></dt>
+      <dd>April 7th, 2013 | Berlin, Germany</dd>
+    </dl>
+    <a href="{% url 'news_index' %}" class="link-readmore">See all Events</a>
+
+    <h3>Latest News</h3>
+    <dl class="list-links-small news-list">
+
+      <dt><a href="#">Karen Tracey joins the DSF board</a></dt>
+      <dd>
+        by Russell Keith-Magee on Sep. 20, 2013
+      </dd>
+      <dt><a href="#">Karen Tracey joins the DSF board</a></dt>
+      <dd>
+        by Russell Keith-Magee on Sep. 20, 2013
+      </dd>
       <dt><a href="#">Karen Tracey joins the DSF board</a></dt>
       <dd>
         by Russell Keith-Magee on Sep. 20, 2013
       </dd>
 
-      <dt class="event"><a href="#">DjangoCon 2013 Call for Papers</a></dt>
-      <dd>April 7th, 2013 | Berlin, Germany</dd>
     </dl>
-    <a href="{% url 'about' %}" class="link-readmore">See all News &amp; Events</a>
+    <a href="{% url 'news_index' %}" class="link-readmore">See all News</a>
 
     <h3>Django Community Resources</h3>
     <dl class="list-links-small resource-list">
@@ -206,6 +220,7 @@
 {% endblock %}
 
 {% block alert %}
+  {# Begin loop #}
   <div role="alert">
     <div class="container">
       <dl>
@@ -220,4 +235,5 @@
       </dl>
     </div>
   </div>
+  {# End loop #}
 {% endblock %}
