@@ -594,7 +594,7 @@ blockquote {
 		margin: 24px 0;
 		background: $green-medium-dark;
 		&:hover {
-			background: darken($green-medium-dark, 2%);
+			background: lighten($green-medium-dark, 4%);
 		}
 
 		background: none;
@@ -625,23 +625,30 @@ blockquote {
 	}
 
 	.homepage & {
+		padding: 50px 0;
+		background: white;
 		text-align: center;
 		p {
 			max-width: 700px;
 			margin-left: auto;
 			margin-right: auto;
 			margin: 1em auto .5em;
+			color: $text;
 			@include font-size(36);
 			&.small {
-				color: $green-very-light;
+				color: $text-light;
 				margin: 2em auto 1em;
 				@include font-size(14);
+			}
+			em {
+				color: $text;
 			}
 		}
 		a.cta, .cta {
 			display: inline-block;
 			padding-left: 40px;
 			padding-right: 40px;
+			margin-bottom: 50px;
 		}
 		
 		.django-companies {
@@ -688,8 +695,9 @@ blockquote {
 
 [role="alert"] {
 	clear: both;
-	background: $green-very-light;
+	background: $white;
 	position: relative;
+	@include box-shadow(0 -2px 8px 0 rgba(0,0,0,0.05));
 
 	a {
 		@include link-green;
@@ -1005,7 +1013,7 @@ blockquote {
 	}
 
 	&:hover {
-		background: darken($green-medium, 2%);
+		background: lighten($green-medium, 4%);
 	}
 
 	[role="complementary"] & {
