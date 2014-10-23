@@ -9,7 +9,7 @@
       <p>It’s <em>quick &amp; easy</em> to get up and running with <em>Django</em>.</p>
     </div>
     <div class="col one-third">
-      <a href="#" class="cta">Download <em>Version 1.7</em></a>
+      <a href="{% url 'download' %}" class="cta">Download <em>Version 1.7</em></a>
     </div>
   </div>
 {% endblock %}
@@ -20,12 +20,17 @@
     <h1>Getting started with Django</h1>
 
     <p>Depending how new you are to Django, you can also <a href="#">try a tutorial</a>, or just <a href="#">dive into the documentation</a>.</p>
+
+    <p>
+      Want to learn more about Django? Read the overview to see if Django is right for your project.
+    </p>
+    <a class="link-readmore" href="{% url 'overview' %}">Django Overview</a>
   </div>
 
   <div class="section">
     <h2>Install Django</h2>
     <p>Before you can use Django, you’ll need to get it installed. We have a complete installation guide that covers all the possibilities; this guide will guide you to a simple, minimal installation that’ll work while you walk through the introduction.</p>
-    <a class="link-readmore" href="#install">Django Installation Guide</a>
+    <a class="link-readmore" href="{% url 'django' %}">Django Installation Guide</a>
   </div>
 
   <div class="section">

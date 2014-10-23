@@ -133,7 +133,7 @@ h2 {
 	}
 }
 h3 {
-	@include font-size(18);
+	@include font-size(20);
 	font-weight: 700;
 	color: $text;
 	line-height: 1.2;
@@ -159,7 +159,7 @@ h3 {
 }
 
 h4 {
-	@include font-size(18);	
+	@include font-size(16);	
 	color: $text;
 	line-height: 1.2;
 	margin: 35px 0 20px;
@@ -591,7 +591,8 @@ blockquote {
 	}
 
 	a.cta, .cta {
-		margin: 24px 0;
+		margin: 20px 0;
+		padding: 0.7em 1.5em;
 		background: $green-medium-dark;
 		&:hover {
 			background: lighten($green-medium-dark, 4%);
@@ -647,9 +648,18 @@ blockquote {
 		}
 		a.cta, .cta {
 			display: inline-block;
-			padding-left: 40px;
-			padding-right: 40px;
+			padding: 1em 50px;
 			margin-bottom: 40px;
+			background: $green-medium;
+			color: white;
+			border: 0;
+			font-weight: 700;
+			&:hover {
+				background: lighten($green-medium, 4%);
+			}
+			&:active {
+				background: darken($green-medium, 2%);
+			}
 		}
 		
 		.django-companies {
@@ -1018,6 +1028,10 @@ blockquote {
 		background: lighten($green-medium, 4%);
 	}
 
+	&:active {
+		background: darken($green-medium, 2%);
+	}
+
 	[role="complementary"] & {
 		@include font-size(16);
 
@@ -1030,6 +1044,8 @@ blockquote {
 		}
 	}
 
+
+	// Outline button for less-dominant CTA
 	&.outline {
 		background: none;
 		border: 1px solid $green;
@@ -1041,12 +1057,16 @@ blockquote {
 		}
 
 		&:hover {
-			background: $green;
-			border-color: $green;
+			background: $green-medium;
+			border-color: $green-medium;
 			color: white;
 			em {
 				color: white;
 			}
+		}
+		&:active {
+			background: darken($green-medium, 2%);
+			border-color: darken($green-medium, 2%);
 		}
 	}
 }
@@ -1702,6 +1722,16 @@ h2 + .list-link-soup {
 			border-top: 1px solid $gray-line;
 			margin: 0;
 			padding: 0;
+
+			&.active {
+				h2 {
+					.collapsing-icon {
+						&:before {
+							content: "\f068";
+						}
+					}
+				}
+			}
 		}
 
 		h2 {
@@ -1722,6 +1752,9 @@ h2 + .list-link-soup {
 				position: absolute;
 				right: 0;
 				top: 24px;
+				&:before {
+					content: "\f067";
+				}
 			}
 
 			&.bullet-icon {
@@ -1743,6 +1776,7 @@ h2 + .list-link-soup {
 		}
 		li.active .collapsing-content {
 			max-height: 1000px;
+			overflow: auto;
 		}
 	}
 }
@@ -2255,8 +2289,8 @@ h2 + .list-link-soup {
 			background: none;
 			color: $green;
 			@include device-min(320px) {
-				background: lighten($text-light, 30%);
-				color: $text-light;
+				background: $green;
+				color: white;
 			}
 		}
 
