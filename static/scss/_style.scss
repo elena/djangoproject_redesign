@@ -2100,6 +2100,21 @@ h2 + .list-link-soup {
 			padding-left: 24px;
 		}
 	}
+
+	// Add rss icon before list item link
+	&.rss-list {
+		list-style: none;
+		li > a,
+		dt > a {
+			&:before {
+				content: "\f09e";
+			}
+		}
+
+		dd {
+			padding-left: 24px;
+		}
+	}
 }
 
 // Forms
