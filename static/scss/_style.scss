@@ -1128,16 +1128,19 @@ blockquote {
 		.col {
 			float: left;
 			width: 46%;
-
+			margin: 0 4%;
 			&:first-child {
-				padding-right: 7%;
+				margin-left: 0;
+			}
+			&:last-child {
+				margin-right: 0;
 			}
 		}
 		.one-third {
-			width: 33%;
+			width: 29%;
 		}
 		.two-third {
-			width: 60%;
+			width: 62%;
 		}
 	}
 }
