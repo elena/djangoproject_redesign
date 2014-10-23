@@ -6,6 +6,8 @@ define([
 		this.list = $(list);
 		this.init();
 	};
+
+	var hash = window.location.hash;
 	
 	CollapsingList.prototype = {
 		init: function(){		
@@ -28,20 +30,23 @@ define([
 			this.headings.on( 'click', function( ev ) { //headings onclick (passing event)
 				var target = $(ev.target).closest('h2'),
 						parent = target.closest('li'); //store target as var
-				if (parent.hasClass('active')) { //if currently active
-					target.find('.collapsing-icon').removeClass('icon icon-minus').addClass('icon icon-plus'); //change icon to a plus
-				} else {
-					target.find('.collapsing-icon').removeClass('icon icon-plus').addClass('icon icon-minus'); //otherwise to a minus
-				}
 				parent.toggleClass('active'); //toggle active class
 			});
 
 			this.buttonExpand.on( 'click', function() { //expand all onclick
-				self.items.addClass('active').find('.collapsing-icon').removeClass('icon icon-plus').addClass('icon icon-minus');
+				self.items.addClass('active');
 			});
 			this.buttonCollapse.on( 'click', function() { //expand all onclick
-				self.items.removeClass('active').find('.collapsing-icon').removeClass('icon icon-minus').addClass('icon icon-plus');
+				self.items.removeClass('active');
 			});
+
+			//expand list item with matching hash id
+			if (hash) {
+				$(hash).addClass('active');
+				var pos = $(hash).position();
+				$(window).scrollTop(pos.top);
+			}
+			
 		}
 	};
 
