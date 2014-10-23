@@ -66,14 +66,14 @@ class DocsIndex(BaseSectionView):
     """
     Django Documentation.
     """
-    nav = "docs_index"
+    nav = "docs"
     template_name = "docs_index.html"
 
 class DocsDetail(BaseSectionView):
     """
     Django Documentation.
     """
-    nav = "docs_detail"
+    nav = "docs"
     template_name = "docs_detail.html"
 
 class Code(BaseSectionView):
