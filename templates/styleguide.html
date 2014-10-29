@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Django Web Styleguide{% endblock %}
+{% block body_class %}styleguide{% endblock %}
+
+{% block header %}
+  <h1>Style Guide</h1>
+{% endblock %}
+
+{% block body %}
+
+  <div class="section">
+    <h1>Django Web Style Guide</h1>
+    <h4>Updated October October 29, 2014</h4>
+    <div data-xrayhtml>
+    <p>
+      This styleguide is a reference to maintain a design standard on djangoproject.com and related Django websites. It is meant to provide a source of available elements, and give insight into which elements to use where.
+    </p>
+    <p>
+      It is best practice to use elements from this guide to serve any design needs before introducing new elements. If new elements must be introduced to accommodate new content, please be mindful of the guidelines here and take the liberty to update the guide. 
+    </p>
+    </div>
+  </div>
+
+  <div class="section" id="layout">
+    <h2>Layout</h2>
+
+    <h3>Sidebar left</h3>
+    <h3>Sidebar right</h3>
+    <h3>Single column</h3>
+
+  </div>
+
+  <div class="section" id="colors">
+    <h2>Colors</h2>
+  </div>
+
+  <div class="section" id="typography">
+    <h2>Typography</h2>
+
+    <p>
+      The djangoproject.com website is set in both serif and sans-serif fonts. The serif font is <em>Palatino</em>, which is widely availabe as a system font. The sans-serif font is <em><a href="https://processtypefoundry.com/fonts/colfax/">Colfax Web</a></em>, a web font that is loaded via TypeKit. To keep page load down, only 2 styles of this typeface are loaded, <em>Regular</em> and <em>Medium</em>. For this reason, refrain from using italics with sans-serif type.
+    </p>
+
+    <h3>Main content</h3>
+
+    <div class="example">
+
+      <h1>H1 Header - 32px Colfax Regular</h1>
+      <h2>H2 Header - 24px Colfax Regular</h2>
+      <h3>H3 Header - 20px Colfax Medium</h3>
+      <h4>H4 Header - 16px Colfax Medium</h4>
+      <h5>H5 Header - 16px Colfax Regular</h5>
+
+
+      <p>
+        Serif paragraph type. Palatino font style should be used for all text copy, except for the documentation and in sidebars. 
+      </p>
+
+    </div>
+
+    <h3>Secondary content</h3>
+
+    <div class="example">
+
+      <div role="complementary">
+        <h1>H1 Header - 28px Colfax Regular</h1>
+        <h2>H2 Header - 20px Colfax Regular</h2>
+        <h3>H3 Header - 18px Colfax Regular</h3>
+        <h4>H4 Header - 16px Colfax Medium</h4>
+
+        <p>
+          Sans-serif paragraph type. Colfax font is used in documentation paragraph text, sidebars, headers, and footers.
+        </p>
+      </div>
+
+    </div>
+
+
+
+  </div>
+
+  <div class="section" id="typography">
+    <h2>Icons</h2>
+  </div>
+
+  <div class="section" id="elements">
+    <h2>Page Elements</h2>
+
+    <h3 id="buttons">
+      Buttons
+    </h3>
+
+    <h3 id="buttons">
+      Icons
+    </h3>
+
+    <h3 id="forms">
+      Forms
+    </h3>
+
+    <h3 id="buttons">
+      Lists
+    </h3>
+
+  </div>
+
+{% endblock %}
+
+{% block sidebar %} {# Always include <h1> label and <div> with aria role. #}
+  <h1 class="visuallyhidden">Additional Information</h1>
+  <div role="complementary">
+    <h2>Contents</h2>   
+    <ul class="list-outline">
+      <li><a class="reference internal" href="#">Django Web Style Guide</a>
+        <ul>
+          <li>
+            <a class="reference internal" href="#layout">Page Layout</a>
+            <ul>
+              <li><a href="#">Sidebar Left</a></li>
+              <li><a href="#">Sidebar Right</a></li>
+              <li><a href="#">Single Column</a></li>
+            </ul>
+          </li>
+          <li>
+            <a class="reference internal" href="#layout">Colors</a>
+          </li>
+          <li>
+            <a class="reference internal" href="#layout">Typography</a>
+            <ul>
+              <li><a href="#">Main content</a></li>
+              <li><a href="#">Secondary content</a></li>
+            </ul>
+          </li>
+          <li><a class="reference internal" href="#layout">Icons</a></li>
+          <li><a class="reference internal" href="#layout">Page Elements</a><ul>
+            <li><a href="#" class="reference internal">Buttons</a></li>
+            <li><a href="#" class="reference internal">Forms</a></li>
+            <li><a href="#" class="reference internal">Links</a></li>
+            <li><a href="#" class="reference internal">Lists</a></li>
+          </ul></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+{% endblock %}

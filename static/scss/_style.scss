@@ -102,6 +102,10 @@ h1 {
 		margin: 40px 0 20px;
 		color: $text;
 	}
+
+	[role="complementary"] & {
+		@include font-size(28);
+	}
 }
 h2 {
 	@include font-size(24);
@@ -163,6 +167,7 @@ h4 {
 	color: $text;
 	line-height: 1.2;
 	margin: 35px 0 20px;
+	font-weight: 700;
 }
 tt { // increase size of inline monospace text
 	font-family: Courier, monospace;
@@ -1890,7 +1895,10 @@ h2 + .list-link-soup {
 	}
 
 	> li > ul > li {
-		margin-top: 18px;
+		margin-top: 12px;
+		&:first-child {
+			margin-top: 6px;
+		}
 	}
 
 	> li > a { //top level

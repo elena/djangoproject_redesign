@@ -110,3 +110,10 @@ class TestTemplate(BaseSectionView):
     """
     nav = "test"
     template_name = "test_template.html"
+
+class Styleguide(BaseSectionView):
+    """
+    Django web styleguide
+    """
+    nav = "styleguide"
+    template_name = "styleguide.html"

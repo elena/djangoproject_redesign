@@ -20,6 +20,7 @@ urlpatterns = patterns('',
     url(r'^case_studies/example/$', views.CaseStudy.as_view(), name="case_study"),
     url(r'^download/$', views.Download.as_view(), name="download"),
     url(r'^test/$', views.TestTemplate.as_view(), name="test_template"),
+    url(r'^styleguide/$', views.Styleguide.as_view(), name="styleguide"),
 )
 
 if settings.DEBUG:
