@@ -265,7 +265,7 @@ blockquote {
 		width: auto;
 
 		@include device-min(768px) {
-			max-width: 700px;
+			max-width: 740px;
 			padding: 20px 0 40px;
 			width: (704/768) * 100%;
 		}
@@ -840,7 +840,7 @@ blockquote {
 		background: $green-dark;
 		margin-top: 20px;
 		padding: 10px 10px 30px;
-		color: $green-dark-text;
+		color: $green-medium-dark;
 
 		.footer-logo {
 			float: left;
@@ -885,7 +885,7 @@ blockquote {
 
 	.thanks {
 		@include font-size(12);
-		color: $green-dark-text;
+		color: $green-medium-dark;
 		margin: 0;
 		padding: 0;
 		@include device-min(768px) {
@@ -1705,6 +1705,10 @@ h2 + .list-link-soup {
 	.list-collapsing-header {
 		float: left;
 
+		.section & h2 {
+			margin: 40px 0 20px;
+		}
+
 		+ .form-controls.label {
 			margin: 50px 0 0;
 			text-align: right;
@@ -1934,7 +1938,8 @@ h2 + .list-link-soup {
 }
 
 .note,
-.admonition {
+.admonition,
+.help-block {
 		background: $white;
 		padding: 15px 20px;
 		border: 1px solid $green-very-light;
@@ -1952,25 +1957,6 @@ h2 + .list-link-soup {
 		.last {
 			margin-bottom: 10px;
 		}
-}
-
-// Custom style for getting help section in documentation index
-
-.help-block,
-#s-getting-help {
-	float: right;
-	width: 40%;
-	margin: 10px 0 30px 3%;
-	padding: 0 20px 20px;
-	background: $white;
-	@include font-size(14);
-	@include border-radius(4px);
-	@include box-shadow(-20px 0 0 0 #fff);
-	border: 1px solid $green-very-light;
-	h2 {
-		@include font-size(20);
-		margin: 1em 0;
-	}
 }
 
 .list-links { 
