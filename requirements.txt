@@ -1,6 +1,6 @@
 # These are the libraries that are required to run the django_website project.
 
-Django==1.6.6
+Django==1.6.8
 django-compressor==1.4
 django-lockdown==0.1.1
 docutils
